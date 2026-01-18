@@ -10,7 +10,7 @@ export default async function ClankyPage() {
   const clanky = await getClanky()
 
   // Group by category
-  const categories = [...new Set(clanky.map(c => c.category))]
+  const categories = Array.from(new Set(clanky.map(c => c.category)))
 
   return (
     <div className="py-12">
