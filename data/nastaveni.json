@@ -1,0 +1,75 @@
+{
+  "siteName": "SeznamkySrovnani.cz",
+  "siteDescription": "Nezávislý srovnávač seznamek a seznamovacích aplikací",
+  "heroTitle": "Najdi svou dokonalou seznamku",
+  "heroSubtitle": "Porovnali jsme nejlepší seznamky a seznamovací aplikace, abychom ti pomohli najít tu pravou lásku.",
+  "contactEmail": "info@seznamkysrovnani.cz",
+  "contactPhone": "+420 123 456 789",
+  "contactAddress": "Praha, Česká republika",
+  "socialLinks": {
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "twitter": "https://twitter.com"
+  },
+  "footerText": "SeznamkySrovnani.cz - Váš průvodce světem online seznamování",
+  "seo": {
+    "title": "Srovnání Seznamek 2024 | Nejlepší seznamovací aplikace",
+    "description": "Nezávislé recenze a srovnání nejlepších seznamek a seznamovacích aplikací. Najděte tu pravou pro vás!",
+    "keywords": "seznamky, seznamovací aplikace, online seznamování, Tinder, Badoo, recenze seznamek"
+  },
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Jana K.",
+      "age": 28,
+      "text": "Díky tomuto srovnávači jsem si vybrala správnou seznamku a našla svého partnera!",
+      "image": "/images/testimonials/jana.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Petr M.",
+      "age": 35,
+      "text": "Konečně přehledné srovnání všech seznamek na jednom místě. Ušetřilo mi to spoustu času.",
+      "image": "/images/testimonials/petr.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Eva S.",
+      "age": 42,
+      "text": "Jako senior jsem nevěděla, kterou seznamku vybrat. Tento web mi pomohl najít tu správnou.",
+      "image": "/images/testimonials/eva.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "vazne-vztahy",
+      "name": "Vážné vztahy",
+      "description": "Seznamky pro ty, kteří hledají dlouhodobý vztah",
+      "icon": "heart"
+    },
+    {
+      "id": "flirt",
+      "name": "Flirt & Zábava",
+      "description": "Aplikace pro nezávazné seznámení a flirtování",
+      "icon": "smile"
+    },
+    {
+      "id": "gay-lesbian",
+      "name": "Gay & Lesbian",
+      "description": "Seznamky pro LGBTQ+ komunitu",
+      "icon": "rainbow"
+    },
+    {
+      "id": "senior",
+      "name": "Senior",
+      "description": "Seznamky pro uživatele nad 50 let",
+      "icon": "users"
+    },
+    {
+      "id": "eroticke",
+      "name": "Erotické",
+      "description": "Seznamky pro dospělé (18+)",
+      "icon": "flame"
+    }
+  ]
+}

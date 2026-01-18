@@ -1,0 +1,37 @@
+[
+  {
+    "id": "vazne-vztahy",
+    "name": "Vážné vztahy",
+    "slug": "vazne-vztahy",
+    "description": "Seznamky zaměřené na hledání dlouhodobého partnera a vážného vztahu.",
+    "icon": "heart"
+  },
+  {
+    "id": "flirt",
+    "name": "Flirt & Zábava",
+    "slug": "flirt",
+    "description": "Aplikace pro nezávazné seznámení, flirtování a zábavu.",
+    "icon": "smile"
+  },
+  {
+    "id": "gay-lesbian",
+    "name": "Gay & Lesbian",
+    "slug": "gay-lesbian",
+    "description": "Specializované seznamky pro LGBTQ+ komunitu.",
+    "icon": "rainbow"
+  },
+  {
+    "id": "senior",
+    "name": "Senior 50+",
+    "slug": "senior",
+    "description": "Seznamky určené pro uživatele nad 50 let.",
+    "icon": "users"
+  },
+  {
+    "id": "eroticke",
+    "name": "Erotické",
+    "slug": "eroticke",
+    "description": "Seznamky pro dospělé zaměřené na erotiku a intimní setkání (18+).",
+    "icon": "flame"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "slug": "jak-napsat-atraktivni-profil",
+    "title": "Jak napsat atraktivní profil na seznamce",
+    "excerpt": "Váš profil je vaše vizitka. Naučte se, jak ho napsat tak, aby vás ostatní chtěli poznat.",
+    "content": "## Proč je profil tak důležitý?\n\nVáš profil na seznamce je první věc, kterou o vás ostatní uvidí. Je to vaše digitální vizitka, která rozhoduje o tom, zda vás někdo osloví nebo ne.\n\n## 5 tipů pro skvělý profil\n\n### 1. Vyberte si kvalitní fotky\n\nPoužijte fotky, na kterých je vidět váš obličej. Vyvarujte se skupinových fotek jako hlavní fotografie. Ideální je mít 4-6 fotek z různých situací.\n\n### 2. Napište upřímný popis\n\nNebuďte někdo, kým nejste. Upřímnost je základ každého vztahu. Napište, co vás baví, jaké máte koníčky a co hledáte.\n\n### 3. Buďte konkrétní\n\nMísto \"rád cestuji\" napište \"minulý rok jsem navštívil Japonsko a zamiloval si tamní kulturu\". Konkrétní detaily dávají lidem možnost začít konverzaci.\n\n### 4. Ukažte humor\n\nSmysl pro humor je atraktivní. Nebojte se být vtipní, ale vyhněte se kontroverzním vtipům.\n\n### 5. Aktualizujte profil\n\nPravidelně aktualizujte své fotky a popis. Ukažte, že jste aktivní a zajímaví člověk.",
+    "image": "/images/blog/profil.jpg",
+    "category": "tipy",
+    "author": "Admin",
+    "createdAt": "2024-01-15",
+    "isPublished": true
+  },
+  {
+    "id": "2",
+    "slug": "prvni-schuzka-tipy",
+    "title": "První schůzka: Co dělat a čeho se vyvarovat",
+    "excerpt": "Nervozita před první schůzkou je normální. Přečtěte si naše tipy, jak ji zvládnout.",
+    "content": "## První schůzka je klíčová\n\nPrvní schůzka rozhoduje o tom, zda budete pokračovat v poznávání. Zde jsou tipy, jak ji zvládnout na jedničku.\n\n## Před schůzkou\n\n### Vyberte vhodné místo\n\nKavárna nebo park jsou ideální pro první setkání. Vyvarujte se příliš hlučných nebo intimních míst.\n\n### Informujte někoho blízkého\n\nZ bezpečnostních důvodů řekněte příteli, kam jdete a kdy se plánujete vrátit.\n\n## Během schůzky\n\n### Buďte sami sebou\n\nNesnažte se být někým, kým nejste. Autentičnost je přitažlivá.\n\n### Poslouchejte\n\nNejlepší konverzace jsou vyvážené. Ptejte se a pozorně poslouchejte odpovědi.\n\n### Vyvarujte se kontroverzních témat\n\nPolitika a náboženství nejsou ideální témata pro první schůzku.\n\n## Po schůzce\n\nPokud se vám líbilo, napište. Nehraje na nezájem - upřímnost je sexy.",
+    "image": "/images/blog/schuzka.jpg",
+    "category": "tipy",
+    "author": "Admin",
+    "createdAt": "2024-01-20",
+    "isPublished": true
+  },
+  {
+    "id": "3",
+    "slug": "online-seznamovani-bezpecnost",
+    "title": "Bezpečnost při online seznamování",
+    "excerpt": "Online seznamování může být bezpečné, pokud dodržujete základní pravidla.",
+    "content": "## Bezpečnost na prvním místě\n\nOnline seznamování otevírá dveře novým možnostem, ale také rizikům. Zde je, jak se chránit.\n\n## Ochrana osobních údajů\n\n### Nesdílejte citlivé informace\n\nNikdy nesdílejte svou adresu, pracoviště nebo finanční údaje s někým, koho neznáte.\n\n### Používejte platformu\n\nKomunikujte přes seznamku, dokud se s osobou nesetkáte. Nepřecházejte hned na jiné platformy.\n\n## Rozpoznání podvodníků\n\n### Příliš rychlé city\n\nPokud někdo vyznává lásku po několika dnech, buďte opatrní.\n\n### Žádosti o peníze\n\nNikdy neposílejte peníze někomu, koho jste nepotkali osobně.\n\n### Odmítání videohovoru\n\nPokud se někdo vyhýbá videohovoru nebo osobnímu setkání, může jít o catfish.\n\n## První setkání\n\nSetkejte se na veřejném místě, informujte přátele a mějte vlastní dopravu.",
+    "image": "/images/blog/bezpecnost.jpg",
+    "category": "bezpecnost",
+    "author": "Admin",
+    "createdAt": "2024-02-01",
+    "isPublished": true
+  },
+  {
+    "id": "4",
+    "slug": "vztahy-na-dalku",
+    "title": "Vztahy na dálku: Mohou fungovat?",
+    "excerpt": "Vztahy na dálku jsou výzvou, ale mohou být úspěšné. Zjistěte jak.",
+    "content": "## Vztahy na dálku v digitální době\n\nDíky technologiím jsou vztahy na dálku snazší než kdy dřív. Přesto vyžadují extra úsilí.\n\n## Klíče k úspěchu\n\n### Komunikace\n\nPravidelná a otevřená komunikace je základ. Videohovory, zprávy, sdílení každodenního života.\n\n### Důvěra\n\nBez důvěry vztah na dálku nemůže fungovat. Buďte upřímní a transparentní.\n\n### Plány do budoucna\n\nMějte jasnou představu, kdy a jak se vzdálenost zmenší. Cíl na obzoru pomáhá.\n\n### Návštěvy\n\nPravidelná osobní setkání jsou důležitá. Plánujte je dopředu.\n\n## Kdy to nefunguje\n\nPokud nemáte plán, jak se přiblížit, nebo pokud komunikace vázne, vztah pravděpodobně nebude fungovat.",
+    "image": "/images/blog/dalka.jpg",
+    "category": "vztahy",
+    "author": "Admin",
+    "createdAt": "2024-02-10",
+    "isPublished": true
+  }
+]
