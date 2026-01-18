@@ -34,7 +34,11 @@ export async function POST(request: NextRequest) {
       cons: body.cons || [],
       features: body.features || [],
       order: body.order || produkty.length + 1,
-      isActive: body.isActive ?? true
+      isActive: body.isActive ?? true,
+      pricing: body.pricing || 'Zdarma',
+      freeVersion: body.freeVersion ?? true,
+      isNew: body.isNew ?? false,
+      isFeatured: body.isFeatured ?? false
     }
 
     produkty.push(newProdukt)

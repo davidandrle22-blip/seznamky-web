@@ -4,17 +4,30 @@ export interface Produkt {
   name: string
   logo: string
   description: string
+  shortDescription?: string
   fullDescription: string
   affiliateUrl: string
   rating: number
+  userRating?: number
+  expertRating?: number
   users: string
+  activeUsers?: string
+  successRate?: string
   ageRange: string
+  genderRatio?: string
   categories: string[]
+  targetAudience?: string
   pros: string[]
   cons: string[]
   features: string[]
+  highlights?: { icon: string; text: string }[]
   order: number
   isActive: boolean
+  isFeatured?: boolean
+  isNew?: boolean
+  pricing: string
+  freeVersion?: boolean
+  freeFeatures?: string[]
 }
 
 export interface Clanek {
@@ -26,8 +39,11 @@ export interface Clanek {
   image: string
   category: string
   author: string
+  authorAvatar?: string
   createdAt: string
+  readTime?: number
   isPublished: boolean
+  isFeatured?: boolean
 }
 
 export interface Testimonial {
