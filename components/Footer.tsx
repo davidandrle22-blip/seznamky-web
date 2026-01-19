@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Heart, Facebook, Instagram, Twitter, Mail, Phone, MapPin, Sparkles, ArrowRight } from 'lucide-react'
 import { getSettings } from '@/lib/data'
 
+const kategorieLinks = [
+  { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
+  { name: 'Vážné vztahy', href: '/kategorie/vazne-vztahy' },
+  { name: 'Flirt seznamky', href: '/kategorie/flirt-seznamky' },
+  { name: 'Sex seznamky 18+', href: '/kategorie/sex-seznamky' },
+  { name: 'Senior 50+', href: '/kategorie/senior-seznamky' },
+  { name: 'Pro zadané', href: '/kategorie/seznamky-pro-zadane' },
+  { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky' },
+  { name: 'Seznamky zdarma', href: '/kategorie/seznamky-zdarma' },
+]
+
 export default async function Footer() {
   const settings = await getSettings()
 
@@ -69,6 +80,7 @@ export default async function Footer() {
             <ul className="space-y-3">
               <li><Link href="/" className="text-gray-400 hover:text-romantic-400 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-romantic-500 rounded-full"></span>Domů</Link></li>
               <li><Link href="/seznamky" className="text-gray-400 hover:text-romantic-400 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-romantic-500 rounded-full"></span>Srovnání seznamek</Link></li>
+              <li><Link href="/kategorie/nejlepsi-seznamky" className="text-gray-400 hover:text-romantic-400 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-romantic-500 rounded-full"></span>Kategorie</Link></li>
               <li><Link href="/clanky" className="text-gray-400 hover:text-romantic-400 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-romantic-500 rounded-full"></span>Rady a tipy</Link></li>
               <li><Link href="/kontakt" className="text-gray-400 hover:text-romantic-400 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-romantic-500 rounded-full"></span>Kontakt</Link></li>
             </ul>
@@ -78,11 +90,13 @@ export default async function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Kategorie</h3>
             <ul className="space-y-3">
-              <li><Link href="/seznamky?kategorie=vazne-vztahy" className="text-gray-400 hover:text-romantic-400 transition-colors">Vážné vztahy</Link></li>
-              <li><Link href="/seznamky?kategorie=flirt" className="text-gray-400 hover:text-romantic-400 transition-colors">Flirt a seznámení</Link></li>
-              <li><Link href="/seznamky?kategorie=senior" className="text-gray-400 hover:text-romantic-400 transition-colors">Seznamky 50+</Link></li>
-              <li><Link href="/seznamky?kategorie=gay-lesbian" className="text-gray-400 hover:text-romantic-400 transition-colors">LGBT seznamky</Link></li>
-              <li><Link href="/seznamky?kategorie=erotika" className="text-gray-400 hover:text-romantic-400 transition-colors">Diskrétní seznámení</Link></li>
+              {kategorieLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-romantic-400 transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

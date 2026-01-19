@@ -2,7 +2,18 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, Sparkles, ChevronDown, ExternalLink } from 'lucide-react'
+import { Menu, X, Heart, Sparkles, ChevronDown, Crown, Smile, Flame, Users, EyeOff, Rainbow, Gift } from 'lucide-react'
+
+const kategorieItems = [
+  { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky', description: 'Kompletní žebříček', icon: Crown },
+  { name: 'Vážné vztahy', href: '/kategorie/vazne-vztahy', description: 'Pro hledající partnera', icon: Heart },
+  { name: 'Flirt & nezávazné', href: '/kategorie/flirt-seznamky', description: 'Zábava bez závazků', icon: Smile },
+  { name: 'Sex seznamky', href: '/kategorie/sex-seznamky', description: 'Pro dospělé 18+', icon: Flame },
+  { name: 'Senior 50+', href: '/kategorie/senior-seznamky', description: 'Pro zralé singles', icon: Users },
+  { name: 'Pro zadané', href: '/kategorie/seznamky-pro-zadane', description: 'Diskrétní seznámení', icon: EyeOff },
+  { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky', description: 'LGBTQ+ komunita', icon: Rainbow },
+  { name: 'Zdarma', href: '/kategorie/seznamky-zdarma', description: 'Bezplatné možnosti', icon: Gift },
+]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,23 +31,19 @@ export default function Header() {
   const navigation = [
     { name: 'Domů', href: '/' },
     {
-      name: 'Srovnání',
-      href: '/seznamky',
-      dropdown: [
-        { name: 'Všechny seznamky', href: '/seznamky', description: 'Kompletní přehled' },
-        { name: 'Vážné vztahy', href: '/seznamky?kategorie=vazne-vztahy', description: 'Pro hledající partnera' },
-        { name: 'Flirt & zábava', href: '/seznamky?kategorie=flirt', description: 'Nezávazné seznámení' },
-        { name: 'Senior 50+', href: '/seznamky?kategorie=senior', description: 'Pro zralé singles' },
-      ]
+      name: 'Kategorie',
+      href: '/kategorie/nejlepsi-seznamky',
+      dropdown: kategorieItems
     },
+    { name: 'Srovnání', href: '/seznamky' },
     { name: 'Blog', href: '/clanky' },
     { name: 'Kontakt', href: '/kontakt' },
   ]
 
   const topSeznamky = [
     { name: 'ELITE Date', href: '/seznamky/elite-date', badge: '#1' },
-    { name: 'Victoria Milan', href: '/seznamky/victoria-milan', badge: '#2' },
-    { name: 'Singles50', href: '/seznamky/singles50', badge: '#3' },
+    { name: 'Tinder', href: '/seznamky/tinder', badge: '#2' },
+    { name: 'Badoo', href: '/seznamky/badoo', badge: '#3' },
   ]
 
   return (
@@ -98,17 +105,25 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 animate-fade-in">
-                    {item.dropdown.map((dropItem) => (
-                      <Link
-                        key={dropItem.name}
-                        href={dropItem.href}
-                        className="flex flex-col px-4 py-3 hover:bg-romantic-50 transition-colors"
-                      >
-                        <span className="font-medium text-gray-900">{dropItem.name}</span>
-                        <span className="text-sm text-gray-500">{dropItem.description}</span>
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 animate-fade-in">
+                    {item.dropdown.map((dropItem) => {
+                      const IconComponent = dropItem.icon
+                      return (
+                        <Link
+                          key={dropItem.name}
+                          href={dropItem.href}
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-romantic-50 transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-romantic-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <IconComponent className="w-4 h-4 text-romantic-600" />
+                          </div>
+                          <div>
+                            <span className="font-medium text-gray-900 block">{dropItem.name}</span>
+                            <span className="text-xs text-gray-500">{dropItem.description}</span>
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 )}
               </div>
@@ -166,22 +181,26 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className="block py-3 px-4 text-gray-700 hover:text-romantic-600 hover:bg-romantic-50 font-medium rounded-xl transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => !item.dropdown && setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                   {item.dropdown && (
                     <div className="ml-4 mt-1 space-y-1">
-                      {item.dropdown.map((dropItem) => (
-                        <Link
-                          key={dropItem.name}
-                          href={dropItem.href}
-                          className="block py-2 px-4 text-sm text-gray-600 hover:text-romantic-600 hover:bg-romantic-50 rounded-lg transition-colors"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {dropItem.name}
-                        </Link>
-                      ))}
+                      {item.dropdown.map((dropItem) => {
+                        const IconComponent = dropItem.icon
+                        return (
+                          <Link
+                            key={dropItem.name}
+                            href={dropItem.href}
+                            className="flex items-center gap-2 py-2 px-4 text-sm text-gray-600 hover:text-romantic-600 hover:bg-romantic-50 rounded-lg transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <IconComponent className="w-4 h-4 text-romantic-500" />
+                            {dropItem.name}
+                          </Link>
+                        )
+                      })}
                     </div>
                   )}
                 </div>

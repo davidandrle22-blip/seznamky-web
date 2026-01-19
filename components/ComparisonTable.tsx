@@ -39,9 +39,6 @@ export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTable
 
   const getPromoLabel = (produkt: Produkt, rank: number) => {
     if (rank === 1) return { text: 'Nejlepší volba 2026', color: 'bg-green-500' }
-    if (produkt.freeVersion && produkt.pricing?.toLowerCase().includes('zdarma')) {
-      return { text: 'Zcela ZDARMA', color: 'bg-blue-500' }
-    }
     if (produkt.categories.includes('diskretni')) {
       return { text: '100% diskrétní', color: 'bg-purple-500' }
     }
@@ -64,7 +61,7 @@ export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTable
             <th className="text-white font-bold py-4 px-4 text-center">Hodnocení</th>
             <th className="text-white font-bold py-4 px-4 text-center">Uživatelé</th>
             <th className="text-white font-bold py-4 px-4 text-center">Úspěšnost</th>
-            <th className="text-white font-bold py-4 px-4 text-center">Cena</th>
+            <th className="text-white font-bold py-4 px-4 text-center">Zdarma</th>
             <th className="text-white font-bold py-4 px-6 text-center rounded-tr-xl min-w-[180px]">Akce</th>
           </tr>
         </thead>
@@ -77,13 +74,22 @@ export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTable
               <tr
                 key={produkt.id}
                 className={`
-                  border-b border-gray-100 transition-all duration-200
-                  ${rank === 1 ? 'bg-gradient-to-r from-amber-50/80 to-yellow-50/50' : 'bg-white hover:bg-romantic-50/40'}
+                  border-b border-gray-100 transition-all duration-200 relative
+                  ${rank === 1 ? 'bg-gradient-to-r from-amber-50 via-yellow-50/70 to-amber-50/50 shadow-inner' : 'bg-white hover:bg-romantic-50/40'}
                 `}
               >
+                {/* Special indicator for #1 */}
+                {rank === 1 && (
+                  <td className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 via-romantic-500 to-amber-400"></td>
+                )}
                 {/* Rank */}
                 <td className="py-5 px-4">
-                  {getRankBadge(rank)}
+                  <div className="flex flex-col items-start gap-1">
+                    {getRankBadge(rank)}
+                    {rank === 1 && (
+                      <span className="text-[10px] font-bold text-romantic-600 uppercase tracking-wide">Volba redakce</span>
+                    )}
+                  </div>
                 </td>
 
                 {/* Name with Logo */}
@@ -171,15 +177,16 @@ export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTable
                   </div>
                 </td>
 
-                {/* Price */}
+                {/* Free Version */}
                 <td className="py-5 px-4 text-center">
                   <div className="flex flex-col items-center gap-1">
-                    <span className="font-bold text-romantic-600">{produkt.pricing}</span>
-                    {produkt.freeVersion && (
-                      <span className="inline-flex items-center gap-1 text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
-                        <Gift className="w-3 h-3" />
-                        Trial zdarma
+                    {produkt.freeVersion ? (
+                      <span className="inline-flex items-center gap-1 text-sm text-green-600 bg-green-50 px-3 py-1.5 rounded-full font-semibold">
+                        <Gift className="w-4 h-4" />
+                        Ano
                       </span>
+                    ) : (
+                      <span className="text-gray-400 text-sm">Ne</span>
                     )}
                   </div>
                 </td>

@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import { Produkt, Clanek, Nastaveni, Kategorie } from './types'
+import { Produkt, Clanek, Nastaveni, Kategorie, CategoryContent } from './types'
 
 const dataDir = path.join(process.cwd(), 'data')
 
@@ -76,4 +76,20 @@ export async function getKategorie(): Promise<Kategorie[]> {
 export async function getProduktyByKategorie(kategorieId: string): Promise<Produkt[]> {
   const produkty = await getProdukty()
   return produkty.filter(p => p.categories.includes(kategorieId))
+}
+
+export async function getKategorieBySlug(slug: string): Promise<Kategorie | null> {
+  const kategorie = await getKategorie()
+  return kategorie.find(k => k.slug === slug) || null
+}
+
+export async function getCategoryContent(): Promise<CategoryContent[]> {
+  const filePath = path.join(dataDir, 'category-content.json')
+  const data = await fs.readFile(filePath, 'utf-8')
+  return JSON.parse(data)
+}
+
+export async function getCategoryContentBySlug(slug: string): Promise<CategoryContent | null> {
+  const contents = await getCategoryContent()
+  return contents.find(c => c.slug === slug) || null
 }

@@ -199,9 +199,9 @@ export default function ProductCard({ produkt, rank, variant = 'default' }: Prod
                 <div className="text-xs text-gray-500">věk</div>
               </div>
               <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-xl p-3 text-center border border-amber-100">
-                <Zap className="w-5 h-5 text-amber-600 mx-auto mb-1" />
-                <div className="font-bold text-gray-900">{produkt.pricing}</div>
-                <div className="text-xs text-gray-500">cena</div>
+                <Gift className="w-5 h-5 text-amber-600 mx-auto mb-1" />
+                <div className="font-bold text-gray-900">{produkt.freeVersion ? 'Ano' : 'Ne'}</div>
+                <div className="text-xs text-gray-500">zdarma</div>
               </div>
             </div>
 
@@ -283,11 +283,13 @@ export default function ProductCard({ produkt, rank, variant = 'default' }: Prod
               </div>
             )}
 
-            {/* Price highlight */}
-            <div className="text-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 border border-gray-200 mb-2">
-              <div className="text-xs text-gray-500 mb-1">Cena od</div>
-              <div className="text-xl font-bold gradient-text">{produkt.pricing}</div>
-            </div>
+            {/* Free version highlight */}
+            {produkt.freeVersion && (
+              <div className="text-center bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200 mb-2">
+                <div className="text-xs text-green-600 mb-1">Registrace</div>
+                <div className="text-xl font-bold text-green-700">ZDARMA</div>
+              </div>
+            )}
 
             {/* CTA Buttons */}
             <a

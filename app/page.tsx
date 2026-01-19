@@ -100,8 +100,79 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* ELITE Date - Editor's Choice Banner */}
+      {topProdukty[0] && (
+        <section className="relative -mt-4 z-20 pb-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-romantic-600 via-crimson-600 to-romantic-700 rounded-2xl p-1 shadow-2xl shadow-romantic-500/20">
+              <div className="bg-gradient-to-br from-white to-romantic-50 rounded-xl p-5 lg:p-6">
+                <div className="flex flex-col lg:flex-row items-center gap-6">
+                  {/* Badge */}
+                  <div className="flex items-center gap-3 lg:flex-shrink-0">
+                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden shadow-xl border-4 border-romantic-200 bg-white">
+                      <Image
+                        src={topProdukty[0].logo}
+                        alt={topProdukty[0].name}
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="lg:hidden">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Crown className="w-5 h-5 text-amber-500" />
+                        <span className="text-xs font-bold text-romantic-600 uppercase tracking-wider">Volba redakce 2026</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">{topProdukty[0].name}</h3>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-grow text-center lg:text-left">
+                    <div className="hidden lg:flex items-center gap-2 mb-2">
+                      <Crown className="w-5 h-5 text-amber-500" />
+                      <span className="text-sm font-bold text-romantic-600 uppercase tracking-wider">Volba redakce 2026</span>
+                    </div>
+                    <h3 className="hidden lg:block text-2xl font-bold text-gray-900 mb-2">{topProdukty[0].name}</h3>
+                    <p className="text-gray-600 mb-3 max-w-xl">{topProdukty[0].description}</p>
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm">
+                      <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-1 rounded-full">
+                        <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
+                        <span className="font-bold text-amber-700">{topProdukty[0].rating}/10</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-gray-600">
+                        <Users className="w-4 h-4" />
+                        <span>{topProdukty[0].users} uživatelů</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-green-600">
+                        <CheckCircle className="w-4 h-4" />
+                        <span className="font-medium">92% úspěšnost párování</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex flex-col items-center gap-2 lg:flex-shrink-0">
+                    <a
+                      href={topProdukty[0].affiliateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-romantic-600 to-crimson-600 hover:from-romantic-700 hover:to-crimson-700 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-romantic-500/25 hover:shadow-xl hover:-translate-y-0.5"
+                    >
+                      <Zap className="w-5 h-5" />
+                      Vyzkoušet zdarma
+                    </a>
+                    <span className="text-xs text-gray-500">Registrace trvá jen 2 minuty</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* TOP 3 Seznamky - Immediately Visible Above the Fold */}
-      <section className="relative -mt-4 z-10 pb-8">
+      <section className="relative z-10 pb-8 pt-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top 3 Quick Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8">
@@ -171,18 +242,14 @@ export default async function Home() {
                     ))}
                   </div>
 
-                  {/* Pricing & Free Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-sm">
-                      <span className="text-gray-500">Cena: </span>
-                      <span className="font-semibold text-gray-900">{produkt.pricing}</span>
-                    </div>
-                    {produkt.freeVersion && (
+                  {/* Free Badge */}
+                  {produkt.freeVersion && (
+                    <div className="mb-4">
                       <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">
                         ZDARMA k vyzkoušení
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   {/* CTA Button */}
                   <a
@@ -205,24 +272,28 @@ export default async function Home() {
             ))}
           </div>
 
-          {/* Urgency Banner */}
-          <div className="bg-gradient-to-r from-romantic-50 to-pink-50 border border-romantic-200 rounded-xl p-4 mb-8">
+          {/* Urgency Banner - ELITE Date specific */}
+          <div className="bg-gradient-to-r from-amber-50 via-romantic-50 to-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-romantic-100 rounded-full flex items-center justify-center">
-                  <Flame className="w-5 h-5 text-romantic-600" />
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Award className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900">Aktuální akce na seznamkách</p>
-                  <p className="text-sm text-gray-600">Registrace zdarma + bonusy pro nové uživatele</p>
+                  <p className="font-bold text-gray-900">
+                    <span className="text-romantic-600">ELITE Date</span> - Exkluzivní nabídka
+                  </p>
+                  <p className="text-sm text-gray-600">Premium funkce na 7 dní zdarma pro nové členy</p>
                 </div>
               </div>
               <a
-                href="#kompletni-srovnani"
-                className="flex items-center gap-2 bg-romantic-600 hover:bg-romantic-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                href={topProdukty[0]?.affiliateUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-gradient-to-r from-romantic-600 to-crimson-600 hover:from-romantic-700 hover:to-crimson-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-all shadow-md hover:shadow-lg"
               >
-                Zobrazit akce
-                <ArrowRight className="w-4 h-4" />
+                Aktivovat nabídku
+                <Sparkles className="w-4 h-4" />
               </a>
             </div>
           </div>

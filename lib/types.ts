@@ -1,3 +1,8 @@
+export interface FaqItem {
+  question: string
+  answer: string
+}
+
 export interface Produkt {
   id: string
   slug: string
@@ -25,9 +30,9 @@ export interface Produkt {
   isActive: boolean
   isFeatured?: boolean
   isNew?: boolean
-  pricing: string
   freeVersion?: boolean
   freeFeatures?: string[]
+  faq?: FaqItem[]
 }
 
 export interface Clanek {
@@ -60,6 +65,9 @@ export interface Kategorie {
   slug: string
   description: string
   icon: string
+  order?: number
+  metaTitle?: string
+  metaDescription?: string
 }
 
 export interface SocialLinks {
@@ -87,4 +95,19 @@ export interface Nastaveni {
   seo: SEO
   testimonials: Testimonial[]
   categories: Kategorie[]
+}
+
+export interface CategoryContent {
+  slug: string
+  heroTitle: string
+  heroSubtitle: string
+  introText: string
+  sections: CategorySection[]
+  faq: FaqItem[]
+  relatedCategories: string[]
+}
+
+export interface CategorySection {
+  title: string
+  content: string
 }

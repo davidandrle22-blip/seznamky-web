@@ -6,7 +6,7 @@
     "logo": "/images/seznamky/elitedate.jpg",
     "description": "Prémiová česká seznamka pro náročné, kteří hledají vážný vztah. Vědecký matchmaking s 92% úspěšností párování.",
     "shortDescription": "Pro vážné vztahy s vědeckým přístupem",
-    "fullDescription": "## ELITE Date - Recenze 2026\n\n**ELITE Date** je prémiová česká seznamka zaměřená na **vážné vztahy a dlouhodobá partnerství**. Platforma využívá vědecky podložený matchmaking algoritmus s prokázanou 92% úspěšností.\n\n### Proč si vybrat ELITE Date?\n\n**Vědecký přístup k seznamování**\nELITE Date využívá propracovaný matchmaking algoritmus založený na 136 otázkovém osobnostním testu vyvinutém psychology.\n\n**Manuální ověřování profilů**\nKaždý profil prochází ruční kontrolou - žádné fake účty.\n\n### Ceník 2026\n\n| Typ členství | Cena |\n|-------------|------|\n| 1 měsíc | 599 Kč |\n| 3 měsíce | 449 Kč/měsíc |\n| 6 měsíců | 299 Kč/měsíc |\n| 12 měsíců | 150 Kč/měsíc |",
+    "fullDescription": "## ELITE Date - Recenze 2026\n\n**ELITE Date** je prémiová česká seznamka zaměřená na **vážné vztahy a dlouhodobá partnerství**. Platforma využívá vědecky podložený matchmaking algoritmus s prokázanou 92% úspěšností.\n\n### Proč si vybrat ELITE Date?\n\n**Vědecký přístup k seznamování**\nELITE Date využívá propracovaný matchmaking algoritmus založený na 136 otázkovém osobnostním testu vyvinutém psychology.\n\n**Manuální ověřování profilů**\nKaždý profil prochází ruční kontrolou - žádné fake účty.",
     "affiliateUrl": "https://elitedate.cz",
     "rating": 9.2,
     "userRating": 4.6,
@@ -16,7 +16,7 @@
     "successRate": "92%",
     "ageRange": "30-55",
     "genderRatio": "45/55",
-    "categories": ["vazne-vztahy"],
+    "categories": ["vazne-vztahy", "nejlepsi-seznamky"],
     "targetAudience": "Profesionálové 30+ hledající vážný vztah",
     "pros": [
       "Vědecký matchmaking s 92% úspěšností",
@@ -46,9 +46,13 @@
     "isActive": true,
     "isFeatured": true,
     "isNew": false,
-    "pricing": "od 150 Kč/měsíc",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Osobnostní test", "Prohlížení profilů"]
+    "freeFeatures": ["Registrace", "Osobnostní test", "Prohlížení profilů"],
+    "faq": [
+      {"question": "Je ELITE Date zdarma?", "answer": "Registrace a osobnostní test jsou zdarma. Pro odesílání zpráv je potřeba premium členství."},
+      {"question": "Jak funguje matchmaking?", "answer": "Algoritmus analyzuje odpovědi z 136 otázkového testu a doporučuje kompatibilní partnery."},
+      {"question": "Jsou profily ověřené?", "answer": "Ano, každý profil prochází manuální kontrolou našeho týmu."}
+    ]
   },
   {
     "id": "2",
@@ -57,7 +61,7 @@
     "logo": "/images/seznamky/victoria-milan.jpg",
     "description": "Diskrétní seznamka pro zadané s maximální anonymitou. Bezplatné pro ženy, propracované bezpečnostní funkce.",
     "shortDescription": "Diskrétní seznamka pro zadané",
-    "fullDescription": "## Victoria Milan - Recenze 2026\n\n**Victoria Milan** je specializovaná seznamka určená pro **diskrétní seznámení**. Nabízí anonymní prostředí s propracovanými bezpečnostními funkcemi.\n\n### Bezpečnostní funkce\n\n- **AnonymousBlur** - automatické rozmazání fotek\n- **Panic Button** - rychlé skrytí stránky\n- **Soukromé fotoalba** s přístupovým klíčem\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| Ženy | Zdarma |\n| 1 měsíc | 499 Kč |\n| 3 měsíce | 333 Kč/měsíc |",
+    "fullDescription": "## Victoria Milan - Recenze 2026\n\n**Victoria Milan** je specializovaná seznamka určená pro **diskrétní seznámení**. Nabízí anonymní prostředí s propracovanými bezpečnostními funkcemi.\n\n### Bezpečnostní funkce\n\n- **AnonymousBlur** - automatické rozmazání fotek\n- **Panic Button** - rychlé skrytí stránky\n- **Soukromá fotoalba** s přístupovým klíčem",
     "affiliateUrl": "https://victoriamilan.cz",
     "rating": 8.8,
     "userRating": 4.4,
@@ -67,7 +71,7 @@
     "successRate": "78%",
     "ageRange": "25-55",
     "genderRatio": "40/60",
-    "categories": ["diskretni", "flirt"],
+    "categories": ["seznamky-pro-zadane", "sex-seznamky"],
     "targetAudience": "Zadaní hledající diskrétní seznámení",
     "pros": [
       "Maximální diskrétnost a anonymita",
@@ -84,7 +88,7 @@
     "features": [
       "AnonymousBlur",
       "Panic Button",
-      "Soukromé alba",
+      "Soukromá alba",
       "Mezinárodní dosah",
       "Live chat"
     ],
@@ -97,9 +101,13 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 333 Kč/měsíc",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Prohlížení", "Zdarma pro ženy"]
+    "freeFeatures": ["Registrace", "Prohlížení", "Zdarma pro ženy"],
+    "faq": [
+      {"question": "Je Victoria Milan bezpečná?", "answer": "Ano, platforma nabízí pokročilé bezpečnostní funkce jako AnonymousBlur a Panic Button."},
+      {"question": "Je pro ženy zdarma?", "answer": "Ano, ženy mají plný přístup ke všem funkcím zcela zdarma."},
+      {"question": "Jak funguje AnonymousBlur?", "answer": "Automaticky rozmazává fotografie, které můžete odhalit pouze vybraným uživatelům."}
+    ]
   },
   {
     "id": "3",
@@ -108,7 +116,7 @@
     "logo": "/images/seznamky/singles-50.jpg",
     "description": "Nejlepší seznamka pro generaci 50+. Vědecká metoda párování, video chat a ověřené profily pro seriózní vztahy.",
     "shortDescription": "Pro zralé singles nad 50 let",
-    "fullDescription": "## Singles50 - Recenze 2026\n\n**Singles50** je prémiová seznamka **specializovaná na věkovou skupinu 50+**. Využívá vědeckou metodu párování.\n\n### Pro koho je Singles50?\n\n- Svobodní nad 50 let\n- Rozvedení hledající nový začátek\n- Ovdovělí připravení na nový vztah\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| 1 měsíc | 699 Kč |\n| 3 měsíce | 599 Kč/měsíc |\n| 6 měsíců | 399 Kč/měsíc |",
+    "fullDescription": "## Singles50 - Recenze 2026\n\n**Singles50** je prémiová seznamka **specializovaná na věkovou skupinu 50+**. Využívá vědeckou metodu párování.\n\n### Pro koho je Singles50?\n\n- Svobodní nad 50 let\n- Rozvedení hledající nový začátek\n- Ovdovělí připravení na nový vztah",
     "affiliateUrl": "https://singles50.cz",
     "rating": 8.5,
     "userRating": 4.3,
@@ -118,7 +126,7 @@
     "successRate": "85%",
     "ageRange": "50+",
     "genderRatio": "48/52",
-    "categories": ["vazne-vztahy", "senior"],
+    "categories": ["senior-seznamky", "vazne-vztahy", "nejlepsi-seznamky"],
     "targetAudience": "Zralí singles nad 50 let",
     "pros": [
       "Specializace na věkovou skupinu 50+",
@@ -148,18 +156,22 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 399 Kč/měsíc",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Test osobnosti", "Prohlížení"]
+    "freeFeatures": ["Registrace", "Test osobnosti", "Prohlížení"],
+    "faq": [
+      {"question": "Je Singles50 pouze pro seniory?", "answer": "Ano, platforma je určena výhradně pro uživatele nad 50 let."},
+      {"question": "Jak funguje video chat?", "answer": "Video chat umožňuje bezpečně poznat partnera před osobní schůzkou."},
+      {"question": "Jsou profily ověřené?", "answer": "Ano, všechny profily jsou manuálně kontrolovány."}
+    ]
   },
   {
     "id": "4",
     "slug": "badoo",
     "name": "Badoo",
     "logo": "/images/seznamky/badoo.jpg",
-    "description": "Největší seznamovací síť na světě s 500M+ uživatelů. Ideální pro nezávazný flirt i vážné vztahy v každém věku.",
+    "description": "Největší seznamovací síť na světě s 500M+ uživateli. Ideální pro nezávazný flirt i vážné vztahy v každém věku.",
     "shortDescription": "Největší světová seznamka",
-    "fullDescription": "## Badoo - Recenze 2026\n\n**Badoo** je **největší seznamovací platforma na světě** s více než 500 miliony uživatelů.\n\n### Hlavní funkce\n\n- **Encounters** - swipe matching podobný Tinderu\n- **Lidé v okolí** - GPS lokalizace\n- **Video chat** - bezpečné poznání\n- **Ověření selfie** - méně fake profilů\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| 1 týden | 149 Kč |\n| 1 měsíc | 299 Kč |\n| Lifetime | 2 499 Kč |",
+    "fullDescription": "## Badoo - Recenze 2026\n\n**Badoo** je **největší seznamovací platforma na světě** s více než 500 miliony uživatelů.\n\n### Hlavní funkce\n\n- **Encounters** - swipe matching podobný Tinderu\n- **Lidé v okolí** - GPS lokalizace\n- **Video chat** - bezpečné poznání\n- **Ověření selfie** - méně fake profilů",
     "affiliateUrl": "https://badoo.com",
     "rating": 8.2,
     "userRating": 4.1,
@@ -169,7 +181,7 @@
     "successRate": "65%",
     "ageRange": "18-55",
     "genderRatio": "45/55",
-    "categories": ["flirt", "vazne-vztahy"],
+    "categories": ["flirt-seznamky", "vazne-vztahy", "seznamky-zdarma", "nejlepsi-seznamky"],
     "targetAudience": "Všechny věkové kategorie",
     "pros": [
       "Největší uživatelská základna na světě",
@@ -199,9 +211,13 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 149 Kč/týden",
     "freeVersion": true,
-    "freeFeatures": ["Swipe", "Chat", "Prohlížení", "Stories"]
+    "freeFeatures": ["Swipe", "Chat", "Prohlížení", "Stories"],
+    "faq": [
+      {"question": "Je Badoo zdarma?", "answer": "Základní funkce včetně swipování a chatu jsou zdarma. Premium odemyká další výhody."},
+      {"question": "Jak funguje ověření selfie?", "answer": "Pořídíte selfie v určité póze a systém ověří, že odpovídá vašim fotkám."},
+      {"question": "Co je Lifetime členství?", "answer": "Jednorázová platba za doživotní premium přístup."}
+    ]
   },
   {
     "id": "5",
@@ -210,7 +226,7 @@
     "logo": "/images/seznamky/edarling.jpg",
     "description": "Prémiová mezinárodní seznamka s 200+ otázkovým testem kompatibility. Pro vzdělané profesionály hledající vážný vztah.",
     "shortDescription": "Pro vzdělané profesionály",
-    "fullDescription": "## eDarling - Recenze 2026\n\n**eDarling** je **prémiová mezinárodní seznamka** využívající vědecky podložený test osobnosti.\n\n### Vědecký přístup\n\n200+ otázkový test vyvinutý psychology analyzuje:\n- Osobnostní rysy\n- Životní hodnoty\n- Preference partnera\n- Kompatibilitu\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| 3 měsíce | 699 Kč/měsíc |\n| 6 měsíců | 499 Kč/měsíc |\n| 12 měsíců | 349 Kč/měsíc |",
+    "fullDescription": "## eDarling - Recenze 2026\n\n**eDarling** je **prémiová mezinárodní seznamka** využívající vědecky podložený test osobnosti.\n\n### Vědecký přístup\n\n200+ otázkový test vyvinutý psychology analyzuje:\n- Osobnostní rysy\n- Životní hodnoty\n- Preference partnera\n- Kompatibilitu",
     "affiliateUrl": "https://edarling.cz",
     "rating": 8.4,
     "userRating": 4.2,
@@ -220,7 +236,7 @@
     "successRate": "88%",
     "ageRange": "28-55",
     "genderRatio": "47/53",
-    "categories": ["vazne-vztahy"],
+    "categories": ["vazne-vztahy", "nejlepsi-seznamky"],
     "targetAudience": "Vzdělaní profesionálové",
     "pros": [
       "Vědecky podložený test (200+ otázek)",
@@ -250,9 +266,13 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 349 Kč/měsíc",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Test", "Prohlížení návrhů"]
+    "freeFeatures": ["Registrace", "Test", "Prohlížení návrhů"],
+    "faq": [
+      {"question": "Jak dlouho trvá registrace?", "answer": "Kompletní osobnostní test zabere přibližně 45 minut."},
+      {"question": "Co znamená procento kompatibility?", "answer": "Ukazuje, jak jsou vaše osobnostní rysy a hodnoty shodné s druhým uživatelem."},
+      {"question": "Mohu používat eDarling zdarma?", "answer": "Registrace a test jsou zdarma, pro komunikaci je potřeba premium."}
+    ]
   },
   {
     "id": "6",
@@ -261,7 +281,7 @@
     "logo": "/images/seznamky/flirt-kontakt.svg",
     "description": "Seznamka pro nezávazné flirtování a zábavu. Zcela zdarma pro ženy, rychlá registrace, aktivní česká komunita.",
     "shortDescription": "Pro nezávazný flirt a zábavu",
-    "fullDescription": "## FlirtKontakt - Recenze 2026\n\n**FlirtKontakt** je česká seznamka zaměřená na **flirtování a nezávazné vztahy**.\n\n### Hlavní přednosti\n\n- Bezplatné pro ženy\n- Rychlá registrace (2 minuty)\n- Aktivní česká komunita\n- Přímočaré rozhraní\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| Ženy | Zdarma |\n| Muži - 1 týden | 99 Kč |\n| Muži - 1 měsíc | 249 Kč |",
+    "fullDescription": "## FlirtKontakt - Recenze 2026\n\n**FlirtKontakt** je česká seznamka zaměřená na **flirtování a nezávazné vztahy**.\n\n### Hlavní přednosti\n\n- Bezplatné pro ženy\n- Rychlá registrace (2 minuty)\n- Aktivní česká komunita\n- Přímočaré rozhraní",
     "affiliateUrl": "https://flirtkontakt.cz",
     "rating": 7.8,
     "userRating": 3.9,
@@ -271,7 +291,7 @@
     "successRate": "55%",
     "ageRange": "18-45",
     "genderRatio": "35/65",
-    "categories": ["flirt", "erotika"],
+    "categories": ["flirt-seznamky", "sex-seznamky"],
     "targetAudience": "Mladší generace hledající flirt",
     "pros": [
       "Zcela zdarma pro ženy",
@@ -301,9 +321,13 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
-    "pricing": "od 99 Kč/týden",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Prohlížení", "Zdarma pro ženy"]
+    "freeFeatures": ["Registrace", "Prohlížení", "Zdarma pro ženy"],
+    "faq": [
+      {"question": "Je FlirtKontakt pro ženy zdarma?", "answer": "Ano, ženy mají plný přístup ke všem funkcím zcela zdarma."},
+      {"question": "Jak rychlá je registrace?", "answer": "Registrace trvá přibližně 2 minuty."},
+      {"question": "Je k dispozici mobilní aplikace?", "answer": "Aktuálně je k dispozici pouze webová verze."}
+    ]
   },
   {
     "id": "7",
@@ -312,7 +336,7 @@
     "logo": "/images/seznamky/academic-singles.jpg",
     "description": "Exkluzivní seznamka pro vysokoškolsky vzdělané profesionály. 85% uživatelů s VŠ vzděláním, důraz na intelektuální kompatibilitu.",
     "shortDescription": "Pro vysokoškolsky vzdělané",
-    "fullDescription": "## Academic Singles - Recenze 2026\n\n**Academic Singles** je **exkluzivní seznamka pro vysokoškolsky vzdělané** profesionály.\n\n### Unikátní komunita\n\n- 85% uživatelů s VŠ vzděláním\n- Důraz na intelektuální kompatibilitu\n- Detailní profily s ověřením vzdělání\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| 3 měsíce | 799 Kč/měsíc |\n| 6 měsíců | 599 Kč/měsíc |\n| 12 měsíců | 449 Kč/měsíc |",
+    "fullDescription": "## Academic Singles - Recenze 2026\n\n**Academic Singles** je **exkluzivní seznamka pro vysokoškolsky vzdělané** profesionály.\n\n### Unikátní komunita\n\n- 85% uživatelů s VŠ vzděláním\n- Důraz na intelektuální kompatibilitu\n- Detailní profily s ověřením vzdělání",
     "affiliateUrl": "https://academicsingles.cz",
     "rating": 8.3,
     "userRating": 4.2,
@@ -352,9 +376,13 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 449 Kč/měsíc",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Test", "Prohlížení"]
+    "freeFeatures": ["Registrace", "Test", "Prohlížení"],
+    "faq": [
+      {"question": "Ověřuje se vzdělání?", "answer": "Ano, platforma ověřuje údaje o vzdělání u všech uživatelů."},
+      {"question": "Je pro vysokoškoláky?", "answer": "Ano, 85% uživatelů má vysokoškolské vzdělání."},
+      {"question": "Jak funguje matching?", "answer": "Algoritmus analyzuje intelektuální kompatibilitu a životní hodnoty."}
+    ]
   },
   {
     "id": "8",
@@ -363,7 +391,7 @@
     "logo": "/images/seznamky/benaughty.jpg",
     "description": "Odvážná seznamka pro dospělé bez zábran. Otevřená komunita, rychlé seznámení, flexibilní cenové možnosti.",
     "shortDescription": "Pro odvážné dospělé",
-    "fullDescription": "## BeNaughty - Recenze 2026\n\n**BeNaughty** je **seznamka zaměřená na nezávazné schůzky** pro odvážné dospělé.\n\n### Pro koho je BeNaughty?\n\n- Dospělí hledající vzrušení\n- Otevření lidé bez předsudků\n- Ti, kteří vědí, co chtějí\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| 1 den | 29 Kč |\n| 1 týden | 149 Kč |\n| 1 měsíc | 399 Kč |",
+    "fullDescription": "## BeNaughty - Recenze 2026\n\n**BeNaughty** je **seznamka zaměřená na nezávazné schůzky** pro odvážné dospělé.\n\n### Pro koho je BeNaughty?\n\n- Dospělí hledající vzrušení\n- Otevření lidé bez předsudků\n- Ti, kteří vědí, co chtějí",
     "affiliateUrl": "https://benaughty.com",
     "rating": 7.2,
     "userRating": 3.8,
@@ -373,7 +401,7 @@
     "successRate": "48%",
     "ageRange": "18-45",
     "genderRatio": "38/62",
-    "categories": ["erotika", "flirt"],
+    "categories": ["sex-seznamky", "flirt-seznamky"],
     "targetAudience": "Odvážní dospělí",
     "pros": [
       "Rychlá registrace",
@@ -397,24 +425,28 @@
     "highlights": [
       {"icon": "zap", "text": "Rychlá registrace"},
       {"icon": "shield", "text": "Safe Mode"},
-      {"icon": "clock", "text": "Denní přístup od 29 Kč"}
+      {"icon": "clock", "text": "Flexibilní možnosti"}
     ],
     "order": 8,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "od 29 Kč/den",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Prohlížení", "Like"]
+    "freeFeatures": ["Registrace", "Prohlížení", "Like"],
+    "faq": [
+      {"question": "Je BeNaughty bezpečná?", "answer": "Ano, platforma nabízí Safe Mode pro filtrování nechtěných kontaktů."},
+      {"question": "Mohu vyzkoušet na krátkou dobu?", "answer": "Ano, platforma nabízí flexibilní možnosti členství."},
+      {"question": "Jaké je zaměření platformy?", "answer": "Platforma je určena pro dospělé hledající nezávazné vztahy."}
+    ]
   },
   {
     "id": "9",
     "slug": "seznamte-se",
     "name": "Seznamte.se",
     "logo": "/images/seznamky/seznamte-se.svg",
-    "description": "Tradiční česká seznamka s dlouhou historií. Rychloseznamka, fotosoutěže, horoskopy - mnoho funkcí zdarma.",
-    "shortDescription": "Tradiční česká rychloseznamka",
-    "fullDescription": "## Seznamte.se - Recenze 2026\n\n**Seznamte.se** je tradiční česká seznamka nabízející širokou škálu funkcí.\n\n### Unikátní funkce\n\n- Rychloseznamka online\n- Fotosoutěže a hodnocení\n- Hledání podle horoskopu\n- Fórum a komunita\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| Základní | Zdarma |\n| VIP 1 měsíc | 199 Kč |\n| VIP 3 měsíce | 149 Kč/měsíc |",
+    "description": "Tradiční česká seznamka s dlouhou historií. Rychloseznámka, fotosoutěže, horoskopy - mnoho funkcí zdarma.",
+    "shortDescription": "Tradiční česká rychloseznámka",
+    "fullDescription": "## Seznamte.se - Recenze 2026\n\n**Seznamte.se** je tradiční česká seznamka nabízející širokou škálu funkcí.\n\n### Unikátní funkce\n\n- Rychloseznámka online\n- Fotosoutěže a hodnocení\n- Hledání podle horoskopu\n- Fórum a komunita",
     "affiliateUrl": "https://seznamte.se",
     "rating": 7.6,
     "userRating": 3.9,
@@ -424,12 +456,12 @@
     "successRate": "52%",
     "ageRange": "18-65",
     "genderRatio": "42/58",
-    "categories": ["flirt", "vazne-vztahy"],
+    "categories": ["flirt-seznamky", "vazne-vztahy", "seznamky-zdarma"],
     "targetAudience": "Všechny věkové kategorie",
     "pros": [
       "Česká platforma s historií",
       "Mnoho funkcí zdarma",
-      "Rychloseznamka online",
+      "Rychloseznámka online",
       "Fotosoutěže a interakce",
       "Přátelská komunita"
     ],
@@ -439,14 +471,14 @@
       "Chybí mobilní aplikace"
     ],
     "features": [
-      "Rychloseznamka",
+      "Rychloseznámka",
       "Fotosoutěže",
       "Horoskopy",
       "Fórum",
       "Chat"
     ],
     "highlights": [
-      {"icon": "clock", "text": "Rychloseznamka"},
+      {"icon": "clock", "text": "Rychloseznámka"},
       {"icon": "star", "text": "Fotosoutěže"},
       {"icon": "gift", "text": "Zdarma základní verze"}
     ],
@@ -454,18 +486,22 @@
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "Zdarma / VIP od 149 Kč",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Chat", "Prohlížení", "Fotosoutěže"]
+    "freeFeatures": ["Registrace", "Chat", "Prohlížení", "Fotosoutěže"],
+    "faq": [
+      {"question": "Je Seznamte.se zdarma?", "answer": "Ano, základní verze včetně chatu je zdarma. VIP přidává extra funkce."},
+      {"question": "Co je rychloseznámka?", "answer": "Online verze speed datingu, kde se seznámíte s více lidmi najednou."},
+      {"question": "Jak fungují fotosoutěže?", "answer": "Uživatelé hodnotí fotky a vítězové získávají výhody."}
+    ]
   },
   {
     "id": "10",
     "slug": "libimseti",
-    "name": "Líbímseti.cz",
+    "name": "Libimseti.cz",
     "logo": "/images/seznamky/libimseti.svg",
     "description": "Nejstarší česká seznamka s komunitou 500K+ uživatelů. Fotosoutěže, chat, fórum - tradiční místo pro seznámení.",
     "shortDescription": "Nejstarší česká seznamka",
-    "fullDescription": "## Líbímseti.cz - Recenze 2026\n\n**Líbímseti.cz** je jedna z **nejstarších českých seznamek** s více než 20letou tradicí.\n\n### Proč Líbímseti?\n\n- 20+ let na trhu\n- Loajální česká komunita\n- Fotosoutěže a hodnocení\n- Aktivní fórum\n\n### Ceník\n\n| Typ členství | Cena |\n|-------------|------|\n| Základní | Zdarma |\n| VIP 1 měsíc | 149 Kč |\n| VIP 3 měsíce | 99 Kč/měsíc |",
+    "fullDescription": "## Libimseti.cz - Recenze 2026\n\n**Libimseti.cz** je jedna z **nejstarších českých seznamek** s více než 20letou tradicí.\n\n### Proč Libimseti?\n\n- 20+ let na trhu\n- Loajální česká komunita\n- Fotosoutěže a hodnocení\n- Aktivní fórum",
     "affiliateUrl": "https://libimseti.cz",
     "rating": 7.4,
     "userRating": 3.8,
@@ -475,7 +511,7 @@
     "successRate": "45%",
     "ageRange": "18-65",
     "genderRatio": "44/56",
-    "categories": ["flirt", "vazne-vztahy"],
+    "categories": ["flirt-seznamky", "vazne-vztahy", "seznamky-zdarma"],
     "targetAudience": "Všechny věkové kategorie",
     "pros": [
       "20+ let tradice",
@@ -499,14 +535,687 @@
     "highlights": [
       {"icon": "clock", "text": "20+ let na trhu"},
       {"icon": "users", "text": "500K+ uživatelů"},
-      {"icon": "gift", "text": "VIP od 99 Kč/měsíc"}
+      {"icon": "gift", "text": "Dostupné VIP"}
     ],
     "order": 10,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
-    "pricing": "Zdarma / VIP od 99 Kč",
     "freeVersion": true,
-    "freeFeatures": ["Registrace", "Chat", "Fotosoutěže", "Fórum"]
+    "freeFeatures": ["Registrace", "Chat", "Fotosoutěže", "Fórum"],
+    "faq": [
+      {"question": "Jak dlouho Libimseti existuje?", "answer": "Libimseti.cz funguje již více než 20 let."},
+      {"question": "Je chat zdarma?", "answer": "Ano, chat je součástí bezplatné verze."},
+      {"question": "Nabízí výhodné členství?", "answer": "Ano, VIP členství patří mezi nejdostupnější na trhu."}
+    ]
+  },
+  {
+    "id": "11",
+    "slug": "tinder",
+    "name": "Tinder",
+    "logo": "/images/seznamky/tinder.svg",
+    "description": "Nejpopulárnější swipovací aplikace na světě. Rychlé seznámení, Super Likes, Passport pro cestování. Ideální pro flirt.",
+    "shortDescription": "Nejpopulárnější swipovací aplikace",
+    "fullDescription": "## Tinder - Recenze 2026\n\n**Tinder** je **nejpopulárnější seznamovací aplikace na světě** s ikonickým swipe mechanismem.\n\n### Jak Tinder funguje?\n\nJednoduchý princip - swipnete doprava, pokud se vám někdo líbí, doleva pokud ne. Při oboustranném zájmu (match) můžete začít chatovat.\n\n### Hlavní funkce\n\n- **Swipe** - základní mechanismus seznamování\n- **Super Like** - dejte najevo zvláštní zájem\n- **Boost** - zvyšte svou viditelnost\n- **Passport** - seznamte se v jiných městech\n- **Top Picks** - nejlepší profily pro vás",
+    "affiliateUrl": "https://tinder.com",
+    "rating": 8.0,
+    "userRating": 4.0,
+    "expertRating": 8.0,
+    "users": "75M+",
+    "activeUsers": "10M",
+    "successRate": "52%",
+    "ageRange": "18-35",
+    "genderRatio": "40/60",
+    "categories": ["flirt-seznamky", "seznamky-zdarma", "nejlepsi-seznamky"],
+    "targetAudience": "Mladí lidé 18-35 hledající flirt nebo vztah",
+    "pros": [
+      "Největší uživatelská základna pro mladý věk",
+      "Intuitivní swipování",
+      "Kvalitní mobilní aplikace",
+      "Passport pro cestování",
+      "Mnoho funkcí zdarma"
+    ],
+    "cons": [
+      "Povrchní výběr podle fotek",
+      "Premium funkce jsou dražší",
+      "Mnoho neaktivních profilů",
+      "Omezený počet swipes zdarma"
+    ],
+    "features": [
+      "Swipe matching",
+      "Super Like",
+      "Boost",
+      "Passport",
+      "Top Picks",
+      "Video chat"
+    ],
+    "highlights": [
+      {"icon": "globe", "text": "75M+ aktivních uživatelů"},
+      {"icon": "smartphone", "text": "#1 seznamovací appka"},
+      {"icon": "zap", "text": "Okamžité matche"}
+    ],
+    "order": 11,
+    "isActive": true,
+    "isFeatured": true,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Swipování", "Chat", "Profil", "Omezené liky"],
+    "faq": [
+      {"question": "Je Tinder zdarma?", "answer": "Základní swipování a chat jsou zdarma, ale s omezeným počtem swipes denně."},
+      {"question": "Co je Super Like?", "answer": "Speciální like, který druhému člověku ukazuje váš zvláštní zájem."},
+      {"question": "Jak funguje Passport?", "answer": "Umožňuje vám swipovat lidi v jiných městech a zemích."},
+      {"question": "Jaký je rozdíl mezi Gold a Platinum?", "answer": "Platinum přidává prioritní liky a možnost poslat zprávu před matchem."}
+    ]
+  },
+  {
+    "id": "12",
+    "slug": "adult-friend-finder",
+    "name": "AdultFriendFinder",
+    "logo": "/images/seznamky/adultfriendfinder.svg",
+    "description": "Největší světová sex seznamka pro dospělé. Miliony aktivních uživatelů, live cams, skupiny a eventy pro dospělé.",
+    "shortDescription": "Největší světová sex seznamka",
+    "fullDescription": "## AdultFriendFinder - Recenze 2026\n\n**AdultFriendFinder** (AFF) je **největší platforma pro dospělé** na světě s desítkami milionů uživatelů.\n\n### Pro koho je AFF?\n\n- Singles hledající nezávazný sex\n- Páry hledající zpestření\n- Lidé s otevřeným vztahem\n- Swingeři a experimentátoři\n\n### Funkce platformy\n\n- **Profily** - detailní profily s preferencemi\n- **Live cams** - erotické video streamy\n- **Skupiny** - komunity podle zájmů\n- **Hotlist** - ukládání oblíbených profilů\n- **Magazine** - články a rady",
+    "affiliateUrl": "https://adultfriendfinder.com",
+    "rating": 7.8,
+    "userRating": 3.9,
+    "expertRating": 7.8,
+    "users": "80M+",
+    "activeUsers": "25M",
+    "successRate": "62%",
+    "ageRange": "18-55",
+    "genderRatio": "35/65",
+    "categories": ["sex-seznamky", "nejlepsi-seznamky"],
+    "targetAudience": "Dospělí hledající sexuální partnery",
+    "pros": [
+      "Největší komunita pro dospělé na světě",
+      "Velmi aktivní uživatelé",
+      "Mnoho způsobů komunikace",
+      "Live cams a video chat",
+      "Skupiny podle zájmů"
+    ],
+    "cons": [
+      "Vyšší cena premium",
+      "Zastaralý design",
+      "Agresivní reklamy",
+      "Fake profily"
+    ],
+    "features": [
+      "Detailní profily",
+      "Live cams",
+      "Skupiny",
+      "Hotlist",
+      "Instant messaging",
+      "Video chat"
+    ],
+    "highlights": [
+      {"icon": "globe", "text": "80M+ uživatelů celosvětově"},
+      {"icon": "video", "text": "Live cam shows"},
+      {"icon": "users", "text": "Aktivní komunita"}
+    ],
+    "order": 12,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Základní prohlížení", "Omezené zprávy"],
+    "faq": [
+      {"question": "Je AFF bezpečný?", "answer": "Platforma má základní ověřování, ale doporučujeme opatrnost jako u všech sex seznamek."},
+      {"question": "Co jsou live cams?", "answer": "Erotické video streamy od ostatních uživatelů."},
+      {"question": "Jsou tam opravdoví lidé?", "answer": "Ano, ale jako u každé velké platformy existují i fake profily."}
+    ]
+  },
+  {
+    "id": "13",
+    "slug": "ashley-madison",
+    "name": "Ashley Madison",
+    "logo": "/images/seznamky/ashleymadison.svg",
+    "description": "Nejznámější seznamka pro mimomanželské vztahy. Maximální diskrétnost, ověřené profily, bezplatné pro ženy.",
+    "shortDescription": "Pro diskrétní mimomanželské vztahy",
+    "fullDescription": "## Ashley Madison - Recenze 2026\n\n**Ashley Madison** je **nejznámější platforma pro mimomanželské vztahy** s mottem \"Život je krátký. Užijte si aféru.\"\n\n### Bezpečnostní funkce\n\n- **Traveling Man/Woman** - seznamte se na cestách\n- **Priority Man** - zvyšte svou viditelnost\n- **Blur/Mask** - skryjte svou tvář na fotkách\n- **Panic Button** - rychlé opuštění stránky\n- **Diskrétní platby** - neukazují Ashley Madison\n\n### Pro koho je Ashley Madison?\n\n- Zadaní hledající mimomanželský vztah\n- Lidé v otevřeném vztahu\n- Ti, kteří hledají diskrétní aférku",
+    "affiliateUrl": "https://ashleymadison.com",
+    "rating": 8.2,
+    "userRating": 4.1,
+    "expertRating": 8.2,
+    "users": "70M+",
+    "activeUsers": "15M",
+    "successRate": "68%",
+    "ageRange": "25-55",
+    "genderRatio": "45/55",
+    "categories": ["seznamky-pro-zadane", "sex-seznamky", "nejlepsi-seznamky"],
+    "targetAudience": "Zadaní lidé hledající diskrétní vztah",
+    "pros": [
+      "Maximální diskrétnost a anonymita",
+      "Zcela zdarma pro ženy",
+      "Propracované bezpečnostní funkce",
+      "Velká aktivní komunita",
+      "Diskrétní platby"
+    ],
+    "cons": [
+      "Kreditový systém může být drahý",
+      "Morálně kontroverzní účel",
+      "Riziko podvodů"
+    ],
+    "features": [
+      "Kreditový systém",
+      "Blur fotky",
+      "Panic Button",
+      "Traveling Man",
+      "Priority Man",
+      "Diskrétní platby"
+    ],
+    "highlights": [
+      {"icon": "shield", "text": "Maximální diskrétnost"},
+      {"icon": "gift", "text": "Zdarma pro ženy"},
+      {"icon": "globe", "text": "70M+ uživatelů"}
+    ],
+    "order": 13,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení", "Kompletně zdarma pro ženy"],
+    "faq": [
+      {"question": "Je Ashley Madison bezpečná?", "answer": "Ano, platforma nabízí pokročilé bezpečnostní funkce a diskrétní platby."},
+      {"question": "Jak funguje kreditový systém?", "answer": "Kupujete kredity, které pak používáte na odesílání zpráv a další akce."},
+      {"question": "Je pro ženy opravdu zdarma?", "answer": "Ano, ženy mají plný přístup ke všem funkcím zcela zdarma."}
+    ]
+  },
+  {
+    "id": "14",
+    "slug": "c-date",
+    "name": "C-Date",
+    "logo": "/images/seznamky/cdate.svg",
+    "description": "Prémiová erotická seznamka pro nezávazné vztahy. Propracovaný matching, diskrétnost a aktivní česká komunita.",
+    "shortDescription": "Prémiová erotická seznamka",
+    "fullDescription": "## C-Date - Recenze 2026\n\n**C-Date** (Casual Date) je **prémiová seznamka pro nezávazné erotické vztahy** s velkým důrazem na kvalitu a diskrétnost.\n\n### Proč C-Date?\n\n- **Kvalitní matching** - algoritmus doporučuje kompatibilní partnery\n- **Diskrétnost** - možnost skrýt tvář na fotkách\n- **Aktivní komunita** - poměr mužů a žen je vyvážený\n- **Ověření** - manuální kontrola profilů\n\n### Pro koho je C-Date?\n\n- Singles hledající nezávazný sex\n- Lidé hledající FWB (přátelé s výhodami)\n- Ti, kteří preferují kvalitu před kvantitou",
+    "affiliateUrl": "https://c-date.cz",
+    "rating": 7.9,
+    "userRating": 4.0,
+    "expertRating": 7.9,
+    "users": "36M+",
+    "activeUsers": "8M",
+    "successRate": "58%",
+    "ageRange": "25-50",
+    "genderRatio": "48/52",
+    "categories": ["sex-seznamky", "flirt-seznamky"],
+    "targetAudience": "Dospělí hledající nezávazné erotické vztahy",
+    "pros": [
+      "Kvalitní matching algoritmus",
+      "Zdarma pro ženy",
+      "Vyvážený poměr pohlaví",
+      "Diskrétní prostředí",
+      "Aktivní česká komunita"
+    ],
+    "cons": [
+      "Vyšší cena pro muže",
+      "Delší doba čekání na ověření",
+      "Omezené bezplatné funkce"
+    ],
+    "features": [
+      "Smart matching",
+      "Soukromé fotky",
+      "Anonymní prohlížení",
+      "Mobilní aplikace",
+      "Video chat"
+    ],
+    "highlights": [
+      {"icon": "heart", "text": "36M+ uživatelů"},
+      {"icon": "gift", "text": "Zdarma pro ženy"},
+      {"icon": "shield", "text": "Ověřené profily"}
+    ],
+    "order": 14,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení", "Kompletně zdarma pro ženy"],
+    "faq": [
+      {"question": "Co znamená C-Date?", "answer": "C-Date je zkratka pro Casual Date - nezávazné randění."},
+      {"question": "Je pro ženy zdarma?", "answer": "Ano, ženy mají přístup ke všem funkcím zdarma."},
+      {"question": "Jak dlouho trvá ověření profilu?", "answer": "Ověření profilu obvykle trvá 24-48 hodin."}
+    ]
+  },
+  {
+    "id": "15",
+    "slug": "grindr",
+    "name": "Grindr",
+    "logo": "/images/seznamky/grindr.svg",
+    "description": "Největší seznamka pro gay muže na světě. GPS lokalizace, okamžitý chat, miliony aktivních uživatelů.",
+    "shortDescription": "Největší gay seznamka",
+    "fullDescription": "## Grindr - Recenze 2026\n\n**Grindr** je **největší seznamovací aplikace pro gay, bi a queer muže** na světě.\n\n### Jak Grindr funguje?\n\nAplikace ukazuje profily mužů ve vašem okolí seřazené podle vzdálenosti. Můžete odesílat zprávy komukoliv bez nutnosti matche.\n\n### Hlavní funkce\n\n- **GPS lokalizace** - najdete muže poblíž\n- **Filtry** - věk, výška, typ postavy\n- **Tribes** - komunity podle stylu (bear, otter, jock...)\n- **Gaymoji** - speciální emoji pro gay komunitu\n- **XTRA** - více filtrů a neomezené profily\n- **Unlimited** - všechny funkce bez omezení",
+    "affiliateUrl": "https://grindr.com",
+    "rating": 8.1,
+    "userRating": 4.0,
+    "expertRating": 8.1,
+    "users": "13M+",
+    "activeUsers": "6M",
+    "successRate": "72%",
+    "ageRange": "18-55",
+    "genderRatio": "100/0",
+    "categories": ["gay-seznamky", "seznamky-zdarma", "nejlepsi-seznamky"],
+    "targetAudience": "Gay, bi a queer muži",
+    "pros": [
+      "Největší gay komunita na světě",
+      "GPS pro nalezení mužů poblíž",
+      "Okamžité odesílání zpráv",
+      "Tribes pro různé typy",
+      "Kvalitní mobilní aplikace"
+    ],
+    "cons": [
+      "Zaměření na rychlé seznámení",
+      "Reklamy v bezplatné verzi",
+      "Omezené profily zdarma"
+    ],
+    "features": [
+      "GPS lokalizace",
+      "Tribes",
+      "Gaymoji",
+      "Filtry",
+      "Explore",
+      "Video chat"
+    ],
+    "highlights": [
+      {"icon": "globe", "text": "13M+ uživatelů"},
+      {"icon": "map-pin", "text": "GPS lokalizace"},
+      {"icon": "zap", "text": "Okamžitý chat"}
+    ],
+    "order": 15,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Prohlížení", "Chat", "Základní filtry"],
+    "faq": [
+      {"question": "Je Grindr pouze pro gay muže?", "answer": "Primárně ano, ale vítáni jsou i bi a queer muži."},
+      {"question": "Jak funguje GPS?", "answer": "Aplikace ukazuje profily podle vzdálenosti od vás."},
+      {"question": "Co jsou Tribes?", "answer": "Kategorie podle typu (bear, otter, jock, twink atd.)."}
+    ]
+  },
+  {
+    "id": "16",
+    "slug": "planetromeo",
+    "name": "PlanetRomeo",
+    "logo": "/images/seznamky/planetromeo.svg",
+    "description": "Tradiční evropská gay seznamka s důrazem na komunitu. Detailní profily, kluby, eventy a spolehlivý chat.",
+    "shortDescription": "Tradiční evropská gay seznamka",
+    "fullDescription": "## PlanetRomeo - Recenze 2026\n\n**PlanetRomeo** (dříve GayRomeo) je **tradiční evropská seznamka pro gay muže** s důrazem na komunitu.\n\n### Proč PlanetRomeo?\n\n- **Detailní profily** - více informací než na Grindru\n- **Kluby** - tematické skupiny a komunity\n- **Eventy** - akce pro gay komunitu\n- **Historie** - 20+ let na trhu\n\n### Pro koho je PlanetRomeo?\n\n- Gay muži hledající vztah i přátelství\n- Lidé preferující komunitu před hookups\n- Cestovatelé (silná základna v Evropě)",
+    "affiliateUrl": "https://planetromeo.com",
+    "rating": 7.7,
+    "userRating": 3.9,
+    "expertRating": 7.7,
+    "users": "2M+",
+    "activeUsers": "800K",
+    "successRate": "65%",
+    "ageRange": "18-60",
+    "genderRatio": "100/0",
+    "categories": ["gay-seznamky"],
+    "targetAudience": "Gay muži hledající vztah nebo přátelství",
+    "pros": [
+      "Detailní profily",
+      "Silná evropská komunita",
+      "Kluby a eventy",
+      "20+ let tradice",
+      "Méně zaměření na hookups"
+    ],
+    "cons": [
+      "Menší uživatelská základna než Grindr",
+      "Starší rozhraní",
+      "Slabší mobilní aplikace"
+    ],
+    "features": [
+      "Detailní profily",
+      "Kluby",
+      "Eventy",
+      "Footprints",
+      "Cestovní modus"
+    ],
+    "highlights": [
+      {"icon": "users", "text": "Silná evropská komunita"},
+      {"icon": "clock", "text": "20+ let na trhu"},
+      {"icon": "heart", "text": "Více než hookups"}
+    ],
+    "order": 16,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Profil", "Prohlížení", "Základní zprávy"],
+    "faq": [
+      {"question": "Čím se liší od Grindru?", "answer": "PlanetRomeo je více zaměřený na komunitu a vztahy, méně na hookups."},
+      {"question": "Je populární v Česku?", "answer": "Má solidní základnu, ale v Evropě je silnější v Německu a Nizozemsku."},
+      {"question": "Co jsou Kluby?", "answer": "Tematické skupiny pro různé zájmy a komunity."}
+    ]
+  },
+  {
+    "id": "17",
+    "slug": "her",
+    "name": "HER",
+    "logo": "/images/seznamky/her.svg",
+    "description": "Největší seznamka pro lesbičky, bi a queer ženy. Bezpečná komunita, eventy, přátelé i vztahy.",
+    "shortDescription": "Seznamka pro lesbičky a bi ženy",
+    "fullDescription": "## HER - Recenze 2026\n\n**HER** je **největší seznamovací aplikace pro lesbičky, bi, queer a nebinární osoby**.\n\n### Pro koho je HER?\n\n- Lesbičky\n- Bi ženy\n- Queer a nebinární osoby\n- Trans ženy\n\n### Hlavní funkce\n\n- **Feed** - sociální síť pro LGBTQ+ ženy\n- **Events** - akce pro komunitu\n- **Communities** - skupiny podle zájmů\n- **Incognito Mode** - diskrétní prohlížení",
+    "affiliateUrl": "https://weareher.com",
+    "rating": 8.0,
+    "userRating": 4.1,
+    "expertRating": 8.0,
+    "users": "10M+",
+    "activeUsers": "4M",
+    "successRate": "68%",
+    "ageRange": "18-45",
+    "genderRatio": "0/100",
+    "categories": ["gay-seznamky", "seznamky-zdarma"],
+    "targetAudience": "Lesbičky, bi a queer ženy",
+    "pros": [
+      "Největší LGBTQ+ ženská komunita",
+      "Bezpečné a inkluzivní prostředí",
+      "Více než jen seznamka - sociální síť",
+      "Eventy a setkání",
+      "Kvalitní ověřování"
+    ],
+    "cons": [
+      "Menší uživatelská základna v ČR",
+      "Někteří fake profily",
+      "Premium potřeba pro pokročilé filtry"
+    ],
+    "features": [
+      "Feed",
+      "Events",
+      "Communities",
+      "Incognito Mode",
+      "Filtry",
+      "Video chat"
+    ],
+    "highlights": [
+      {"icon": "shield", "text": "Bezpečná komunita"},
+      {"icon": "users", "text": "10M+ uživatelů"},
+      {"icon": "heart", "text": "Více než seznamka"}
+    ],
+    "order": 17,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Swipování", "Chat", "Feed", "Communities"],
+    "faq": [
+      {"question": "Je HER pouze pro lesbičky?", "answer": "Ne, aplikace je určena pro všechny LGBTQ+ ženy a nebinární osoby."},
+      {"question": "Mohou se přihlásit muži?", "answer": "Ne, aplikace je výhradně pro ženy a nebinární osoby."},
+      {"question": "Co je Feed?", "answer": "Sociální část aplikace, kde můžete sdílet příspěvky a komunikovat s komunitou."}
+    ]
+  },
+  {
+    "id": "18",
+    "slug": "ourtime",
+    "name": "OurTime",
+    "logo": "/images/seznamky/ourtime.svg",
+    "description": "Mezinárodní seznamka pro seniory 50+. Jednoduché ovládání, ověřené profily a komunita zaměřená na vážné vztahy.",
+    "shortDescription": "Mezinárodní senior seznamka",
+    "fullDescription": "## OurTime - Recenze 2026\n\n**OurTime** je **mezinárodní seznamka určená výhradně pro seniory nad 50 let**.\n\n### Proč OurTime?\n\n- **Pro 50+** - všichni uživatelé jsou ve vašem věku\n- **Jednoduché** - intuitivní rozhraní pro seniory\n- **Bezpečné** - ověřené profily\n- **Mezinárodní** - uživatelé z celé Evropy\n\n### Jak OurTime funguje?\n\n1. Vytvořte profil s fotkami\n2. Vyplňte co hledáte\n3. Prohlížejte doporučení\n4. Posílejte zprávy a flirty",
+    "affiliateUrl": "https://ourtime.cz",
+    "rating": 7.8,
+    "userRating": 3.9,
+    "expertRating": 7.8,
+    "users": "1.5M+",
+    "activeUsers": "400K",
+    "successRate": "72%",
+    "ageRange": "50+",
+    "genderRatio": "45/55",
+    "categories": ["senior-seznamky", "vazne-vztahy"],
+    "targetAudience": "Singles nad 50 let",
+    "pros": [
+      "Výhradně pro 50+",
+      "Jednoduché ovládání",
+      "Ověřené profily",
+      "Mezinárodní dosah",
+      "Kvalitní mobilní aplikace"
+    ],
+    "cons": [
+      "Menší uživatelská základna v ČR",
+      "Omezené bezplatné funkce",
+      "Pomalejší odezva podpory"
+    ],
+    "features": [
+      "Jednoduchý profil",
+      "Denní doporučení",
+      "Flirty",
+      "Zprávy",
+      "Kdo mě navštívil"
+    ],
+    "highlights": [
+      {"icon": "users", "text": "Pouze 50+"},
+      {"icon": "smartphone", "text": "Jednoduchá aplikace"},
+      {"icon": "shield", "text": "Ověřené profily"}
+    ],
+    "order": 18,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení", "Odesílání flirtů"],
+    "faq": [
+      {"question": "Je OurTime pouze pro 50+?", "answer": "Ano, registrovat se mohou pouze uživatelé starší 50 let."},
+      {"question": "Je ovládání jednoduché?", "answer": "Ano, rozhraní je navrženo speciálně pro seniory."},
+      {"question": "Mohu používat zdarma?", "answer": "Základní prohlížení a flirty jsou zdarma, zprávy vyžadují premium."}
+    ]
+  },
+  {
+    "id": "19",
+    "slug": "silversingles",
+    "name": "SilverSingles",
+    "logo": "/images/seznamky/silversingles.svg",
+    "description": "Prémiová seznamka pro seniory 50+ s vědeckým matchmakingem. Osobnostní test, ověřené profily a kvalitní komunita.",
+    "shortDescription": "Prémiová senior seznamka",
+    "fullDescription": "## SilverSingles - Recenze 2026\n\n**SilverSingles** je **prémiová seznamka pro seriózní singles nad 50 let** s důrazem na vědecký matching.\n\n### Jak SilverSingles funguje?\n\n1. **Osobnostní test** - 125 otázek analyzuje vaše vlastnosti\n2. **Denní návrhy** - 3-7 kompatibilních profilů denně\n3. **Komunikace** - smajlíci, zprávy, otázky\n4. **Reálné schůzky** - poznejte se osobně\n\n### Proč SilverSingles?\n\n- **Vědecký matching** - algoritmus založený na výzkumu\n- **Kvalitní profily** - 80% uživatelů s VŠ vzděláním\n- **Bezpečné** - ověření každého profilu\n- **Profesionální** - seriózní uživatelé",
+    "affiliateUrl": "https://silversingles.cz",
+    "rating": 8.3,
+    "userRating": 4.2,
+    "expertRating": 8.3,
+    "users": "800K+",
+    "activeUsers": "180K",
+    "successRate": "82%",
+    "ageRange": "50+",
+    "genderRatio": "47/53",
+    "categories": ["senior-seznamky", "vazne-vztahy", "nejlepsi-seznamky"],
+    "targetAudience": "Vzdělaní singles nad 50 let",
+    "pros": [
+      "Vědecký matching algoritmus",
+      "80% s VŠ vzděláním",
+      "Kvalitní ověřené profily",
+      "Denní návrhy partnerů",
+      "Seriózní komunita"
+    ],
+    "cons": [
+      "Vyšší cena členství",
+      "Povinný dlouhý test",
+      "Menší uživatelská základna"
+    ],
+    "features": [
+      "125 otázkový test",
+      "Denní návrhy",
+      "% kompatibilita",
+      "Wildcard",
+      "Mobilní aplikace"
+    ],
+    "highlights": [
+      {"icon": "brain", "text": "Vědecký matching"},
+      {"icon": "graduation-cap", "text": "80% s VŠ vzděláním"},
+      {"icon": "heart", "text": "82% úspěšnost"}
+    ],
+    "order": 19,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Osobnostní test", "Prohlížení návrhů"],
+    "faq": [
+      {"question": "Jak dlouhý je osobnostní test?", "answer": "Test obsahuje 125 otázek a trvá přibližně 20-25 minut."},
+      {"question": "Je SilverSingles vhodná pro seniory?", "answer": "Ano, platforma je navržena speciálně pro uživatele nad 50 let."},
+      {"question": "Co znamená % kompatibilita?", "answer": "Ukazuje shodu vašich osobnostních rysů s druhým uživatelem."}
+    ]
+  },
+  {
+    "id": "20",
+    "slug": "gleeden",
+    "name": "Gleeden",
+    "logo": "/images/seznamky/gleeden.svg",
+    "description": "Francouzská seznamka pro zadané řízená ženami. Elegantní design, maximální diskrétnost a bezplatné pro ženy.",
+    "shortDescription": "Elegantní seznamka pro zadané",
+    "fullDescription": "## Gleeden - Recenze 2026\n\n**Gleeden** je **první mimomanželská seznamka vytvořená a řízená ženami** s důrazem na eleganci a diskrétnost.\n\n### Proč Gleeden?\n\n- **By women, for everyone** - řízená ženami\n- **Elegantní design** - prémiové sofistikované rozhraní\n- **Maximální diskrétnost** - anonymní platby\n- **Evropský původ** - Francie, kvalita a styl\n\n### Bezpečnostní funkce\n\n- Rozmazávání fotek\n- Anonymní platby\n- Diskrétní notifikace\n- Skrytí online stavu",
+    "affiliateUrl": "https://gleeden.com",
+    "rating": 7.9,
+    "userRating": 4.0,
+    "expertRating": 7.9,
+    "users": "7M+",
+    "activeUsers": "2M",
+    "successRate": "65%",
+    "ageRange": "30-55",
+    "genderRatio": "48/52",
+    "categories": ["seznamky-pro-zadane", "sex-seznamky"],
+    "targetAudience": "Sofistikovaní zadaní lidé hledající diskrétní vztah",
+    "pros": [
+      "Řízená ženami - vyvážená komunita",
+      "Elegantní a sofistikované prostředí",
+      "Maximální diskrétnost",
+      "Zdarma pro ženy",
+      "Kvalitní evropská základna"
+    ],
+    "cons": [
+      "Kreditový systém může být drahý",
+      "Menší česká komunita",
+      "Webová verze pouze"
+    ],
+    "features": [
+      "Kreditový systém",
+      "Rozmazávání fotek",
+      "Anonymní platby",
+      "Crush alerts",
+      "Favoriti"
+    ],
+    "highlights": [
+      {"icon": "shield", "text": "Maximální diskrétnost"},
+      {"icon": "gift", "text": "Zdarma pro ženy"},
+      {"icon": "heart", "text": "Řízená ženami"}
+    ],
+    "order": 20,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení", "Kompletně zdarma pro ženy"],
+    "faq": [
+      {"question": "Co znamená řízená ženami?", "answer": "Gleeden byla založena a je provozována týmem žen, což zajišťuje vyvážené prostředí."},
+      {"question": "Je pro ženy zdarma?", "answer": "Ano, ženy mají přístup ke všem funkcím zcela zdarma."},
+      {"question": "Jsou platby diskrétní?", "answer": "Ano, na výpisu se nezobrazuje Gleeden ale neutrální název."}
+    ]
+  },
+  {
+    "id": "21",
+    "slug": "okcupid",
+    "name": "OkCupid",
+    "logo": "/images/seznamky/okcupid.svg",
+    "description": "Progresivní seznamka s detailním matchmakingem. Tisíce otázek, inkluzivní prostředí a silná bezplatná verze.",
+    "shortDescription": "Progresivní seznamka s hlubokým matchingem",
+    "fullDescription": "## OkCupid - Recenze 2026\n\n**OkCupid** je **progresivní seznamka** známá svým unikátním systémem otázek a inkluzivním přístupem.\n\n### Jak OkCupid funguje?\n\nOdpovídejte na tisíce otázek na různá témata - od politiky po sexuální preference. Algoritmus pak počítá procento kompatibility s ostatními uživateli.\n\n### Unikátní funkce\n\n- **Tisíce otázek** - od vtipných po vážné\n- **% Match** - přesná kompatibilita\n- **Inkluzivita** - 22 genderových identit, 12 orientací\n- **Dealbreakers** - vyloučte nekompatibilní",
+    "affiliateUrl": "https://okcupid.com",
+    "rating": 8.1,
+    "userRating": 4.1,
+    "expertRating": 8.1,
+    "users": "50M+",
+    "activeUsers": "10M",
+    "successRate": "70%",
+    "ageRange": "20-45",
+    "genderRatio": "45/55",
+    "categories": ["vazne-vztahy", "seznamky-zdarma", "gay-seznamky"],
+    "targetAudience": "Progresivní singles hledající hlubokou kompatibilitu",
+    "pros": [
+      "Velmi silná bezplatná verze",
+      "Hluboký matching na základě otázek",
+      "Maximálně inkluzivní prostředí",
+      "Kvalitní mobilní aplikace",
+      "Dealbreakers pro přesné filtrování"
+    ],
+    "cons": [
+      "Mnoho neaktivních profilů",
+      "Nižší popularita v ČR",
+      "Může být zahlcující s otázkami"
+    ],
+    "features": [
+      "Matching otázky",
+      "% kompatibilita",
+      "Dealbreakers",
+      "Boost",
+      "Super Like",
+      "Double Take"
+    ],
+    "highlights": [
+      {"icon": "brain", "text": "Tisíce matching otázek"},
+      {"icon": "heart", "text": "% kompatibilita"},
+      {"icon": "gift", "text": "Silná free verze"}
+    ],
+    "order": 21,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Swipování", "Zprávy", "Otázky", "Základní filtry"],
+    "faq": [
+      {"question": "Kolik otázek musím zodpovědět?", "answer": "Základní profil vyžaduje minimum, ale víc otázek = lepší matching."},
+      {"question": "Je OkCupid vhodný pro LGBT?", "answer": "Ano, OkCupid je jedna z nejinkluzivnějších platforem s 22 gendery."},
+      {"question": "Mohu psát zprávy zdarma?", "answer": "Ano, odesílání zpráv je součástí bezplatné verze."}
+    ]
+  },
+  {
+    "id": "22",
+    "slug": "secret",
+    "name": "Secret.cz",
+    "logo": "/images/seznamky/secret.svg",
+    "description": "Česká erotická seznamka pro dospělé. Diskrétní prostředí, aktivní česká komunita a dostupné ceny.",
+    "shortDescription": "Česká erotická seznamka",
+    "fullDescription": "## Secret.cz - Recenze 2026\n\n**Secret.cz** je **česká erotická seznamka** pro dospělé hledající diskrétní nezávazné vztahy.\n\n### Pro koho je Secret.cz?\n\n- Singles hledající nezávazný sex\n- Páry hledající zpestření\n- Lidé hledající FWB vztahy\n- Česká komunita\n\n### Hlavní funkce\n\n- **Lokální vyhledávání** - najdete partnery ve vašem okolí\n- **Diskrétní profily** - možnost skrýt tvář\n- **Video profily** - představte se lépe\n- **Soukromé galerie** - fotky pouze pro vybrané",
+    "affiliateUrl": "https://secret.cz",
+    "rating": 7.5,
+    "userRating": 3.8,
+    "expertRating": 7.5,
+    "users": "180K+",
+    "activeUsers": "35K",
+    "successRate": "52%",
+    "ageRange": "18-50",
+    "genderRatio": "40/60",
+    "categories": ["sex-seznamky", "flirt-seznamky"],
+    "targetAudience": "Čeští dospělí hledající nezávazné erotické vztahy",
+    "pros": [
+      "Česká platforma a komunita",
+      "Zdarma pro ženy",
+      "Dostupné ceny pro muže",
+      "Diskrétní prostředí",
+      "Lokální uživatelé"
+    ],
+    "cons": [
+      "Menší uživatelská základna",
+      "Základní design",
+      "Omezené pokročilé funkce"
+    ],
+    "features": [
+      "Lokální vyhledávání",
+      "Diskrétní profily",
+      "Video profily",
+      "Soukromé galerie",
+      "Chat"
+    ],
+    "highlights": [
+      {"icon": "map-pin", "text": "Česká komunita"},
+      {"icon": "gift", "text": "Zdarma pro ženy"},
+      {"icon": "shield", "text": "Diskrétní prostředí"}
+    ],
+    "order": 22,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení", "Kompletně zdarma pro ženy"],
+    "faq": [
+      {"question": "Je Secret.cz česká platforma?", "answer": "Ano, Secret.cz je česká seznamka s převážně českou komunitou."},
+      {"question": "Je pro ženy zdarma?", "answer": "Ano, ženy mají plný přístup ke všem funkcím zdarma."},
+      {"question": "Jsou tam opravdoví lidé?", "answer": "Ano, ale jako u každé platformy doporučujeme opatrnost."}
+    ]
   }
 ]

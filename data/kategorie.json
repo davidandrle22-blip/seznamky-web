@@ -1,37 +1,82 @@
 [
   {
+    "id": "nejlepsi-seznamky",
+    "name": "Nejlepší seznamky",
+    "slug": "nejlepsi-seznamky",
+    "description": "Celkový žebříček všech seznamek 2026 - kompletní srovnání a hodnocení.",
+    "icon": "crown",
+    "order": 1,
+    "metaTitle": "Nejlepší seznamky 2026 - Top 10 srovnání a recenze",
+    "metaDescription": "Kompletní žebříček nejlepších online seznamek v Česku pro rok 2026. Nezávislé recenze, srovnání cen a funkcí."
+  },
+  {
     "id": "vazne-vztahy",
     "name": "Vážné vztahy",
     "slug": "vazne-vztahy",
     "description": "Seznamky zaměřené na hledání dlouhodobého partnera a vážného vztahu.",
-    "icon": "heart"
+    "icon": "heart",
+    "order": 2,
+    "metaTitle": "Seznamky pro vážné vztahy 2026 - Najděte svou lásku",
+    "metaDescription": "Nejlepší seznamky pro vážné vztahy a hledání životního partnera. Srovnání platforem s vědeckým matchmakingem."
   },
   {
-    "id": "flirt",
-    "name": "Flirt & Zábava",
-    "slug": "flirt",
+    "id": "flirt-seznamky",
+    "name": "Flirt & nezávazné vztahy",
+    "slug": "flirt-seznamky",
     "description": "Aplikace pro nezávazné seznámení, flirtování a zábavu.",
-    "icon": "smile"
+    "icon": "smile",
+    "order": 3,
+    "metaTitle": "Flirt seznamky 2026 - Nezávazné seznámení a zábava",
+    "metaDescription": "Top seznamky pro flirt a nezávazné vztahy. Swipování, rychlé schůzky a zábava bez závazků."
   },
   {
-    "id": "gay-lesbian",
-    "name": "Gay & Lesbian",
-    "slug": "gay-lesbian",
-    "description": "Specializované seznamky pro LGBTQ+ komunitu.",
-    "icon": "rainbow"
+    "id": "sex-seznamky",
+    "name": "Sex seznamky",
+    "slug": "sex-seznamky",
+    "description": "Erotické seznamky pro dospělé 18+ hledající intimní setkání.",
+    "icon": "flame",
+    "order": 4,
+    "metaTitle": "Sex seznamky 2026 - Erotické seznamky pro dospělé 18+",
+    "metaDescription": "Nejlepší erotické a sex seznamky pro dospělé. Diskrétní platformy pro nezávazný sex a intimní setkání."
   },
   {
-    "id": "senior",
-    "name": "Senior 50+",
-    "slug": "senior",
-    "description": "Seznamky určené pro uživatele nad 50 let.",
-    "icon": "users"
+    "id": "senior-seznamky",
+    "name": "Senior seznamky 50+",
+    "slug": "senior-seznamky",
+    "description": "Seznamky určené pro zralé singles nad 50 let hledající partnera.",
+    "icon": "users",
+    "order": 5,
+    "metaTitle": "Senior seznamky 50+ v roce 2026 - Pro zralé singles",
+    "metaDescription": "Nejlepší seznamky pro seniory nad 50 let. Platformy s ověřenými profily a vědeckým párováním pro zralé singles."
   },
   {
-    "id": "eroticke",
-    "name": "Erotické",
-    "slug": "eroticke",
-    "description": "Seznamky pro dospělé zaměřené na erotiku a intimní setkání (18+).",
-    "icon": "flame"
+    "id": "seznamky-pro-zadane",
+    "name": "Seznamky pro zadané",
+    "slug": "seznamky-pro-zadane",
+    "description": "Diskrétní seznamky pro mimomanželské vztahy a tajné schůzky.",
+    "icon": "eye-off",
+    "order": 6,
+    "metaTitle": "Seznamky pro zadané 2026 - Diskrétní seznámení",
+    "metaDescription": "Diskrétní seznamky pro zadané hledající mimomanželský vztah. Maximální anonymita a bezpečnostní funkce."
+  },
+  {
+    "id": "gay-seznamky",
+    "name": "Gay & LGBT seznamky",
+    "slug": "gay-seznamky",
+    "description": "Specializované seznamky pro LGBTQ+ komunitu - gay, lesbické a další.",
+    "icon": "rainbow",
+    "order": 7,
+    "metaTitle": "Gay a LGBT seznamky 2026 - Pro LGBTQ+ komunitu",
+    "metaDescription": "Nejlepší gay, lesbické a LGBT seznamky. Bezpečné platformy pro LGBTQ+ komunitu v Česku."
+  },
+  {
+    "id": "seznamky-zdarma",
+    "name": "Seznamky zdarma",
+    "slug": "seznamky-zdarma",
+    "description": "Bezplatné seznamky a aplikace s plnohodnotnými funkcemi zdarma.",
+    "icon": "gift",
+    "order": 8,
+    "metaTitle": "Seznamky zdarma 2026 - Bezplatné seznamovací aplikace",
+    "metaDescription": "Nejlepší seznamky zdarma s plnohodnotnými funkcemi. Bezplatné možnosti pro seznámení bez placení."
   }
 ]
