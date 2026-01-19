@@ -35,7 +35,6 @@ export async function POST(request: NextRequest) {
       features: body.features || [],
       order: body.order || produkty.length + 1,
       isActive: body.isActive ?? true,
-      pricing: body.pricing || 'Zdarma',
       freeVersion: body.freeVersion ?? true,
       isNew: body.isNew ?? false,
       isFeatured: body.isFeatured ?? false
