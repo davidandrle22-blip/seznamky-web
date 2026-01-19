@@ -3,9 +3,11 @@ import ProductCard from '@/components/ProductCard'
 import ArticleCard from '@/components/ArticleCard'
 import ComparisonTable from '@/components/ComparisonTable'
 import Testimonials from '@/components/Testimonials'
+import Image from 'next/image'
 import {
   ArrowRight, Heart, Shield, Users, Star, CheckCircle, TrendingUp, Award,
-  Sparkles, Target, Clock, Gift, Zap, BarChart3, ThumbsUp, MessageCircle
+  Sparkles, Target, Clock, Gift, Zap, BarChart3, ThumbsUp, MessageCircle,
+  Crown, ExternalLink, Check, Flame
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -18,13 +20,6 @@ export default async function Home() {
 
   const topProdukty = produkty.slice(0, 5)
   const recentClanky = clanky.slice(0, 3)
-
-  const stats = [
-    { icon: Users, value: '2.5M+', label: 'Spokojených uživatelů', color: 'text-romantic-500' },
-    { icon: Heart, value: '185K+', label: 'Úspěšných párů', color: 'text-pink-500' },
-    { icon: Star, value: '4.9', label: 'Průměrné hodnocení', color: 'text-amber-500' },
-    { icon: Shield, value: '100%', label: 'Ověřené recenze', color: 'text-green-500' },
-  ]
 
   const benefits = [
     {
@@ -58,140 +53,210 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Compact Hero with Integrated Seznamky */}
       <section className="relative overflow-hidden bg-gradient-to-br from-romantic-950 via-romantic-900 to-romantic-950 text-white">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-romantic-500/20 rounded-full blur-3xl animate-float-slow" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-crimson-500/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '-3s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-romantic-600/10 rounded-full blur-3xl" />
-
-          {/* Grid pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEiLz48L2c+PC9zdmc+')] opacity-50" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
-          <div className="text-center mb-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 lg:pt-16 lg:pb-12">
+          <div className="text-center mb-8">
             {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full mb-8 border border-white/10">
-              <Heart className="w-5 h-5 text-romantic-400 animate-heart-beat" fill="#fb7185" />
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/10">
+              <Heart className="w-4 h-4 text-romantic-400 animate-heart-beat" fill="#fb7185" />
               <span className="text-sm font-medium text-romantic-200">Nejdůvěryhodnější srovnávač seznamek v ČR</span>
-              <Sparkles className="w-4 h-4 text-amber-400" />
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-              Najděte svou
-              <span className="block mt-2 bg-gradient-to-r from-romantic-300 via-pink-300 to-ruby-300 bg-clip-text text-transparent">
-                životní lásku
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight tracking-tight">
+              Top 10 seznamek
+              <span className="block mt-1 bg-gradient-to-r from-romantic-300 via-pink-300 to-ruby-300 bg-clip-text text-transparent">
+                roku 2026
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-romantic-200/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Porovnejte <span className="text-white font-semibold">10+ českých seznamek</span> a najděte tu pravou cestu k partnerství.
-              Nezávislé recenze, reálná hodnocení, ověřené informace.
+            <p className="text-lg md:text-xl text-romantic-200/90 max-w-2xl mx-auto mb-6">
+              Vyberte si z <span className="text-white font-semibold">ověřených českých seznamek</span> a najděte partnera ještě dnes
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link
-                href="#srovnani"
-                className="group inline-flex items-center justify-center gap-3 bg-white text-romantic-600 hover:text-romantic-700 font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                <span className="text-lg">Srovnat seznamky</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/clanky"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 border border-white/20"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Přečíst rady a tipy
-              </Link>
+            {/* Quick stats */}
+            <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-8 text-sm mb-6">
+              <div className="flex items-center gap-1.5 text-romantic-200">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Nezávislé recenze</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-romantic-200">
+                <Shield className="w-4 h-4 text-romantic-400" />
+                <span>Ověřené informace</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-romantic-200">
+                <TrendingUp className="w-4 h-4 text-blue-400" />
+                <span>Aktualizováno leden 2026</span>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto">
-            {stats.map((stat, i) => (
+      {/* TOP 3 Seznamky - Immediately Visible Above the Fold */}
+      <section className="relative -mt-4 z-10 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top 3 Quick Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8">
+            {topProdukty.slice(0, 3).map((produkt, index) => (
               <div
-                key={i}
-                className="glass p-6 text-center transform hover:scale-105 transition-transform duration-300"
+                key={produkt.id}
+                className={`
+                  relative bg-white rounded-2xl shadow-xl border-2 overflow-hidden
+                  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl
+                  ${index === 0 ? 'border-amber-400 ring-2 ring-amber-400/20' : 'border-gray-100'}
+                `}
               >
-                <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-3`} />
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-romantic-200">{stat.label}</div>
+                {/* Rank Badge */}
+                <div className={`
+                  absolute top-0 left-0 px-4 py-2 rounded-br-xl font-bold text-white
+                  ${index === 0 ? 'bg-gradient-to-r from-amber-500 to-amber-600' :
+                    index === 1 ? 'bg-gradient-to-r from-gray-400 to-gray-500' :
+                    'bg-gradient-to-r from-amber-600 to-amber-700'}
+                `}>
+                  <div className="flex items-center gap-1.5">
+                    {index === 0 && <Crown className="w-4 h-4" />}
+                    #{index + 1}
+                  </div>
+                </div>
+
+                {/* Featured Badge for #1 */}
+                {index === 0 && (
+                  <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-bl-xl">
+                    DOPORUČUJEME
+                  </div>
+                )}
+
+                <div className="p-5 pt-12">
+                  {/* Logo & Name */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 shadow-md">
+                      <Image
+                        src={produkt.logo}
+                        alt={produkt.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-gray-900">{produkt.name}</h3>
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                          <span className="font-bold text-gray-900">{produkt.rating}</span>
+                        </div>
+                        <span className="text-gray-400">|</span>
+                        <span className="text-sm text-gray-600">{produkt.users} uživatelů</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Short Description */}
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">{produkt.description}</p>
+
+                  {/* Key Benefits */}
+                  <div className="space-y-1.5 mb-4">
+                    {produkt.pros.slice(0, 2).map((pro, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700 line-clamp-1">{pro}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Pricing & Free Badge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-sm">
+                      <span className="text-gray-500">Cena: </span>
+                      <span className="font-semibold text-gray-900">{produkt.pricing}</span>
+                    </div>
+                    {produkt.freeVersion && (
+                      <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">
+                        ZDARMA k vyzkoušení
+                      </span>
+                    )}
+                  </div>
+
+                  {/* CTA Button */}
+                  <a
+                    href={produkt.affiliateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      w-full flex items-center justify-center gap-2 font-bold py-3 px-4 rounded-xl
+                      transition-all duration-300 group
+                      ${index === 0
+                        ? 'bg-gradient-to-r from-romantic-500 to-romantic-600 hover:from-romantic-600 hover:to-romantic-700 text-white shadow-lg shadow-romantic-500/30'
+                        : 'bg-gray-900 hover:bg-gray-800 text-white'}
+                    `}
+                  >
+                    Navštívit {produkt.name}
+                    <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f9fafb"/>
-          </svg>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
-      <section className="py-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16 text-sm">
-            <div className="flex items-center gap-2 text-gray-600">
-              <CheckCircle className="w-5 h-5 text-green-500" />
-              <span className="font-medium">Nezávislé recenze</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Shield className="w-5 h-5 text-romantic-500" />
-              <span className="font-medium">Ověřené informace</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <TrendingUp className="w-5 h-5 text-blue-500" />
-              <span className="font-medium">Aktualizováno leden 2026</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Award className="w-5 h-5 text-amber-500" />
-              <span className="font-medium">Od roku 2020</span>
+          {/* Urgency Banner */}
+          <div className="bg-gradient-to-r from-romantic-50 to-pink-50 border border-romantic-200 rounded-xl p-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-romantic-100 rounded-full flex items-center justify-center">
+                  <Flame className="w-5 h-5 text-romantic-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-gray-900">Aktuální akce na seznamkách</p>
+                  <p className="text-sm text-gray-600">Registrace zdarma + bonusy pro nové uživatele</p>
+                </div>
+              </div>
+              <a
+                href="#kompletni-srovnani"
+                className="flex items-center gap-2 bg-romantic-600 hover:bg-romantic-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              >
+                Zobrazit akce
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Comparison Table */}
-      <section id="srovnani" className="py-16 lg:py-24 bg-gray-50">
+      {/* Complete Comparison Table */}
+      <section id="kompletni-srovnani" className="py-12 lg:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="inline-block bg-romantic-100 text-romantic-700 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
-              RYCHLÉ SROVNÁNÍ
+              KOMPLETNÍ SROVNÁNÍ
             </span>
-            <h2 className="section-title mb-4">
-              Top 5 seznamek <span className="gradient-text">roku 2026</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+              Všech <span className="text-romantic-600">{produkty.length} seznamek</span> na jednom místě
             </h2>
-            <p className="section-subtitle mx-auto">
-              Přehledná tabulka nejlepších seznamek podle našeho hodnocení
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Porovnejte hodnocení, ceny a funkce a vyberte tu pravou seznamku pro vás
             </p>
           </div>
 
-          <ComparisonTable produkty={produkty} limit={5} />
-
-          <div className="text-center mt-8">
-            <Link href="/seznamky" className="btn-outline">
-              Zobrazit všechny seznamky
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <ComparisonTable produkty={produkty} limit={10} />
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="inline-block bg-green-100 text-green-700 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
               PROČ NÁM VĚŘIT
             </span>
-            <h2 className="section-title mb-4">
-              Nezávislé a <span className="gradient-text">objektivní</span> hodnocení
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+              Nezávislé a <span className="text-romantic-600">objektivní</span> hodnocení
             </h2>
           </div>
 
@@ -199,7 +264,7 @@ export default async function Home() {
             {benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="card p-6 text-center hover:-translate-y-1 transition-all duration-300"
+                className="bg-white border border-gray-100 rounded-2xl p-6 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-romantic-100 to-romantic-50 rounded-2xl flex items-center justify-center">
                   <benefit.icon className="w-7 h-7 text-romantic-600" />
@@ -212,29 +277,32 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Top Seznamky - Detailed Cards */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* Detailed Product Cards */}
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="inline-block bg-romantic-100 text-romantic-700 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
               PODROBNÉ RECENZE
             </span>
-            <h2 className="section-title mb-4">
-              Nejlepší seznamky <span className="gradient-text">detailně</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+              Nejlepší seznamky <span className="text-romantic-600">detailně</span>
             </h2>
-            <p className="section-subtitle mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Kompletní přehled funkcí, cen a výhod každé seznamky
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {topProdukty.map((produkt, index) => (
               <ProductCard key={produkt.id} produkt={produkt} rank={index + 1} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link href="/seznamky" className="btn-primary-lg">
+          <div className="text-center mt-10">
+            <Link
+              href="/seznamky"
+              className="inline-flex items-center gap-2 bg-romantic-600 hover:bg-romantic-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
+            >
               Zobrazit všech {produkty.length} seznamek
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -243,14 +311,14 @@ export default async function Home() {
       </section>
 
       {/* Categories */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="inline-block bg-purple-100 text-purple-700 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
               KATEGORIE
             </span>
-            <h2 className="section-title mb-4">
-              Najděte seznamku <span className="gradient-text">podle vašich preferencí</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+              Najděte seznamku <span className="text-romantic-600">podle preferencí</span>
             </h2>
           </div>
 
@@ -259,7 +327,7 @@ export default async function Home() {
               <Link
                 key={i}
                 href={`/seznamky?kategorie=${cat.name.toLowerCase().replace(/\s+/g, '-')}`}
-                className="group card p-6 text-center hover:-translate-y-2 transition-all duration-300"
+                className="group bg-white border border-gray-100 rounded-2xl p-6 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
                 <div className={`
                   w-16 h-16 mx-auto mb-4 rounded-2xl
@@ -284,30 +352,30 @@ export default async function Home() {
       <Testimonials testimonials={settings.testimonials} />
 
       {/* Blog Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12 gap-4">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-10 gap-4">
             <div>
               <span className="inline-block bg-blue-100 text-blue-700 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
                 BLOG
               </span>
-              <h2 className="section-title mb-2">
-                Rady pro <span className="gradient-text">úspěšné seznámení</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                Rady pro <span className="text-romantic-600">úspěšné seznámení</span>
               </h2>
-              <p className="section-subtitle">
+              <p className="text-gray-600">
                 Tipy od expertů, jak najít lásku online
               </p>
             </div>
             <Link
               href="/clanky"
-              className="btn-outline whitespace-nowrap"
+              className="inline-flex items-center gap-2 border-2 border-gray-200 hover:border-romantic-500 text-gray-700 hover:text-romantic-600 font-semibold px-5 py-2.5 rounded-xl transition-colors whitespace-nowrap"
             >
               Všechny články
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recentClanky.map((clanek) => (
               <ArticleCard key={clanek.id} clanek={clanek} />
             ))}
@@ -316,40 +384,37 @@ export default async function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-romantic-600 via-romantic-700 to-romantic-800 relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-romantic-600 via-romantic-700 to-romantic-800 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-romantic-500/20 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <Heart className="w-20 h-20 text-romantic-300 mx-auto animate-heart-beat" fill="#fda4af" />
+          <div className="mb-6">
+            <Heart className="w-16 h-16 text-romantic-300 mx-auto animate-heart-beat" fill="#fda4af" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Připraveni najít
-            <span className="block text-romantic-200">svou druhou polovičku?</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Připraveni najít lásku?
           </h2>
 
-          <p className="text-xl text-romantic-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Tisíce lidí už díky nám našlo partnera. Vyberte si z našeho srovnání nejlepší seznamku
-            a začněte svou cestu za vztahem snů ještě dnes.
+          <p className="text-lg text-romantic-200 mb-8 max-w-xl mx-auto">
+            Tisíce lidí už díky nám našlo partnera. Začněte svou cestu za vztahem snů ještě dnes.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/seznamky"
-              className="group inline-flex items-center justify-center gap-3 bg-white text-romantic-600 hover:text-romantic-700 font-bold py-5 px-12 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg"
+              className="group inline-flex items-center justify-center gap-2 bg-white text-romantic-600 hover:text-romantic-700 font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
               Prohlédnout seznamky
-              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <p className="mt-8 text-romantic-300 text-sm">
+          <p className="mt-6 text-romantic-300 text-sm">
             Zcela zdarma a bez závazků
           </p>
         </div>

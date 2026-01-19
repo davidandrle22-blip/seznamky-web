@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="20" fill="url(#grad3)"/>
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <text x="60" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">LIBIMSETI</text>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">.CZ</text>
+  <path d="M60 75 C60 75 45 85 45 92 C45 98 52 102 60 95 C68 102 75 98 75 92 C75 85 60 75 60 75Z" fill="white"/>
+</svg>

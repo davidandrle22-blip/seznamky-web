@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Star, Check, X, ExternalLink, Crown, TrendingUp, Heart } from 'lucide-react'
+import Image from 'next/image'
+import { Star, Check, X, ExternalLink, Crown, TrendingUp, Heart, Gift, Zap, Shield } from 'lucide-react'
 import { Produkt } from '@/lib/types'
 
 interface ComparisonTableProps {
@@ -12,103 +13,130 @@ interface ComparisonTableProps {
 export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTableProps) {
   const displayProdukty = produkty.slice(0, limit)
 
-  const getRankIcon = (rank: number) => {
-    if (rank === 1) return <Crown className="w-5 h-5 text-amber-500" />
-    if (rank === 2) return <TrendingUp className="w-5 h-5 text-gray-400" />
-    if (rank === 3) return <Heart className="w-5 h-5 text-amber-600" />
+  const getRankBadge = (rank: number) => {
+    if (rank === 1) return (
+      <div className="flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1.5 rounded-lg font-bold">
+        <Crown className="w-4 h-4" />
+        <span>#1</span>
+      </div>
+    )
+    if (rank === 2) return (
+      <div className="flex items-center gap-1.5 bg-gradient-to-r from-gray-400 to-gray-500 text-white px-3 py-1.5 rounded-lg font-bold">
+        <span>#2</span>
+      </div>
+    )
+    if (rank === 3) return (
+      <div className="flex items-center gap-1.5 bg-gradient-to-r from-amber-600 to-amber-700 text-white px-3 py-1.5 rounded-lg font-bold">
+        <span>#3</span>
+      </div>
+    )
+    return (
+      <div className="flex items-center gap-1.5 bg-gray-100 text-gray-600 px-3 py-1.5 rounded-lg font-bold">
+        <span>#{rank}</span>
+      </div>
+    )
+  }
+
+  const getPromoLabel = (produkt: Produkt, rank: number) => {
+    if (rank === 1) return { text: 'Nejlepší volba 2026', color: 'bg-green-500' }
+    if (produkt.freeVersion && produkt.pricing?.toLowerCase().includes('zdarma')) {
+      return { text: 'Zcela ZDARMA', color: 'bg-blue-500' }
+    }
+    if (produkt.categories.includes('diskretni')) {
+      return { text: '100% diskrétní', color: 'bg-purple-500' }
+    }
+    if (produkt.isNew) {
+      return { text: 'Nové!', color: 'bg-pink-500' }
+    }
+    if (produkt.freeVersion) {
+      return { text: 'Zdarma k vyzkoušení', color: 'bg-teal-500' }
+    }
     return null
   }
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-lg">
-      <table className="w-full min-w-[800px]">
+    <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-xl bg-white">
+      <table className="w-full min-w-[900px]">
         <thead>
-          <tr className="bg-gradient-to-r from-romantic-600 via-romantic-500 to-crimson-500">
-            <th className="text-white font-bold py-4 px-6 text-left rounded-tl-xl">#</th>
-            <th className="text-white font-bold py-4 px-6 text-left">Seznamka</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Hodnocení</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Uživatelé</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Úspěšnost</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Věk</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Zdarma</th>
-            <th className="text-white font-bold py-4 px-6 text-center">Cena</th>
-            <th className="text-white font-bold py-4 px-6 text-center rounded-tr-xl">Akce</th>
+          <tr className="bg-gradient-to-r from-romantic-700 via-romantic-600 to-crimson-600">
+            <th className="text-white font-bold py-4 px-4 text-left rounded-tl-xl">Pořadí</th>
+            <th className="text-white font-bold py-4 px-4 text-left">Seznamka</th>
+            <th className="text-white font-bold py-4 px-4 text-center">Hodnocení</th>
+            <th className="text-white font-bold py-4 px-4 text-center">Uživatelé</th>
+            <th className="text-white font-bold py-4 px-4 text-center">Úspěšnost</th>
+            <th className="text-white font-bold py-4 px-4 text-center">Cena</th>
+            <th className="text-white font-bold py-4 px-6 text-center rounded-tr-xl min-w-[180px]">Akce</th>
           </tr>
         </thead>
         <tbody>
           {displayProdukty.map((produkt, index) => {
             const rank = index + 1
-            const isTop = rank <= 3
+            const promo = getPromoLabel(produkt, rank)
 
             return (
               <tr
                 key={produkt.id}
                 className={`
-                  border-b border-gray-100 transition-colors
-                  ${rank === 1 ? 'bg-amber-50/50' : 'bg-white hover:bg-romantic-50/30'}
+                  border-b border-gray-100 transition-all duration-200
+                  ${rank === 1 ? 'bg-gradient-to-r from-amber-50/80 to-yellow-50/50' : 'bg-white hover:bg-romantic-50/40'}
                 `}
               >
                 {/* Rank */}
-                <td className="py-4 px-6">
-                  <div className="flex items-center gap-2">
-                    {getRankIcon(rank)}
-                    <span className={`
-                      font-bold text-lg
-                      ${rank === 1 ? 'text-amber-600' : rank <= 3 ? 'text-gray-700' : 'text-gray-500'}
-                    `}>
-                      {rank}
-                    </span>
-                  </div>
+                <td className="py-5 px-4">
+                  {getRankBadge(rank)}
                 </td>
 
-                {/* Name */}
-                <td className="py-4 px-6">
+                {/* Name with Logo */}
+                <td className="py-5 px-4">
                   <Link
                     href={`/seznamky/${produkt.slug}`}
-                    className="group flex items-center gap-3"
+                    className="group flex items-center gap-4"
                   >
                     <div className={`
-                      w-12 h-12 rounded-xl
-                      bg-gradient-to-br from-romantic-100 to-romantic-50
-                      flex items-center justify-center
-                      text-xl font-bold text-romantic-600
-                      border ${rank === 1 ? 'border-amber-300' : 'border-romantic-200'}
+                      relative w-14 h-14 rounded-xl overflow-hidden
+                      bg-gray-100 flex-shrink-0
+                      border-2 ${rank === 1 ? 'border-amber-400 shadow-lg shadow-amber-200/50' : 'border-gray-200'}
                       group-hover:scale-105 transition-transform
                     `}>
-                      {produkt.name.charAt(0)}
+                      <Image
+                        src={produkt.logo}
+                        alt={produkt.name}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 group-hover:text-romantic-600 transition-colors flex items-center gap-2">
+                      <div className="font-bold text-gray-900 group-hover:text-romantic-600 transition-colors flex items-center gap-2 text-lg">
                         {produkt.name}
-                        {produkt.isNew && (
-                          <span className="text-[10px] bg-green-500 text-white px-1.5 py-0.5 rounded uppercase font-bold">
-                            New
-                          </span>
-                        )}
                       </div>
-                      <div className="text-sm text-gray-500 truncate max-w-[200px]">
-                        {produkt.shortDescription || produkt.categories.join(', ')}
+                      <div className="text-sm text-gray-500 mt-0.5">
+                        {produkt.shortDescription || produkt.categories.join(' • ')}
                       </div>
+                      {promo && (
+                        <span className={`inline-block mt-1.5 text-[10px] ${promo.color} text-white px-2 py-0.5 rounded-full uppercase font-bold tracking-wide`}>
+                          {promo.text}
+                        </span>
+                      )}
                     </div>
                   </Link>
                 </td>
 
                 {/* Rating */}
-                <td className="py-4 px-6 text-center">
+                <td className="py-5 px-4 text-center">
                   <div className="inline-flex flex-col items-center">
                     <div className={`
-                      font-bold text-xl
+                      font-bold text-2xl
                       ${produkt.rating >= 9 ? 'text-green-600' :
                         produkt.rating >= 8 ? 'text-romantic-600' :
                         produkt.rating >= 7 ? 'text-amber-600' : 'text-gray-600'}
                     `}>
                       {produkt.rating}
                     </div>
-                    <div className="flex items-center gap-0.5">
+                    <div className="flex items-center gap-0.5 mt-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-3 h-3 ${
+                          className={`w-3.5 h-3.5 ${
                             i < Math.floor(produkt.rating / 2)
                               ? 'text-amber-400 fill-amber-400'
                               : 'text-gray-200'
@@ -120,74 +148,107 @@ export default function ComparisonTable({ produkty, limit = 5 }: ComparisonTable
                 </td>
 
                 {/* Users */}
-                <td className="py-4 px-6 text-center">
-                  <span className="font-semibold text-gray-700">{produkt.users}</span>
+                <td className="py-5 px-4 text-center">
+                  <span className="font-bold text-gray-800 text-lg">{produkt.users}</span>
+                  <div className="text-xs text-gray-500 mt-0.5">registrací</div>
                 </td>
 
                 {/* Success Rate */}
-                <td className="py-4 px-6 text-center">
-                  <div className="inline-flex items-center gap-1">
-                    <div className="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <td className="py-5 px-4 text-center">
+                  <div className="inline-flex flex-col items-center gap-1">
+                    <span className={`font-bold text-lg ${
+                      parseInt(produkt.successRate || '0') >= 80 ? 'text-green-600' :
+                      parseInt(produkt.successRate || '0') >= 60 ? 'text-amber-600' : 'text-gray-600'
+                    }`}>
+                      {produkt.successRate || 'N/A'}
+                    </span>
+                    <div className="w-20 h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
-                        style={{ width: produkt.successRate || '70%' }}
+                        className="h-full bg-gradient-to-r from-green-500 to-emerald-400 rounded-full transition-all"
+                        style={{ width: produkt.successRate || '0%' }}
                       />
                     </div>
-                    <span className="text-sm font-medium text-gray-600">
-                      {produkt.successRate || '70%'}
-                    </span>
                   </div>
                 </td>
 
-                {/* Age Range */}
-                <td className="py-4 px-6 text-center">
-                  <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-lg text-sm font-medium">
-                    {produkt.ageRange}
-                  </span>
-                </td>
-
-                {/* Free Version */}
-                <td className="py-4 px-6 text-center">
-                  {produkt.freeVersion ? (
-                    <div className="inline-flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
-                      <Check className="w-5 h-5 text-green-600" />
-                    </div>
-                  ) : (
-                    <div className="inline-flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
-                      <X className="w-5 h-5 text-gray-400" />
-                    </div>
-                  )}
-                </td>
-
                 {/* Price */}
-                <td className="py-4 px-6 text-center">
-                  <span className="font-bold text-romantic-600">{produkt.pricing}</span>
+                <td className="py-5 px-4 text-center">
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="font-bold text-romantic-600">{produkt.pricing}</span>
+                    {produkt.freeVersion && (
+                      <span className="inline-flex items-center gap-1 text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                        <Gift className="w-3 h-3" />
+                        Trial zdarma
+                      </span>
+                    )}
+                  </div>
                 </td>
 
-                {/* Action */}
-                <td className="py-4 px-6 text-center">
+                {/* Action CTA */}
+                <td className="py-5 px-4 text-center">
                   <a
                     href={produkt.affiliateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`
-                      inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-semibold text-sm
-                      transition-all duration-300
+                      inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm
+                      transition-all duration-300 w-full max-w-[160px]
                       ${rank === 1
-                        ? 'bg-gradient-to-r from-romantic-600 to-crimson-500 text-white hover:shadow-lg hover:-translate-y-0.5'
-                        : 'bg-romantic-100 text-romantic-700 hover:bg-romantic-200'
+                        ? 'bg-gradient-to-r from-romantic-600 to-crimson-500 text-white hover:shadow-xl hover:shadow-romantic-500/30 hover:-translate-y-0.5'
+                        : rank <= 3
+                        ? 'bg-romantic-600 text-white hover:bg-romantic-700 hover:shadow-lg'
+                        : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
                       }
                     `}
                   >
-                    Navštívit
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    {rank === 1 ? (
+                      <>
+                        <Zap className="w-4 h-4" />
+                        Registrovat se
+                      </>
+                    ) : (
+                      <>
+                        Navštívit
+                        <ExternalLink className="w-4 h-4" />
+                      </>
+                    )}
                   </a>
+                  {rank <= 3 && (
+                    <Link
+                      href={`/seznamky/${produkt.slug}`}
+                      className="block text-xs text-gray-500 hover:text-romantic-600 mt-2 transition-colors"
+                    >
+                      Zobrazit recenzi →
+                    </Link>
+                  )}
                 </td>
               </tr>
             )
           })}
         </tbody>
       </table>
+
+      {/* Bottom conversion banner */}
+      <div className="bg-gradient-to-r from-romantic-50 to-pink-50 p-4 border-t border-romantic-100">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <Shield className="w-5 h-5 text-green-600" />
+            </div>
+            <div className="text-sm">
+              <span className="font-bold text-gray-900">Všechny seznamky osobně testujeme</span>
+              <span className="text-gray-600 ml-1">a hodnotíme nezávisle</span>
+            </div>
+          </div>
+          <Link
+            href="/jak-hodnotime"
+            className="text-sm text-romantic-600 hover:text-romantic-700 font-semibold flex items-center gap-1"
+          >
+            Jak hodnotíme
+            <ExternalLink className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

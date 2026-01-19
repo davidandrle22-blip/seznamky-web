@@ -299,27 +299,42 @@ export default function ProductCard({ produkt, rank, variant = 'default' }: Prod
                 flex items-center justify-center gap-2
                 transition-all duration-300
                 ${isTopRated
-                  ? 'bg-gradient-to-r from-romantic-600 via-romantic-500 to-crimson-500 hover:from-romantic-700 hover:via-romantic-600 hover:to-crimson-600 text-white shadow-lg shadow-romantic-500/30 hover:shadow-xl hover:-translate-y-0.5'
+                  ? 'bg-gradient-to-r from-romantic-600 via-romantic-500 to-crimson-500 hover:from-romantic-700 hover:via-romantic-600 hover:to-crimson-600 text-white shadow-lg shadow-romantic-500/30 hover:shadow-xl hover:-translate-y-0.5 animate-pulse-slow'
                   : 'bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600 text-white shadow-md hover:shadow-lg'
                 }
               `}
             >
-              <span>Navštívit web</span>
-              <ExternalLink className="w-4 h-4" />
+              {isTopRated ? (
+                <>
+                  <Zap className="w-5 h-5" />
+                  <span>Registrovat se ZDARMA</span>
+                </>
+              ) : (
+                <>
+                  <span>Navštívit {produkt.name}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </>
+              )}
             </a>
+
+            {isTopRated && (
+              <div className="text-center text-xs text-green-600 font-medium bg-green-50 py-2 px-3 rounded-lg border border-green-200">
+                Registrace trvá jen 2 minuty
+              </div>
+            )}
 
             <Link
               href={`/seznamky/${produkt.slug}`}
               className="w-full btn-secondary py-3 text-center group"
             >
-              <span>Celá recenze</span>
+              <span>Přečíst recenzi</span>
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
             {/* Trust indicator */}
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-2">
-              <Shield className="w-3 h-3" />
-              <span>Ověřený affiliate partner</span>
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-2">
+              <Shield className="w-3.5 h-3.5 text-green-500" />
+              <span>Ověřený a bezpečný web</span>
             </div>
           </div>
         </div>
