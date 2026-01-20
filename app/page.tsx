@@ -486,7 +486,7 @@ export default async function Home() {
           </div>
 
           <p className="mt-6 text-romantic-300 text-sm">
-            Zcela zdarma a bez závazků
+            Zcela zdarma a bez jakýchkoliv závazků
           </p>
         </div>
       </section>
