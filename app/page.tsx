@@ -434,7 +434,7 @@ export default async function Home() {
                 Rady pro <span className="text-romantic-600">úspěšné seznámení</span>
               </h2>
               <p className="text-gray-600">
-                Tipy od expertů, jak najít lásku online
+                Tipy od expertů, jak najít lásku na internetu
               </p>
             </div>
             <Link
