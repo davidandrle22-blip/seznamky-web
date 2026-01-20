@@ -67,7 +67,7 @@ export default async function Home() {
             {/* Trust badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/10">
               <Heart className="w-4 h-4 text-romantic-400 animate-heart-beat" fill="#fb7185" />
-              <span className="text-sm font-medium text-romantic-200">Nejdůvěryhodnější srovnávač seznamek v ČR</span>
+              <span className="text-sm font-medium text-romantic-200">Nejdůvěryhodnější srovnání seznamek v ČR</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight tracking-tight">
