@@ -2,6 +2,7 @@ import { getProduktBySlug, getProdukty, getKategorie } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import { Star, Users, ExternalLink, Check, X, ArrowLeft, Shield, Heart, Zap, Globe, Smartphone, Gift, Award, Clock, MapPin, Video, Brain, GraduationCap } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import FaqSection from '@/components/FaqSection'
 
@@ -69,8 +70,18 @@ export default async function ProduktDetailPage({ params }: Props) {
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 lg:p-8 mb-8">
           <div className="flex flex-col lg:flex-row gap-6 items-start">
             {/* Logo */}
-            <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-romantic-100 to-romantic-50 rounded-2xl flex items-center justify-center text-4xl font-bold text-romantic-600 flex-shrink-0 shadow-sm">
-              {produkt.name.charAt(0)}
+            <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-romantic-100 to-romantic-50 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
+              {produkt.logo ? (
+                <Image
+                  src={produkt.logo}
+                  alt={produkt.name}
+                  width={80}
+                  height={80}
+                  className="object-contain p-2"
+                />
+              ) : (
+                <span className="text-4xl font-bold text-romantic-600">{produkt.name.charAt(0)}</span>
+              )}
             </div>
 
             <div className="flex-grow">
@@ -243,8 +254,18 @@ export default async function ProduktDetailPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedProdukty.map((p) => (
                 <Link key={p.id} href={`/seznamky/${p.slug}`} className="bg-white rounded-2xl border-2 border-gray-100 hover:border-romantic-300 p-6 transition-all duration-300 hover:shadow-lg">
-                  <div className="w-12 h-12 bg-romantic-100 rounded-xl flex items-center justify-center text-xl font-bold text-romantic-600 mb-3">
-                    {p.name.charAt(0)}
+                  <div className="w-12 h-12 bg-romantic-100 rounded-xl flex items-center justify-center text-xl font-bold text-romantic-600 mb-3 overflow-hidden">
+                    {p.logo ? (
+                      <Image
+                        src={p.logo}
+                        alt={p.name}
+                        width={48}
+                        height={48}
+                        className="object-contain p-1"
+                      />
+                    ) : (
+                      <span>{p.name.charAt(0)}</span>
+                    )}
                   </div>
                   <h3 className="font-bold text-gray-900 mb-1">{p.name}</h3>
                   <p className="text-sm text-gray-600 mb-2 line-clamp-2">{p.shortDescription || p.description}</p>

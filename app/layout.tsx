@@ -13,6 +13,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: settings.seo.title,
     description: settings.seo.description,
     keywords: settings.seo.keywords,
+    icons: {
+      icon: '/favicon.svg',
+      apple: '/favicon.svg',
+    },
   }
 }
 
