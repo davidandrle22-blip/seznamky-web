@@ -93,7 +93,7 @@ export default async function Home() {
               </div>
               <div className="flex items-center gap-1.5 text-romantic-200">
                 <TrendingUp className="w-4 h-4 text-blue-400" />
-                <span>Aktualizováno leden 2026</span>
+                <span>Aktualizováno 20. ledna 2026</span>
               </div>
             </div>
           </div>
