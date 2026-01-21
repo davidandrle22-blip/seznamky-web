@@ -1,5 +1,6 @@
-import { Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift } from 'lucide-react'
+import { Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift, List, Star, CheckCircle, Sparkles } from 'lucide-react'
 import { Kategorie } from '@/lib/types'
+import Link from 'next/link'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   crown: Crown,
@@ -10,6 +11,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'eye-off': EyeOff,
   rainbow: Rainbow,
   gift: Gift,
+  list: List,
 }
 
 interface CategoryHeroProps {
@@ -21,32 +23,71 @@ export default function CategoryHero({ kategorie, productCount }: CategoryHeroPr
   const IconComponent = iconMap[kategorie.icon] || Heart
 
   return (
-    <section className="bg-gradient-to-br from-romantic-50 via-white to-romantic-50 py-12 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-br from-romantic-950 via-romantic-900 to-crimson-950 text-white">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-romantic-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-crimson-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ruby-500/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEiLz48L2c+PC9zdmc+')] opacity-50" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-romantic-100 rounded-2xl mb-6">
-            <IconComponent className="w-8 h-8 text-romantic-600" />
+          {/* Trust badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
+            <Heart className="w-4 h-4 text-romantic-400 animate-pulse" fill="#fb7185" />
+            <span className="text-sm font-medium text-romantic-200">Ověřené recenze 2026</span>
+            <Sparkles className="w-4 h-4 text-amber-400" />
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {kategorie.metaTitle || kategorie.name}
+          {/* Icon */}
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl mb-6 border border-white/20 shadow-2xl">
+            <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight tracking-tight">
+            <span className="bg-gradient-to-r from-white via-romantic-100 to-white bg-clip-text text-transparent drop-shadow-lg">
+              {kategorie.metaTitle || kategorie.name}
+            </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg md:text-xl text-romantic-100/90 max-w-3xl mx-auto mb-8 leading-relaxed">
             {kategorie.description}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <div className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-              <span className="font-semibold text-romantic-600">{productCount}</span>
-              <span className="text-gray-600 ml-1">seznamek v kategorii</span>
+          {/* Stats badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+              <Star className="w-5 h-5 text-amber-400" fill="#fbbf24" />
+              <span className="font-bold text-white text-lg">{productCount}</span>
+              <span className="text-romantic-200">seznamek</span>
             </div>
-            <div className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-              <span className="text-gray-600">Aktualizováno</span>
-              <span className="font-semibold text-gray-900 ml-1">Leden 2026</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+              <CheckCircle className="w-5 h-5 text-emerald-400" />
+              <span className="text-romantic-200">Aktualizováno</span>
+              <span className="font-bold text-white">Leden 2026</span>
             </div>
           </div>
+
+          {/* CTA Button */}
+          <Link
+            href="/api/affiliate/elite-date?source=category&placement=hero-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 border border-white/20"
+          >
+            <span className="text-lg">🏆 Vyzkoušet #1 ELITE Date</span>
+            <Sparkles className="w-5 h-5" />
+          </Link>
         </div>
+      </div>
+
+      {/* Bottom wave */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+          <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
+        </svg>
       </div>
     </section>
   )
