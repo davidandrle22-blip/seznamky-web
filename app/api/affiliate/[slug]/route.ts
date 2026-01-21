@@ -36,10 +36,13 @@ export async function GET(
 
   // Sestavit cílovou URL s tracking parametry
   // Pro produkty s vlastním affiliate (např. EliteDate) se použije centrální config
+  // Detekce zařízení pro správné offer_id (mobilní/desktop)
+  const userAgent = request.headers.get('user-agent') || undefined
   const targetUrl = buildAffiliateUrl(
     produkt.affiliateUrl,
     { source, placement },
-    produkt.slug
+    produkt.slug,
+    userAgent
   )
 
   // Přesměrovat na cílovou URL

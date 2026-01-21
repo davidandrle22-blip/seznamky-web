@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 import { randomUUID } from 'crypto'
-import { getAffiliateLink, hasCustomAffiliateLink } from './affiliate-config'
+import { getAffiliateLink, hasCustomAffiliateLink, detectDevice } from './affiliate-config'
 
 const dataDir = path.join(process.cwd(), 'data')
 const clicksFile = path.join(dataDir, 'affiliate-clicks.json')
@@ -40,6 +40,7 @@ export interface ClickStats {
  * @param baseUrl - Základní URL produktu
  * @param params - Parametry pro tracking
  * @param produktSlug - Slug produktu (volitelné, pro detekci vlastního affiliate)
+ * @param userAgent - User-Agent pro detekci zařízení (mobilní/desktop)
  */
 export function buildAffiliateUrl(
   baseUrl: string,
@@ -47,13 +48,16 @@ export function buildAffiliateUrl(
     source: string
     placement?: string
   },
-  produktSlug?: string
+  produktSlug?: string,
+  userAgent?: string
 ): string {
   // Pokud má produkt vlastní affiliate konfiguraci, použijeme ji
   if (produktSlug && hasCustomAffiliateLink(produktSlug)) {
+    const device = detectDevice(userAgent)
     return getAffiliateLink(produktSlug, baseUrl, {
       source: params.source,
       placement: params.placement,
+      device,
     })
   }
 

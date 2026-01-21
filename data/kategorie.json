@@ -78,5 +78,15 @@
     "order": 8,
     "metaTitle": "Seznamky zdarma 2026 - Bezplatné seznamovací aplikace",
     "metaDescription": "Nejlepší seznamky zdarma s plnohodnotnými funkcemi. Bezplatné možnosti pro seznámení bez placení."
+  },
+  {
+    "id": "luxusni-seznamky",
+    "name": "Luxusní seznamky",
+    "slug": "luxusni-seznamky",
+    "description": "Exkluzivní seznamky pro úspěšné a náročné singles hledající kvalitního partnera.",
+    "icon": "crown",
+    "order": 9,
+    "metaTitle": "Luxusní seznamky 2026 - Pro úspěšné a náročné",
+    "metaDescription": "Exkluzivní seznamky pro úspěšné profesionály a náročné singles. Ověřené profily a prémiové služby."
   }
 ]

@@ -10,32 +10,78 @@ export interface AffiliateConfig {
   baseUrl: string
   /** Offer ID v affiliate síti */
   offerId?: string
+  /** Offer ID pro mobilní zařízení (pokud se liší) */
+  offerIdMobile?: string
+  /** Offer ID pro desktop (pokud se liší) */
+  offerIdDesktop?: string
   /** Affiliate ID */
   affId?: string
   /** Podporuje sub tracking parametry */
   supportsSubTracking?: boolean
+  /** Má rozdílné offer ID podle zařízení */
+  hasDeviceDetection?: boolean
 }
 
 /**
  * Konfigurace affiliate odkazů podle produktu (slug)
  *
- * Přidejte sem nové seznamky s vlastními affiliate linky.
+ * Všechny seznamky s vlastními affiliate linky.
  * Ostatní seznamky bez záznamu použijí výchozí URL z produkty.json
  */
 export const AFFILIATE_LINKS: Record<string, AffiliateConfig> = {
+  // ===== ELITE Date =====
   'elite-date': {
     baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
     offerId: '1263',
     affId: '24115',
     supportsSubTracking: true,
   },
-  // Příklad pro další seznamky:
-  // 'victoria-milan': {
-  //   baseUrl: 'https://tracking.example.com/aff_c',
-  //   offerId: '999',
-  //   affId: '123',
-  //   supportsSubTracking: true,
-  // },
+
+  // ===== Academic Singles =====
+  'academic-singles': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '1199',        // Obecný
+    offerIdMobile: '1127',  // 30+ mobilní
+    offerIdDesktop: '1199', // Desktop
+    affId: '24115',
+    supportsSubTracking: true,
+    hasDeviceDetection: true,
+  },
+
+  // ===== Victoria Milan =====
+  'victoria-milan': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '1137',
+    affId: '24115',
+    supportsSubTracking: true,
+  },
+
+  // ===== FlirtKontakt =====
+  'flirtkontakt': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '762',
+    affId: '24115',
+    supportsSubTracking: true,
+  },
+
+  // ===== Be2 =====
+  'be2': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '1081',        // Desktop (výchozí)
+    offerIdMobile: '1173',  // Mobilní
+    offerIdDesktop: '1081', // Desktop
+    affId: '24115',
+    supportsSubTracking: true,
+    hasDeviceDetection: true,
+  },
+
+  // ===== Rich Meet Beautiful =====
+  'rich-meet-beautiful': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '1139',
+    affId: '24115',
+    supportsSubTracking: true,
+  },
 }
 
 export interface AffiliateParams {
@@ -47,6 +93,18 @@ export interface AffiliateParams {
   sub1?: string
   /** Vlastní sub2 parametr pro tracking */
   sub2?: string
+  /** Typ zařízení (mobile/desktop) - pro server-side */
+  device?: 'mobile' | 'desktop'
+}
+
+/**
+ * Detekuje typ zařízení z User-Agent (server-side)
+ */
+export function detectDevice(userAgent?: string): 'mobile' | 'desktop' {
+  if (!userAgent) return 'desktop'
+
+  const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i
+  return mobileRegex.test(userAgent) ? 'mobile' : 'desktop'
 }
 
 /**
@@ -66,6 +124,11 @@ export interface AffiliateParams {
  * // S tracking parametry
  * getAffiliateLink('elite-date', undefined, { source: 'homepage', placement: 'hero' })
  * // => https://espolupracecz.go2cloud.org/aff_c?offer_id=1263&aff_id=24115&aff_sub=homepage&aff_sub2=hero
+ *
+ * @example
+ * // S detekcí zařízení (pro Be2)
+ * getAffiliateLink('be2', undefined, { device: 'mobile' })
+ * // => https://espolupracecz.go2cloud.org/aff_c?offer_id=1173&aff_id=24115
  */
 export function getAffiliateLink(
   slug: string,
@@ -82,9 +145,17 @@ export function getAffiliateLink(
   // Sestavení URL
   const url = new URL(config.baseUrl)
 
+  // Určení správného offer ID (s detekcí zařízení)
+  let offerId = config.offerId
+  if (config.hasDeviceDetection && params?.device) {
+    offerId = params.device === 'mobile'
+      ? (config.offerIdMobile || config.offerId)
+      : (config.offerIdDesktop || config.offerId)
+  }
+
   // Přidání základních parametrů
-  if (config.offerId) {
-    url.searchParams.set('offer_id', config.offerId)
+  if (offerId) {
+    url.searchParams.set('offer_id', offerId)
   }
   if (config.affId) {
     url.searchParams.set('aff_id', config.affId)
@@ -121,4 +192,11 @@ export function hasCustomAffiliateLink(slug: string): boolean {
  */
 export function getAffiliateConfig(slug: string): AffiliateConfig | null {
   return AFFILIATE_LINKS[slug] || null
+}
+
+/**
+ * Vrátí seznam všech produktů s vlastním affiliate
+ */
+export function getAffiliateProductSlugs(): string[] {
+  return Object.keys(AFFILIATE_LINKS)
 }
