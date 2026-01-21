@@ -69,14 +69,18 @@ export default function ComparisonTable({ produkty, limit = 20, source = 'table'
             const hodnoceni = getHodnoceni(produkt.rating)
             const oceneni = getOceneni(rank, produkt.name)
             const oceneniBg = getOceneniBg(rank, produkt.name)
-            const isFirst = rank === 1 || produkt.name === 'ELITE Date'
+            const isPriority = produkt.slug === 'elite-date' || produkt.slug === 'victoria-milan' || produkt.slug === 'academic-singles'
+            const isFirst = rank === 1 || produkt.slug === 'elite-date'
 
             return (
               <tr
                 key={produkt.id}
                 className={`
                   border-b border-gray-200
-                  ${isFirst ? 'bg-yellow-50' : rank % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+                  ${produkt.slug === 'elite-date' ? 'bg-yellow-50 ring-2 ring-yellow-400 ring-inset' :
+                    produkt.slug === 'victoria-milan' ? 'bg-purple-50' :
+                    produkt.slug === 'academic-singles' ? 'bg-emerald-50' :
+                    rank % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
                   hover:bg-blue-50 transition-colors
                 `}
               >
@@ -154,13 +158,17 @@ export default function ComparisonTable({ produkty, limit = 20, source = 'table'
                     source={source}
                     placement="table-row"
                     className={`
-                      inline-block text-white text-sm font-semibold py-2.5 px-4 rounded transition-colors w-full
-                      ${isFirst
-                        ? 'bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600'
+                      inline-block text-white text-sm font-semibold py-2.5 px-4 rounded transition-all w-full
+                      ${produkt.slug === 'elite-date'
+                        ? 'bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 shadow-lg shadow-orange-500/30 animate-pulse'
+                        : produkt.slug === 'victoria-milan'
+                        ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 shadow-lg shadow-purple-500/30'
+                        : produkt.slug === 'academic-singles'
+                        ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg shadow-emerald-500/30'
                         : 'bg-[#24447b] hover:bg-[#1a3460]'}
                     `}
                   >
-                    Registrace do seznamky
+                    {isPriority ? '🔥 Vyzkoušet ZDARMA' : 'Registrace do seznamky'}
                   </AffiliateLink>
                   <Link
                     href={`/seznamky/${produkt.slug}`}

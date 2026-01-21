@@ -88,5 +88,15 @@
     "order": 9,
     "metaTitle": "Luxusní seznamky 2026 - Pro úspěšné a náročné",
     "metaDescription": "Exkluzivní seznamky pro úspěšné profesionály a náročné singles. Ověřené profily a prémiové služby."
+  },
+  {
+    "id": "vsechny-seznamky",
+    "name": "Všechny seznamky",
+    "slug": "vsechny-seznamky",
+    "description": "Kompletní přehled všech 24 seznamek v našem katalogu - srovnání, hodnocení a recenze.",
+    "icon": "list",
+    "order": 10,
+    "metaTitle": "Všechny seznamky 2026 - Kompletní katalog 24 seznamek",
+    "metaDescription": "Kompletní katalog všech 24 online seznamek. Podrobné srovnání, hodnocení a nezávislé recenze každé platformy."
   }
 ]

@@ -346,5 +346,40 @@
       }
     ],
     "relatedCategories": ["nejlepsi-seznamky", "flirt-seznamky", "gay-seznamky"]
+  },
+  {
+    "slug": "vsechny-seznamky",
+    "heroTitle": "Všechny seznamky 2026",
+    "heroSubtitle": "Kompletní katalog 24 online seznamek s podrobnými recenzemi",
+    "introText": "Představujeme vám **kompletní přehled všech 24 seznamek**, které jsme otestovali a zrecenzovali. Ať už hledáte vážný vztah, nezávazný flirt nebo diskrétní dobrodružství - v tomto katalogu najdete tu správnou platformu pro vás.\n\nKaždou seznamku jsme důkladně otestovali a ohodnotili podle kritérií jako úspěšnost párování, aktivita uživatelů, bezpečnost a hodnota za peníze.",
+    "sections": [
+      {
+        "title": "🏆 Top 3 doporučené seznamky",
+        "content": "**1. ELITE Date** - Nejlepší volba pro vážné vztahy\n- 92% úspěšnost párování\n- Vědecký matchmaking algoritmus\n- Ověřené profily\n\n**2. Victoria Milan** - Nejlepší pro diskrétní seznámení\n- Maximální anonymita\n- Zdarma pro ženy\n- 1M+ aktivních uživatelů v Evropě\n\n**3. Academic Singles** - Pro vysokoškolsky vzdělané\n- 85% uživatelů s VŠ vzděláním\n- Intelektuální kompatibilita\n- Kvalitní profily"
+      },
+      {
+        "title": "Přehled podle kategorií",
+        "content": "**Vážné vztahy:**\nELITE Date, eDarling, Academic Singles, Be2\n\n**Flirt a nezávazné:**\nTinder, Badoo, Flirtkontakt, BeNaughty\n\n**Diskrétní seznámení:**\nVictoria Milan, Ashley Madison, Gleeden\n\n**Pro seniory 50+:**\nSingles50, SilverSingles, OurTime\n\n**LGBT komunita:**\nGrindr, PlanetRomeo, HER\n\n**Luxusní seznamky:**\nRich Meet Beautiful"
+      },
+      {
+        "title": "Jak jsme hodnotili",
+        "content": "Každou seznamku hodnotíme podle těchto kritérií:\n\n- **Úspěšnost** - Kolik uživatelů najde partnera?\n- **Aktivita** - Jsou profily aktivní?\n- **Bezpečnost** - Jak platforma chrání data?\n- **Cena/výkon** - Co dostanete za peníze?\n- **UX** - Jak se platforma používá?\n- **Mobilní aplikace** - Kvalita aplikace"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Kolik seznamek je v katalogu?",
+        "answer": "V našem katalogu najdete 24 důkladně otestovaných seznamek pro různé cílové skupiny a účely."
+      },
+      {
+        "question": "Která seznamka je nejlepší?",
+        "answer": "Záleží na vašich cílech. Pro vážný vztah doporučujeme ELITE Date, pro diskrétní seznámení Victoria Milan, pro vzdělané Academic Singles."
+      },
+      {
+        "question": "Jsou všechny seznamky v češtině?",
+        "answer": "Většina velkých seznamek má českou lokalizaci. Některé menší nebo specializované platformy jsou pouze v angličtině."
+      }
+    ],
+    "relatedCategories": ["nejlepsi-seznamky", "vazne-vztahy", "flirt-seznamky"]
   }
 ]

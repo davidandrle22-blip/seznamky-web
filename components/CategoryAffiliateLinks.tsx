@@ -3,7 +3,7 @@
 import { Produkt } from '@/lib/types'
 import AffiliateLink from './AffiliateLink'
 import Image from 'next/image'
-import { Crown, Star, CheckCircle, Users, Zap, EyeOff, ArrowRight } from 'lucide-react'
+import { Crown, Star, CheckCircle, Users, Zap, EyeOff, ArrowRight, GraduationCap } from 'lucide-react'
 
 interface CategoryEliteDateBannerProps {
   produkt: Produkt
@@ -116,6 +116,66 @@ export function CategoryVictoriaMilanBanner({ produkt }: CategoryVictoriaMilanBa
           source="category"
           placement="victoria-banner"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-500/20 hover:shadow-xl whitespace-nowrap"
+        >
+          <Zap className="w-4 h-4" />
+          Vyzkoušet zdarma
+        </AffiliateLink>
+      </div>
+    </div>
+  )
+}
+
+interface CategoryAcademicSinglesBannerProps {
+  produkt: Produkt
+}
+
+export function CategoryAcademicSinglesBanner({ produkt }: CategoryAcademicSinglesBannerProps) {
+  return (
+    <div className="bg-gradient-to-r from-emerald-50 via-white to-emerald-50 rounded-2xl border-2 border-emerald-300 shadow-lg p-5 lg:p-6 relative overflow-hidden">
+      <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-600 to-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+        #3 PRO VZDĚLANÉ
+      </div>
+      <div className="flex flex-col md:flex-row items-center gap-5">
+        <div className="flex items-center gap-4">
+          <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-md border-2 border-emerald-200">
+            <Image
+              src={produkt.logo}
+              alt={produkt.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <GraduationCap className="w-4 h-4 text-emerald-500" />
+              <span className="text-xs font-bold text-emerald-600 uppercase">85% VŠ vzdělání</span>
+            </div>
+            <h3 className="font-bold text-lg text-gray-900">{produkt.name}</h3>
+          </div>
+        </div>
+
+        <div className="flex-grow hidden lg:block">
+          <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
+            <div className="flex items-center gap-1.5">
+              <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
+              <span className="font-bold">{produkt.rating}/10</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="w-4 h-4 text-green-500" />
+              <span>Vědecký matching</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Users className="w-4 h-4 text-emerald-500" />
+              <span>{produkt.users}</span>
+            </div>
+          </div>
+        </div>
+
+        <AffiliateLink
+          produkt={produkt}
+          source="category"
+          placement="academic-banner"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl whitespace-nowrap"
         >
           <Zap className="w-4 h-4" />
           Vyzkoušet zdarma

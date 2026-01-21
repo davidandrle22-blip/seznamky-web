@@ -6,8 +6,8 @@ import CategoryQuickTable from '@/components/CategoryQuickTable'
 import CategorySeoContent from '@/components/CategorySeoContent'
 import FaqSection from '@/components/FaqSection'
 import ComparisonTable from '@/components/ComparisonTable'
-import { CategoryEliteDateBanner, CategoryVictoriaMilanBanner, CategoryBottomCTA } from '@/components/CategoryAffiliateLinks'
-import { ArrowRight, Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift } from 'lucide-react'
+import { CategoryEliteDateBanner, CategoryVictoriaMilanBanner, CategoryAcademicSinglesBanner, CategoryBottomCTA } from '@/components/CategoryAffiliateLinks'
+import { ArrowRight, Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift, List } from 'lucide-react'
 
 interface Props {
   params: { slug: string }
@@ -22,6 +22,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'eye-off': EyeOff,
   rainbow: Rainbow,
   gift: Gift,
+  list: List,
 }
 
 export async function generateStaticParams() {
@@ -50,8 +51,9 @@ export default async function KategoriePage({ params }: Props) {
   const categoryContent = await getCategoryContentBySlug(params.slug)
   const allKategorie = await getKategorie()
   const allProdukty = await getProdukty()
-  const eliteDate = allProdukty[0] // ELITE Date is always first
-  const victoriaMilan = allProdukty.find(p => p.slug === 'victoria-milan') // Victoria Milan
+  const eliteDate = allProdukty.find(p => p.slug === 'elite-date')
+  const victoriaMilan = allProdukty.find(p => p.slug === 'victoria-milan')
+  const academicSingles = allProdukty.find(p => p.slug === 'academic-singles')
 
   const relatedCategories = categoryContent?.relatedCategories
     ? allKategorie.filter(k => categoryContent.relatedCategories.includes(k.slug))
@@ -62,15 +64,20 @@ export default async function KategoriePage({ params }: Props) {
       {/* Hero Section */}
       <CategoryHero kategorie={kategorie} productCount={produkty.length} />
 
-      {/* Top 2 Recommendations - ELITE Date & Victoria Milan */}
+      {/* Top 3 Recommendations - ELITE Date, Victoria Milan & Academic Singles */}
       <section className="py-6 bg-gradient-to-r from-romantic-50 via-white to-romantic-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          {/* ELITE Date */}
+          {/* ELITE Date - vždy první */}
           {eliteDate && <CategoryEliteDateBanner produkt={eliteDate} />}
 
-          {/* Victoria Milan - Especially for sex-seznamky and seznamky-pro-zadane */}
-          {victoriaMilan && (params.slug === 'sex-seznamky' || params.slug === 'seznamky-pro-zadane' || params.slug === 'nejlepsi-seznamky') && (
+          {/* Victoria Milan - pro diskrétní, sex a všechny */}
+          {victoriaMilan && (params.slug === 'sex-seznamky' || params.slug === 'seznamky-pro-zadane' || params.slug === 'nejlepsi-seznamky' || params.slug === 'flirt-seznamky' || params.slug === 'vsechny-seznamky') && (
             <CategoryVictoriaMilanBanner produkt={victoriaMilan} />
+          )}
+
+          {/* Academic Singles - pro vážné vztahy, seniory a vzdělané */}
+          {academicSingles && (params.slug === 'vazne-vztahy' || params.slug === 'senior-seznamky' || params.slug === 'nejlepsi-seznamky' || params.slug === 'vsechny-seznamky') && (
+            <CategoryAcademicSinglesBanner produkt={academicSingles} />
           )}
         </div>
       </section>

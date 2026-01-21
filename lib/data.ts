@@ -75,6 +75,10 @@ export async function getKategorie(): Promise<Kategorie[]> {
 
 export async function getProduktyByKategorie(kategorieId: string): Promise<Produkt[]> {
   const produkty = await getProdukty()
+  // Pro kategorii "vsechny-seznamky" vrátíme všechny aktivní produkty
+  if (kategorieId === 'vsechny-seznamky') {
+    return produkty
+  }
   return produkty.filter(p => p.categories.includes(kategorieId))
 }
 

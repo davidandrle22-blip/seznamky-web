@@ -22,10 +22,15 @@ export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuic
         </h2>
 
         <div className="space-y-4">
-          {displayProdukty.map((produkt, index) => (
+          {displayProdukty.map((produkt, index) => {
+            const isPriority = produkt.slug === 'elite-date' || produkt.slug === 'victoria-milan' || produkt.slug === 'academic-singles'
+            return (
             <div
               key={produkt.id}
               className={`bg-white rounded-2xl border-2 transition-all duration-300 hover:shadow-lg ${
+                produkt.slug === 'elite-date' ? 'border-yellow-400 shadow-lg ring-2 ring-yellow-200' :
+                produkt.slug === 'victoria-milan' ? 'border-purple-400 shadow-md' :
+                produkt.slug === 'academic-singles' ? 'border-emerald-400 shadow-md' :
                 index === 0 ? 'border-romantic-400 shadow-md' : 'border-gray-100 hover:border-romantic-200'
               }`}
             >
@@ -93,9 +98,14 @@ export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuic
                         produkt={produkt}
                         source="category"
                         placement="quick-table"
-                        className="bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600 text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg shadow-romantic-500/25"
+                        className={`font-semibold py-2.5 px-5 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg ${
+                          produkt.slug === 'elite-date' ? 'bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white shadow-orange-500/30' :
+                          produkt.slug === 'victoria-milan' ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-purple-500/30' :
+                          produkt.slug === 'academic-singles' ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white shadow-emerald-500/30' :
+                          'bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600 text-white shadow-romantic-500/25'
+                        }`}
                       >
-                        Navštívit
+                        {isPriority ? '🔥 Vyzkoušet' : 'Navštívit'}
                         <ExternalLink className="w-4 h-4" />
                       </AffiliateLink>
                       <Link
@@ -109,7 +119,7 @@ export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuic
                 </div>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

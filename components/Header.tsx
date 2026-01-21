@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, Sparkles, ChevronDown, Crown, Smile, Flame, Users, EyeOff, Rainbow, Gift } from 'lucide-react'
+import { Menu, X, Heart, Sparkles, ChevronDown, Crown, Smile, Flame, Users, EyeOff, Rainbow, Gift, List, Star } from 'lucide-react'
 
 const kategorieItems = [
   { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky', description: 'Kompletní žebříček', icon: Crown },
@@ -13,6 +13,7 @@ const kategorieItems = [
   { name: 'Pro zadané', href: '/kategorie/seznamky-pro-zadane', description: 'Diskrétní seznámení', icon: EyeOff },
   { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky', description: 'LGBTQ+ komunita', icon: Rainbow },
   { name: 'Zdarma', href: '/kategorie/seznamky-zdarma', description: 'Bezplatné možnosti', icon: Gift },
+  { name: 'Všechny seznamky', href: '/kategorie/vsechny-seznamky', description: 'Kompletní katalog 24 seznamek', icon: List },
 ]
 
 export default function Header() {
@@ -41,9 +42,9 @@ export default function Header() {
   ]
 
   const topSeznamky = [
-    { name: 'ELITE Date', href: '/seznamky/elite-date', badge: '#1' },
-    { name: 'Tinder', href: '/seznamky/tinder', badge: '#2' },
-    { name: 'Badoo', href: '/seznamky/badoo', badge: '#3' },
+    { name: 'ELITE Date', href: '/api/affiliate/elite-date?source=header&placement=top-nav', badge: '🏆', isAffiliate: true },
+    { name: 'Victoria Milan', href: '/api/affiliate/victoria-milan?source=header&placement=top-nav', badge: '🔥', isAffiliate: true },
+    { name: 'Academic Singles', href: '/api/affiliate/academic-singles?source=header&placement=top-nav', badge: '🎓', isAffiliate: true },
   ]
 
   return (
@@ -132,19 +133,23 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Top Seznamky Quick Links */}
+            {/* Top Seznamky Quick Links - Prioritní affiliate */}
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-gray-200">
-              {topSeznamky.map((item) => (
-                <Link
+              {topSeznamky.map((item, index) => (
+                <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-romantic-50 rounded-lg text-sm font-medium text-gray-600 hover:text-romantic-600 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                    index === 0
+                      ? 'bg-gradient-to-r from-romantic-500 to-crimson-500 text-white shadow-md hover:shadow-lg hover:scale-105'
+                      : 'bg-romantic-50 hover:bg-romantic-100 text-romantic-700 hover:text-romantic-800'
+                  }`}
                 >
-                  <span className="text-xs bg-romantic-100 text-romantic-700 px-1.5 py-0.5 rounded font-bold">
-                    {item.badge}
-                  </span>
+                  <span className="text-sm">{item.badge}</span>
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -214,24 +219,28 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Mobile Top Seznamky */}
+            {/* Mobile Top Seznamky - Prioritní affiliate */}
             <div className="mt-4 pt-4 border-t border-gray-100">
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-4">
-                Top seznamky
+                ⭐ Doporučené seznamky
               </p>
               <div className="flex flex-wrap gap-2 px-4">
-                {topSeznamky.map((item) => (
-                  <Link
+                {topSeznamky.map((item, index) => (
+                  <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center gap-1.5 px-3 py-2 bg-romantic-50 rounded-lg text-sm font-medium text-romantic-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold ${
+                      index === 0
+                        ? 'bg-gradient-to-r from-romantic-500 to-crimson-500 text-white'
+                        : 'bg-romantic-50 text-romantic-700'
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <span className="text-xs bg-romantic-200 px-1.5 py-0.5 rounded font-bold">
-                      {item.badge}
-                    </span>
+                    <span className="text-sm">{item.badge}</span>
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
