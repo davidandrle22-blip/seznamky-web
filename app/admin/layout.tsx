@@ -13,7 +13,8 @@ import {
   LogOut,
   Heart,
   Menu,
-  X
+  X,
+  MousePointer
 } from 'lucide-react'
 import { useState } from 'react'
 import SessionProvider from '@/components/SessionProvider'
@@ -53,6 +54,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { name: 'Produkty', href: '/admin/produkty', icon: Package },
     { name: 'Články', href: '/admin/clanky', icon: FileText },
+    { name: 'Affiliate', href: '/admin/affiliate', icon: MousePointer },
     { name: 'Nastavení', href: '/admin/nastaveni', icon: Settings },
   ]
 

@@ -1,0 +1,41 @@
+{
+  "clicks": [
+    {
+      "id": "6ad696ee-aa88-4446-8dfe-b8127194e967",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "homepage",
+      "placement": "hero",
+      "timestamp": "2026-01-21T13:06:39.844Z",
+      "userAgent": "curl/8.7.1"
+    },
+    {
+      "id": "56a6c4df-7da7-4d76-a29a-cee32fde4f4d",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "homepage",
+      "placement": "hero-banner",
+      "timestamp": "2026-01-21T13:07:52.722Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "referer": "http://localhost:3001/"
+    },
+    {
+      "id": "75c019b6-6b6e-4642-9c7f-e6f4569c640f",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "homepage",
+      "placement": "hero-banner",
+      "timestamp": "2026-01-21T13:07:52.839Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+    },
+    {
+      "id": "e75a535d-c498-457f-938f-5ca62012414f",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "homepage",
+      "placement": "hero",
+      "timestamp": "2026-01-21T13:11:07.115Z",
+      "userAgent": "curl/8.7.1"
+    }
+  ]
+}

@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Star, ExternalLink, Check, Award } from 'lucide-react'
 import { Produkt } from '@/lib/types'
+import AffiliateLink from './AffiliateLink'
 
 interface CategoryQuickTableProps {
   produkty: Produkt[]
@@ -86,15 +89,15 @@ export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuic
                     )}
 
                     <div className="flex gap-2">
-                      <a
-                        href={produkt.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <AffiliateLink
+                        produkt={produkt}
+                        source="category"
+                        placement="quick-table"
                         className="bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600 text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg shadow-romantic-500/25"
                       >
                         Navštívit
                         <ExternalLink className="w-4 h-4" />
-                      </a>
+                      </AffiliateLink>
                       <Link
                         href={`/seznamky/${produkt.slug}`}
                         className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2.5 px-4 rounded-xl transition-colors"

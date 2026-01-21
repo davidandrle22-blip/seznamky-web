@@ -3,13 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Produkt } from '@/lib/types'
+import AffiliateLink, { AffiliateSource } from './AffiliateLink'
 
 interface ComparisonTableProps {
   produkty: Produkt[]
   limit?: number
+  source?: AffiliateSource
 }
 
-export default function ComparisonTable({ produkty, limit = 20 }: ComparisonTableProps) {
+export default function ComparisonTable({ produkty, limit = 20, source = 'table' }: ComparisonTableProps) {
   const displayProdukty = produkty.slice(0, limit)
 
   const getHodnoceni = (rating: number) => {
@@ -147,10 +149,10 @@ export default function ComparisonTable({ produkty, limit = 20 }: ComparisonTabl
 
                 {/* CTA */}
                 <td className="py-4 px-4 align-middle text-center w-[160px]">
-                  <a
-                    href={produkt.affiliateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <AffiliateLink
+                    produkt={produkt}
+                    source={source}
+                    placement="table-row"
                     className={`
                       inline-block text-white text-sm font-semibold py-2.5 px-4 rounded transition-colors w-full
                       ${isFirst
@@ -159,7 +161,7 @@ export default function ComparisonTable({ produkty, limit = 20 }: ComparisonTabl
                     `}
                   >
                     Registrace do seznamky
-                  </a>
+                  </AffiliateLink>
                   <Link
                     href={`/seznamky/${produkt.slug}`}
                     className="block text-xs text-[#24447b] hover:underline mt-2"

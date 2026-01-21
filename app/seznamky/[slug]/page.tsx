@@ -1,10 +1,11 @@
 import { getProduktBySlug, getProdukty, getKategorie } from '@/lib/data'
 import { notFound } from 'next/navigation'
-import { Star, Users, ExternalLink, Check, X, ArrowLeft, Shield, Heart, Zap, Globe, Smartphone, Gift, Award, Clock, MapPin, Video, Brain, GraduationCap } from 'lucide-react'
+import { Star, Users, Check, X, ArrowLeft, Shield, Heart, Zap, Globe, Smartphone, Gift, Award, Clock, MapPin, Video, Brain, GraduationCap } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import FaqSection from '@/components/FaqSection'
+import { DetailCTAButton, DetailBottomCTA } from '@/components/DetailAffiliateLinks'
 
 interface Props {
   params: { slug: string }
@@ -136,15 +137,7 @@ export default async function ProduktDetailPage({ params }: Props) {
 
             {/* CTA */}
             <div className="w-full lg:w-auto flex flex-col gap-3">
-              <a
-                href={produkt.affiliateUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-romantic-500/25"
-              >
-                Navštívit {produkt.name}
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <DetailCTAButton produkt={produkt} placement="header" />
               <div className="text-center text-sm text-gray-500">
                 {produkt.freeVersion && <span className="text-green-600 font-medium">Registrace zdarma</span>}
               </div>
@@ -227,25 +220,7 @@ export default async function ProduktDetailPage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-romantic-600 to-crimson-600 rounded-2xl p-8 text-center my-12">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Vyzkoušejte {produkt.name} ještě dnes
-          </h2>
-          <p className="text-romantic-100 mb-6">
-            {produkt.freeVersion
-              ? 'Registrace je zdarma a můžete ihned začít hledat svého partnera.'
-              : 'Začněte hledat svého partnera ještě dnes.'}
-          </p>
-          <a
-            href={produkt.affiliateUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-romantic-600 hover:bg-romantic-50 font-bold py-4 px-8 rounded-xl transition-colors inline-flex items-center shadow-lg"
-          >
-            Registrovat se na {produkt.name}
-            <ExternalLink className="w-5 h-5 ml-2" />
-          </a>
-        </div>
+        <DetailBottomCTA produkt={produkt} />
 
         {/* Related */}
         {relatedProdukty.length > 0 && (

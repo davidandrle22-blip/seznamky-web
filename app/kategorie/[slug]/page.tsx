@@ -1,13 +1,13 @@
 import { getKategorie, getKategorieBySlug, getProduktyByKategorie, getCategoryContentBySlug, getProdukty } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 import CategoryHero from '@/components/CategoryHero'
 import CategoryQuickTable from '@/components/CategoryQuickTable'
 import CategorySeoContent from '@/components/CategorySeoContent'
 import FaqSection from '@/components/FaqSection'
 import ComparisonTable from '@/components/ComparisonTable'
-import { ArrowRight, Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift, Star, CheckCircle, Zap } from 'lucide-react'
+import { CategoryEliteDateBanner, CategoryVictoriaMilanBanner, CategoryBottomCTA } from '@/components/CategoryAffiliateLinks'
+import { ArrowRight, Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift } from 'lucide-react'
 
 interface Props {
   params: { slug: string }
@@ -66,113 +66,11 @@ export default async function KategoriePage({ params }: Props) {
       <section className="py-6 bg-gradient-to-r from-romantic-50 via-white to-romantic-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           {/* ELITE Date */}
-          {eliteDate && (
-            <div className="bg-white rounded-2xl border-2 border-romantic-300 shadow-lg p-5 lg:p-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-400 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
-                #1 VOLBA REDAKCE
-              </div>
-              <div className="flex flex-col md:flex-row items-center gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-md border-2 border-romantic-200">
-                    <Image
-                      src={eliteDate.logo}
-                      alt={eliteDate.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <Crown className="w-4 h-4 text-amber-500" />
-                      <span className="text-xs font-bold text-romantic-600 uppercase">Naše doporučení</span>
-                    </div>
-                    <h3 className="font-bold text-lg text-gray-900">{eliteDate.name}</h3>
-                  </div>
-                </div>
-
-                <div className="flex-grow hidden lg:block">
-                  <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
-                    <div className="flex items-center gap-1.5">
-                      <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
-                      <span className="font-bold">{eliteDate.rating}/10</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span>92% úspěšnost</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="w-4 h-4 text-romantic-500" />
-                      <span>{eliteDate.users}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <a
-                  href={eliteDate.affiliateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-romantic-600 to-crimson-600 hover:from-romantic-700 hover:to-crimson-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-romantic-500/20 hover:shadow-xl whitespace-nowrap"
-                >
-                  <Zap className="w-4 h-4" />
-                  Vyzkoušet zdarma
-                </a>
-              </div>
-            </div>
-          )}
+          {eliteDate && <CategoryEliteDateBanner produkt={eliteDate} />}
 
           {/* Victoria Milan - Especially for sex-seznamky and seznamky-pro-zadane */}
           {victoriaMilan && (params.slug === 'sex-seznamky' || params.slug === 'seznamky-pro-zadane' || params.slug === 'nejlepsi-seznamky') && (
-            <div className="bg-gradient-to-r from-purple-50 via-white to-purple-50 rounded-2xl border-2 border-purple-300 shadow-lg p-5 lg:p-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-gradient-to-l from-purple-600 to-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
-                #2 TOP DISKRÉTNÍ
-              </div>
-              <div className="flex flex-col md:flex-row items-center gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-md border-2 border-purple-200">
-                    <Image
-                      src={victoriaMilan.logo}
-                      alt={victoriaMilan.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <EyeOff className="w-4 h-4 text-purple-500" />
-                      <span className="text-xs font-bold text-purple-600 uppercase">Maximální diskrétnost</span>
-                    </div>
-                    <h3 className="font-bold text-lg text-gray-900">{victoriaMilan.name}</h3>
-                  </div>
-                </div>
-
-                <div className="flex-grow hidden lg:block">
-                  <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
-                    <div className="flex items-center gap-1.5">
-                      <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
-                      <span className="font-bold">{victoriaMilan.rating}/10</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span>Zdarma pro ženy</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="w-4 h-4 text-purple-500" />
-                      <span>{victoriaMilan.users}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <a
-                  href={victoriaMilan.affiliateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-500/20 hover:shadow-xl whitespace-nowrap"
-                >
-                  <Zap className="w-4 h-4" />
-                  Vyzkoušet zdarma
-                </a>
-              </div>
-            </div>
+            <CategoryVictoriaMilanBanner produkt={victoriaMilan} />
           )}
         </div>
       </section>
@@ -189,7 +87,7 @@ export default async function KategoriePage({ params }: Props) {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
               Kompletní srovnání všech seznamek
             </h2>
-            <ComparisonTable produkty={produkty} />
+            <ComparisonTable produkty={produkty} source="category" />
           </div>
         </section>
       )}
@@ -255,17 +153,7 @@ export default async function KategoriePage({ params }: Props) {
           <p className="text-romantic-100 mb-8 text-lg">
             Vyzkoušejte naši doporučenou seznamku a začněte hledat ještě dnes.
           </p>
-          {produkty.length > 0 && (
-            <a
-              href={produkty[0].affiliateUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-white text-romantic-600 font-bold py-4 px-8 rounded-xl hover:bg-romantic-50 transition-colors shadow-lg"
-            >
-              Navštívit {produkty[0].name}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </a>
-          )}
+          {produkty.length > 0 && <CategoryBottomCTA produkt={produkty[0]} />}
         </div>
       </section>
     </div>

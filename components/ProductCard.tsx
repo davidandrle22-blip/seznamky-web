@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -6,14 +8,16 @@ import {
   Globe, Award, Sparkles, Clock, Flame
 } from 'lucide-react'
 import { Produkt } from '@/lib/types'
+import AffiliateLink, { AffiliateSource } from './AffiliateLink'
 
 interface ProductCardProps {
   produkt: Produkt
   rank?: number
   variant?: 'default' | 'compact' | 'featured'
+  source?: AffiliateSource
 }
 
-export default function ProductCard({ produkt, rank, variant = 'default' }: ProductCardProps) {
+export default function ProductCard({ produkt, rank, variant = 'default', source = 'homepage' }: ProductCardProps) {
   const isTopRated = rank === 1
   const isTop3 = rank && rank <= 3
 
@@ -292,10 +296,10 @@ export default function ProductCard({ produkt, rank, variant = 'default' }: Prod
             )}
 
             {/* CTA Buttons */}
-            <a
-              href={produkt.affiliateUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <AffiliateLink
+              produkt={produkt}
+              source={source}
+              placement="cta"
               className={`
                 w-full py-4 px-6 rounded-xl font-bold text-center
                 flex items-center justify-center gap-2
@@ -317,7 +321,7 @@ export default function ProductCard({ produkt, rank, variant = 'default' }: Prod
                   <ExternalLink className="w-4 h-4" />
                 </>
               )}
-            </a>
+            </AffiliateLink>
 
             {isTopRated && (
               <div className="text-center text-xs text-green-600 font-medium bg-green-50 py-2 px-3 rounded-lg border border-green-200">
