@@ -153,16 +153,20 @@ export default function Header() {
               ))}
             </div>
 
-            {/* CTA Button - Eye-catching */}
+            {/* CTA Button - Maximum Eye-catching */}
             <Link
               href="/seznamky"
               className="ml-4 relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 rounded-xl blur-md opacity-75 group-hover:opacity-100 transition-opacity animate-pulse" />
-              <div className="relative bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 hover:from-romantic-700 hover:via-crimson-600 hover:to-ruby-600 text-white font-bold py-3 px-7 rounded-xl transition-all duration-300 shadow-xl shadow-romantic-500/40 hover:shadow-2xl hover:-translate-y-1 flex items-center gap-2.5 border border-white/20">
-                <Heart className="w-5 h-5 animate-pulse" fill="currentColor" />
-                <span className="text-base">Najít partnera</span>
-                <Sparkles className="w-4 h-4 text-amber-300" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-300 animate-pulse group-hover:blur-xl" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-xl opacity-90" />
+              <div className="relative bg-gradient-to-r from-romantic-600 via-crimson-600 to-ruby-600 hover:from-romantic-500 hover:via-crimson-500 hover:to-ruby-500 text-white font-extrabold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(244,63,94,0.5)] hover:-translate-y-1.5 hover:scale-105 flex items-center gap-3 border-2 border-white/30">
+                <div className="relative">
+                  <Heart className="w-6 h-6 animate-bounce" fill="currentColor" />
+                  <Heart className="w-6 h-6 absolute inset-0 animate-ping opacity-50" fill="currentColor" />
+                </div>
+                <span className="text-lg tracking-wide">Najít partnera</span>
+                <Sparkles className="w-5 h-5 text-amber-300 animate-spin-slow" />
               </div>
             </Link>
           </div>
