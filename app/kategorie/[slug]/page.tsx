@@ -84,7 +84,7 @@ export default async function KategoriePage({ params }: Props) {
 
       {/* Quick Conversion Table - Above the fold */}
       {produkty.length > 0 && (
-        <CategoryQuickTable produkty={produkty} limit={5} />
+        <CategoryQuickTable produkty={produkty} limit={5} categoryName={kategorie.name} />
       )}
 
       {/* Full Comparison Table */}
@@ -92,7 +92,7 @@ export default async function KategoriePage({ params }: Props) {
         <section className="py-8 lg:py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              Kompletní srovnání všech seznamek
+              Srovnání: {kategorie.name}
             </h2>
             <ComparisonTable produkty={produkty} source="category" />
           </div>

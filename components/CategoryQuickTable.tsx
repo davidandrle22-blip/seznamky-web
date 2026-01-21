@@ -9,16 +9,17 @@ import AffiliateLink from './AffiliateLink'
 interface CategoryQuickTableProps {
   produkty: Produkt[]
   limit?: number
+  categoryName?: string
 }
 
-export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuickTableProps) {
+export default function CategoryQuickTable({ produkty, limit = 5, categoryName }: CategoryQuickTableProps) {
   const displayProdukty = produkty.slice(0, limit)
 
   return (
     <section className="py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Top {limit} seznamek v kategorii
+          Top {limit}: {categoryName || 'Nejlepší seznamky'}
         </h2>
 
         <div className="space-y-4">
