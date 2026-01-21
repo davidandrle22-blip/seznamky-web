@@ -273,7 +273,7 @@ export default async function Home() {
           </div>
 
           {/* Urgency Banner - ELITE Date specific */}
-          <div className="bg-gradient-to-r from-amber-50 via-romantic-50 to-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+          <div className="bg-gradient-to-r from-amber-50 via-romantic-50 to-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
@@ -297,6 +297,34 @@ export default async function Home() {
               </a>
             </div>
           </div>
+
+          {/* Victoria Milan Banner - Discretion focused */}
+          {produkty.find(p => p.slug === 'victoria-milan') && (
+            <div className="bg-gradient-to-r from-purple-50 via-white to-purple-50 border border-purple-200 rounded-xl p-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                    <Flame className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">
+                      <span className="text-purple-600">Victoria Milan</span> - Pro diskrétní seznámení
+                    </p>
+                    <p className="text-sm text-gray-600">Zdarma pro ženy | 8M+ uživatelů | Maximální anonymita</p>
+                  </div>
+                </div>
+                <a
+                  href={produkty.find(p => p.slug === 'victoria-milan')?.affiliateUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-all shadow-md hover:shadow-lg"
+                >
+                  Vyzkoušet zdarma
+                  <Sparkles className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Star, ExternalLink, Check, Award } from 'lucide-react'
 import { Produkt } from '@/lib/types'
 
@@ -42,8 +43,14 @@ export default function CategoryQuickTable({ produkty, limit = 5 }: CategoryQuic
                       {index !== 0 && `#${index + 1}`}
                     </div>
 
-                    <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-2xl font-bold text-romantic-500 flex-shrink-0">
-                      {produkt.name.charAt(0)}
+                    <div className="w-14 h-14 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 shadow-md">
+                      <Image
+                        src={produkt.logo}
+                        alt={produkt.name}
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
                     <div>

@@ -58,22 +58,25 @@ export default function Header() {
         <div className="flex justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2.5 group">
+            <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <Heart
-                  className={`h-10 w-10 transition-all duration-300 group-hover:scale-110 ${
-                    isScrolled ? 'text-romantic-500' : 'text-romantic-600'
-                  }`}
-                  fill="#e11d48"
-                />
-                <Sparkles className="h-4 w-4 text-amber-400 absolute -top-1 -right-1 animate-pulse" />
+                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-romantic-500 via-crimson-500 to-ruby-600 rounded-2xl flex items-center justify-center shadow-lg shadow-romantic-500/30 group-hover:shadow-xl group-hover:shadow-romantic-500/40 transition-all duration-300 group-hover:scale-105">
+                  <Heart
+                    className="h-7 w-7 lg:h-8 lg:w-8 text-white drop-shadow-sm"
+                    fill="white"
+                  />
+                </div>
+                <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-md">
+                  <Sparkles className="h-3 w-3 text-white" />
+                </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 bg-clip-text text-transparent">
-                  NajdiLásku.cz
+                <span className="text-xl lg:text-2xl font-extrabold tracking-tight">
+                  <span className="bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-600 bg-clip-text text-transparent">Seznamky</span>
+                  <span className="text-gray-700">.info</span>
                 </span>
-                <span className="text-[10px] text-gray-500 -mt-0.5 hidden sm:block tracking-wide">
-                  Srovnání nejlepších seznamek
+                <span className="text-[10px] text-gray-500 -mt-0.5 hidden sm:block tracking-wider uppercase font-semibold">
+                  Najdi svou lásku online
                 </span>
               </div>
             </Link>
@@ -145,13 +148,17 @@ export default function Header() {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Eye-catching */}
             <Link
               href="/seznamky"
-              className="ml-4 bg-gradient-to-r from-romantic-600 via-romantic-500 to-crimson-500 hover:from-romantic-700 hover:via-romantic-600 hover:to-crimson-600 text-white font-bold py-2.5 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-romantic-500/25 hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2"
+              className="ml-4 relative group"
             >
-              <Heart className="w-4 h-4" fill="currentColor" />
-              Najít partnera
+              <div className="absolute inset-0 bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 rounded-xl blur-md opacity-75 group-hover:opacity-100 transition-opacity animate-pulse" />
+              <div className="relative bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 hover:from-romantic-700 hover:via-crimson-600 hover:to-ruby-600 text-white font-bold py-3 px-7 rounded-xl transition-all duration-300 shadow-xl shadow-romantic-500/40 hover:shadow-2xl hover:-translate-y-1 flex items-center gap-2.5 border border-white/20">
+                <Heart className="w-5 h-5 animate-pulse" fill="currentColor" />
+                <span className="text-base">Najít partnera</span>
+                <Sparkles className="w-4 h-4 text-amber-300" />
+              </div>
             </Link>
           </div>
 
@@ -229,17 +236,21 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Mobile CTA */}
+            {/* Mobile CTA - Eye-catching */}
             <div className="mt-4 px-4">
               <Link
                 href="/seznamky"
-                className="block w-full text-center bg-gradient-to-r from-romantic-600 to-romantic-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg"
+                className="relative block w-full group"
                 onClick={() => setIsOpen(false)}
               >
-                <span className="flex items-center justify-center gap-2">
-                  <Heart className="w-5 h-5" fill="currentColor" />
-                  Najít partnera
-                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 rounded-xl blur-md opacity-75" />
+                <div className="relative text-center bg-gradient-to-r from-romantic-600 via-crimson-500 to-ruby-500 text-white font-bold py-4 px-6 rounded-xl shadow-xl border border-white/20">
+                  <span className="flex items-center justify-center gap-2.5">
+                    <Heart className="w-5 h-5 animate-pulse" fill="currentColor" />
+                    <span className="text-lg">Najít partnera</span>
+                    <Sparkles className="w-4 h-4 text-amber-300" />
+                  </span>
+                </div>
               </Link>
             </div>
           </div>

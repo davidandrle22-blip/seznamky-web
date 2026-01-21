@@ -45,13 +45,18 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo a popis */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4 group">
+            <Link href="/" className="flex items-center space-x-3 mb-4 group">
               <div className="relative">
-                <Heart className="h-9 w-9 text-romantic-500 transition-transform group-hover:scale-110" fill="#e11d48" />
-                <Sparkles className="h-4 w-4 text-ruby-400 absolute -top-1 -right-1" />
+                <div className="w-11 h-11 bg-gradient-to-br from-romantic-500 via-crimson-500 to-ruby-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                  <Heart className="h-6 w-6 text-white" fill="white" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <Sparkles className="h-2.5 w-2.5 text-white" />
+                </div>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-romantic-400 to-ruby-400 bg-clip-text text-transparent">
-                NajdiLásku.cz
+              <span className="text-xl font-extrabold">
+                <span className="bg-gradient-to-r from-romantic-400 to-ruby-400 bg-clip-text text-transparent">Seznamky</span>
+                <span className="text-gray-300">.info</span>
               </span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">{settings.footerText}</p>
@@ -129,7 +134,7 @@ export default async function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} NajdiLásku.cz. Všechna práva vyhrazena.</p>
+            <p>&copy; {new Date().getFullYear()} Seznamky.info - Všechna práva vyhrazena.</p>
             <div className="flex gap-6">
               <Link href="/podminky" className="hover:text-romantic-400 transition-colors">Podmínky užití</Link>
               <Link href="/soukromi" className="hover:text-romantic-400 transition-colors">Ochrana soukromí</Link>
