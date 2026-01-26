@@ -31,36 +31,46 @@ export default async function SeznamkyPage({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen">
-      {/* Premium Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-romantic-950 via-crimson-900 to-romantic-950 text-white">
-        {/* Animated background */}
+      {/* Premium Hero Section - Same red as categories but premium effects */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-romantic-950 via-romantic-900 to-crimson-950 text-white">
+        {/* Premium animated background with extra effects */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-romantic-500/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-crimson-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-ruby-500/20 rounded-full blur-3xl" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEiLz48L2c+PC9zdmc+')] opacity-50" />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-romantic-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-crimson-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-ruby-500/10 rounded-full blur-3xl" />
+          {/* Extra premium sparkle layer */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIvPjwvZz48L3N2Zz4=')] opacity-60" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full mb-6 border border-white/20">
-              <Heart className="w-5 h-5 text-romantic-400 animate-pulse" fill="#fb7185" />
-              <span className="font-semibold text-romantic-200">Najděte svou lásku ještě dnes</span>
-              <Sparkles className="w-5 h-5 text-amber-400" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          {/* Premium Header */}
+          <div className="text-center mb-14">
+            {/* Premium badge with shimmer effect */}
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-white/10 via-white/20 to-white/10 backdrop-blur-xl px-6 py-3 rounded-full mb-8 border border-white/30 shadow-2xl shadow-black/20">
+              <div className="relative">
+                <Heart className="w-6 h-6 text-romantic-400" fill="#fb7185" />
+                <Heart className="w-6 h-6 text-romantic-400 absolute inset-0 animate-ping opacity-50" fill="#fb7185" />
+              </div>
+              <span className="font-bold text-white text-lg">Exkluzivní výběr 2026</span>
+              <div className="flex gap-1">
+                <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
+                <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" style={{ animationDelay: '0.5s' }} />
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-romantic-100 to-white bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
+              <span className="bg-gradient-to-r from-white via-romantic-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
                 Najít partnera
-              </span>
-              <span className="block mt-2 text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-amber-300 via-orange-300 to-amber-300 bg-clip-text text-transparent">
-                Top 3 doporučené seznamky
               </span>
             </h1>
 
-            <p className="text-xl text-romantic-100/90 max-w-2xl mx-auto mb-8">
-              Ověřené platformy s nejvyšší úspěšností párování. Začněte hledat ještě dnes!
+            <p className="text-2xl md:text-3xl font-bold text-romantic-200 mb-4">
+              ✨ Top 3 prémiové seznamky ✨
+            </p>
+
+            <p className="text-xl text-romantic-100/80 max-w-2xl mx-auto mb-10">
+              Ověřené platformy s nejvyšší úspěšností párování. Registrace zdarma!
             </p>
           </div>
 
