@@ -1,6 +1,6 @@
 import { getProdukty, getKategorie } from '@/lib/data'
 import { Metadata } from 'next'
-import { Star, Check, X, ExternalLink, ChevronRight, Award, Shield, Heart } from 'lucide-react'
+import { Star, Check, X, ExternalLink, ChevronRight, Award, Shield, Heart, Sparkles, ListChecks } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import AffiliateLink from '@/components/AffiliateLink'
@@ -50,17 +50,58 @@ export default async function SeznamkyPage({ searchParams }: Props) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-rose-50 via-white to-pink-50 border-b border-rose-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Srovnání online seznamek <span className="text-rose-600">2026</span>
+            {/* Trust badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
+              <Heart className="w-4 h-4 text-rose-300 animate-pulse" fill="#fda4af" />
+              <span className="text-sm font-medium text-rose-200">Nezávislé hodnocení 2026</span>
+              <Sparkles className="w-4 h-4 text-amber-400" />
+            </div>
+
+            {/* Icon */}
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-2xl mb-6 border border-white/20">
+              <ListChecks className="w-8 h-8 text-white" />
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-white via-rose-100 to-white bg-clip-text text-transparent">
+                Srovnání online seznamek 2026
+              </span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-rose-100/90 max-w-2xl mx-auto mb-8">
               Kompletní přehled {produkty.length} ověřených seznamek seřazených podle hodnocení.
               Najděte tu pravou pro vás!
             </p>
+
+            {/* Stats badges */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+                <Star className="w-5 h-5 text-amber-400" fill="#fbbf24" />
+                <span className="font-bold text-white text-lg">{produkty.length}</span>
+                <span className="text-rose-200">seznamek</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+                <Shield className="w-5 h-5 text-emerald-400" />
+                <span className="text-rose-200">Aktualizováno</span>
+                <span className="font-bold text-white">Leden 2026</span>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
+          </svg>
         </div>
       </section>
 

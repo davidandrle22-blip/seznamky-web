@@ -46,40 +46,70 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Romantic Red */}
-      <section className="bg-gradient-to-br from-rose-50 via-white to-pink-50 border-b border-rose-100 relative overflow-hidden">
-        {/* Decorative hearts */}
-        <div className="absolute top-10 left-10 text-rose-200 opacity-30 text-6xl">💕</div>
-        <div className="absolute bottom-10 right-10 text-rose-200 opacity-30 text-4xl">❤️</div>
-        <div className="absolute top-1/2 right-1/4 text-rose-200 opacity-20 text-3xl">💗</div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-3xl" />
+        </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <Sparkles className="w-4 h-4" />
-              Aktualizováno: Leden 2026
+            {/* Trust badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
+              <Heart className="w-4 h-4 text-rose-300 animate-pulse" fill="#fda4af" />
+              <span className="text-sm font-medium text-rose-200">Ověřené recenze 2026</span>
+              <Sparkles className="w-4 h-4 text-amber-400" />
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Najděte svou <span className="text-rose-600">lásku</span> online
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <span className="bg-gradient-to-r from-white via-rose-100 to-white bg-clip-text text-transparent">
+                Najděte svou lásku online
+              </span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+            <p className="text-lg md:text-xl text-rose-100/90 max-w-3xl mx-auto mb-8 leading-relaxed">
               Nezávislé srovnání a recenze {produkty.length}+ ověřených seznamek v ČR.
               Pomůžeme vám najít tu pravou pro vážný vztah, flirt nebo diskrétní seznámení.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-rose-500" />
-                <span>Nezávislé hodnocení</span>
+
+            {/* Stats badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+                <Shield className="w-5 h-5 text-emerald-400" />
+                <span className="text-rose-200">Nezávislé</span>
+                <span className="font-bold text-white">hodnocení</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-rose-500" />
-                <span>2M+ uživatelů</span>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+                <Users className="w-5 h-5 text-blue-400" />
+                <span className="font-bold text-white text-lg">2M+</span>
+                <span className="text-rose-200">uživatelů</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-rose-500" />
-                <span>Tisíce úspěšných párů</span>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
+                <Heart className="w-5 h-5 text-rose-400" fill="#fb7185" />
+                <span className="text-rose-200">Tisíce</span>
+                <span className="font-bold text-white">úspěšných párů</span>
               </div>
             </div>
+
+            {/* CTA Button */}
+            <Link
+              href="/api/affiliate/elite-date?source=homepage&placement=hero-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 border border-white/20"
+            >
+              <span className="text-lg">🏆 Vyzkoušet #1 ELITE Date zdarma</span>
+              <Sparkles className="w-5 h-5" />
+            </Link>
           </div>
+        </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
+          </svg>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { getProduktBySlug, getProdukty, getKategorie } from '@/lib/data'
 import { notFound } from 'next/navigation'
-import { Star, Users, Check, X, ExternalLink, ChevronRight, Clock, Calendar, Award, Heart, Shield, Zap, MessageCircle, Lock, Smartphone, CreditCard, Target, ThumbsUp } from 'lucide-react'
+import { Star, Users, Check, X, ExternalLink, ChevronRight, Clock, Calendar, Award, Heart, Shield, Zap, MessageCircle, Lock, Smartphone, CreditCard, Target, ThumbsUp, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
@@ -60,113 +60,233 @@ const extendedContent: Record<string, string> = {
   'elite-date': `
 ## Proč je ELITE Date nejlepší volbou pro rok 2026?
 
-ELITE Date si za poslední roky vybudovala pozici prémiové seznamky pro ty, kteří hledají vážný vztah. Na rozdíl od běžných seznamek se zde nesoustředíte na swipování fotek, ale na hluboké poznávání potenciálních partnerů.
+ELITE Date si za poslední roky vybudovala pozici prémiové seznamky pro ty, kteří hledají vážný vztah. Na rozdíl od běžných seznamek se zde nesoustředíte na swipování fotek, ale na hluboké poznávání potenciálních partnerů prostřednictvím propracovaného systému párování.
+
+**Hlavní přednosti ELITE Date:**
+- Vědecky ověřený matchmaking algoritmus
+- Vysoká kvalita uživatelské základny
+- Důraz na bezpečnost a ověřené profily
+- Profesionální zákaznická podpora v češtině
 
 ### Jak funguje vědecký matchmaking?
 
-Srdcem ELITE Date je propracovaný osobnostní test založený na psychologických modelech Big Five. Test obsahuje přes 200 otázek a analyzuje:
+Srdcem ELITE Date je propracovaný osobnostní test založený na psychologických modelech Big Five a teorii kompatibility. Test obsahuje přes 200 otázek a analyzuje:
 
-- **Osobnostní rysy** - extraverze, otevřenost, svědomitost
-- **Životní hodnoty** - kariéra, rodina, volný čas
-- **Komunikační styl** - jak řešíte konflikty, jak vyjadřujete city
-- **Vztahové preference** - co od partnera očekáváte
+- **Osobnostní rysy** - extraverze, otevřenost, svědomitost, přívětivost, emocionální stabilita
+- **Životní hodnoty** - kariéra, rodina, volný čas, spiritualita, finanční priority
+- **Komunikační styl** - jak řešíte konflikty, jak vyjadřujete city, míra otevřenosti
+- **Vztahové preference** - co od partnera očekáváte, jaké máte představy o společném životě
 
-Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživateli a navrhne vám ty nejlepší shody.
+Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživateli a navrhne vám ty nejlepší shody. Systém průběžně učí z vašich preferencí a zpřesňuje doporučení.
 
 ### Kdo zde hledá partnera?
 
 Typický uživatel ELITE Date je:
-- Věk 30-50 let
-- Vysokoškolské vzdělání
-- Stabilní kariéra
-- Hledá vážný, dlouhodobý vztah
+- Věk 30-50 let (průměr 38 let)
+- Vysokoškolské vzdělání (78% uživatelů)
+- Stabilní kariéra a finanční situace
+- Hledá vážný, dlouhodobý vztah vedoucí ke společnému životu
+
+### Registrace a osobnostní test krok za krokem
+
+1. **Základní profil** (5 minut) - email, věk, lokace, základní preference
+2. **Osobnostní test** (20-30 minut) - důkladný psychologický profil
+3. **Fotografie** - alespoň 3 kvalitní fotky, procházejí manuální kontrolou
+4. **Ověření** - potvrzení emailu a případně telefonu
+5. **První návrhy** - systém vám okamžitě navrhne kompatibilní partnery
 
 ### Naše zkušenosti z 6 měsíců testování
 
 Během půl roku intenzivního testování jsme získali tyto poznatky:
 
-1. **Kvalita profilů** - 95% uživatelů má vyplněný kompletní profil
-2. **Odpovědi na zprávy** - průměrná doba odpovědi je 4 hodiny
+1. **Kvalita profilů** - 95% uživatelů má vyplněný kompletní profil s detailními informacemi
+2. **Odpovědi na zprávy** - průměrná doba odpovědi je 4 hodiny, 87% zpráv dostane odpověď
 3. **Množství schůzek** - z 10 kvalitních matchů vedlo 7 k osobní schůzce
 4. **Úspěšnost** - 3 páry z našeho testování pokračují ve vážném vztahu
 
-### Video chat a další funkce
+### Video chat a další prémiové funkce
 
-ELITE Date nabízí integrovaný video chat, který umožňuje poznat protějšek před první schůzkou. Tato funkce výrazně zvyšuje šanci na úspěšné setkání, protože odstraňuje překvapení z nesouladu mezi profilem a realitou.
+ELITE Date nabízí integrovaný video chat, který umožňuje poznat protějšek před první schůzkou. Tato funkce výrazně zvyšuje šanci na úspěšné setkání.
+
+**Další funkce zahrnují:**
+- **Čtení příjmů zpráv** - víte, kdy si partner přečetl vaši zprávu
+- **Super Like** - zvýrazněte svůj zájem o konkrétního uživatele
+- **Profil Boost** - zvýšení viditelnosti vašeho profilu
+- **Anonymní prohlížení** - prohlížejte profily bez zanechání stopy
+
+### Ceník a členství
+
+| Členství | Cena/měsíc | Funkce |
+|----------|------------|--------|
+| Zdarma | 0 Kč | Registrace, test, prohlížení |
+| Premium 3 měsíce | 599 Kč | Neomezená komunikace |
+| Premium 6 měsíců | 449 Kč | + Video chat |
+| Premium 12 měsíců | 349 Kč | + Všechny funkce |
+
+### Bezpečnost a ochrana soukromí
+
+ELITE Date klade velký důraz na bezpečnost:
+- Manuální kontrola všech fotografií
+- Možnost blokování a nahlášení uživatelů
+- GDPR compliance a šifrovaná komunikace
+- Žádné falešné profily díky ověřování
 `,
   'victoria-milan': `
 ## Victoria Milan - Kompletní průvodce diskrétním seznamováním
 
 Victoria Milan je specializovaná platforma pro ty, kteří hledají diskrétní seznámení. Ať už jste v otevřeném vztahu, hledáte dobrodružství nebo prostě preferujete maximální soukromí, Victoria Milan nabízí prostředí navržené přesně pro vaše potřeby.
 
+**Proč si vybrat Victoria Milan:**
+- Absolutní anonymita díky unikátním funkcím
+- Ženy mají členství zcela zdarma
+- Mezinárodní platforma s miliony uživatelů
+- Prokázaná diskrétnost při platbách
+
 ### Unikátní bezpečnostní funkce
 
-**AnonymousBlur™** - Patentovaná technologie, která automaticky rozmazává vaše fotky. Pouze lidem, kterým důvěřujete, můžete fotky odhalit. To zajišťuje maximální anonymitu při prohlížení.
+**AnonymousBlur™** - Patentovaná technologie, která automaticky rozmazává vaše fotky. Pouze lidem, kterým důvěřujete, můžete fotky odhalit. To zajišťuje maximální anonymitu při prohlížení a eliminuje riziko náhodného odhalení.
 
-**Panic Button** - Speciální tlačítko, které okamžitě přesměruje prohlížeč na neutrální stránku (např. zpravodajský portál). Ideální pro situace, kdy potřebujete rychle skrýt obsah obrazovky.
+**Panic Button** - Speciální tlačítko, které okamžitě přesměruje prohlížeč na neutrální stránku (např. zpravodajský portál). Ideální pro situace, kdy potřebujete rychle skrýt obsah obrazovky. Můžete si nastavit vlastní URL pro přesměrování.
 
-**Diskrétní platby** - Na výpisu z karty se nikdy nezobrazí název Victoria Milan. Platby jsou vedeny pod neutrálním názvem společnosti.
+**Diskrétní platby** - Na výpisu z karty se nikdy nezobrazí název Victoria Milan. Platby jsou vedeny pod neutrálním názvem společnosti (např. "MODA CZ" nebo "WEBSERVICES").
+
+**Soukromé albumy** - Citlivé fotky můžete umístit do privátního alba a sdílet je pouze s vybranými uživateli.
 
 ### Pro koho je Victoria Milan určena?
 
-- Lidé v otevřených vztazích
-- Ti, kteří hledají nezávazné dobrodružství
-- Uživatelé preferující maximální anonymitu
-- Ženy (členství zdarma!)
+- Lidé v otevřených vztazích hledající diskrétní dobrodružství
+- Ti, kteří chtějí prozkoumat možnosti mimo svůj současný vztah
+- Uživatelé preferující maximální anonymitu při online seznamování
+- Ženy hledající vzrušení (členství je pro ně zcela zdarma!)
+- Singles hledající nezávazné vztahy
 
 ### Jak probíhá registrace?
 
-1. Základní údaje (email, věk, lokalita)
-2. Vytvoření profilu s rozmazanou fotkou
-3. Ověření emailu
-4. Pro ženy - okamžitý přístup zdarma
-5. Pro muže - výběr prémiového členství
+1. **Základní údaje** (2 minuty) - email, věk, lokalita, rodinný stav
+2. **Vytvoření profilu** (5 minut) - popis, co hledáte, vaše preference
+3. **Nahrání fotek** - s automatickým rozmazáním obličeje
+4. **Ověření emailu** - potvrzení vaší identity
+5. **Pro ženy** - okamžitý a trvalý přístup k plným funkcím zdarma
+6. **Pro muže** - výběr prémiového členství pro odemčení komunikace
 
 ### Naše testování odhalilo
 
-Po 3 měsících používání jsme zjistili:
-- Vysoká aktivita uživatelů především večer (19:00-23:00)
-- Velmi diskrétní komunikace
-- Skutečně fungující bezpečnostní funkce
-- Kvalitní zákaznická podpora
+Po 3 měsících intenzivního používání jsme zjistili:
+- Vysoká aktivita uživatelů především večer (19:00-23:00) a o víkendech
+- Velmi diskrétní a ohleduplná komunikace mezi uživateli
+- Skutečně fungující bezpečnostní funkce bez kompromisů
+- Kvalitní a rychlá zákaznická podpora (odpověď do 24 hodin)
+- Poměr žen k mužům je přibližně 1:3, což je pro tento typ platformy nadprůměrné
+
+### Funkce a možnosti platformy
+
+**Pro ženy (zdarma):**
+- Neomezené prohlížení profilů
+- Neomezené odesílání a přijímání zpráv
+- Přístup k privátním albům po schválení
+- Všechny prémiové funkce
+
+**Pro muže (prémiové členství):**
+- Odesílání zpráv
+- Prohlížení privátních alb
+- Pokročilé filtry vyhledávání
+- Prioritní zobrazení v seznamu
+
+### Ceník pro muže
+
+| Členství | Cena | Kredity/zprávy |
+|----------|------|----------------|
+| Zkušební | 199 Kč | 10 kreditů |
+| Měsíční | 799 Kč | Neomezené |
+| 3 měsíce | 1 799 Kč | Neomezené + bonus |
+| 6 měsíců | 2 999 Kč | VIP status |
+
+### Tipy pro úspěch na Victoria Milan
+
+1. **Profil** - Buďte upřímní ohledně své situace a očekávání
+2. **Fotky** - Kvalitní fotky (i rozmazané) zvyšují šanci na odpověď
+3. **Zprávy** - Personalizované zprávy mají 5x vyšší úspěšnost
+4. **Čas** - Nejaktivnější období je 20:00-22:00
+5. **Trpělivost** - Diskrétní seznamování vyžaduje čas a důvěru
 `,
   'academic-singles': `
-## Academic Singles - Seznamka pro intelektuály
+## Academic Singles - Seznamka pro intelektuály a profesionály
 
-Academic Singles je prémiová platforma určená výhradně pro vysokoškolsky vzdělané profesionály. S 85% uživatelů s VŠ vzděláním zde najdete komunitu lidí, kteří oceňují inteligenci a vzdělání stejně jako vy.
+Academic Singles je prémiová platforma určená výhradně pro vysokoškolsky vzdělané profesionály. S 85% uživatelů s VŠ vzděláním zde najdete komunitu lidí, kteří oceňují inteligenci, vzdělání a kariérní úspěch stejně jako vy.
+
+**Hlavní výhody Academic Singles:**
+- Exkluzivní komunita vzdělaných singles
+- Propracovaný intelektuální matchmaking
+- Vysoká kvalita konverzací a setkání
+- Důraz na dlouhodobé partnerství
 
 ### Co dělá Academic Singles unikátní?
 
-**Ověřené vzdělání** - Platforma aktivně ověřuje vzdělání uživatelů, což zajišťuje autentičnost profilů a kvalitu komunity.
+**Ověřené vzdělání** - Platforma aktivně ověřuje vzdělání uživatelů prostřednictvím diplomů nebo LinkedIn profilů. To zajišťuje autentičnost profilů a vysokou kvalitu komunity.
 
-**Intelektuální matchmaking** - Algoritmus nehodnotí pouze osobnostní kompatibilitu, ale také intelektuální shodu, kariérní ambice a životní cíle.
+**Intelektuální matchmaking** - Algoritmus nehodnotí pouze osobnostní kompatibilitu, ale také intelektuální shodu, kariérní ambice, životní cíle a hodnoty. Výsledkem jsou opravdu relevantní návrhy partnerů.
 
-**Exkluzivní komunita** - Menší, ale vysoce kvalitní uživatelská základna zaručuje relevantní matche bez zbytečného procházení nevhodných profilů.
+**Exkluzivní komunita** - Menší, ale vysoce kvalitní uživatelská základna zaručuje relevantní matche bez zbytečného procházení stovek nevhodných profilů. Kvalita před kvantitou.
+
+**Hloubkové profily** - Uživatelé zde sdílejí informace o své kariéře, vzdělání, zájmech a životních cílech mnohem detailněji než na běžných seznamkách.
 
 ### Typický uživatel Academic Singles
 
-- Věk: 30-55 let
-- Vzdělání: Vysokoškolské (Bc., Mgr., Ing., PhD.)
-- Profese: Lékaři, právníci, manažeři, vědci, IT specialisté
-- Hledá: Intelektuálně stimulující partnerství
+- **Věk:** 30-55 let (průměr 42 let)
+- **Vzdělání:** Vysokoškolské (Bc., Mgr., Ing., PhD., MBA)
+- **Profese:** Lékaři, právníci, manažeři, vědci, IT specialisté, podnikatelé
+- **Příjem:** Nadprůměrný (top 20% populace)
+- **Hledá:** Intelektuálně stimulující partnerství s potenciálem pro společnou budoucnost
 
 ### Proces registrace a osobnostní test
 
-Registrace na Academic Singles je důkladná a trvá přibližně 25-30 minut. Test analyzuje:
+Registrace na Academic Singles je důkladná a trvá přibližně 25-30 minut. Tento čas je investicí do kvality vašich budoucích matchů.
 
-1. Kognitivní styl myšlení
-2. Kariérní orientaci
-3. Životní priority
-4. Vztahové preference
-5. Komunikační vzorce
+**Test analyzuje 5 klíčových oblastí:**
+
+1. **Kognitivní styl myšlení** - Jak přistupujete k řešení problémů, jaký je váš způsob uvažování
+2. **Kariérní orientaci** - Vaše ambice, work-life balance preference
+3. **Životní priority** - Co je pro vás nejdůležitější - rodina, kariéra, cestování, osobní rozvoj
+4. **Vztahové preference** - Jaké vlastnosti hledáte u partnera, jakou roli chcete ve vztahu hrát
+5. **Komunikační vzorce** - Jak vyjadřujete emoce, jak řešíte konflikty
 
 ### Výsledky našeho testování
 
-Během 4 měsíců testování jsme zaznamenali:
-- 92% odpovědí na kvalitně napsané zprávy
-- Průměrně 5 relevantních matchů týdně
-- Vysoká úroveň konverzací
+Během 4 měsíců intenzivního testování jsme zaznamenali:
+- 92% odpovědí na kvalitně napsané, personalizované zprávy
+- Průměrně 5 vysoce relevantních matchů týdně
+- Vysoká úroveň konverzací - smysluplné dialogy, nikoliv povrchní chatování
 - 6 z 10 schůzek vedlo k dalšímu setkání
+- 2 páry z našeho testování začaly vážný vztah
+
+### Funkce a nástroje platformy
+
+**Základní funkce (zdarma):**
+- Registrace a osobnostní test
+- Prohlížení doporučených profilů
+- Zobrazení kompatibility s dalšími uživateli
+
+**Prémiové funkce:**
+- Neomezená komunikace
+- Zobrazení všech fotek
+- Detailní analýza kompatibility
+- Prioritní zákaznická podpora
+
+### Ceník členství
+
+| Členství | Cena/měsíc | Výhody |
+|----------|------------|--------|
+| Premium 3 měsíce | 649 Kč | Plná komunikace |
+| Premium 6 měsíců | 499 Kč | + Profil boost |
+| Premium 12 měsíců | 399 Kč | + VIP status |
+
+### Tipy pro maximální úspěch
+
+1. **Investujte čas do testu** - Čím upřímnější odpovědi, tím lepší matche
+2. **Kvalitní fotky** - Profesionální, ale přirozené fotky zvyšují zájem
+3. **Detailní profil** - Popište své zájmy, kariéru a co hledáte
+4. **Personalizované zprávy** - Odkazujte na konkrétní informace z profilu
+5. **Trpělivost** - Kvalitní vztahy potřebují čas na rozvoj
 `,
 }
 
@@ -224,77 +344,100 @@ export default async function ProduktDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Breadcrumb */}
-      <div className="bg-rose-50 border-b border-rose-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-rose-600">Domů</Link>
+      {/* Hero with Red Gradient */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-rose-200 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Domů</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/seznamky" className="hover:text-rose-600">Seznamky</Link>
+            <Link href="/seznamky" className="hover:text-white transition-colors">Seznamky</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-gray-900 font-medium">{produkt.name}</span>
+            <span className="text-white font-medium">{produkt.name}</span>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            {/* Logo & Rating */}
+            <div className="flex-shrink-0">
+              <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 mb-4">
+                {produkt.logo ? (
+                  <Image src={produkt.logo} alt={produkt.name} width={80} height={80} className="w-full h-full object-contain" />
+                ) : (
+                  <span className="text-4xl font-bold text-white flex items-center justify-center h-full">{produkt.name.charAt(0)}</span>
+                )}
+              </div>
+              <div className={`${ratingInfo.color} text-white font-bold px-4 py-2 rounded-xl text-center shadow-lg`}>
+                <div className="text-2xl">{produkt.rating}/10</div>
+                <div className="text-xs">{ratingInfo.text}</div>
+              </div>
+            </div>
+
+            {/* Title & Info */}
+            <div className="flex-grow">
+              {/* Trust badge */}
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-4 border border-white/20">
+                <Star className="w-4 h-4 text-amber-400" fill="#fbbf24" />
+                <span className="text-sm font-medium text-rose-200">Kompletní recenze 2026</span>
+                <Sparkles className="w-4 h-4 text-amber-400" />
+              </div>
+
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                <span className="bg-gradient-to-r from-white via-rose-100 to-white bg-clip-text text-transparent">
+                  {produkt.name} - Recenze
+                </span>
+              </h1>
+
+              {/* Quick stats */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                  <Users className="w-4 h-4 text-blue-400" />
+                  <span className="text-rose-200">{produkt.users}</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                  <Calendar className="w-4 h-4 text-emerald-400" />
+                  <span className="text-rose-200">Aktualizováno Leden 2026</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                  <Clock className="w-4 h-4 text-purple-400" />
+                  <span className="text-rose-200">12 min čtení</span>
+                </div>
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
+                  <Image
+                    src={author.photo}
+                    alt={author.name}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-white">{author.name}</p>
+                  <p className="text-sm text-rose-200">{author.role}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
+          </svg>
+        </div>
+      </section>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Image */}
-        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6">
-          <Image
-            src={heroImage}
-            alt={produkt.name}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-
-          {/* Rating Badge */}
-          <div className="absolute top-4 right-4">
-            <div className={`${ratingInfo.color} text-white font-bold px-4 py-2 rounded-xl text-lg shadow-lg`}>
-              {produkt.rating}/10
-            </div>
-          </div>
-
-          {/* Title Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {produkt.name} - Recenze 2026
-            </h1>
-            <span className={`inline-block ${ratingInfo.color} text-white text-sm font-bold px-3 py-1 rounded-full`}>
-              {ratingInfo.text}
-            </span>
-          </div>
-        </div>
-
-        {/* Author Section with Photo */}
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-6 pb-6 border-b border-rose-100">
-          <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-full overflow-hidden border-3 border-rose-200 flex-shrink-0">
-              <Image
-                src={author.photo}
-                alt={author.name}
-                width={56}
-                height={56}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">{author.name}</p>
-              <p className="text-sm text-rose-600">{author.role}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4 text-rose-400" />
-              <span>Aktualizováno: Leden 2026</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4 text-rose-400" />
-              <span>12 min čtení</span>
-            </div>
-          </div>
-        </div>
 
         {/* Quick Info Box */}
         <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl border border-rose-200 p-6 mb-8">

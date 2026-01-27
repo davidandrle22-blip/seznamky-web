@@ -126,8 +126,9 @@ export default function Header() {
             {/* CTA Button */}
             <Link
               href="/seznamky"
-              className="ml-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic"
+              className="ml-4 inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic hover:scale-105"
             >
+              <Heart className="w-4 h-4" fill="currentColor" />
               Najít lásku
             </Link>
           </div>
@@ -184,9 +185,10 @@ export default function Header() {
             <div className="mt-4 px-3">
               <Link
                 href="/seznamky"
-                className="block w-full text-center bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
                 onClick={() => setIsOpen(false)}
               >
+                <Heart className="w-5 h-5" fill="currentColor" />
                 Najít lásku
               </Link>
             </div>

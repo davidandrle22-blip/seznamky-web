@@ -1,6 +1,6 @@
 import { getClanekBySlug, getClanky, getProdukty } from '@/lib/data'
 import { notFound } from 'next/navigation'
-import { Calendar, Clock, ChevronRight, ExternalLink, Heart } from 'lucide-react'
+import { Calendar, Clock, ChevronRight, ExternalLink, Heart, Sparkles, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
@@ -97,23 +97,79 @@ export default async function ClanekDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Breadcrumb */}
-      <div className="bg-rose-50 border-b border-rose-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-rose-600">Domů</Link>
+      {/* Hero with Red Gradient */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-rose-200 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Domů</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/clanky" className="hover:text-rose-600">Blog</Link>
+            <Link href="/clanky" className="hover:text-white transition-colors">Blog</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-gray-900 font-medium truncate">{clanek.title}</span>
+            <span className="text-white font-medium truncate">{clanek.title}</span>
+          </div>
+
+          {/* Category badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-4 border border-white/20">
+            <BookOpen className="w-4 h-4 text-rose-300" />
+            <span className="text-sm font-medium text-rose-200 capitalize">{clanek.category}</span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-white via-rose-100 to-white bg-clip-text text-transparent">
+              {clanek.title}
+            </span>
+          </h1>
+
+          {/* Author & Meta */}
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
+                <Image
+                  src={authorPhoto}
+                  alt={clanek.author}
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-semibold text-white">{clanek.author}</p>
+                <p className="text-sm text-rose-200">Autor článku</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 text-sm text-rose-200">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                <span>{formattedDate}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>{clanek.readTime || 5} min čtení</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
+          </svg>
+        </div>
+      </section>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Image */}
-        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6">
-          {hasImage ? (
+        {/* Featured Image */}
+        {hasImage && (
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-8 -mt-8 shadow-xl">
             <Image
               src={clanek.image}
               alt={clanek.title}
@@ -121,59 +177,8 @@ export default async function ClanekDetailPage({ params }: Props) {
               className="object-cover"
               priority
             />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center">
-              <span className="text-8xl">
-                {clanek.category === 'tipy' && '💡'}
-                {clanek.category === 'bezpecnost' && '🔒'}
-                {clanek.category === 'vztahy' && '❤️'}
-                {clanek.category === 'recenze' && '⭐'}
-                {clanek.category === 'psychologie' && '🧠'}
-                {!['tipy', 'bezpecnost', 'vztahy', 'recenze', 'psychologie'].includes(clanek.category) && '📝'}
-              </span>
-            </div>
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-
-          {/* Title Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <span className="inline-block bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full mb-3 capitalize">
-              {clanek.category}
-            </span>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-              {clanek.title}
-            </h1>
           </div>
-        </div>
-
-        {/* Author & Meta with Photo */}
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-6 pb-6 border-b border-rose-100">
-          <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-full overflow-hidden border-3 border-rose-200 flex-shrink-0">
-              <Image
-                src={authorPhoto}
-                alt={clanek.author}
-                width={56}
-                height={56}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">{clanek.author}</p>
-              <p className="text-sm text-rose-600">Autor článku</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4 text-rose-400" />
-              <span>{formattedDate}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4 text-rose-400" />
-              <span>{clanek.readTime || 5} min čtení</span>
-            </div>
-          </div>
-        </div>
+        )}
 
         {/* Excerpt */}
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
