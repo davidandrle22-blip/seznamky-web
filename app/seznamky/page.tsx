@@ -1,5 +1,6 @@
 import { getProdukty, getKategorie } from '@/lib/data'
-import { Star, Check, X, ExternalLink, ChevronRight, Award, Shield } from 'lucide-react'
+import { Metadata } from 'next'
+import { Star, Check, X, ExternalLink, ChevronRight, Award, Shield, Heart } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import AffiliateLink from '@/components/AffiliateLink'
@@ -8,9 +9,16 @@ interface Props {
   searchParams: { kategorie?: string }
 }
 
-export const metadata = {
-  title: 'Srovnání seznamek 2026 | Kompletní přehled | Seznamky.info',
-  description: 'Kompletní srovnání 24+ online seznamek. Nezávislé recenze, hodnocení a zkušenosti uživatelů. ELITE Date, Victoria Milan, Academic Singles.',
+export const metadata: Metadata = {
+  title: 'Srovnání seznamek 2026 | Kompletní přehled 24+ seznamek | Seznamky.info',
+  description: 'Kompletní srovnání 24+ online seznamek v České republice. Nezávislé recenze, hodnocení a zkušenosti uživatelů. ELITE Date, Victoria Milan, Academic Singles a další.',
+  keywords: 'srovnání seznamek, online seznamky 2026, ELITE Date, Victoria Milan, Academic Singles, nejlepší seznamky, recenze seznamek',
+  openGraph: {
+    title: 'Srovnání seznamek 2026 | Kompletní přehled | Seznamky.info',
+    description: 'Kompletní srovnání 24+ online seznamek. Nezávislé recenze a hodnocení.',
+    type: 'website',
+    locale: 'cs_CZ',
+  },
 }
 
 export default async function SeznamkyPage({ searchParams }: Props) {
@@ -42,27 +50,30 @@ export default async function SeznamkyPage({ searchParams }: Props) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
+      <section className="bg-gradient-to-br from-rose-50 via-white to-pink-50 border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            Srovnání online seznamek 2026
-          </h1>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto">
-            Kompletní přehled {produkty.length} ověřených seznamek seřazených podle hodnocení
-          </p>
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Srovnání online seznamek <span className="text-rose-600">2026</span>
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Kompletní přehled {produkty.length} ověřených seznamek seřazených podle hodnocení.
+              Najděte tu pravou pro vás!
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="py-6 border-b border-gray-100">
+      <section className="py-6 border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2">
             <Link
               href="/seznamky"
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 !selectedKategorie
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white'
+                  : 'bg-rose-50 text-gray-700 hover:bg-rose-100'
               }`}
             >
               Všechny ({produkty.length})
@@ -73,10 +84,10 @@ export default async function SeznamkyPage({ searchParams }: Props) {
                 <Link
                   key={kat.id}
                   href={`/seznamky?kategorie=${kat.slug}`}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     selectedKategorie === kat.slug
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white'
+                      : 'bg-rose-50 text-gray-700 hover:bg-rose-100'
                   }`}
                 >
                   {kat.name} ({count})
@@ -100,25 +111,25 @@ export default async function SeznamkyPage({ searchParams }: Props) {
               return (
                 <div
                   key={produkt.id}
-                  className={`bg-white rounded-lg border-2 transition-shadow hover:shadow-md ${
-                    isWinner ? 'border-green-500' :
-                    isTop3 ? 'border-blue-300' : 'border-gray-200'
+                  className={`bg-white rounded-xl border-2 transition-all hover:shadow-lg ${
+                    isWinner ? 'border-rose-500 shadow-md shadow-rose-100' :
+                    isTop3 ? 'border-rose-300' : 'border-gray-200'
                   }`}
                 >
                   {/* Badge */}
                   {isWinner && (
-                    <div className="bg-green-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm flex items-center justify-center gap-2">
+                    <div className="bg-gradient-to-r from-rose-500 to-rose-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm flex items-center justify-center gap-2">
                       <Award className="w-4 h-4" />
                       VÍTĚZ SROVNÁNÍ 2026
                     </div>
                   )}
                   {index === 1 && !selectedKategorie && (
-                    <div className="bg-blue-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
                       NEJLEPŠÍ PRO DISKRÉTNÍ SEZNÁMENÍ
                     </div>
                   )}
                   {index === 2 && !selectedKategorie && (
-                    <div className="bg-purple-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
                       NEJLEPŠÍ PRO VZDĚLANÉ SINGLES
                     </div>
                   )}
@@ -128,15 +139,15 @@ export default async function SeznamkyPage({ searchParams }: Props) {
                       {/* Rank + Logo + Info */}
                       <div className="flex items-start gap-4 lg:w-64 flex-shrink-0">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 ${
-                          isWinner ? 'bg-green-500 text-white' :
-                          index === 1 && !selectedKategorie ? 'bg-blue-500 text-white' :
-                          index === 2 && !selectedKategorie ? 'bg-purple-500 text-white' :
+                          isWinner ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white' :
+                          index === 1 && !selectedKategorie ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white' :
+                          index === 2 && !selectedKategorie ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white' :
                           'bg-gray-200 text-gray-700'
                         }`}>
                           {index + 1}
                         </div>
 
-                        <div className="w-16 h-16 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <div className="w-16 h-16 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
                           {produkt.logo ? (
                             <Image src={produkt.logo} alt={produkt.name} width={56} height={56} className="object-contain" />
                           ) : (
@@ -201,11 +212,11 @@ export default async function SeznamkyPage({ searchParams }: Props) {
                           produkt={produkt}
                           source="seznamky"
                           placement="list"
-                          className={`w-full text-center font-semibold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-1.5 text-sm ${
+                          className={`w-full text-center font-semibold py-2.5 px-4 rounded-lg transition-all flex items-center justify-center gap-1.5 text-sm ${
                             isWinner
-                              ? 'bg-green-500 hover:bg-green-600 text-white'
+                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white'
                               : isTop3
-                              ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white'
                               : 'bg-gray-800 hover:bg-gray-900 text-white'
                           }`}
                         >
@@ -215,7 +226,7 @@ export default async function SeznamkyPage({ searchParams }: Props) {
 
                         <Link
                           href={`/seznamky/${produkt.slug}`}
-                          className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center gap-1"
+                          className="text-rose-600 hover:text-rose-700 text-sm font-medium flex items-center gap-1"
                         >
                           Recenze <ChevronRight className="w-3.5 h-3.5" />
                         </Link>
@@ -230,7 +241,7 @@ export default async function SeznamkyPage({ searchParams }: Props) {
           {filteredProdukty.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500">V této kategorii nejsou žádné seznamky.</p>
-              <Link href="/seznamky" className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
+              <Link href="/seznamky" className="text-rose-600 hover:text-rose-700 mt-2 inline-block">
                 Zobrazit všechny
               </Link>
             </div>
@@ -239,13 +250,13 @@ export default async function SeznamkyPage({ searchParams }: Props) {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-12 bg-blue-600">
+      <section className="py-12 bg-gradient-to-r from-rose-500 to-rose-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Shield className="w-10 h-10 text-blue-200 mx-auto mb-4" />
+          <Heart className="w-10 h-10 text-rose-200 mx-auto mb-4" fill="currentColor" />
           <h2 className="text-2xl font-bold text-white mb-3">
             Nejste si jistí, kterou vybrat?
           </h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-rose-100 mb-6">
             Doporučujeme začít s ELITE Date - má nejvyšší úspěšnost párování a registrace je zdarma.
           </p>
           {eliteDate && (
@@ -253,7 +264,7 @@ export default async function SeznamkyPage({ searchParams }: Props) {
               produkt={eliteDate}
               source="seznamky"
               placement="bottom-cta"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-rose-600 hover:bg-rose-50 font-bold py-3 px-8 rounded-lg transition-colors"
             >
               Vyzkoušet ELITE Date zdarma
               <ChevronRight className="w-5 h-5" />

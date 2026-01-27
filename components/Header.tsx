@@ -43,22 +43,22 @@ export default function Header() {
     <header className={`
       sticky top-0 z-50 transition-all duration-300 bg-white
       ${isScrolled ? 'shadow-md' : 'shadow-sm'}
-      border-b border-gray-200
+      border-b border-rose-100
     `}>
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+              <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-rose-600 rounded-lg flex items-center justify-center group-hover:from-rose-600 group-hover:to-rose-700 transition-all shadow-romantic">
                 <Heart className="h-6 w-6 text-white" fill="white" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900">
-                  Seznamky<span className="text-blue-600">.info</span>
+                  Seznamky<span className="text-rose-600">.info</span>
                 </span>
                 <span className="text-[10px] text-gray-500 hidden sm:block">
-                  Nezávislé srovnání seznamek
+                  Najděte svou lásku
                 </span>
               </div>
             </Link>
@@ -75,7 +75,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 transition-colors"
                 >
                   {item.name}
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
@@ -83,12 +83,12 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-rose-100 py-2">
                     {item.dropdown.map((dropItem) => (
                       <Link
                         key={dropItem.name}
                         href={dropItem.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                        className="block px-4 py-2 text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-colors"
                       >
                         {dropItem.name}
                       </Link>
@@ -101,9 +101,9 @@ export default function Header() {
             {/* CTA Button */}
             <Link
               href="/seznamky"
-              className="ml-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition-colors"
+              className="ml-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic"
             >
-              Najít seznamku
+              Najít lásku
             </Link>
           </div>
 
@@ -111,13 +111,13 @@ export default function Header() {
           <div className="lg:hidden flex items-center gap-3">
             <Link
               href="/seznamky"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors"
+              className="bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition-all"
             >
               Srovnat
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-50 transition-colors"
+              className="text-gray-700 hover:text-rose-600 p-2 rounded-lg hover:bg-rose-50 transition-colors"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -126,13 +126,13 @@ export default function Header() {
 
         {/* Mobile navigation */}
         {isOpen && (
-          <div className="lg:hidden pb-4 pt-2 border-t border-gray-100 mt-2">
+          <div className="lg:hidden pb-4 pt-2 border-t border-rose-100 mt-2">
             <div className="space-y-1">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-2 px-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded-lg transition-colors"
+                    className="block py-2 px-3 text-gray-700 hover:text-rose-600 hover:bg-rose-50 font-medium rounded-lg transition-colors"
                     onClick={() => !item.dropdown && setIsOpen(false)}
                   >
                     {item.name}
@@ -143,7 +143,7 @@ export default function Header() {
                         <Link
                           key={dropItem.name}
                           href={dropItem.href}
-                          className="block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors"
+                          className="block py-2 px-3 text-sm text-gray-600 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           {dropItem.name}
@@ -159,10 +159,10 @@ export default function Header() {
             <div className="mt-4 px-3">
               <Link
                 href="/seznamky"
-                className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="block w-full text-center bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
                 onClick={() => setIsOpen(false)}
               >
-                Najít seznamku
+                Najít lásku
               </Link>
             </div>
           </div>

@@ -2,14 +2,20 @@ import { Metadata } from 'next'
 import { getProdukty, getClanky, getKategorie } from '@/lib/data'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Star, Check, X, ExternalLink, ChevronRight, Shield, Users, Award, TrendingUp, Heart } from 'lucide-react'
+import { Star, Check, X, ExternalLink, ChevronRight, Shield, Users, Award, TrendingUp, Heart, Sparkles } from 'lucide-react'
 import AffiliateLink from '@/components/AffiliateLink'
 import ArticleCard from '@/components/ArticleCard'
 
 export const metadata: Metadata = {
   title: 'Nejlepší seznamky 2026 | Srovnání a recenze | Seznamky.info',
-  description: 'Nezávislé srovnání 24+ online seznamek. ELITE Date, Academic Singles, Victoria Milan a další. Kompletní recenze, hodnocení a zkušenosti uživatelů.',
-  keywords: 'nejlepší seznamky 2026, srovnání seznamek, online seznamky, ELITE Date, Victoria Milan, Academic Singles',
+  description: 'Nezávislé srovnání 24+ online seznamek v České republice. ELITE Date, Academic Singles, Victoria Milan a další. Kompletní recenze, hodnocení a zkušenosti uživatelů. Najděte svou lásku ještě dnes!',
+  keywords: 'nejlepší seznamky 2026, srovnání seznamek, online seznamky, ELITE Date, Victoria Milan, Academic Singles, online dating, najít partnera, seznamka pro vážný vztah',
+  openGraph: {
+    title: 'Nejlepší seznamky 2026 | Srovnání a recenze | Seznamky.info',
+    description: 'Nezávislé srovnání 24+ online seznamek. Najděte svou lásku ještě dnes!',
+    type: 'website',
+    locale: 'cs_CZ',
+  },
 }
 
 export default async function Home() {
@@ -39,29 +45,38 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Clean & Professional */}
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      {/* Hero Section - Romantic Red */}
+      <section className="bg-gradient-to-br from-rose-50 via-white to-pink-50 border-b border-rose-100 relative overflow-hidden">
+        {/* Decorative hearts */}
+        <div className="absolute top-10 left-10 text-rose-200 opacity-30 text-6xl">💕</div>
+        <div className="absolute bottom-10 right-10 text-rose-200 opacity-30 text-4xl">❤️</div>
+        <div className="absolute top-1/2 right-1/4 text-rose-200 opacity-20 text-3xl">💗</div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
           <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Sparkles className="w-4 h-4" />
+              Aktualizováno: Leden 2026
+            </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Nejlepší online seznamky 2026
+              Najděte svou <span className="text-rose-600">lásku</span> online
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-              Nezávislé srovnání a recenze {produkty.length}+ ověřených seznamek.
-              Najděte tu pravou pro vážný vztah, flirt nebo diskrétní seznámení.
+              Nezávislé srovnání a recenze {produkty.length}+ ověřených seznamek v ČR.
+              Pomůžeme vám najít tu pravou pro vážný vztah, flirt nebo diskrétní seznámení.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-blue-600" />
+                <Shield className="w-4 h-4 text-rose-500" />
                 <span>Nezávislé hodnocení</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-blue-600" />
+                <Users className="w-4 h-4 text-rose-500" />
                 <span>2M+ uživatelů</span>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-blue-600" />
-                <span>Aktualizováno: Leden 2026</span>
+                <Heart className="w-4 h-4 text-rose-500" />
+                <span>Tisíce úspěšných párů</span>
               </div>
             </div>
           </div>
@@ -71,9 +86,10 @@ export default async function Home() {
       {/* Main Comparison Section */}
       <section className="py-10 lg:py-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">
             Top 10 seznamek v České republice
           </h2>
+          <p className="text-gray-600 mb-8">Vybráno a testováno naší redakcí</p>
 
           {/* Product Cards */}
           <div className="space-y-6">
@@ -86,25 +102,25 @@ export default async function Home() {
               return (
                 <div
                   key={produkt.id}
-                  className={`bg-white rounded-lg border-2 transition-shadow hover:shadow-lg ${
-                    isWinner ? 'border-green-500 shadow-md' :
-                    isTop3 ? 'border-blue-400' : 'border-gray-200'
+                  className={`bg-white rounded-xl border-2 transition-all hover:shadow-lg ${
+                    isWinner ? 'border-rose-500 shadow-md shadow-rose-100' :
+                    isTop3 ? 'border-rose-300' : 'border-gray-200'
                   }`}
                 >
                   {/* Winner Badge */}
                   {isWinner && (
-                    <div className="bg-green-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm flex items-center justify-center gap-2">
+                    <div className="bg-gradient-to-r from-rose-500 to-rose-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm flex items-center justify-center gap-2">
                       <Award className="w-4 h-4" />
-                      VÍTĚZ SROVNÁNÍ 2026
+                      VÍTĚZ SROVNÁNÍ 2026 - NEJLEPŠÍ VOLBA PRO VÁŽNÝ VZTAH
                     </div>
                   )}
                   {index === 1 && (
-                    <div className="bg-blue-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
                       NEJLEPŠÍ PRO DISKRÉTNÍ SEZNÁMENÍ
                     </div>
                   )}
                   {index === 2 && (
-                    <div className="bg-purple-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
                       NEJLEPŠÍ PRO VZDĚLANÉ SINGLES
                     </div>
                   )}
@@ -115,9 +131,9 @@ export default async function Home() {
                       <div className="flex items-start gap-4 lg:w-72 flex-shrink-0">
                         {/* Rank */}
                         <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0 ${
-                          isWinner ? 'bg-green-500 text-white' :
-                          index === 1 ? 'bg-blue-500 text-white' :
-                          index === 2 ? 'bg-purple-500 text-white' :
+                          isWinner ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white' :
+                          index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white' :
+                          index === 2 ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white' :
                           'bg-gray-200 text-gray-700'
                         }`}>
                           {index + 1}
@@ -125,7 +141,7 @@ export default async function Home() {
 
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                          <div className="w-20 h-20 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                          <div className="w-20 h-20 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden">
                             {produkt.logo ? (
                               <Image
                                 src={produkt.logo}
@@ -208,9 +224,9 @@ export default async function Home() {
                           placement="main-table"
                           className={`w-full text-center font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 ${
                             isWinner
-                              ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg'
+                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white shadow-lg shadow-rose-200'
                               : isTop3
-                              ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white'
                               : 'bg-gray-800 hover:bg-gray-900 text-white'
                           }`}
                         >
@@ -220,7 +236,7 @@ export default async function Home() {
 
                         <Link
                           href={`/seznamky/${produkt.slug}`}
-                          className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center gap-1"
+                          className="text-rose-600 hover:text-rose-700 text-sm font-medium flex items-center gap-1"
                         >
                           Přečíst recenzi
                           <ChevronRight className="w-4 h-4" />
@@ -237,7 +253,7 @@ export default async function Home() {
           <div className="text-center mt-10">
             <Link
               href="/seznamky"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg shadow-rose-200"
             >
               Zobrazit všech {produkty.length} seznamek
               <ChevronRight className="w-5 h-5" />
@@ -247,50 +263,50 @@ export default async function Home() {
       </section>
 
       {/* Comparison Parameters Table */}
-      <section className="py-10 lg:py-14 bg-gray-50">
+      <section className="py-10 lg:py-14 bg-gradient-to-b from-rose-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Srovnání parametrů
+            Srovnání top 3 seznamek
           </h2>
 
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-lg border border-gray-200 text-sm">
+            <table className="w-full bg-white rounded-xl border border-rose-200 text-sm shadow-sm">
               <thead>
-                <tr className="bg-gray-100">
-                  <th className="text-left p-4 font-bold text-gray-700 border-b">Parametr</th>
+                <tr className="bg-rose-50">
+                  <th className="text-left p-4 font-bold text-gray-700 border-b border-rose-100">Parametr</th>
                   {topProdukty.slice(0, 3).map(p => p && (
-                    <th key={p.id} className="text-center p-4 font-bold text-gray-700 border-b min-w-[140px]">
+                    <th key={p.id} className="text-center p-4 font-bold text-gray-700 border-b border-rose-100 min-w-[140px]">
                       {p.name}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b">
+                <tr className="border-b border-rose-50">
                   <td className="p-4 text-gray-600">Hodnocení</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center font-bold text-gray-900">{p.rating}/10</td>
                   ))}
                 </tr>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b border-rose-50 bg-rose-50/30">
                   <td className="p-4 text-gray-600">Počet uživatelů</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center text-gray-900">{p.users}</td>
                   ))}
                 </tr>
-                <tr className="border-b">
+                <tr className="border-b border-rose-50">
                   <td className="p-4 text-gray-600">Úspěšnost párování</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center text-gray-900">{p.successRate || '—'}</td>
                   ))}
                 </tr>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b border-rose-50 bg-rose-50/30">
                   <td className="p-4 text-gray-600">Věková skupina</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center text-gray-900">{p.ageRange}</td>
                   ))}
                 </tr>
-                <tr className="border-b">
+                <tr className="border-b border-rose-50">
                   <td className="p-4 text-gray-600">Bezplatná verze</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center">
@@ -302,7 +318,7 @@ export default async function Home() {
                     </td>
                   ))}
                 </tr>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b border-rose-50 bg-rose-50/30">
                   <td className="p-4 text-gray-600">Ověřené profily</td>
                   {topProdukty.slice(0, 3).map(p => p && (
                     <td key={p.id} className="p-4 text-center">
@@ -342,9 +358,9 @@ export default async function Home() {
               { icon: TrendingUp, title: 'Aktuální data', desc: 'Informace pravidelně aktualizujeme' },
               { icon: Award, title: 'Transparentnost', desc: 'Jasná metodika hodnocení' },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-blue-600" />
+              <div key={i} className="text-center p-6 bg-gradient-to-b from-rose-50 to-white rounded-xl border border-rose-100">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-rose-600" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.desc}</p>
@@ -355,7 +371,7 @@ export default async function Home() {
       </section>
 
       {/* Categories */}
-      <section className="py-10 lg:py-14 bg-gray-50">
+      <section className="py-10 lg:py-14 bg-gradient-to-b from-rose-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Seznamky podle kategorie
@@ -366,9 +382,9 @@ export default async function Home() {
               <Link
                 key={kat.id}
                 href={`/kategorie/${kat.slug}`}
-                className="bg-white p-5 rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all text-center group"
+                className="bg-white p-5 rounded-xl border border-rose-100 hover:border-rose-400 hover:shadow-lg hover:shadow-rose-100/50 transition-all text-center group"
               >
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                <h3 className="font-bold text-gray-900 group-hover:text-rose-600 transition-colors mb-1">
                   {kat.name}
                 </h3>
                 <p className="text-sm text-gray-500">
@@ -389,7 +405,7 @@ export default async function Home() {
             </h2>
             <Link
               href="/clanky"
-              className="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+              className="text-rose-600 hover:text-rose-700 font-medium flex items-center gap-1"
             >
               Všechny články
               <ChevronRight className="w-4 h-4" />
@@ -405,18 +421,18 @@ export default async function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-12 lg:py-16 bg-blue-600">
+      <section className="py-12 lg:py-16 bg-gradient-to-r from-rose-500 to-rose-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Heart className="w-12 h-12 text-blue-200 mx-auto mb-4" />
+          <Heart className="w-12 h-12 text-rose-200 mx-auto mb-4" fill="currentColor" />
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Připraveni najít partnera?
+            Připraveni najít svou lásku?
           </h2>
-          <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-            Vyberte si z našich doporučených seznamek a začněte hledat lásku ještě dnes.
+          <p className="text-rose-100 mb-6 max-w-xl mx-auto">
+            Tisíce lidí již našly partnera díky našim doporučeným seznamkám. Začněte ještě dnes!
           </p>
           <Link
             href="/seznamky"
-            className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-rose-600 hover:bg-rose-50 font-bold py-3 px-8 rounded-lg transition-colors"
           >
             Prohlédnout seznamky
             <ChevronRight className="w-5 h-5" />
