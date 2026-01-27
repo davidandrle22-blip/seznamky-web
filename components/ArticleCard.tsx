@@ -12,57 +12,41 @@ const categoryStyles: Record<string, {
   bg: string
   text: string
   border: string
-  icon: string
-  gradient: string
 }> = {
   tipy: {
-    bg: 'bg-amber-500/20',
-    text: 'text-amber-400',
-    border: 'border-amber-500/30',
-    icon: '💡',
-    gradient: 'from-amber-500 via-orange-500 to-yellow-600'
+    bg: 'bg-amber-100',
+    text: 'text-amber-700',
+    border: 'border-amber-200',
   },
   bezpecnost: {
-    bg: 'bg-emerald-500/20',
-    text: 'text-emerald-400',
-    border: 'border-emerald-500/30',
-    icon: '🔒',
-    gradient: 'from-emerald-500 via-green-500 to-teal-600'
+    bg: 'bg-emerald-100',
+    text: 'text-emerald-700',
+    border: 'border-emerald-200',
   },
   vztahy: {
-    bg: 'bg-romantic-500/20',
-    text: 'text-romantic-400',
-    border: 'border-romantic-500/30',
-    icon: '❤️',
-    gradient: 'from-romantic-500 via-crimson-500 to-ruby-600'
+    bg: 'bg-rose-100',
+    text: 'text-rose-700',
+    border: 'border-rose-200',
   },
   profil: {
-    bg: 'bg-purple-500/20',
-    text: 'text-purple-400',
-    border: 'border-purple-500/30',
-    icon: '👤',
-    gradient: 'from-purple-500 via-violet-500 to-indigo-600'
+    bg: 'bg-purple-100',
+    text: 'text-purple-700',
+    border: 'border-purple-200',
   },
   psychologie: {
-    bg: 'bg-blue-500/20',
-    text: 'text-blue-400',
-    border: 'border-blue-500/30',
-    icon: '🧠',
-    gradient: 'from-blue-500 via-indigo-500 to-purple-600'
+    bg: 'bg-blue-100',
+    text: 'text-blue-700',
+    border: 'border-blue-200',
   },
   recenze: {
-    bg: 'bg-cyan-500/20',
-    text: 'text-cyan-400',
-    border: 'border-cyan-500/30',
-    icon: '⭐',
-    gradient: 'from-cyan-500 via-blue-500 to-indigo-600'
+    bg: 'bg-cyan-100',
+    text: 'text-cyan-700',
+    border: 'border-cyan-200',
   },
   default: {
-    bg: 'bg-gray-700',
-    text: 'text-white',
-    border: 'border-gray-600',
-    icon: '📝',
-    gradient: 'from-gray-600 via-gray-500 to-gray-700'
+    bg: 'bg-gray-100',
+    text: 'text-gray-700',
+    border: 'border-gray-200',
   },
 }
 
@@ -77,162 +61,67 @@ export default function ArticleCard({ clanek, featured = false }: ArticleCardPro
   const readTime = clanek.readTime || 5
   const hasImage = clanek.image && clanek.image.startsWith('/images/blog/')
 
-  if (featured) {
-    return (
-      <div className="group bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 hover:border-romantic-500/50 transition-all duration-300 h-full">
-        <div className="flex flex-col h-full">
-          {/* Large image area */}
-          <div className="relative h-72 lg:h-80 overflow-hidden">
-            {hasImage ? (
-              <>
-                <Image
-                  src={clanek.image}
-                  alt={clanek.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-gray-950/20" />
-              </>
-            ) : (
-              <>
-                <div className={`absolute inset-0 bg-gradient-to-br ${style.gradient}`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/30 to-transparent" />
-                <span className="absolute inset-0 flex items-center justify-center text-9xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
-                  {style.icon}
-                </span>
-              </>
-            )}
-
-            {/* Featured badge */}
-            <div className="absolute top-4 right-4 bg-gradient-to-r from-romantic-500 to-crimson-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg z-10">
-              <span>⭐</span>
-              Doporučený článek
-            </div>
-
-            {/* Category badge */}
-            <div className={`absolute top-4 left-4 ${style.bg} ${style.text} ${style.border} border px-4 py-2 rounded-full text-sm font-bold capitalize backdrop-blur-sm z-10`}>
-              {clanek.category}
-            </div>
-
-            {/* Title overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 z-10">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 group-hover:text-romantic-200 transition-colors drop-shadow-lg">
-                <Link href={`/clanky/${clanek.slug}`}>
-                  {clanek.title}
-                </Link>
-              </h3>
-            </div>
-          </div>
-
-          <div className="p-6 lg:p-8 flex flex-col flex-grow">
-            {/* Meta info */}
-            <div className="flex items-center gap-4 text-sm text-white mb-4">
-              <div className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
-                {formattedDate}
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                {readTime} min čtení
-              </div>
-            </div>
-
-            <p className="text-white mb-6 text-lg leading-relaxed flex-grow">
-              {clanek.excerpt}
-            </p>
-
-            <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-              <div className="flex items-center gap-3 text-sm text-white">
-                <div className="w-10 h-10 bg-romantic-500/20 rounded-full flex items-center justify-center border border-romantic-500/30">
-                  <User className="w-5 h-5 text-romantic-400" />
-                </div>
-                <span className="font-medium">{clanek.author}</span>
-              </div>
-
-              <Link
-                href={`/clanky/${clanek.slug}`}
-                className="inline-flex items-center bg-gradient-to-r from-romantic-500 to-crimson-600 text-white font-bold py-3 px-6 rounded-xl hover:from-romantic-600 hover:to-crimson-700 transition-all shadow-lg shadow-romantic-500/25 group/link"
-              >
-                Číst článek
-                <ArrowRight className="w-5 h-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-romantic-500/50 transition-all duration-300 flex flex-col h-full">
+    <Link
+      href={`/clanky/${clanek.slug}`}
+      className="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all flex flex-col h-full"
+    >
       {/* Image area */}
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-48 overflow-hidden bg-gray-100">
         {hasImage ? (
-          <>
-            <Image
-              src={clanek.image}
-              alt={clanek.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent" />
-          </>
+          <Image
+            src={clanek.image}
+            alt={clanek.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+          />
         ) : (
-          <>
-            <div className={`absolute inset-0 bg-gradient-to-br ${style.gradient}`} />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 to-transparent" />
-            <span className="absolute inset-0 flex items-center justify-center text-7xl transform group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-              {style.icon}
-            </span>
-          </>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+            <span className="text-4xl">📝</span>
+          </div>
         )}
 
         {/* Category badge */}
-        <div className={`absolute top-4 left-4 ${style.bg} ${style.text} ${style.border} border px-3 py-1 rounded-full text-xs font-semibold capitalize backdrop-blur-sm z-10`}>
+        <div className={`absolute top-3 left-3 ${style.bg} ${style.text} ${style.border} border px-3 py-1 rounded text-xs font-semibold capitalize`}>
           {clanek.category}
         </div>
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-5 flex flex-col flex-grow">
         {/* Meta info */}
-        <div className="flex items-center gap-4 text-sm text-white mb-3">
+        <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
           <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-3.5 h-3.5" />
             {formattedDate}
           </div>
           <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
-            {readTime} min čtení
+            <Clock className="w-3.5 h-3.5" />
+            {readTime} min
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-romantic-400 transition-colors line-clamp-2">
-          <Link href={`/clanky/${clanek.slug}`}>
-            {clanek.title}
-          </Link>
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+          {clanek.title}
         </h3>
 
-        <p className="text-white mb-4 line-clamp-2 flex-grow">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
           {clanek.excerpt}
         </p>
 
-        <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-          <div className="flex items-center gap-2 text-sm text-white">
-            <div className="w-8 h-8 bg-romantic-500/20 rounded-full flex items-center justify-center border border-romantic-500/30">
-              <User className="w-4 h-4 text-romantic-400" />
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center">
+              <User className="w-4 h-4 text-gray-500" />
             </div>
             <span>{clanek.author}</span>
           </div>
 
-          <Link
-            href={`/clanky/${clanek.slug}`}
-            className="inline-flex items-center text-romantic-400 font-semibold hover:text-romantic-300 transition-colors group/link"
-          >
+          <span className="text-blue-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
             Číst více
-            <ArrowRight className="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
-          </Link>
+            <ArrowRight className="w-4 h-4" />
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

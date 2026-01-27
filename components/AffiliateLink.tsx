@@ -3,7 +3,7 @@
 import { Produkt } from '@/lib/types'
 import { ReactNode, MouseEvent } from 'react'
 
-export type AffiliateSource = 'homepage' | 'category' | 'detail' | 'table' | 'sidebar'
+export type AffiliateSource = 'homepage' | 'category' | 'detail' | 'table' | 'sidebar' | 'seznamky'
 
 interface AffiliateLinkProps {
   produkt: Produkt

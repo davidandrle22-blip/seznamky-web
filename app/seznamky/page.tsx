@@ -1,17 +1,16 @@
 import { getProdukty, getKategorie } from '@/lib/data'
-import ProductCard from '@/components/ProductCard'
-import ComparisonTable from '@/components/ComparisonTable'
-import { Filter, Heart, Sparkles, Star, Shield, Zap, Crown, CheckCircle, ArrowRight, ExternalLink } from 'lucide-react'
+import { Star, Check, X, ExternalLink, ChevronRight, Award, Shield } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import AffiliateLink from '@/components/AffiliateLink'
 
 interface Props {
-  searchParams: { kategorie?: string; type?: string }
+  searchParams: { kategorie?: string }
 }
 
 export const metadata = {
-  title: 'Najít partnera 2026 | Top seznamky pro vážné vztahy',
-  description: 'Najděte svou lásku na nejlepších seznamkách. ELITE Date, Victoria Milan, Academic Singles - ověřené platformy s vysokou úspěšností.',
+  title: 'Srovnání seznamek 2026 | Kompletní přehled | Seznamky.info',
+  description: 'Kompletní srovnání 24+ online seznamek. Nezávislé recenze, hodnocení a zkušenosti uživatelů. ELITE Date, Victoria Milan, Academic Singles.',
 }
 
 export default async function SeznamkyPage({ searchParams }: Props) {
@@ -24,308 +23,242 @@ export default async function SeznamkyPage({ searchParams }: Props) {
   const victoriaMilan = produkty.find(p => p.slug === 'victoria-milan')
   const academicSingles = produkty.find(p => p.slug === 'academic-singles')
 
+  const topProdukty = [eliteDate, victoriaMilan, academicSingles].filter(Boolean)
+  const otherProdukty = produkty.filter(p => !['elite-date', 'victoria-milan', 'academic-singles'].includes(p.slug))
+
   const selectedKategorie = searchParams.kategorie
+  const allProdukty = [...topProdukty, ...otherProdukty]
   const filteredProdukty = selectedKategorie
-    ? produkty.filter(p => p.categories.includes(selectedKategorie))
-    : produkty
+    ? allProdukty.filter(p => p?.categories?.includes(selectedKategorie))
+    : allProdukty
+
+  const getRatingLabel = (rating: number) => {
+    if (rating >= 9) return { text: 'Výborné', color: 'bg-green-500' }
+    if (rating >= 8) return { text: 'Velmi dobré', color: 'bg-green-400' }
+    if (rating >= 7) return { text: 'Dobré', color: 'bg-yellow-500' }
+    return { text: 'Průměrné', color: 'bg-gray-400' }
+  }
 
   return (
-    <div className="min-h-screen">
-      {/* Premium Hero Section - Same red as categories but premium effects */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-romantic-950 via-romantic-900 to-crimson-950 text-white">
-        {/* Premium animated background with extra effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-romantic-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-crimson-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-ruby-500/10 rounded-full blur-3xl" />
-          {/* Extra premium sparkle layer */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIvPjwvZz48L3N2Zz4=')] opacity-60" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          {/* Premium Header */}
-          <div className="text-center mb-14">
-            {/* Premium badge with shimmer effect */}
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-white/10 via-white/20 to-white/10 backdrop-blur-xl px-6 py-3 rounded-full mb-8 border border-white/30 shadow-2xl shadow-black/20">
-              <div className="relative">
-                <Heart className="w-6 h-6 text-romantic-400" fill="#fb7185" />
-                <Heart className="w-6 h-6 text-romantic-400 absolute inset-0 animate-ping opacity-50" fill="#fb7185" />
-              </div>
-              <span className="font-bold text-white text-lg">Exkluzivní výběr 2026</span>
-              <div className="flex gap-1">
-                <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
-                <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              </div>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
-              <span className="bg-gradient-to-r from-white via-romantic-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                Najít partnera
-              </span>
-            </h1>
-
-            <p className="text-2xl md:text-3xl font-bold text-romantic-200 mb-4">
-              ✨ Top 3 prémiové seznamky ✨
-            </p>
-
-            <p className="text-xl text-romantic-100/80 max-w-2xl mx-auto mb-10">
-              Ověřené platformy s nejvyšší úspěšností párování. Registrace zdarma!
-            </p>
-          </div>
-
-          {/* TOP 3 Premium Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* ELITE Date - #1 */}
-            {eliteDate && (
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-300 animate-pulse" />
-                <div className="relative bg-gradient-to-br from-white to-romantic-50 rounded-2xl p-6 shadow-2xl border-2 border-amber-400/50">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-black px-6 py-2 rounded-full shadow-lg flex items-center gap-2">
-                    <Crown className="w-4 h-4" />
-                    #1 VOLBA REDAKCE
-                  </div>
-
-                  <div className="text-center pt-4">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden shadow-xl border-4 border-amber-400/30">
-                      <Image src={eliteDate.logo} alt={eliteDate.name} width={80} height={80} className="w-full h-full object-cover" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{eliteDate.name}</h3>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="flex">
-                        {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-400" />)}
-                      </div>
-                      <span className="font-bold text-gray-700">{eliteDate.rating}/10</span>
-                    </div>
-
-                    <div className="space-y-2 mb-6 text-left">
-                      {eliteDate.pros.slice(0, 3).map((pro, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span>{pro}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a
-                      href="/api/affiliate/elite-date?source=seznamky&placement=hero-card"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-lg"
-                    >
-                      <span className="flex items-center justify-center gap-2">
-                        🔥 Vyzkoušet ZDARMA
-                        <ArrowRight className="w-5 h-5" />
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Victoria Milan - #2 */}
-            {victoriaMilan && (
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-violet-600 rounded-3xl blur opacity-50 group-hover:opacity-75 transition-all duration-300" />
-                <div className="relative bg-gradient-to-br from-white to-purple-50 rounded-2xl p-6 shadow-2xl border border-purple-300/50">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-violet-600 text-white text-sm font-bold px-5 py-2 rounded-full shadow-lg flex items-center gap-2">
-                    <Shield className="w-4 h-4" />
-                    #2 DISKRÉTNÍ
-                  </div>
-
-                  <div className="text-center pt-4">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden shadow-xl border-4 border-purple-300/30">
-                      <Image src={victoriaMilan.logo} alt={victoriaMilan.name} width={80} height={80} className="w-full h-full object-cover" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{victoriaMilan.name}</h3>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="flex">
-                        {[1,2,3,4].map(i => <Star key={i} className="w-5 h-5 text-purple-500 fill-purple-400" />)}
-                        <Star className="w-5 h-5 text-purple-300" />
-                      </div>
-                      <span className="font-bold text-gray-700">{victoriaMilan.rating}/10</span>
-                    </div>
-
-                    <div className="space-y-2 mb-6 text-left">
-                      {victoriaMilan.pros.slice(0, 3).map((pro, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                          <span>{pro}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a
-                      href="/api/affiliate/victoria-milan?source=seznamky&placement=hero-card"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-lg"
-                    >
-                      <span className="flex items-center justify-center gap-2">
-                        🔒 Vyzkoušet ZDARMA
-                        <ArrowRight className="w-5 h-5" />
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Academic Singles - #3 */}
-            {academicSingles && (
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl blur opacity-50 group-hover:opacity-75 transition-all duration-300" />
-                <div className="relative bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-6 shadow-2xl border border-emerald-300/50">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-bold px-5 py-2 rounded-full shadow-lg flex items-center gap-2">
-                    🎓 #3 PRO VZDĚLANÉ
-                  </div>
-
-                  <div className="text-center pt-4">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden shadow-xl border-4 border-emerald-300/30">
-                      <Image src={academicSingles.logo} alt={academicSingles.name} width={80} height={80} className="w-full h-full object-cover" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{academicSingles.name}</h3>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="flex">
-                        {[1,2,3,4].map(i => <Star key={i} className="w-5 h-5 text-emerald-500 fill-emerald-400" />)}
-                        <Star className="w-5 h-5 text-emerald-300" />
-                      </div>
-                      <span className="font-bold text-gray-700">{academicSingles.rating}/10</span>
-                    </div>
-
-                    <div className="space-y-2 mb-6 text-left">
-                      {academicSingles.pros.slice(0, 3).map((pro, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                          <span>{pro}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a
-                      href="/api/affiliate/academic-singles?source=seznamky&placement=hero-card"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-lg"
-                    >
-                      <span className="flex items-center justify-center gap-2">
-                        🎓 Vyzkoušet ZDARMA
-                        <ArrowRight className="w-5 h-5" />
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-6 mt-12 text-romantic-200/80">
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-green-400" />
-              <span>100% ověřené platformy</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-green-400" />
-              <span>Registrace zdarma</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-amber-400" />
-              <span>Začněte za 2 minuty</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
-          </svg>
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+            Srovnání online seznamek 2026
+          </h1>
+          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto">
+            Kompletní přehled {produkty.length} ověřených seznamek seřazených podle hodnocení
+          </p>
         </div>
       </section>
 
-      {/* Filters & Full List */}
-      <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Title */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Kompletní srovnání všech seznamek</h2>
-            <p className="text-gray-600">Vyberte si podle kategorie nebo prohlédněte všech {produkty.length} seznamek</p>
-          </div>
-
-          {/* Filters */}
-          <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <Filter className="w-5 h-5 text-gray-500 mr-2" />
-              <span className="font-medium text-gray-700">Filtrovat podle kategorie:</span>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/seznamky"
-                className={`px-4 py-2 rounded-full font-medium transition-all ${
-                  !selectedKategorie
-                    ? 'bg-romantic-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                Všechny
-              </Link>
-              {kategorie.map((kat) => (
+      {/* Filters */}
+      <section className="py-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/seznamky"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                !selectedKategorie
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Všechny ({produkty.length})
+            </Link>
+            {kategorie.map((kat) => {
+              const count = produkty.filter(p => p.categories?.includes(kat.slug)).length
+              return (
                 <Link
                   key={kat.id}
                   href={`/seznamky?kategorie=${kat.slug}`}
-                  className={`px-4 py-2 rounded-full font-medium transition-all ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedKategorie === kat.slug
-                      ? 'bg-romantic-500 text-white shadow-lg'
+                      ? 'bg-blue-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  {kat.name}
+                  {kat.name} ({count})
                 </Link>
-              ))}
-            </div>
+              )
+            })}
           </div>
+        </div>
+      </section>
 
-          {/* Results count */}
-          <div className="mb-6 text-gray-600 font-medium">
-            Nalezeno <span className="text-romantic-600 font-bold">{filteredProdukty.length}</span> seznamek
+      {/* Product List */}
+      <section className="py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-4">
+            {filteredProdukty.map((produkt, index) => {
+              if (!produkt) return null
+              const ratingInfo = getRatingLabel(produkt.rating)
+              const isWinner = index === 0 && !selectedKategorie
+              const isTop3 = index < 3 && !selectedKategorie
+
+              return (
+                <div
+                  key={produkt.id}
+                  className={`bg-white rounded-lg border-2 transition-shadow hover:shadow-md ${
+                    isWinner ? 'border-green-500' :
+                    isTop3 ? 'border-blue-300' : 'border-gray-200'
+                  }`}
+                >
+                  {/* Badge */}
+                  {isWinner && (
+                    <div className="bg-green-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm flex items-center justify-center gap-2">
+                      <Award className="w-4 h-4" />
+                      VÍTĚZ SROVNÁNÍ 2026
+                    </div>
+                  )}
+                  {index === 1 && !selectedKategorie && (
+                    <div className="bg-blue-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                      NEJLEPŠÍ PRO DISKRÉTNÍ SEZNÁMENÍ
+                    </div>
+                  )}
+                  {index === 2 && !selectedKategorie && (
+                    <div className="bg-purple-500 text-white text-center py-2 px-4 rounded-t-md font-bold text-sm">
+                      NEJLEPŠÍ PRO VZDĚLANÉ SINGLES
+                    </div>
+                  )}
+
+                  <div className="p-5">
+                    <div className="flex flex-col lg:flex-row gap-5">
+                      {/* Rank + Logo + Info */}
+                      <div className="flex items-start gap-4 lg:w-64 flex-shrink-0">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 ${
+                          isWinner ? 'bg-green-500 text-white' :
+                          index === 1 && !selectedKategorie ? 'bg-blue-500 text-white' :
+                          index === 2 && !selectedKategorie ? 'bg-purple-500 text-white' :
+                          'bg-gray-200 text-gray-700'
+                        }`}>
+                          {index + 1}
+                        </div>
+
+                        <div className="w-16 h-16 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                          {produkt.logo ? (
+                            <Image src={produkt.logo} alt={produkt.name} width={56} height={56} className="object-contain" />
+                          ) : (
+                            <span className="text-xl font-bold text-gray-400">{produkt.name.charAt(0)}</span>
+                          )}
+                        </div>
+
+                        <div className="min-w-0">
+                          <h3 className="text-lg font-bold text-gray-900">{produkt.name}</h3>
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="flex">
+                              {[1,2,3,4,5].map(i => (
+                                <Star key={i} className={`w-3.5 h-3.5 ${i <= Math.round(produkt.rating/2) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
+                              ))}
+                            </div>
+                            <span className="font-bold text-gray-900 text-sm">{produkt.rating}/10</span>
+                          </div>
+                          <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold text-white ${ratingInfo.color}`}>
+                            {ratingInfo.text}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Pros & Cons */}
+                      <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h4 className="text-xs font-bold text-green-700 mb-1.5 flex items-center gap-1">
+                            <Check className="w-3.5 h-3.5" /> Výhody
+                          </h4>
+                          <ul className="space-y-1">
+                            {produkt.pros.slice(0, 3).map((pro, i) => (
+                              <li key={i} className="flex items-start gap-1.5 text-sm text-gray-700">
+                                <Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+                                <span>{pro}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-bold text-red-700 mb-1.5 flex items-center gap-1">
+                            <X className="w-3.5 h-3.5" /> Nevýhody
+                          </h4>
+                          <ul className="space-y-1">
+                            {produkt.cons.slice(0, 2).map((con, i) => (
+                              <li key={i} className="flex items-start gap-1.5 text-sm text-gray-600">
+                                <X className="w-3.5 h-3.5 text-red-400 flex-shrink-0 mt-0.5" />
+                                <span>{con}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="flex flex-col items-center justify-center gap-2 lg:w-40 flex-shrink-0">
+                        <div className="text-center text-sm">
+                          <span className="text-gray-500">Uživatelů: </span>
+                          <span className="font-bold text-gray-900">{produkt.users}</span>
+                        </div>
+
+                        <AffiliateLink
+                          produkt={produkt}
+                          source="seznamky"
+                          placement="list"
+                          className={`w-full text-center font-semibold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-1.5 text-sm ${
+                            isWinner
+                              ? 'bg-green-500 hover:bg-green-600 text-white'
+                              : isTop3
+                              ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                              : 'bg-gray-800 hover:bg-gray-900 text-white'
+                          }`}
+                        >
+                          Registrace
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </AffiliateLink>
+
+                        <Link
+                          href={`/seznamky/${produkt.slug}`}
+                          className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center gap-1"
+                        >
+                          Recenze <ChevronRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-
-          {/* Comparison Table */}
-          <ComparisonTable produkty={filteredProdukty} source="table" />
 
           {filteredProdukty.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">
-                V této kategorii zatím nemáme žádné seznamky.
-              </p>
-              <Link href="/seznamky" className="text-romantic-500 hover:text-romantic-600 mt-4 inline-block font-medium">
-                Zobrazit všechny seznamky
+              <p className="text-gray-500">V této kategorii nejsou žádné seznamky.</p>
+              <Link href="/seznamky" className="text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                Zobrazit všechny
               </Link>
             </div>
           )}
         </div>
-      </div>
+      </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-to-r from-romantic-600 via-crimson-600 to-ruby-600">
+      <section className="py-12 bg-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Připraveni najít lásku?
+          <Shield className="w-10 h-10 text-blue-200 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Nejste si jistí, kterou vybrat?
           </h2>
-          <p className="text-romantic-100 mb-8 text-lg">
-            Více než 92% uživatelů ELITE Date najde partnera do 6 měsíců
+          <p className="text-blue-100 mb-6">
+            Doporučujeme začít s ELITE Date - má nejvyšší úspěšnost párování a registrace je zdarma.
           </p>
-          <a
-            href="/api/affiliate/elite-date?source=seznamky&placement=bottom-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white hover:bg-romantic-50 text-romantic-600 font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 text-lg"
-          >
-            <Heart className="w-6 h-6" fill="currentColor" />
-            Začít hledat na ELITE Date
-            <Sparkles className="w-5 h-5 text-amber-500" />
-          </a>
+          {eliteDate && (
+            <AffiliateLink
+              produkt={eliteDate}
+              source="seznamky"
+              placement="bottom-cta"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition-colors"
+            >
+              Vyzkoušet ELITE Date zdarma
+              <ChevronRight className="w-5 h-5" />
+            </AffiliateLink>
+          )}
         </div>
       </section>
     </div>
