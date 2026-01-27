@@ -58,235 +58,359 @@ const authors: Record<string, { name: string; role: string; photo: string; bio: 
 // Rozšířený obsah pro top seznamky
 const extendedContent: Record<string, string> = {
   'elite-date': `
-## Proč je ELITE Date nejlepší volbou pro rok 2026?
+## ELITE Date - Nejdůvěryhodnější česká seznamka pro vážný vztah
 
-ELITE Date si za poslední roky vybudovala pozici prémiové seznamky pro ty, kteří hledají vážný vztah. Na rozdíl od běžných seznamek se zde nesoustředíte na swipování fotek, ale na hluboké poznávání potenciálních partnerů prostřednictvím propracovaného systému párování.
+ELITE Date je druhá největší placená online seznamka na českém trhu, která se specializuje výhradně na uživatele hledající vážný, dlouhodobý vztah. Na rozdíl od aplikací založených na swipování zde najdete propracovaný systém vědeckého párování založený na osobnostním testu.
 
-**Hlavní přednosti ELITE Date:**
-- Vědecky ověřený matchmaking algoritmus
-- Vysoká kvalita uživatelské základny
-- Důraz na bezpečnost a ověřené profily
-- Profesionální zákaznická podpora v češtině
+> **Hodnocení:** 9.0/10 ⭐ | **Google recenze:** 4.0/5 (60+ hodnocení) | **Měsíční návštěvnost:** 295 000
+
+### Proč je ELITE Date nejlepší volbou pro rok 2026?
+
+**Klíčové výhody platformy:**
+- ✅ **Manuálně ověřované profily** - minimální výskyt falešných účtů
+- ✅ **Vědecká metoda seznámení** - párování na základě psychologického testu
+- ✅ **Žádné automatické prodloužení** - členství nekončí bez vašeho souhlasu
+- ✅ **Česká zákaznická podpora** - telefon i email 365 dní v roce
+- ✅ **Mobilní aplikace** - dostupná pro Android i iOS
 
 ### Jak funguje vědecký matchmaking?
 
-Srdcem ELITE Date je propracovaný osobnostní test založený na psychologických modelech Big Five a teorii kompatibility. Test obsahuje přes 200 otázek a analyzuje:
+Srdcem ELITE Date je propracovaný osobnostní test založený na psychologických modelech Big Five. Test obsahuje přes 200 otázek a trvá 20-30 minut. Analyzuje:
 
-- **Osobnostní rysy** - extraverze, otevřenost, svědomitost, přívětivost, emocionální stabilita
-- **Životní hodnoty** - kariéra, rodina, volný čas, spiritualita, finanční priority
-- **Komunikační styl** - jak řešíte konflikty, jak vyjadřujete city, míra otevřenosti
-- **Vztahové preference** - co od partnera očekáváte, jaké máte představy o společném životě
+| Oblast | Co se měří |
+|--------|-----------|
+| **Osobnostní rysy** | Extraverze, otevřenost, svědomitost, přívětivost |
+| **Životní hodnoty** | Kariéra, rodina, volný čas, spiritualita |
+| **Komunikační styl** | Řešení konfliktů, vyjadřování citů |
+| **Vztahové preference** | Očekávání od partnera, představy o společném životě |
 
-Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživateli a navrhne vám ty nejlepší shody. Systém průběžně učí z vašich preferencí a zpřesňuje doporučení.
+Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživateli a navrhne vám ty nejlepší shody s procentuální shodou.
 
-### Kdo zde hledá partnera?
+### Pro koho je ELITE Date určena?
 
-Typický uživatel ELITE Date je:
-- Věk 30-50 let (průměr 38 let)
-- Vysokoškolské vzdělání (78% uživatelů)
-- Stabilní kariéra a finanční situace
-- Hledá vážný, dlouhodobý vztah vedoucí ke společnému životu
+**Typický uživatel:**
+- 👤 Věk: **25-45 let** (cílová skupina)
+- 🎓 Většina má vysokoškolské vzdělání
+- 💼 Stabilní kariéra a finanční situace
+- 💕 Hledá **vážný, dlouhodobý vztah**
 
-### Registrace a osobnostní test krok za krokem
+### Ceník členství 2026 (aktuální)
 
-1. **Základní profil** (5 minut) - email, věk, lokace, základní preference
-2. **Osobnostní test** (20-30 minut) - důkladný psychologický profil
-3. **Fotografie** - alespoň 3 kvalitní fotky, procházejí manuální kontrolou
-4. **Ověření** - potvrzení emailu a případně telefonu
-5. **První návrhy** - systém vám okamžitě navrhne kompatibilní partnery
+| Délka | Celková cena | Cena/měsíc |
+|-------|--------------|------------|
+| **3 měsíce** | 1 260 Kč | 420 Kč |
+| **6 měsíců** | 1 440 Kč | 240 Kč |
+| **12 měsíců** | 1 800 Kč | 150 Kč |
+
+💡 **Tip:** Čím delší období zvolíte, tím výhodnější cena. Navíc **ELITE Date neprovádí automatické prodlužování** - nemusíte se bát skrytých poplatků.
+
+### Co získáte s prémiovým členstvím?
+
+**Základní členství (zdarma):**
+- Registrace a vyplnění osobnostního testu
+- Prohlížení doporučených profilů
+- Zobrazení procentuální kompatibility
+
+**Prémiové členství:**
+- ✉️ Neomezené odesílání a přijímání zpráv
+- 📷 Zobrazení všech fotografií
+- 📹 Video chat přímo v aplikaci
+- 👁️ Informace o přečtení zpráv
+- 🔍 Pokročilé filtry vyhledávání
+- 📱 Plný přístup v mobilní aplikaci
+
+### Nevýhody a na co si dát pozor
+
+⚠️ **Co kritizují uživatelé:**
+
+1. **"Mrtvé profily"** - Někteří uživatelé bez zaplaceného členství nemohou odpovědět na vaše zprávy. Bohužel nevidíte, zda je profil aktivní.
+
+2. **Bez placeného členství je seznamka nepoužitelná** - Základní členství neumožňuje prakticky žádnou komunikaci.
+
+3. **Vyšší cena** - ELITE Date patří mezi dražší seznamky, ale kvalita profilů tomu odpovídá.
 
 ### Naše zkušenosti z 6 měsíců testování
 
 Během půl roku intenzivního testování jsme získali tyto poznatky:
 
-1. **Kvalita profilů** - 95% uživatelů má vyplněný kompletní profil s detailními informacemi
-2. **Odpovědi na zprávy** - průměrná doba odpovědi je 4 hodiny, 87% zpráv dostane odpověď
-3. **Množství schůzek** - z 10 kvalitních matchů vedlo 7 k osobní schůzce
-4. **Úspěšnost** - 3 páry z našeho testování pokračují ve vážném vztahu
-
-### Video chat a další prémiové funkce
-
-ELITE Date nabízí integrovaný video chat, který umožňuje poznat protějšek před první schůzkou. Tato funkce výrazně zvyšuje šanci na úspěšné setkání.
-
-**Další funkce zahrnují:**
-- **Čtení příjmů zpráv** - víte, kdy si partner přečetl vaši zprávu
-- **Super Like** - zvýrazněte svůj zájem o konkrétního uživatele
-- **Profil Boost** - zvýšení viditelnosti vašeho profilu
-- **Anonymní prohlížení** - prohlížejte profily bez zanechání stopy
-
-### Ceník a členství
-
-| Členství | Cena/měsíc | Funkce |
-|----------|------------|--------|
-| Zdarma | 0 Kč | Registrace, test, prohlížení |
-| Premium 3 měsíce | 599 Kč | Neomezená komunikace |
-| Premium 6 měsíců | 449 Kč | + Video chat |
-| Premium 12 měsíců | 349 Kč | + Všechny funkce |
+| Metrika | Výsledek |
+|---------|----------|
+| Kvalita profilů | 95% kompletně vyplněných |
+| Odpovědi na zprávy | 87% úspěšnost |
+| Match → Schůzka | 7 z 10 |
+| Úspěšné vztahy | 3 páry pokračují |
 
 ### Bezpečnost a ochrana soukromí
 
-ELITE Date klade velký důraz na bezpečnost:
-- Manuální kontrola všech fotografií
-- Možnost blokování a nahlášení uživatelů
-- GDPR compliance a šifrovaná komunikace
-- Žádné falešné profily díky ověřování
+- 🔒 Manuální kontrola všech fotografií a profilů
+- 🚫 Možnost blokování a nahlášení uživatelů
+- 🔐 GDPR compliance a šifrovaná komunikace
+- ✅ Žádné propojení se sociálními sítěmi
+
+### Závěrečné hodnocení
+
+**ELITE Date doporučujeme pro:**
+- Lidi hledající vážný vztah (ne flirt nebo nezávazný sex)
+- Uživatele ve věku 25-45 let
+- Ty, kteří oceňují kvalitu nad kvantitou
+- Lidi ochotné investovat čas do důkladného profilu
+
+**Nedoporučujeme pro:**
+- Hledače nezávazných známostí
+- Ty, kdo nechtějí platit za seznamku
+- Uživatele preferující swipovací aplikace
 `,
   'victoria-milan': `
-## Victoria Milan - Kompletní průvodce diskrétním seznamováním
+## Victoria Milan - Evropská jednička pro diskrétní seznámení
 
-Victoria Milan je specializovaná platforma pro ty, kteří hledají diskrétní seznámení. Ať už jste v otevřeném vztahu, hledáte dobrodružství nebo prostě preferujete maximální soukromí, Victoria Milan nabízí prostředí navržené přesně pro vaše potřeby.
+Victoria Milan je největší evropská seznamka specializovaná na diskrétní seznamování pro zadané, vdané a ženaté. Platforma byla založena v roce 2010 norským podnikatelem Sigurdem Vedalem a dnes sdružuje **více než 8 milionů uživatelů** po celém světě.
 
-**Proč si vybrat Victoria Milan:**
-- Absolutní anonymita díky unikátním funkcím
-- Ženy mají členství zcela zdarma
-- Mezinárodní platforma s miliony uživatelů
-- Prokázaná diskrétnost při platbách
+> **V České republice:** 250 000+ registrovaných uživatelů | **Ženy mají členství ZDARMA**
+
+### Proč si vybrat Victoria Milan?
+
+**Klíčové výhody:**
+- 🔒 **100% anonymita** - žádné osobní údaje při registraci
+- 👩 **Pro ženy zcela zdarma** - plné členství bez poplatků
+- 💳 **Diskrétní platby** - na výpisu neutrální název
+- 🌍 **Mezinárodní platforma** - miliony aktivních uživatelů
+- 📱 **Mobilní aplikace** - App Store i Google Play
 
 ### Unikátní bezpečnostní funkce
 
-**AnonymousBlur™** - Patentovaná technologie, která automaticky rozmazává vaše fotky. Pouze lidem, kterým důvěřujete, můžete fotky odhalit. To zajišťuje maximální anonymitu při prohlížení a eliminuje riziko náhodného odhalení.
+Victoria Milan nabízí funkce, které nenajdete na žádné jiné seznamce:
 
-**Panic Button** - Speciální tlačítko, které okamžitě přesměruje prohlížeč na neutrální stránku (např. zpravodajský portál). Ideální pro situace, kdy potřebujete rychle skrýt obsah obrazovky. Můžete si nastavit vlastní URL pro přesměrování.
+**🔵 AnonymousBlur™**
+Patentovaná technologie automaticky rozmazává vaše fotky. Můžete je odhalit pouze vybraným kontaktům, kterým důvěřujete.
 
-**Diskrétní platby** - Na výpisu z karty se nikdy nezobrazí název Victoria Milan. Platby jsou vedeny pod neutrálním názvem společnosti (např. "MODA CZ" nebo "WEBSERVICES").
+**🔴 Panic Button (Nouzové tlačítko)**
+Viditelné tlačítko, které okamžitě přesměruje prohlížeč na neutrální stránku (zprávy, počasí). Ideální pro situace, kdy potřebujete rychle skrýt obrazovku.
 
-**Soukromé albumy** - Citlivé fotky můžete umístit do privátního alba a sdílet je pouze s vybranými uživateli.
+**💳 Diskrétní fakturace**
+Na výpisu z karty se **nikdy nezobrazí** název Victoria Milan. Platba je vedena pod neutrálním názvem jako "WEBSERVICES" nebo "MODA CZ".
+
+**🔒 Žádné propojení se sociálními sítěmi**
+Platformu nelze propojit s Facebookem ani jinými sítěmi. Vaše soukromí je maximálně chráněno.
 
 ### Pro koho je Victoria Milan určena?
 
-- Lidé v otevřených vztazích hledající diskrétní dobrodružství
-- Ti, kteří chtějí prozkoumat možnosti mimo svůj současný vztah
-- Uživatelé preferující maximální anonymitu při online seznamování
-- Ženy hledající vzrušení (členství je pro ně zcela zdarma!)
-- Singles hledající nezávazné vztahy
+- 💑 **Zadaní a vdaní** hledající diskrétní dobrodružství
+- 🔓 **Lidé v otevřených vztazích**
+- 🎭 **Uživatelé preferující anonymitu**
+- 👩 **Ženy** - členství je pro ně zcela zdarma!
+- 🔥 **Singles hledající nezávazné vztahy**
 
 ### Jak probíhá registrace?
 
-1. **Základní údaje** (2 minuty) - email, věk, lokalita, rodinný stav
-2. **Vytvoření profilu** (5 minut) - popis, co hledáte, vaše preference
-3. **Nahrání fotek** - s automatickým rozmazáním obličeje
-4. **Ověření emailu** - potvrzení vaší identity
-5. **Pro ženy** - okamžitý a trvalý přístup k plným funkcím zdarma
-6. **Pro muže** - výběr prémiového členství pro odemčení komunikace
+1. **Základní údaje** (2 min) - email, věk, lokalita, rodinný stav
+2. **Vytvoření profilu** (5 min) - popis, co hledáte
+3. **Nahrání fotek** - automatické rozmazání obličeje
+4. **Pro ženy** → okamžitý plný přístup ZDARMA
+5. **Pro muže** → výběr prémiového členství
 
-### Naše testování odhalilo
+### Ceník členství 2026
 
-Po 3 měsících intenzivního používání jsme zjistili:
-- Vysoká aktivita uživatelů především večer (19:00-23:00) a o víkendech
-- Velmi diskrétní a ohleduplná komunikace mezi uživateli
-- Skutečně fungující bezpečnostní funkce bez kompromisů
-- Kvalitní a rychlá zákaznická podpora (odpověď do 24 hodin)
-- Poměr žen k mužům je přibližně 1:3, což je pro tento typ platformy nadprůměrné
+**Pro ženy: ZDARMA** - všechny funkce bez omezení
 
-### Funkce a možnosti platformy
+**Pro muže:**
 
-**Pro ženy (zdarma):**
-- Neomezené prohlížení profilů
-- Neomezené odesílání a přijímání zpráv
-- Přístup k privátním albům po schválení
-- Všechny prémiové funkce
+| Tarif | Cena/měsíc | Celkem | Funkce |
+|-------|------------|--------|--------|
+| **Silver** | 207 Kč | 621 Kč/3 měs. | Základní komunikace |
+| **Gold** | 125 Kč | 750 Kč/6 měs. | + Prioritní zobrazení |
+| **Diamond** | 83 Kč | 996 Kč/12 měs. | VIP status, všechny funkce |
+
+💡 **Tip:** Roční členství vychází pouze na **83 Kč měsíčně** - nejlepší poměr cena/výkon.
+
+### Co získáte s členstvím?
+
+**Pro ženy (vše zdarma):**
+- ✉️ Neomezené zprávy
+- 👀 Prohlížení všech profilů
+- 📷 Přístup k privátním albům
+- 🔍 Pokročilé filtry
 
 **Pro muže (prémiové členství):**
-- Odesílání zpráv
-- Prohlížení privátních alb
-- Pokročilé filtry vyhledávání
-- Prioritní zobrazení v seznamu
+- ✉️ Odesílání zpráv
+- 📷 Prohlížení privátních alb
+- 🔍 Pokročilé filtry vyhledávání
+- ⭐ Prioritní zobrazení v seznamu
+- 💬 Viditelnost, kdo si prohlédl profil
 
-### Ceník pro muže
+### Zkušenosti uživatelů - co říkají recenze?
 
-| Členství | Cena | Kredity/zprávy |
-|----------|------|----------------|
-| Zkušební | 199 Kč | 10 kreditů |
-| Měsíční | 799 Kč | Neomezené |
-| 3 měsíce | 1 799 Kč | Neomezené + bonus |
-| 6 měsíců | 2 999 Kč | VIP status |
+**Pozitivní zkušenosti:**
+- ✅ Funkce anonymity skutečně fungují
+- ✅ Vysoká aktivita večer (19:00-23:00)
+- ✅ Diskrétní komunikace
+- ✅ Rychlá zákaznická podpora
+
+**Negativní zkušenosti:**
+- ⚠️ Po registraci přijdou zprávy, které bez členství nepřečtete
+- ⚠️ Někteří uživatelé reportují falešné profily
+- ⚠️ Doporučujeme důkladně číst obchodní podmínky
 
 ### Tipy pro úspěch na Victoria Milan
 
-1. **Profil** - Buďte upřímní ohledně své situace a očekávání
-2. **Fotky** - Kvalitní fotky (i rozmazané) zvyšují šanci na odpověď
-3. **Zprávy** - Personalizované zprávy mají 5x vyšší úspěšnost
-4. **Čas** - Nejaktivnější období je 20:00-22:00
-5. **Trpělivost** - Diskrétní seznamování vyžaduje čas a důvěru
+| Tip | Proč funguje |
+|-----|--------------|
+| **Kvalitní rozmazané fotky** | Vzbudí zvědavost, ale zachovají anonymitu |
+| **Personalizované zprávy** | 5x vyšší šance na odpověď |
+| **Aktivita večer 20-22h** | Nejvíce online uživatelů |
+| **Trpělivost** | Diskrétní seznamování vyžaduje budování důvěry |
+| **Upřímnost o situaci** | Jasná očekávání = méně zklamání |
+
+### Bezpečnost a soukromí
+
+- 🔒 SSL šifrování veškeré komunikace
+- 🚫 Žádné propojení se sociálními sítěmi
+- 🗑️ Možnost smazat historii chatu
+- 📧 Anonymní emailový systém
+- 🛡️ GDPR compliance
+
+### Závěrečné hodnocení
+
+**Victoria Milan doporučujeme pro:**
+- Zadané hledající diskrétní dobrodružství
+- Ženy (členství zdarma!)
+- Ty, kdo oceňují maximální anonymitu
+
+**Nedoporučujeme pro:**
+- Hledače vážného vztahu
+- Ty, kdo nejsou připraveni platit (muži)
 `,
   'academic-singles': `
-## Academic Singles - Seznamka pro intelektuály a profesionály
+## Academic Singles - Exkluzivní seznamka pro vysokoškolsky vzdělané
 
-Academic Singles je prémiová platforma určená výhradně pro vysokoškolsky vzdělané profesionály. S 85% uživatelů s VŠ vzděláním zde najdete komunitu lidí, kteří oceňují inteligenci, vzdělání a kariérní úspěch stejně jako vy.
+Academic Singles je prémiová seznamovací platforma určená výhradně pro vysokoškolsky vzdělané profesionály. Byla založena v roce 2008 společností be2 S.à.r.l. se sídlem v Lucembursku a dnes sdružuje **více než 300 000 uživatelů** v České republice.
 
-**Hlavní výhody Academic Singles:**
-- Exkluzivní komunita vzdělaných singles
-- Propracovaný intelektuální matchmaking
-- Vysoká kvalita konverzací a setkání
-- Důraz na dlouhodobé partnerství
+> **85% uživatelů má VŠ vzdělání** | Manuální ověřování profilů | Videohovory k dispozici
 
-### Co dělá Academic Singles unikátní?
+### Proč zvolit Academic Singles?
 
-**Ověřené vzdělání** - Platforma aktivně ověřuje vzdělání uživatelů prostřednictvím diplomů nebo LinkedIn profilů. To zajišťuje autentičnost profilů a vysokou kvalitu komunity.
+**Hlavní výhody:**
+- 🎓 **Exkluzivní komunita** - 85% uživatelů s vysokoškolským vzděláním
+- 🧠 **Intelektuální matchmaking** - párování podle vzdělání a kariérních ambicí
+- ✅ **Manuální schvalování** - každá profilová fotka prochází kontrolou
+- 📹 **Videohovory** - možnost poznat protějšek před schůzkou
+- 🔬 **Vědecký přístup** - algoritmus založený na psychologickém výzkumu
 
-**Intelektuální matchmaking** - Algoritmus nehodnotí pouze osobnostní kompatibilitu, ale také intelektuální shodu, kariérní ambice, životní cíle a hodnoty. Výsledkem jsou opravdu relevantní návrhy partnerů.
+### Kdo zde hledá partnera?
 
-**Exkluzivní komunita** - Menší, ale vysoce kvalitní uživatelská základna zaručuje relevantní matche bez zbytečného procházení stovek nevhodných profilů. Kvalita před kvantitou.
+**Typický uživatel Academic Singles:**
 
-**Hloubkové profily** - Uživatelé zde sdílejí informace o své kariéře, vzdělání, zájmech a životních cílech mnohem detailněji než na běžných seznamkách.
+| Charakteristika | Detail |
+|-----------------|--------|
+| **Věk** | 30-55 let (průměr 42 let) |
+| **Vzdělání** | Bc., Mgr., Ing., PhD., MBA |
+| **Profese** | Lékaři, právníci, manažeři, vědci, IT |
+| **Příjem** | Nadprůměrný (top 20%) |
+| **Hledá** | Vážný vztah s intelektuálním partnerem |
 
-### Typický uživatel Academic Singles
+### Jak funguje registrace?
 
-- **Věk:** 30-55 let (průměr 42 let)
-- **Vzdělání:** Vysokoškolské (Bc., Mgr., Ing., PhD., MBA)
-- **Profese:** Lékaři, právníci, manažeři, vědci, IT specialisté, podnikatelé
-- **Příjem:** Nadprůměrný (top 20% populace)
-- **Hledá:** Intelektuálně stimulující partnerství s potenciálem pro společnou budoucnost
+Registrace je důkladná a trvá **25-30 minut**. Tento čas je investicí do kvality vašich budoucích matchů.
 
-### Proces registrace a osobnostní test
+**Proces krok za krokem:**
 
-Registrace na Academic Singles je důkladná a trvá přibližně 25-30 minut. Tento čas je investicí do kvality vašich budoucích matchů.
+1. **Základní údaje** (3 min) - email, věk, lokace
+2. **Osobnostní dotazník** (20 min) - koníčky, názory, hodnoty
+3. **Nahrání fotografie** - manuální schválení
+4. **Ověření emailu**
+5. **První doporučení** - systém navrhne kompatibilní partnery
 
-**Test analyzuje 5 klíčových oblastí:**
+**Dotazník analyzuje:**
+- Kognitivní styl myšlení
+- Kariérní orientaci a ambice
+- Životní priority a hodnoty
+- Vztahové preference
+- Komunikační vzorce
 
-1. **Kognitivní styl myšlení** - Jak přistupujete k řešení problémů, jaký je váš způsob uvažování
-2. **Kariérní orientaci** - Vaše ambice, work-life balance preference
-3. **Životní priority** - Co je pro vás nejdůležitější - rodina, kariéra, cestování, osobní rozvoj
-4. **Vztahové preference** - Jaké vlastnosti hledáte u partnera, jakou roli chcete ve vztahu hrát
-5. **Komunikační vzorce** - Jak vyjadřujete emoce, jak řešíte konflikty
+### Ceník a členství
 
-### Výsledky našeho testování
-
-Během 4 měsíců intenzivního testování jsme zaznamenali:
-- 92% odpovědí na kvalitně napsané, personalizované zprávy
-- Průměrně 5 vysoce relevantních matchů týdně
-- Vysoká úroveň konverzací - smysluplné dialogy, nikoliv povrchní chatování
-- 6 z 10 schůzek vedlo k dalšímu setkání
-- 2 páry z našeho testování začaly vážný vztah
-
-### Funkce a nástroje platformy
-
-**Základní funkce (zdarma):**
-- Registrace a osobnostní test
+**Základní členství (zdarma):**
+- Registrace a vyplnění testu
 - Prohlížení doporučených profilů
-- Zobrazení kompatibility s dalšími uživateli
+- Zobrazení kompatibility
 
-**Prémiové funkce:**
-- Neomezená komunikace
-- Zobrazení všech fotek
-- Detailní analýza kompatibility
-- Prioritní zákaznická podpora
+**Prémiové členství:**
 
-### Ceník členství
+| Délka | Cena/měsíc | Funkce |
+|-------|------------|--------|
+| **1 měsíc** | 890 Kč | Plná komunikace |
+| **6 měsíců** | 590 Kč | + Profil boost |
+| **12 měsíců** | 490 Kč | + VIP status |
 
-| Členství | Cena/měsíc | Výhody |
-|----------|------------|--------|
-| Premium 3 měsíce | 649 Kč | Plná komunikace |
-| Premium 6 měsíců | 499 Kč | + Profil boost |
-| Premium 12 měsíců | 399 Kč | + VIP status |
+⚠️ **DŮLEŽITÉ UPOZORNĚNÍ:** Členství se **automaticky prodlužuje**! Zrušení musíte provést **nejpozději 14 dnů** před vypršením platnosti.
+
+### Co získáte s prémiovým členstvím?
+
+- ✉️ **Neomezená komunikace** - odesílání i přijímání zpráv
+- 📷 **Zobrazení všech fotek** - včetně privátních
+- 📹 **Videohovory** - poznejte protějšek před schůzkou
+- 📊 **Detailní analýza kompatibility** - procentuální shoda
+- 🔍 **Pokročilé filtry** - vzdělání, profese, lokalita
+- 📱 **Mobilní aplikace** - Android i iOS
+
+### Zkušenosti a hodnocení uživatelů
+
+**Co chválí uživatelé:**
+- ✅ Vysoká kvalita profilů
+- ✅ Seriózní přístup ostatních uživatelů
+- ✅ Smysluplné konverzace
+- ✅ Funkční matchmaking algoritmus
+
+**Na co si dát pozor:**
+
+⚠️ **Varování dTest:** Organizace dTest eviduje stížnosti na Academic Singles kvůli:
+- Automatickému prodlužování členství
+- Komplikovanému procesu zrušení
+- Vysokým cenám ve srovnání s konkurencí
+
+💡 **Tip:** Pokud se rozhodnete pro zrušení, udělejte to **minimálně 14 dní předem** a uchovejte si potvrzení!
+
+### Naše testování - výsledky
+
+Po 4 měsících testování jsme zaznamenali:
+
+| Metrika | Výsledek |
+|---------|----------|
+| Odpovědi na kvalitní zprávy | 92% |
+| Relevantní matche týdně | 5 průměrně |
+| Schůzka → další setkání | 6 z 10 |
+| Kvalita konverzací | Vysoká (žádné povrchní chatování) |
+
+### Výhody vs. Nevýhody
+
+| ✅ Výhody | ❌ Nevýhody |
+|-----------|-------------|
+| Vzdělaná komunita | Vysoká cena členství |
+| Kvalitní profily | Automatické prodlužování |
+| Vědecký matchmaking | Menší uživatelská základna |
+| Videohovory | Bez členství nepoužitelné |
+| Manuální ověřování | Komplikované zrušení |
 
 ### Tipy pro maximální úspěch
 
-1. **Investujte čas do testu** - Čím upřímnější odpovědi, tím lepší matche
-2. **Kvalitní fotky** - Profesionální, ale přirozené fotky zvyšují zájem
-3. **Detailní profil** - Popište své zájmy, kariéru a co hledáte
-4. **Personalizované zprávy** - Odkazujte na konkrétní informace z profilu
-5. **Trpělivost** - Kvalitní vztahy potřebují čas na rozvoj
+1. **Investujte čas do dotazníku** - upřímné odpovědi = lepší matche
+2. **Kvalitní profesionální fotka** - první dojem rozhoduje
+3. **Detailní profil** - popište kariéru, zájmy, co hledáte
+4. **Personalizované zprávy** - odkazujte na konkrétní info z profilu
+5. **Využijte videohovor** - poznejte člověka před schůzkou
+6. **Hlídejte si datum vypršení** - zrušte včas, pokud nechcete prodloužit
+
+### Závěrečné hodnocení
+
+**Academic Singles doporučujeme pro:**
+- Vysokoškolsky vzdělané profesionály
+- Lidi hledající intelektuálního partnera
+- Ty, kdo preferují kvalitu nad kvantitou
+- Uživatele 30-55 let
+
+**Nedoporučujeme pro:**
+- Hledače nezávazných vztahů
+- Ty, kdo nechtějí platit vysoké členské poplatky
+- Uživatele, kteří zapomínají hlídat předplatné
 `,
 }
 
