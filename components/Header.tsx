@@ -5,12 +5,15 @@ import { useState, useEffect } from 'react'
 import { Menu, X, Heart, ChevronDown } from 'lucide-react'
 
 const kategorieItems = [
+  { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
   { name: 'Vážné vztahy', href: '/kategorie/vazne-vztahy' },
   { name: 'Flirt & nezávazné', href: '/kategorie/flirt-seznamky' },
+  { name: 'Sex seznamky 18+', href: '/kategorie/sex-seznamky' },
   { name: 'Senior 50+', href: '/kategorie/senior-seznamky' },
   { name: 'Pro zadané', href: '/kategorie/seznamky-pro-zadane' },
   { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky' },
   { name: 'Zdarma', href: '/kategorie/seznamky-zdarma' },
+  { name: 'Luxusní seznamky', href: '/kategorie/luxusni-seznamky' },
   { name: 'Všechny seznamky', href: '/seznamky' },
 ]
 
@@ -97,6 +100,28 @@ export default function Header() {
                 )}
               </div>
             ))}
+
+            {/* Top 3 Dating Sites */}
+            <div className="hidden xl:flex items-center gap-2 ml-2 pl-4 border-l border-rose-200">
+              <Link
+                href="/seznamky/elite-date"
+                className="text-sm font-medium text-rose-600 hover:text-rose-700 hover:bg-rose-50 px-2 py-1 rounded transition-colors"
+              >
+                ELITE Date
+              </Link>
+              <Link
+                href="/seznamky/victoria-milan"
+                className="text-sm font-medium text-purple-600 hover:text-purple-700 hover:bg-purple-50 px-2 py-1 rounded transition-colors"
+              >
+                Victoria Milan
+              </Link>
+              <Link
+                href="/seznamky/academic-singles"
+                className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:bg-amber-50 px-2 py-1 rounded transition-colors"
+              >
+                Academic Singles
+              </Link>
+            </div>
 
             {/* CTA Button */}
             <Link

@@ -11,19 +11,22 @@ interface Props {
   params: { slug: string }
 }
 
-// Mapování autorů na fotografie
+// Mapování autorů na fotografie - ženy mají ženské fotky, muži mužské
 const authorPhotos: Record<string, string> = {
+  // Ženská jména → ženské fotografie
   'Tereza Nováková': '/images/authors/tereza-novakova.jpg',
-  'Martin Dvořák': '/images/authors/martin-dvorak.jpg',
   'Jana Procházková': '/images/authors/jana-prochazkova.jpg',
-  'Petr Svoboda': '/images/authors/petr-svoboda.jpg',
   'Lucie Králová': '/images/authors/lucie-kralova.jpg',
-  'Tomáš Marek': '/images/authors/tomas-marek.jpg',
   'Kateřina Novotná': '/images/authors/katerina-novotna.jpg',
-  'PhDr. Jan Malý': '/images/authors/martin-dvorak.jpg',
-  'Mgr. Anna Černá': '/images/authors/jana-prochazkova.jpg',
-  'Mgr. Pavel Novotný': '/images/authors/petr-svoboda.jpg',
-  'Kateřina Veselá': '/images/authors/katerina-novotna.jpg',
+  'Kateřina Veselá': '/images/authors/lucie-kralova.jpg',
+  'Mgr. Anna Černá': '/images/authors/tereza-novakova.jpg',
+  // Mužská jména → mužské fotografie
+  'Martin Dvořák': '/images/authors/martin-dvorak.jpg',
+  'Petr Svoboda': '/images/authors/petr-svoboda.jpg',
+  'Tomáš Marek': '/images/authors/tomas-marek.jpg',
+  'PhDr. Jan Malý': '/images/authors/tomas-marek.jpg',
+  'Mgr. Pavel Novotný': '/images/authors/martin-dvorak.jpg',
+  // Redakce a týmy
   'Finanční tým Seznamky.info': '/images/authors/redakce.jpg',
   'Anonymní přispěvatel': '/images/authors/redakce.jpg',
   'Redakce Seznamky.info': '/images/authors/redakce.jpg',
@@ -205,18 +208,141 @@ export default async function ClanekDetailPage({ params }: Props) {
           </div>
         )}
 
-        {/* Main Content */}
-        <div className="prose prose-lg max-w-none mb-8
-          prose-headings:text-gray-900 prose-headings:font-bold
-          prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
-          prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-          prose-p:text-gray-700 prose-p:leading-relaxed
-          prose-a:text-rose-600 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-900
-          prose-ul:my-4 prose-li:text-gray-700
-          prose-blockquote:border-rose-500 prose-blockquote:bg-rose-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
-        ">
-          <ReactMarkdown>{clanek.content}</ReactMarkdown>
+        {/* Main Content with Sidebar */}
+        <div className="flex flex-col lg:flex-row gap-8 mb-8">
+          {/* Article Content */}
+          <div className="flex-grow prose prose-lg max-w-none
+            prose-headings:text-gray-900 prose-headings:font-bold
+            prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
+            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+            prose-p:text-gray-700 prose-p:leading-relaxed
+            prose-a:text-rose-600 prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-gray-900
+            prose-ul:my-4 prose-li:text-gray-700
+            prose-blockquote:border-rose-500 prose-blockquote:bg-rose-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
+          ">
+            <ReactMarkdown>{clanek.content}</ReactMarkdown>
+          </div>
+
+          {/* Sidebar with Affiliate Links */}
+          <aside className="lg:w-80 flex-shrink-0">
+            <div className="sticky top-24 space-y-4">
+              {/* Top Picks Sidebar */}
+              <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl border border-rose-200 p-4">
+                <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-rose-500" fill="currentColor" />
+                  Nejlepší seznamky
+                </h4>
+                <div className="space-y-3">
+                  {eliteDate && (
+                    <AffiliateLink
+                      produkt={eliteDate}
+                      source="article"
+                      placement="sidebar-top"
+                      className="flex items-center gap-3 bg-white rounded-lg p-3 border border-rose-100 hover:border-rose-300 transition-colors group"
+                    >
+                      <div className="w-10 h-10 bg-rose-50 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+                        {eliteDate.logo && (
+                          <Image src={eliteDate.logo} alt={eliteDate.name} width={32} height={32} className="object-contain" />
+                        )}
+                      </div>
+                      <div className="flex-grow min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm group-hover:text-rose-600 transition-colors">{eliteDate.name}</p>
+                        <p className="text-xs text-gray-500">{eliteDate.rating}/10 ⭐</p>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                    </AffiliateLink>
+                  )}
+                  {victoriaMilan && (
+                    <AffiliateLink
+                      produkt={victoriaMilan}
+                      source="article"
+                      placement="sidebar-mid"
+                      className="flex items-center gap-3 bg-white rounded-lg p-3 border border-purple-100 hover:border-purple-300 transition-colors group"
+                    >
+                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+                        {victoriaMilan.logo && (
+                          <Image src={victoriaMilan.logo} alt={victoriaMilan.name} width={32} height={32} className="object-contain" />
+                        )}
+                      </div>
+                      <div className="flex-grow min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm group-hover:text-purple-600 transition-colors">{victoriaMilan.name}</p>
+                        <p className="text-xs text-gray-500">{victoriaMilan.rating}/10 ⭐</p>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                    </AffiliateLink>
+                  )}
+                  {academicSingles && (
+                    <AffiliateLink
+                      produkt={academicSingles}
+                      source="article"
+                      placement="sidebar-bottom"
+                      className="flex items-center gap-3 bg-white rounded-lg p-3 border border-amber-100 hover:border-amber-300 transition-colors group"
+                    >
+                      <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+                        {academicSingles.logo && (
+                          <Image src={academicSingles.logo} alt={academicSingles.name} width={32} height={32} className="object-contain" />
+                        )}
+                      </div>
+                      <div className="flex-grow min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm group-hover:text-amber-600 transition-colors">{academicSingles.name}</p>
+                        <p className="text-xs text-gray-500">{academicSingles.rating}/10 ⭐</p>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                    </AffiliateLink>
+                  )}
+                </div>
+              </div>
+
+              {/* Quick CTA Box */}
+              <div className="bg-gray-900 rounded-xl p-4 text-center">
+                <p className="text-white font-semibold mb-2">Připraveni na lásku?</p>
+                <AffiliateLink
+                  produkt={eliteDate!}
+                  source="article"
+                  placement="sidebar-cta"
+                  className="block w-full bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold py-2 px-4 rounded-lg transition-all text-sm"
+                >
+                  Registrace zdarma →
+                </AffiliateLink>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        {/* Inline Recommendation Box */}
+        <div className="bg-white rounded-xl border-2 border-rose-200 p-5 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="flex-grow">
+              <p className="text-sm text-rose-600 font-semibold mb-1">💡 Tip redakce</p>
+              <p className="text-gray-700">
+                Pro vážné vztahy doporučujeme <strong>ELITE Date</strong> - má nejvyšší úspěšnost párování v ČR.
+                Pro diskrétní seznámení je ideální <strong>Victoria Milan</strong>.
+              </p>
+            </div>
+            <div className="flex gap-2 flex-shrink-0">
+              {eliteDate && (
+                <AffiliateLink
+                  produkt={eliteDate}
+                  source="article"
+                  placement="inline-tip"
+                  className="bg-rose-500 hover:bg-rose-600 text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors"
+                >
+                  ELITE Date
+                </AffiliateLink>
+              )}
+              {victoriaMilan && (
+                <AffiliateLink
+                  produkt={victoriaMilan}
+                  source="article"
+                  placement="inline-tip"
+                  className="bg-purple-500 hover:bg-purple-600 text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors"
+                >
+                  Victoria Milan
+                </AffiliateLink>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Mid-Article CTA */}

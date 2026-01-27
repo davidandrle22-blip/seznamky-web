@@ -8,19 +8,25 @@ interface ArticleCardProps {
   featured?: boolean
 }
 
-// Mapování autorů na fotografie
+// Mapování autorů na fotografie - ženy mají ženské fotky, muži mužské
 const authorPhotos: Record<string, string> = {
+  // Ženská jména → ženské fotografie
   'Tereza Nováková': '/images/authors/tereza-novakova.jpg',
-  'Martin Dvořák': '/images/authors/martin-dvorak.jpg',
   'Jana Procházková': '/images/authors/jana-prochazkova.jpg',
-  'Petr Svoboda': '/images/authors/petr-svoboda.jpg',
   'Lucie Králová': '/images/authors/lucie-kralova.jpg',
-  'Tomáš Marek': '/images/authors/tomas-marek.jpg',
   'Kateřina Novotná': '/images/authors/katerina-novotna.jpg',
-  'PhDr. Jan Malý': '/images/authors/martin-dvorak.jpg',
-  'Mgr. Anna Černá': '/images/authors/jana-prochazkova.jpg',
-  'Mgr. Pavel Novotný': '/images/authors/petr-svoboda.jpg',
-  'Kateřina Veselá': '/images/authors/katerina-novotna.jpg',
+  'Kateřina Veselá': '/images/authors/lucie-kralova.jpg',
+  'Mgr. Anna Černá': '/images/authors/tereza-novakova.jpg',
+  // Mužská jména → mužské fotografie
+  'Martin Dvořák': '/images/authors/martin-dvorak.jpg',
+  'Petr Svoboda': '/images/authors/petr-svoboda.jpg',
+  'Tomáš Marek': '/images/authors/tomas-marek.jpg',
+  'PhDr. Jan Malý': '/images/authors/tomas-marek.jpg',
+  'Mgr. Pavel Novotný': '/images/authors/martin-dvorak.jpg',
+  // Redakce a týmy
+  'Finanční tým Seznamky.info': '/images/authors/redakce.jpg',
+  'Anonymní přispěvatel': '/images/authors/redakce.jpg',
+  'Redakce Seznamky.info': '/images/authors/redakce.jpg',
   'default': '/images/authors/redakce.jpg',
 }
 

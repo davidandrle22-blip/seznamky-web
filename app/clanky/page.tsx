@@ -17,11 +17,14 @@ export const metadata: Metadata = {
 }
 
 const categoryLabels: Record<string, string> = {
-  tipy: 'Tipy',
+  tipy: 'Tipy & rady',
   bezpecnost: 'Bezpečnost',
   vztahy: 'Vztahy',
   psychologie: 'Psychologie',
   recenze: 'Recenze',
+  profil: 'Profil & fotky',
+  prvni_schuzka: 'První schůzka',
+  online_dating: 'Online dating',
 }
 
 export default async function ClankyPage() {
