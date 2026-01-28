@@ -505,58 +505,88 @@
 /* ============================================
    PROSE / ARTICLE STYLES
    Professional typography for long-form content
+   Optimized for readability: 65-75ch line width
    ============================================ */
 .prose-review {
-  @apply text-gray-700 leading-relaxed;
-  max-width: 720px;
+  @apply text-gray-700;
+  font-size: 1.0625rem; /* 17px - optimal for reading */
+  line-height: 1.8;
+  max-width: 70ch; /* Optimal reading width */
 }
 
 .prose-review > * + * {
   margin-top: 1.5em;
 }
 
+/* Heading hierarchy with clear visual distinction */
 .prose-review h2 {
-  @apply text-2xl md:text-3xl font-bold text-gray-900 tracking-tight;
+  @apply text-2xl md:text-[1.75rem] font-bold text-gray-900 tracking-tight;
+  line-height: 1.3;
   margin-top: 2.5em;
   margin-bottom: 0.75em;
+  scroll-margin-top: 100px;
+}
+
+.prose-review h2::before {
+  content: '';
+  @apply block w-12 h-1 bg-gradient-to-r from-romantic-500 to-romantic-400 rounded-full mb-4;
 }
 
 .prose-review h3 {
-  @apply text-xl md:text-2xl font-semibold text-gray-900;
+  @apply text-xl md:text-[1.375rem] font-semibold text-gray-900;
+  line-height: 1.4;
   margin-top: 2em;
   margin-bottom: 0.5em;
+  scroll-margin-top: 100px;
 }
 
 .prose-review h4 {
   @apply text-lg font-semibold text-gray-800;
+  line-height: 1.4;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .prose-review p {
-  @apply text-base md:text-lg leading-loose;
   margin-bottom: 1.25em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.prose-review p:first-of-type {
+  @apply text-lg text-gray-600;
+  line-height: 1.7;
 }
 
 .prose-review strong {
   @apply font-semibold text-gray-900;
 }
 
-.prose-review a {
-  @apply text-romantic-600 underline decoration-romantic-300 underline-offset-2 hover:decoration-romantic-500 transition-colors;
+.prose-review em {
+  @apply italic text-gray-700;
 }
 
+.prose-review a {
+  @apply text-romantic-600 underline decoration-romantic-300 underline-offset-2 hover:decoration-romantic-500 hover:text-romantic-700 transition-colors;
+}
+
+.prose-review a[target="_blank"]::after {
+  content: ' ↗';
+  @apply text-romantic-400 text-sm;
+}
+
+/* Lists with better spacing */
 .prose-review ul, .prose-review ol {
   @apply my-6 space-y-3 pl-0;
 }
 
 .prose-review ul li {
-  @apply relative pl-7 text-base md:text-lg;
+  @apply relative pl-7;
 }
 
 .prose-review ul li::before {
   content: '';
-  @apply absolute left-0 top-2.5 w-2 h-2 rounded-full bg-romantic-500;
+  @apply absolute left-0 top-[0.6em] w-2 h-2 rounded-full bg-romantic-500;
 }
 
 .prose-review ol {
@@ -564,32 +594,84 @@
 }
 
 .prose-review ol li {
-  @apply relative pl-10 text-base md:text-lg;
+  @apply relative pl-10;
   counter-increment: list-counter;
 }
 
 .prose-review ol li::before {
   content: counter(list-counter);
-  @apply absolute left-0 top-0.5 w-7 h-7 rounded-full bg-romantic-100 text-romantic-700 font-semibold text-sm flex items-center justify-center;
+  @apply absolute left-0 top-0 w-7 h-7 rounded-full bg-romantic-100 text-romantic-700 font-semibold text-sm flex items-center justify-center;
 }
 
+/* Nested lists */
+.prose-review ul ul, .prose-review ol ol {
+  @apply mt-3 mb-0 ml-4;
+}
+
+/* Blockquote with citation */
 .prose-review blockquote {
-  @apply border-l-4 border-romantic-500 pl-6 py-2 my-8 bg-romantic-50/50 rounded-r-xl italic text-gray-700;
+  @apply border-l-4 border-romantic-500 pl-6 py-4 my-8 bg-romantic-50/50 rounded-r-xl text-gray-700 not-italic;
+  font-size: 1.0625rem;
+}
+
+.prose-review blockquote p {
+  @apply italic mb-2;
+}
+
+.prose-review blockquote cite {
+  @apply block text-sm text-gray-500 not-italic mt-2;
 }
 
 .prose-review hr {
   @apply my-12 border-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent;
 }
 
-/* Tables in prose */
+/* Inline code */
+.prose-review code:not(pre code) {
+  @apply px-1.5 py-0.5 bg-gray-100 text-romantic-700 rounded text-[0.9em] font-mono;
+}
+
+/* Code blocks */
+.prose-review pre {
+  @apply my-6 p-4 bg-gray-900 text-gray-100 rounded-xl overflow-x-auto;
+}
+
+.prose-review pre code {
+  @apply text-sm font-mono;
+}
+
+/* Image captions */
+.prose-review figure {
+  @apply my-8;
+}
+
+.prose-review figure img {
+  @apply rounded-xl w-full;
+}
+
+.prose-review figcaption {
+  @apply text-sm text-gray-500 text-center mt-3 italic;
+}
+
+/* Mark/highlight */
+.prose-review mark {
+  @apply bg-romantic-100 text-romantic-900 px-1 rounded;
+}
+
+/* Tables in prose - responsive wrapper */
+.prose-review .table-wrapper {
+  @apply my-8 -mx-4 md:mx-0 overflow-x-auto;
+}
+
 .prose-review table {
-  @apply w-full my-8 text-sm md:text-base;
+  @apply w-full text-sm md:text-base;
   border-collapse: separate;
   border-spacing: 0;
+  min-width: 500px;
 }
 
 .prose-review thead th {
-  @apply bg-gray-900 text-white font-semibold text-left px-4 py-3 first:rounded-tl-xl last:rounded-tr-xl;
+  @apply bg-gray-900 text-white font-semibold text-left px-4 py-3 first:rounded-tl-xl last:rounded-tr-xl whitespace-nowrap;
 }
 
 .prose-review tbody td {
@@ -610,6 +692,42 @@
 
 .prose-review tbody tr:last-child td:last-child {
   @apply rounded-br-xl;
+}
+
+/* Definition lists */
+.prose-review dl {
+  @apply my-6 space-y-4;
+}
+
+.prose-review dt {
+  @apply font-semibold text-gray-900;
+}
+
+.prose-review dd {
+  @apply ml-6 text-gray-600;
+}
+
+/* Summary/details for expandable content */
+.prose-review details {
+  @apply my-4 bg-gray-50 rounded-xl border border-gray-200;
+}
+
+.prose-review summary {
+  @apply px-5 py-4 font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 rounded-xl transition-colors;
+}
+
+.prose-review details[open] summary {
+  @apply border-b border-gray-200 rounded-b-none;
+}
+
+.prose-review details > *:not(summary) {
+  @apply px-5 py-4;
+}
+
+/* Drop cap for article intro */
+.prose-review-dropcap > p:first-of-type::first-letter {
+  @apply float-left text-6xl font-bold text-romantic-600 mr-3 mt-1;
+  line-height: 0.8;
 }
 
 /* ============================================
@@ -1014,6 +1132,221 @@
 
 .affiliate-disclosure svg {
   @apply w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5;
+}
+
+/* ============================================
+   EDITORIAL BOX / METHODOLOGY
+   E-E-A-T trust signals
+   ============================================ */
+.editorial-box {
+  @apply my-10 bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl border border-gray-200 overflow-hidden;
+}
+
+.editorial-box-header {
+  @apply flex items-center gap-4 p-5 bg-white/70 border-b border-gray-200;
+}
+
+.editorial-box-avatar {
+  @apply w-14 h-14 rounded-full object-cover ring-2 ring-gray-200;
+}
+
+.editorial-box-author {
+  @apply flex-1;
+}
+
+.editorial-box-author-name {
+  @apply font-semibold text-gray-900;
+}
+
+.editorial-box-author-role {
+  @apply text-sm text-gray-500;
+}
+
+.editorial-box-date {
+  @apply text-sm text-gray-500;
+}
+
+.editorial-box-body {
+  @apply p-5;
+}
+
+.editorial-box-title {
+  @apply font-bold text-lg text-gray-900 mb-3 flex items-center gap-2;
+}
+
+.editorial-box-content {
+  @apply text-sm text-gray-600 leading-relaxed space-y-2;
+}
+
+.editorial-box-criteria {
+  @apply mt-4 grid grid-cols-2 md:grid-cols-3 gap-2;
+}
+
+.editorial-box-criterion {
+  @apply flex items-center gap-2 text-sm text-gray-700 bg-white px-3 py-2 rounded-lg;
+}
+
+.editorial-box-criterion svg {
+  @apply w-4 h-4 text-romantic-500;
+}
+
+/* ============================================
+   TIP BOX / INFO HIGHLIGHT
+   Useful tips within content
+   ============================================ */
+.tip-box {
+  @apply my-6 p-5 rounded-xl flex gap-4;
+}
+
+.tip-box-icon {
+  @apply w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0;
+}
+
+.tip-box-content {
+  @apply flex-1;
+}
+
+.tip-box-title {
+  @apply font-semibold mb-1;
+}
+
+.tip-box-text {
+  @apply text-sm leading-relaxed;
+}
+
+.tip-box-info {
+  @apply bg-blue-50 border border-blue-200;
+}
+
+.tip-box-info .tip-box-icon {
+  @apply bg-blue-500 text-white;
+}
+
+.tip-box-info .tip-box-title {
+  @apply text-blue-900;
+}
+
+.tip-box-info .tip-box-text {
+  @apply text-blue-800;
+}
+
+.tip-box-tip {
+  @apply bg-amber-50 border border-amber-200;
+}
+
+.tip-box-tip .tip-box-icon {
+  @apply bg-amber-500 text-white;
+}
+
+.tip-box-tip .tip-box-title {
+  @apply text-amber-900;
+}
+
+.tip-box-tip .tip-box-text {
+  @apply text-amber-800;
+}
+
+.tip-box-success {
+  @apply bg-green-50 border border-green-200;
+}
+
+.tip-box-success .tip-box-icon {
+  @apply bg-green-500 text-white;
+}
+
+.tip-box-success .tip-box-title {
+  @apply text-green-900;
+}
+
+.tip-box-success .tip-box-text {
+  @apply text-green-800;
+}
+
+.tip-box-warning {
+  @apply bg-red-50 border border-red-200;
+}
+
+.tip-box-warning .tip-box-icon {
+  @apply bg-red-500 text-white;
+}
+
+.tip-box-warning .tip-box-title {
+  @apply text-red-900;
+}
+
+.tip-box-warning .tip-box-text {
+  @apply text-red-800;
+}
+
+/* ============================================
+   REVIEW LAYOUT UTILITIES
+   Layout helpers for review pages
+   ============================================ */
+.review-container {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.review-header {
+  @apply mb-8 pb-8 border-b border-gray-200;
+}
+
+.review-sidebar {
+  @apply lg:sticky lg:top-24;
+}
+
+.review-toc {
+  @apply bg-white rounded-xl border border-gray-200 p-5;
+}
+
+.review-toc-title {
+  @apply font-bold text-gray-900 mb-4 flex items-center gap-2;
+}
+
+.review-toc-list {
+  @apply space-y-2;
+}
+
+.review-toc-item {
+  @apply text-sm text-gray-600 hover:text-romantic-600 transition-colors block py-1;
+}
+
+.review-toc-item.active {
+  @apply text-romantic-600 font-medium;
+}
+
+/* Quick summary card at top of review */
+.review-summary {
+  @apply bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200 p-6 mb-10;
+}
+
+.review-summary-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.review-summary-item {
+  @apply text-center;
+}
+
+.review-summary-value {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.review-summary-label {
+  @apply text-xs text-gray-500 uppercase tracking-wider mt-1;
+}
+
+/* Section anchors */
+.review-section {
+  scroll-margin-top: 100px;
+}
+
+/* Update indicator */
+.last-updated {
+  @apply inline-flex items-center gap-2 text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full;
+}
+
+.last-updated svg {
+  @apply w-4 h-4;
 }
 
 /* ============================================

@@ -36,6 +36,25 @@
       "placement": "hero",
       "timestamp": "2026-01-21T13:11:07.115Z",
       "userAgent": "curl/8.7.1"
+    },
+    {
+      "id": "a98639ba-10e9-4527-9b88-bc52dfd0dd4e",
+      "produktSlug": "academic-singles",
+      "produktName": "Academic Singles",
+      "source": "detail",
+      "placement": "mid-banner",
+      "timestamp": "2026-01-28T14:15:22.951Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "referer": "http://localhost:3000/seznamky/academic-singles"
+    },
+    {
+      "id": "8ae38443-7039-4fdf-9eba-596cf27ca6a9",
+      "produktSlug": "academic-singles",
+      "produktName": "Academic Singles",
+      "source": "detail",
+      "placement": "mid-banner",
+      "timestamp": "2026-01-28T14:15:23.149Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
     }
   ]
 }
