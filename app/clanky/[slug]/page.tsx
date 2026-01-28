@@ -6,6 +6,7 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import ArticleCard from '@/components/ArticleCard'
 import AffiliateLink from '@/components/AffiliateLink'
+import LeadMagnet from '@/components/LeadMagnet'
 
 interface Props {
   params: { slug: string }
@@ -417,6 +418,13 @@ export default async function ClanekDetailPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Lead Magnet - E-book */}
+        <LeadMagnet
+          source="ebook"
+          placement="blog-post-bottom"
+          className="mb-8"
+        />
 
         {/* Final CTA */}
         <div className="bg-gray-900 rounded-2xl p-8 mb-8 text-center">

@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown'
 import AffiliateLink from '@/components/AffiliateLink'
 import { ReviewSchema, FAQSchema, BreadcrumbSchema } from '@/components/seo'
 import { EditorialBox } from '@/components/review'
+import LeadMagnet from '@/components/LeadMagnet'
 
 interface Props {
   params: { slug: string }
@@ -1820,6 +1821,13 @@ export default async function ProduktDetailPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Lead Magnet - E-book */}
+        <LeadMagnet
+          source="ebook"
+          placement="review-post-verdict"
+          className="mb-8"
+        />
 
         {/* Final CTA */}
         <div className="bg-gray-900 rounded-2xl p-8 mb-8 text-center">
