@@ -1,15 +1,26 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { BookOpen, Mail, Check, AlertCircle, Loader2, Shield, Gift } from 'lucide-react'
-import { useAnalytics } from '@/hooks/useAnalytics'
+/**
+ * LeadMagnet Component
+ *
+ * Formulář pro sběr emailů výměnou za e-book.
+ * Po odeslání:
+ * 1. Pošle notifikaci adminovi (přes Resend)
+ * 2. Zobrazí tlačítko pro stažení PDF
+ *
+ * Bezpečnostní funkce:
+ * - Honeypot proti botům
+ * - Validace emailu
+ * - Rate limiting na serveru
+ */
 
-type LeadMagnetVariant = 'default' | 'compact' | 'sidebar' | 'inline'
+import { useState, useEffect } from 'react'
+import { BookOpen, Mail, Check, AlertCircle, Loader2, Shield, Gift, Download } from 'lucide-react'
+
+type LeadMagnetVariant = 'default' | 'compact' | 'sidebar'
 
 interface LeadMagnetProps {
   variant?: LeadMagnetVariant
-  source?: string
-  placement?: string
   className?: string
 }
 
@@ -17,8 +28,6 @@ type FormState = 'idle' | 'loading' | 'success' | 'error'
 
 export default function LeadMagnet({
   variant = 'default',
-  source = 'ebook',
-  placement = 'unknown',
   className = '',
 }: LeadMagnetProps) {
   const [email, setEmail] = useState('')
@@ -26,20 +35,32 @@ export default function LeadMagnet({
   const [honeypot, setHoneypot] = useState('')
   const [formState, setFormState] = useState<FormState>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [hasTrackedView, setHasTrackedView] = useState(false)
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
 
-  const formRef = useRef<HTMLFormElement>(null)
-  const { trackLeadMagnetView, trackLeadMagnetSubmit, trackLeadMagnetSuccess, trackLeadMagnetError } = useAnalytics()
+  // Sbíráme UTM parametry a referrer při načtení
+  const [trackingData, setTrackingData] = useState({
+    pageUrl: '',
+    utmSource: '',
+    utmMedium: '',
+    utmCampaign: '',
+    referrer: ''
+  })
 
-  // Track view on mount (only once)
   useEffect(() => {
-    if (!hasTrackedView) {
-      trackLeadMagnetView(placement)
-      setHasTrackedView(true)
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      setTrackingData({
+        pageUrl: window.location.href,
+        utmSource: params.get('utm_source') || '',
+        utmMedium: params.get('utm_medium') || '',
+        utmCampaign: params.get('utm_campaign') || '',
+        referrer: document.referrer || ''
+      })
     }
-  }, [placement, trackLeadMagnetView, hasTrackedView])
+  }, [])
 
-  const validateEmail = (email: string): boolean => {
+  // Validace emailu na klientu
+  const isValidEmail = (email: string): boolean => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return re.test(email)
   }
@@ -47,15 +68,8 @@ export default function LeadMagnet({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Honeypot check
-    if (honeypot) {
-      console.log('Honeypot triggered')
-      setFormState('success') // Fake success for bots
-      return
-    }
-
-    // Validation
-    if (!validateEmail(email)) {
+    // Validace
+    if (!isValidEmail(email)) {
       setErrorMessage('Zadejte prosím platnou e-mailovou adresu.')
       setFormState('error')
       return
@@ -69,18 +83,17 @@ export default function LeadMagnet({
 
     setFormState('loading')
     setErrorMessage('')
-    trackLeadMagnetSubmit(placement)
 
     try {
-      const response = await fetch('/api/lead-magnet', {
+      const response = await fetch('/api/ebook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email,
-          source,
-          sourcePage: typeof window !== 'undefined' ? window.location.pathname : placement,
+          honeypot,
+          ...trackingData
         }),
       })
 
@@ -90,18 +103,28 @@ export default function LeadMagnet({
         throw new Error(data.error || 'Něco se pokazilo')
       }
 
+      // Úspěch - uložíme download URL
+      setDownloadUrl(data.downloadUrl)
       setFormState('success')
-      trackLeadMagnetSuccess(placement)
+
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Něco se pokazilo'
       setErrorMessage(message)
       setFormState('error')
-      trackLeadMagnetError(placement, message)
     }
   }
 
-  // Success state
-  if (formState === 'success') {
+  // Stažení PDF
+  const handleDownload = () => {
+    if (downloadUrl) {
+      window.open(downloadUrl, '_blank')
+    }
+  }
+
+  // ============================================
+  // SUCCESS STATE - Zobrazí tlačítko pro stažení
+  // ============================================
+  if (formState === 'success' && downloadUrl) {
     return (
       <div className={`lead-magnet lead-magnet-${variant} lead-magnet-success ${className}`}>
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200 p-8 text-center">
@@ -109,21 +132,31 @@ export default function LeadMagnet({
             <Check className="w-8 h-8 text-green-600" />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">
-            E-book je na cestě! 📚
+            E-book je připraven! 📚
           </h3>
-          <p className="text-gray-600 mb-4">
-            Zkontrolujte svou e-mailovou schránku (a případně složku spam).
-            Link pro stažení je platný 72 hodin.
+          <p className="text-gray-600 mb-6">
+            Klikněte na tlačítko níže pro stažení vašeho e-booku.
           </p>
-          <p className="text-sm text-gray-500">
-            Odeslali jsme vám e-mail na <strong>{email}</strong>
+
+          <button
+            onClick={handleDownload}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-green-200 hover:shadow-xl"
+          >
+            <Download className="w-5 h-5" />
+            Stáhnout PDF zdarma
+          </button>
+
+          <p className="text-sm text-gray-500 mt-4">
+            Soubor: Tajemství šťastných vztahů (PDF, 1.1 MB)
           </p>
         </div>
       </div>
     )
   }
 
-  // Compact variant (sidebar, inline)
+  // ============================================
+  // COMPACT / SIDEBAR VARIANT
+  // ============================================
   if (variant === 'compact' || variant === 'sidebar') {
     return (
       <div className={`lead-magnet lead-magnet-${variant} ${className}`}>
@@ -138,11 +171,11 @@ export default function LeadMagnet({
           </div>
 
           <p className="text-xs text-gray-600 mb-4">
-            50+ stran rad pro úspěšné online seznamování
+            Tajemství šťastných vztahů – praktické rady pro seznamování
           </p>
 
-          <form onSubmit={handleSubmit} ref={formRef}>
-            {/* Honeypot */}
+          <form onSubmit={handleSubmit}>
+            {/* Honeypot - skryté pole proti botům */}
             <input
               type="text"
               name="website"
@@ -172,7 +205,10 @@ export default function LeadMagnet({
                   disabled={formState === 'loading'}
                 />
                 <span className="text-xs text-gray-600 leading-tight">
-                  Souhlasím se zpracováním e-mailu pro zaslání e-booku
+                  Souhlasím se{' '}
+                  <a href="/ochrana-soukromi" className="text-rose-600 hover:underline">
+                    zpracováním e-mailu
+                  </a>
                 </span>
               </label>
 
@@ -205,14 +241,16 @@ export default function LeadMagnet({
 
           <p className="text-xs text-gray-500 mt-3 flex items-center gap-1">
             <Shield className="w-3 h-3" />
-            Bez spamu. Odhlášení kdykoliv.
+            Bez spamu. Vaše data jsou v bezpečí.
           </p>
         </div>
       </div>
     )
   }
 
-  // Default (full) variant
+  // ============================================
+  // DEFAULT (FULL) VARIANT
+  // ============================================
   return (
     <div className={`lead-magnet lead-magnet-${variant} ${className}`}>
       <div className="bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 rounded-2xl p-8 md:p-10 relative overflow-hidden">
@@ -231,12 +269,12 @@ export default function LeadMagnet({
             </div>
 
             <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-              Jak si efektivně najít partnera v roce 2026
+              Tajemství šťastných vztahů
             </h3>
 
             <p className="text-rose-200 mb-6">
-              Stáhněte si zdarma 50+ stránkový e-book plný praktických rad,
-              tipů a strategií od expertů na online seznamování.
+              Stáhněte si zdarma e-book plný praktických rad
+              a tipů pro úspěšné online seznamování.
             </p>
 
             <ul className="space-y-2 text-sm text-rose-100">
@@ -267,11 +305,11 @@ export default function LeadMagnet({
               </div>
               <div>
                 <p className="font-semibold text-gray-900">E-book zdarma</p>
-                <p className="text-sm text-gray-500">PDF, 50+ stran</p>
+                <p className="text-sm text-gray-500">PDF ke stažení</p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} ref={formRef}>
+            <form onSubmit={handleSubmit}>
               {/* Honeypot field - hidden from real users */}
               <input
                 type="text"
@@ -310,9 +348,8 @@ export default function LeadMagnet({
                     disabled={formState === 'loading'}
                   />
                   <span className="text-sm text-gray-600">
-                    Souhlasím se zpracováním e-mailu za účelem zaslání e-booku
-                    a případných tipů na online seznamování.
-                    <a href="/ochrana-soukromi" className="text-rose-600 hover:underline ml-1">
+                    Souhlasím se zpracováním e-mailu za účelem zaslání e-booku.{' '}
+                    <a href="/ochrana-soukromi" className="text-rose-600 hover:underline">
                       Zásady ochrany soukromí
                     </a>
                   </span>
@@ -345,7 +382,7 @@ export default function LeadMagnet({
 
                 <p className="text-xs text-gray-500 text-center flex items-center justify-center gap-1">
                   <Shield className="w-3 h-3" />
-                  Bez spamu. Odhlášení kdykoliv jedním klikem.
+                  Bez spamu. Vaše data jsou v bezpečí.
                 </p>
               </div>
             </form>

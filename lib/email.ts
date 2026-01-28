@@ -6,6 +6,10 @@ const FROM_EMAIL = process.env.FROM_EMAIL || 'Seznamky.info <noreply@seznamky.in
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'info@seznamky.info'
 const ADMIN_NOTIFICATION_EMAIL = process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL
 
+// Test mode: všechny emaily jdou na tuto adresu místo skutečným uživatelům
+const TEST_EMAIL_OVERRIDE = process.env.TEST_EMAIL_OVERRIDE || 'seznamky-info@seznam.cz'
+const IS_TEST_MODE = process.env.EMAIL_TEST_MODE === 'true'
+
 interface SendEmailOptions {
   to: string
   subject: string
@@ -62,9 +66,13 @@ export async function sendEmail(options: SendEmailOptions): Promise<{ success: b
 
 /**
  * Odešle e-book email
+ * V test módu (EMAIL_TEST_MODE=true) jde email na TEST_EMAIL_OVERRIDE adresu
  */
 export async function sendEbookEmail(email: string): Promise<{ success: boolean; error?: string }> {
   const downloadUrl = generateDownloadUrl(email)
+
+  // V test módu posílat na testovací adresu
+  const recipientEmail = IS_TEST_MODE ? TEST_EMAIL_OVERRIDE : email
 
   const subject = '📚 Váš e-book: Jak si efektivně najít partnera v roce 2026'
 
@@ -203,7 +211,7 @@ Seznamky.info – Váš nezávislý průvodce online seznamováním
 `
 
   return sendEmail({
-    to: email,
+    to: recipientEmail,
     subject,
     html,
     text,

@@ -1815,11 +1815,7 @@ export default async function ProduktDetailPage({ params }: Props) {
         </div>
 
         {/* Lead Magnet - E-book */}
-        <LeadMagnet
-          source="ebook"
-          placement="review-post-verdict"
-          className="mb-8"
-        />
+        <LeadMagnet className="mb-8" />
 
         {/* Final CTA */}
         <div className="bg-gray-900 rounded-2xl p-8 mb-8 text-center">
