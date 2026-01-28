@@ -37,7 +37,7 @@ const authors: Record<string, { name: string; role: string; photo: string; bio: 
   },
   'victoria-milan': {
     name: 'Martin Dvořák',
-    role: 'Recenzent seznamek',
+    role: 'Recenzent diskrétních seznamek',
     photo: '/images/authors/martin-dvorak.jpg',
     bio: 'Martin se specializuje na diskrétní seznamky a bezpečnost online seznamování. Jeho recenze jsou založeny na měsících reálného testování.'
   },
@@ -46,6 +46,54 @@ const authors: Record<string, { name: string; role: string; photo: string; bio: 
     role: 'Specialistka na vztahy',
     photo: '/images/authors/jana-prochazkova.jpg',
     bio: 'Jana je psycholožka zaměřená na partnerské vztahy. Hodnotí seznamky z pohledu efektivity matchmakingu a kvality uživatelské základny.'
+  },
+  'divoke-rande': {
+    name: 'Kateřina Novotná',
+    role: 'Recenzentka flirt seznamek',
+    photo: '/images/authors/katerina-novotna.jpg',
+    bio: 'Kateřina se zaměřuje na erotické a flirt seznamky. Testuje bezpečnost, anonymitu a skutečnou aktivitu uživatelů na platformách.'
+  },
+  'singles50': {
+    name: 'Lucie Králová',
+    role: 'Specialistka na seznamky 40+',
+    photo: '/images/authors/lucie-kralova.jpg',
+    bio: 'Lucie pomáhá lidem ve zralém věku najít partnera. Hodnotí seznamky z pohledu potřeb uživatelů nad 40 let.'
+  },
+  'flirt-com': {
+    name: 'Petr Svoboda',
+    role: 'Expert na flirt seznamky',
+    photo: '/images/authors/petr-svoboda.jpg',
+    bio: 'Petr testuje flirt a nezávazné seznamky již 4 roky. Zaměřuje se na poměr cena/výkon a skutečnou aktivitu uživatelů.'
+  },
+  'benaughty': {
+    name: 'Tomáš Marek',
+    role: 'Recenzent seznamek',
+    photo: '/images/authors/tomas-marek.jpg',
+    bio: 'Tomáš se specializuje na mezinárodní seznamky a porovnává české a zahraniční platformy. Testuje funkce a zákaznickou podporu.'
+  },
+  'dateefy': {
+    name: 'Tereza Nováková',
+    role: 'Expertka na online seznamování',
+    photo: '/images/authors/tereza-novakova.jpg',
+    bio: 'Tereza se věnuje recenzím seznamek již přes 5 let. Osobně testuje všechny platformy a pomáhá tisícům lidí najít tu pravou cestu k lásce.'
+  },
+  'badoo': {
+    name: 'Kateřina Novotná',
+    role: 'Recenzentka seznamek',
+    photo: '/images/authors/katerina-novotna.jpg',
+    bio: 'Kateřina se zaměřuje na populární mezinárodní seznamky. Testuje mobilní aplikace a hodnotí uživatelskou přívětivost.'
+  },
+  'tinder': {
+    name: 'Petr Svoboda',
+    role: 'Expert na swipe seznamky',
+    photo: '/images/authors/petr-svoboda.jpg',
+    bio: 'Petr testuje swipovací aplikace a hodnotí jejich efektivitu pro české uživatele. Specializuje se na Tinder, Bumble a podobné platformy.'
+  },
+  'ona-hleda-jeho': {
+    name: 'Lucie Králová',
+    role: 'Specialistka na české seznamky',
+    photo: '/images/authors/lucie-kralova.jpg',
+    bio: 'Lucie se věnuje tradičním českým seznamkám a hodnotí jejich přínos pro různé věkové skupiny.'
   },
   'default': {
     name: 'Redakce Seznamky.info',
@@ -411,6 +459,428 @@ Po 4 měsících testování jsme zaznamenali:
 - Hledače nezávazných vztahů
 - Ty, kdo nechtějí platit vysoké členské poplatky
 - Uživatele, kteří zapomínají hlídat předplatné
+`,
+  'divoke-rande': `
+## Divoké rande - Největší česká erotická seznamka
+
+Divoké rande (divokerande.cz) je největší česká seznamka zaměřená na erotické seznámení a nezávazné vztahy. Platforma sdružuje **více než 549 000 registrovaných uživatelů** a patří mezi nejaktivnější české seznamky.
+
+> **Celkové hodnocení: 8,1/10** | **549 000+ uživatelů** | **Ženy mají VIP zdarma**
+
+### Základní informace o seznamce
+
+Divoké rande se prezentuje jako platforma pro dospělé, kteří hledají nezávazné známosti, flirt nebo erotická dobrodružství. Registrovat se mohou pouze uživatelé starší 18 let. Seznamka garantuje diskrétnost a naprostou anonymitu.
+
+**Klíčové statistiky:**
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Počet uživatelů** | 549 000+ |
+| **Poměr pohlaví** | 57% žen, 43% mužů |
+| **Online uživatelů** | Desítky tisíc denně |
+| **Cílová skupina** | 18+ hledající nezávazné vztahy |
+
+### Hodnocení podle kategorií
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Použitelnost a funkce | 7,6/10 |
+| Bezpečnost | 8,0/10 |
+| Přehlednost profilů | 8,2/10 |
+| Potenciál nalezení partnera | 8,1/10 |
+| Zákaznická podpora | 6,2/10 |
+| Cena služby | 5,9/10 |
+
+### Ceník VIP členství 2026
+
+**Pro ženy: ZDARMA** - doživotní VIP účet po ověření fotografie
+
+**Pro muže:**
+
+| Délka | Cena | Cena/měsíc |
+|-------|------|------------|
+| **1 měsíc** | 499 Kč | 499 Kč |
+| **3 měsíce** | 999 Kč | 333 Kč |
+| **1 rok** | 2 388 Kč | 199 Kč |
+
+💡 **Tip:** Roční členství vychází pouze na 199 Kč měsíčně - nejlepší poměr cena/výkon.
+
+### Co získáte s VIP členstvím?
+
+**Základní účet (zdarma - prvních 15 dní):**
+- Až 140 oslovení
+- Odpovídání na zprávy
+- Nahrání až 5 fotografií
+- Nastavení viditelnosti profilu
+
+**VIP členství:**
+- ✉️ Neomezená konverzace
+- 👋 30 oslovení denně
+- ❤️ 40 hodnocení denně
+- 👁️ Zobrazení návštěvníků profilu
+- 💕 Zobrazení „Kdo si mě oblíbil"
+- ✏️ Změna uživatelského jména
+- 📱 Předávání osobních kontaktů
+
+### Hlavní výhody
+
+- ✅ **Vyrovnaný poměr pohlaví** - 57% žen, 43% mužů
+- ✅ **Desítky tisíc aktivních uživatelů** denně online
+- ✅ **Ženy mají VIP zdarma** po ověření fotky
+- ✅ **Neomezená konverzace** s VIP členstvím
+- ✅ **Diskrétní prostředí** s důrazem na anonymitu
+- ✅ **Vychytané funkce** pro snadné seznamování
+
+### Nevýhody a na co si dát pozor
+
+- ⚠️ **Muži musí platit** za plnohodnotné funkce
+- ⚠️ **Orientace pouze na nezávazné vztahy** a sex
+- ⚠️ **VIP členství placené kartou** vyžaduje písemné vypovězení
+- ⚠️ **Vyšší ceny** ve srovnání s jinými seznamkami
+
+### Bezpečnost a anonymita
+
+- 🔒 Možnost nastavit viditelnost profilu
+- 🚫 Aktivní odstraňování falešných profilů
+- 🔐 Diskrétní komunikace
+- ✅ Ověřování fotografií pro ženy
+
+### Závěrečné hodnocení
+
+**Divoké rande doporučujeme pro:**
+- Dospělé hledající nezávazné vztahy a erotická dobrodružství
+- Ženy (VIP členství zdarma!)
+- Ty, kdo oceňují aktivní českou komunitu
+- Uživatele preferující diskrétnost
+
+**Nedoporučujeme pro:**
+- Hledače vážného dlouhodobého vztahu
+- Ty, kdo nechtějí platit (muži)
+- Uživatele mladší 18 let
+`,
+  'singles50': `
+## Singles50 - Exkluzivní seznamka pro zralé uživatele 40+
+
+Singles50 je prémiová online seznamka určená výhradně pro uživatele **starší 40 let**, kteří hledají vážný partnerský vztah. Platforma nabízí bezplatnou registraci s možností upgrade na prémiové členství.
+
+> **Celkové hodnocení: 7,8/10** | **256 200+ uživatelů** | **Zaměření na 40+**
+
+### Základní informace
+
+Singles50 se zaměřuje na zralé uživatele, kteří již vědí, co od vztahu očekávají. Platforma využívá chytrý algoritmus párování založený na osobnostním testu a společných zájmech.
+
+**Klíčové statistiky:**
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Počet uživatelů** | 256 200+ |
+| **Poměr pohlaví** | 52% mužů, 48% žen |
+| **Online uživatelů** | 56 681 |
+| **Věková skupina** | 40+ let |
+
+### Hodnocení podle kategorií
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Použitelnost | 7,5/10 |
+| Bezpečnost | 7,7/10 |
+| Přehlednost profilů | 7,8/10 |
+| Potenciál nalezení partnera | 7,8/10 |
+| Zákaznická podpora | 8,0/10 |
+| Cena služby | 7,7/10 |
+
+### Ceník VIP členství 2026
+
+| Délka | Cena/měsíc |
+|-------|------------|
+| **1 měsíc** | 149 Kč |
+| **3 měsíce** | 399 Kč |
+| **6 měsíců** | 549 Kč |
+| **1 rok** | 399 Kč |
+
+### Hlavní funkce
+
+- 🧠 **Chytrý výběr partnerů** podle zájmů a osobnostního testu
+- 📷 **Volitelné zpřístupnění fotografií** - vy rozhodujete, kdo je vidí
+- 🔍 **Pokročilé vyhledávání** podle věku, vzdělání, příjmu
+- 💕 **Hra „Láska na první lajk"** - zábavný způsob seznamování
+- ✉️ **Neomezené zprávy** s VIP členstvím
+
+### Hlavní výhody
+
+- ✅ **256 tisíc aktivních uživatelů** ve vaší věkové kategorii
+- ✅ **Vyrovnaný poměr pohlaví** - 52:48
+- ✅ **Rychlé procházení profilů** s intuitivním rozhraním
+- ✅ **Chytrá doporučení partnerů** na základě kompatibility
+- ✅ **Flexibilní VIP modely** dle vašich potřeb
+
+### Nevýhody
+
+- ⚠️ Některé funkce pouze s VIP členstvím
+- ⚠️ Minimální věková hranice 40 let
+- ⚠️ Není možné pozastavit Premium členství
+- ⚠️ Někteří uživatelé hlásí obtížné zrušení
+
+### Pro koho je Singles50 určena?
+
+**Typický uživatel:**
+- 👤 Věk: 40-65 let
+- 💼 Ustálená životní situace
+- 💕 Hledá vážný vztah s partnerem podobného věku
+- 🎯 Ví, co od vztahu očekává
+
+### Závěrečné hodnocení
+
+**Singles50 doporučujeme pro:**
+- Uživatele starší 40 let
+- Ty, kdo hledají vážný partnerský vztah
+- Lidi preferující kvalitní komunitu podobného věku
+
+**Nedoporučujeme pro:**
+- Mladší uživatele (pod 40 let)
+- Hledače nezávazných vztahů
+- Ty, kdo nechtějí platit za členství
+`,
+  'flirt-com': `
+## Flirt.com - Mezinárodní seznamka s miliony uživatelů
+
+Flirt.com je jedna z největších mezinárodních seznamek zaměřená na flirt a nezávazné seznamování. S **více než 9 miliony uživatelů** celosvětově nabízí obrovskou základnu potenciálních kontaktů.
+
+> **Celkové hodnocení: 9,3/10** | **9 305 000+ uživatelů** | **Ženy ZDARMA**
+
+### Základní informace
+
+Flirt.com se zaměřuje na uživatele hledající flirt, zábavu a nezávazné vztahy. Platforma nabízí moderní rozhraní, pokročilé vyhledávání a řadu zábavných funkcí pro usnadnění seznamování.
+
+**Klíčové statistiky:**
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Počet uživatelů** | 9 305 000+ |
+| **Poměr pohlaví** | 50% mužů, 50% žen |
+| **Online uživatelů** | 2 058 628 |
+| **Průměrný věk** | 21+ |
+
+### Hodnocení podle kategorií
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Použitelnost stránek | 9,0/10 |
+| Bezpečnost seznamky | 9,5/10 |
+| Přehlednost profilů | 9,5/10 |
+| Potenciál nalezení partnera | 9,0/10 |
+| Zákaznická podpora | 9,0/10 |
+| Cena služby | 9,5/10 |
+
+### Ceník 2026
+
+**Pro ženy: ZDARMA** - plný přístup ke všem funkcím
+
+**Pro muže:**
+
+| Balíček | Cena |
+|---------|------|
+| **Účet zdarma** | Základní funkce |
+| **Prémiový randič** | 314 Kč |
+| **Extra zabezpečení** | 66 Kč/měsíc |
+| **Balíček chataholik** | 36 Kč/měsíc |
+
+### Hlavní funkce
+
+- 🔍 **Pokročilé vyhledávání** s filtry podle pohlaví, věku a místa
+- 💬 **Koketní zprávy** rozesílané více lidem najednou
+- 🎬 **Nahrávání videí** do profilu
+- ❤️ **„Líbí se vám nebo ne?"** galerie pro rychlé seznamování
+- 🔒 **Extra zabezpečení** pro VIP členy
+- 📈 **Balíček chataholik** se zvýšenou viditelností
+
+### Hlavní výhody
+
+- ✅ **Koncentrace uživatelů hledajících flirt** - všichni jsou tu ze stejného důvodu
+- ✅ **Ženy mají plný přístup zdarma** ke všem funkcím
+- ✅ **Bezpečné šifrování** a anonymita
+- ✅ **Tři variabilní VIP balíčky** podle potřeb
+- ✅ **Neomezené flirtování** s jakýmkoliv uživatelem
+- ✅ **Přátelské a bezpečné prostředí**
+
+### Nevýhody
+
+- ⚠️ Muži získávají plný přístup pouze po zaplacení
+- ⚠️ Automatické obnovování členství
+- ⚠️ Ostatní uživatelé nemusí odpovědět na vaše zprávy
+- ⚠️ Zaměření na flirt, ne vážné vztahy
+
+### Bezpečnost
+
+- 🔐 HTTPS šifrování veškeré komunikace
+- 🛡️ Možnost blokování obtěžujících uživatelů
+- ✅ Ověřování profilů
+- 🔒 Anonymní prostředí
+
+### Závěrečné hodnocení
+
+**Flirt.com doporučujeme pro:**
+- Uživatele hledající flirt a nezávazné vztahy
+- Ženy (plný přístup zdarma!)
+- Ty, kdo oceňují mezinárodní komunitu
+- Singles nad 18 let preferující zábavné seznamování
+
+**Nedoporučujeme pro:**
+- Hledače vážného dlouhodobého vztahu
+- Ty, kdo nechtějí platit (muži)
+`,
+  'benaughty': `
+## BeNaughty - Mezinárodní flirt seznamka
+
+BeNaughty je online seznamka určená pro singles starší 18 let hledající zábavné seznamování bez čekání. Platforma nabízí prostor pro osobní prezentaci a vyhledávání partnerů podobných zájmů.
+
+> **Celkové hodnocení: 7,3/10** | **1 000 000+ uživatelů** | **Flexibilní VIP balíčky**
+
+### Základní informace
+
+BeNaughty se zaměřuje na uživatele, kteří hledají flirt, zábavu a nezávazné vztahy. Platforma nabízí moderní rozhraní a řadu funkcí pro usnadnění seznamování.
+
+**Klíčové statistiky:**
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Počet uživatelů** | 1 000 000+ |
+| **Poměr pohlaví** | 53% mužů, 47% žen |
+| **Průměrný věk** | 20+ let |
+
+### Hodnocení podle kategorií
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Použitelnost | 4,2/10 |
+| Bezpečnost | 4,7/10 |
+| Přehlednost profilů | 4,0/10 |
+| Potenciál nalezení partnera | 6,2/10 |
+| Zákaznická podpora | 4,3/10 |
+| Cena | 4,2/10 |
+
+### Ceník VIP balíčků 2026
+
+| Balíček | Cena/měsíc |
+|---------|------------|
+| **Extra zabezpečení** | 199,99 Kč |
+| **Chataholik** | 214,99 Kč |
+| **Prémiový randič** | 314,99 Kč |
+
+### Hlavní funkce
+
+- 🔍 **Rozšířené vyhledávání** s filtrováním (pohlaví, věk, poloha, vzhled)
+- ❤️ **„Like galerie"** pro hodnocení fotografií
+- 💬 **Chatování** přes zprávy
+- 💌 **Hromadné koketní zprávy**
+- 📊 **Přehled aktivit** uživatele
+- 🚫 **Blokování** obtěžujících uživatelů
+
+### Hlavní výhody
+
+- ✅ Moderní, přehledné rozhraní
+- ✅ Flexibilní VIP balíčky s možností pozastavení
+- ✅ Rozšířené vyhledávání
+- ✅ Funkce blokování obtěžujících uživatelů
+- ✅ Registrace zdarma
+
+### Nevýhody
+
+- ⚠️ Ne každý profil má nahranou profilovou fotografii
+- ⚠️ Možnost výskytu falešných profilů
+- ⚠️ Omezené funkce bez VIP členství
+- ⚠️ Veřejné hodnocování profilových fotek
+
+### Závěrečné hodnocení
+
+**BeNaughty doporučujeme pro:**
+- Uživatele hledající nezávazné seznamování
+- Ty, kdo oceňují flexibilní platební možnosti
+- Singles preferující mezinárodní komunitu
+
+**Nedoporučujeme pro:**
+- Hledače vážného vztahu
+- Uživatele požadující vysokou kvalitu profilů
+`,
+  'dateefy': `
+## Dateefy - Česká flirt seznamka s ověřenými profily
+
+Dateefy je česká seznamka zaměřená na nezávazné seznamování a flirt. Platforma se vyznačuje důrazem na ověřování profilů a bezpečné prostředí.
+
+> **Celkové hodnocení: 8,4/10** | **199 557+ uživatelů** | **Ženy VIP zdarma**
+
+### Základní informace
+
+Dateefy se zaměřuje na uživatele hledající flirt a nezávazné vztahy. Všechny ženské profily jsou ověřovány, což zajišťuje vyšší kvalitu a bezpečnost.
+
+**Klíčové statistiky:**
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Počet uživatelů** | 199 557+ |
+| **Poměr pohlaví** | 57% mužů, 43% žen |
+| **Online uživatelů** | 44 150 |
+
+### Hodnocení podle kategorií
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Použitelnost a funkce | 6,9/10 |
+| Bezpečnost | 6,8/10 |
+| Přehlednost profilů | 6,7/10 |
+| Potenciál nalezení partnera | 6,5/10 |
+| Zákaznická podpora | 6,0/10 |
+| Cena služby | 6,9/10 |
+
+### Ceník VIP členství 2026
+
+**Pro ženy: ZDARMA** po ověření
+
+**Pro muže:**
+
+| Délka | Cena/měsíc |
+|-------|------------|
+| **1 měsíc** | 299 Kč |
+| **3 měsíce** | 199 Kč |
+| **12 měsíců** | 99 Kč |
+
+💡 **Tip:** Při aktivaci ročního členství zaplatíte jen 99 Kč/měsíc!
+
+### Hlavní funkce
+
+- 💬 **Chatování** (neomezené s VIP)
+- 💕 **Hra „Setkání"** (lajkování/odmítnutí profilů)
+- ⭐ **Oblíbené profily**
+- 🔍 **Pokročilé vyhledávání**
+- 👁️ **Přehled návštěvníků**
+- ❤️ **Sekce „Chtějí mě"**
+
+### Hlavní výhody
+
+- ✅ **Ženy mají VIP zdarma** po ověření
+- ✅ **Žádné falešné profily** díky ověřování
+- ✅ **Intuitivní uživatelské rozhraní**
+- ✅ **Rychlá registrace** bez osobních otázek
+- ✅ **Rozumné ceny** - od 99 Kč/měsíc
+
+### Nevýhody
+
+- ⚠️ Muži bez VIP se prakticky neseznámí
+- ⚠️ Zaměřena spíše na flirtování než vážné vztahy
+- ⚠️ Některé profily bez fotografií
+- ⚠️ Automatické obnovování členství
+
+### Závěrečné hodnocení
+
+**Dateefy doporučujeme pro:**
+- Ženy (VIP zdarma po ověření!)
+- Muže hledající ověřené ženské profily
+- Uživatele preferující českou seznamku
+- Hledače nezávazných vztahů a flirtu
+
+**Nedoporučujeme pro:**
+- Hledače vážného dlouhodobého vztahu
+- Muže, kteří nechtějí platit
 `,
 }
 
