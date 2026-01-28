@@ -1,0 +1,11 @@
+// Review components barrel export
+export { default as ScoreCard } from './ScoreCard'
+export { default as ProsConsBox } from './ProsConsBox'
+export { default as PricingBox } from './PricingBox'
+export { default as StepByStep } from './StepByStep'
+export { default as CalloutBox } from './CalloutBox'
+export { default as AudienceBox } from './AudienceBox'
+export { default as CTABox } from './CTABox'
+export { default as AlternativesGrid } from './AlternativesGrid'
+export { default as AffiliateDisclosure } from './AffiliateDisclosure'
+export { default as FAQAccordion } from './FAQAccordion'

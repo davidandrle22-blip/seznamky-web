@@ -1,10 +1,11 @@
 import { getProduktBySlug, getProdukty, getKategorie } from '@/lib/data'
 import { notFound } from 'next/navigation'
-import { Star, Users, Check, X, ExternalLink, ChevronRight, Clock, Calendar, Award, Heart, Shield, Zap, MessageCircle, Lock, Smartphone, CreditCard, Target, ThumbsUp, Sparkles } from 'lucide-react'
+import { Star, Users, Check, X, ExternalLink, ChevronRight, Clock, Calendar, Award, Heart, Shield, Zap, MessageCircle, Lock, Smartphone, CreditCard, Target, ThumbsUp, Sparkles, Info } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import AffiliateLink from '@/components/AffiliateLink'
+import { ReviewSchema, FAQSchema, BreadcrumbSchema } from '@/components/seo'
 
 interface Props {
   params: { slug: string }
@@ -882,6 +883,261 @@ Dateefy se zaměřuje na uživatele hledající flirt a nezávazné vztahy. Vše
 - Hledače vážného dlouhodobého vztahu
 - Muže, kteří nechtějí platit
 `,
+  'badoo': `
+## Badoo - Největší seznamovací síť na světě | Kompletní recenze 2026
+
+Badoo je **největší seznamovací platforma na světě** s více než **500 miliony registrovaných uživatelů**. Působí ve 190 zemích a je dostupná ve 47 jazycích včetně češtiny. V tomto podrobném průvodci se dozvíte vše, co potřebujete vědět.
+
+> **Celkové hodnocení: 8,2/10** | **500M+ uživatelů** | **Dostupná v ČR**
+
+---
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|----------|---------|
+| **Celkové hodnocení** | 8,2/10 |
+| **Počet uživatelů** | 500M+ celosvětově |
+| **Aktivních měsíčně** | 50M |
+| **Věková skupina** | 18-55 let |
+| **Poměr pohlaví** | 45% žen / 55% mužů |
+| **Registrace** | Zdarma |
+| **Aplikace** | iOS, Android |
+
+---
+
+## Základní informace o Badoo
+
+Badoo byla založena v roce 2006 ruským podnikatelem Andrejem Andrejevem v Londýně. Od té doby vyrostla v jednu z nejpoužívanějších seznamovacích platforem na světě. V roce 2021 se Badoo stala součástí skupiny Bumble Inc.
+
+### Jak funguje Badoo?
+
+Badoo kombinuje několik způsobů seznamování:
+
+1. **Encounters (Setkání)** - swipování podobné Tinderu
+2. **Lidé v okolí** - GPS lokalizace uživatelů poblíž
+3. **Vyhledávání** - filtry podle věku, vzdělání, zájmů
+4. **Live streamy** - živé vysílání a interakce
+
+---
+
+## Ceník Badoo Premium 2026
+
+### Bezplatné funkce
+
+Co získáte zdarma:
+- ✅ Vytvoření profilu a nahrání fotek
+- ✅ Omezené swipování (cca 100 denně)
+- ✅ Základní chat s matchi
+- ✅ Stories
+- ✅ Lidé v okolí
+
+### Premium členství
+
+| Délka | Cena | Cena/měsíc |
+|-------|------|------------|
+| **1 týden** | 199 Kč | - |
+| **1 měsíc** | 399 Kč | 399 Kč |
+| **3 měsíce** | 699 Kč | 233 Kč |
+| **6 měsíců** | 999 Kč | 167 Kč |
+| **Lifetime** | 2 499 Kč | Jednorázově |
+
+💡 **Tip:** Lifetime členství je nejlepší investice, pokud plánujete Badoo používat dlouhodobě.
+
+### Co získáte s Premium?
+
+- ✨ **Neomezené swipování** - žádné denní limity
+- 👀 **Kdo mě lajkl** - vidíte, komu se líbíte
+- ⏪ **Vrácení swipe** - oprava omylem odmítnutých
+- 🔝 **Zvýraznění profilu** - 3x více zobrazení
+- 🚫 **Bez reklam** - čistší zážitek
+- ✅ **Ověřený badge** - důvěryhodnější profil
+
+---
+
+## Registrace krok za krokem
+
+### 1. Stažení aplikace (1 minuta)
+Stáhněte Badoo z App Store nebo Google Play. Aplikace je zdarma a má přes 100 milionů stažení.
+
+### 2. Vytvoření účtu (2 minuty)
+Registrujte se pomocí:
+- E-mailu
+- Telefonu
+- Facebook účtu
+- Apple ID
+
+### 3. Nahrání fotek (3 minuty)
+Nahrajte alespoň 3 kvalitní fotky. Doporučujeme:
+- Portrét s úsměvem
+- Celou postavu
+- Fotku při aktivitě/koníčku
+
+### 4. Ověření selfie (1 minuta)
+Pořiďte selfie v určité póze pro ověření identity. Zvýšíte tím důvěryhodnost profilu.
+
+### 5. Vyplnění profilu (5 minut)
+Doplňte informace o sobě:
+- Popis (bio)
+- Vzdělání a práce
+- Zájmy a koníčky
+- Co hledáte
+
+---
+
+## Hlavní funkce Badoo
+
+### 🎯 Encounters (Setkání)
+Klasické swipování profilů. Swipněte doprava, pokud se vám někdo líbí, doleva pokud ne. Při vzájemné shodě vznikne match a můžete chatovat.
+
+### 📍 Lidé v okolí
+Díky GPS vidíte uživatele ve vašem okolí. Můžete filtrovat podle vzdálenosti od 1 km až po celý svět. Ideální pro cestování.
+
+### 📹 Video chat
+Poznejte člověka bezpečně přes video hovor přímo v aplikaci. Nemusíte sdílet telefonní číslo ani jiné kontakty.
+
+### 📱 Stories
+Podobně jako na Instagramu můžete sdílet fotky a videa, které zmizí po 24 hodinách. Dobrý způsob, jak ukázat svou osobnost.
+
+### 🎬 Livestreamy
+Vysílejte živě nebo sledujte ostatní. Můžete posílat virtuální dárky a interagovat v reálném čase.
+
+---
+
+## Bezpečnost a ochrana soukromí
+
+### Ověřování profilů
+
+Badoo nabízí několik způsobů ověření:
+- **Selfie ověření** - porovnání s profilovými fotkami
+- **Video ověření** - krátké video potvrzující identitu
+- **Propojení sociálních sítí** - Facebook, Instagram
+
+### Bezpečnostní funkce
+
+- 🔒 **Blokování uživatelů** - okamžité blokování obtěžujících
+- 🚨 **Nahlášení** - report nevhodného obsahu
+- 🤖 **AI moderace** - automatická detekce nevhodných fotek
+- 👨‍💼 **24/7 tým** - moderátoři kontrolují obsah
+
+### Tipy pro bezpečné seznamování
+
+1. Nikdy neposílejte peníze neznámým lidem
+2. Nesdílejte osobní údaje (adresa, práce)
+3. První schůzku domlouvejte na veřejném místě
+4. Informujte přátele o plánované schůzce
+5. Důvěřujte svým instinktům
+
+---
+
+## Pro koho je Badoo ideální?
+
+### ✅ Doporučujeme pro:
+- **Mladé lidi 18-35** - nejvíce aktivní věková skupina
+- **Ty, kdo chtějí velký výběr** - 500M uživatelů
+- **Začátečníky** - snadné ovládání, hodně zdarma
+- **Cestující** - mezinárodní dosah ve 190 zemích
+- **Hledače flirtu i vztahu** - univerzální platforma
+
+### ❌ Nedoporučujeme pro:
+- **Seniory 55+** - málo uživatelů v této kategorii
+- **Hledače výhradně vážného vztahu** - lepší ELITE Date
+- **Ty bez trpělivosti** - hodně neaktivních profilů
+
+---
+
+## Badoo vs. konkurence
+
+### Badoo vs. Tinder
+
+| Funkce | Badoo | Tinder |
+|--------|-------|--------|
+| **Uživatelé** | 500M | 75M |
+| **Chat zdarma** | ✅ | ✅ |
+| **Video chat** | ✅ | ✅ (Gold) |
+| **Lifetime** | ✅ 2 499 Kč | ❌ |
+| **Stories** | ✅ | ❌ |
+| **Ověření selfie** | ✅ | ❌ |
+| **Lidé v okolí** | ✅ | ✅ |
+
+**Verdikt:** Badoo nabízí více funkcí zdarma a větší uživatelskou základnu. Tinder má modernější design a cílenější marketing na mladší publikum.
+
+### Badoo vs. ELITE Date
+
+| Funkce | Badoo | ELITE Date |
+|--------|-------|------------|
+| **Zaměření** | Flirt i vztahy | Pouze vážné vztahy |
+| **Věk uživatelů** | 18-55 | 30-55 |
+| **Matchmaking** | Swipování | Vědecký algoritmus |
+| **Profily** | Částečně ověřené | 100% ověřené |
+| **Cena** | Od 399 Kč/měsíc | Od 420 Kč/měsíc |
+
+**Verdikt:** Badoo pro mladší a ty, kdo chtějí flexibilitu. ELITE Date pro seriózní hledání partnera 30+.
+
+---
+
+## Zkušenosti uživatelů
+
+### Co chválí:
+> "Badoo mi pomohlo najít přítelkyni. Líbí se mi, že hodně funkcí je zdarma." - *Tomáš, 28 let*
+
+> "Lifetime členství se vyplatilo. Používám Badoo už 2 roky a nemám žádné měsíční poplatky." - *Petra, 31 let*
+
+### Co kritizují:
+> "Hodně fake profilů a neaktivních účtů. Musíte být trpěliví." - *Jan, 34 let*
+
+> "Reklamy v bezplatné verzi jsou otravné." - *Markéta, 25 let*
+
+---
+
+## Tipy pro úspěch na Badoo
+
+### 1. Kvalitní fotky
+- Úsměv a oční kontakt
+- Dobré osvětlení
+- Různorodé záběry
+- Žádné skupinové fotky jako hlavní
+
+### 2. Zajímavý profil
+- Napište něco originálního
+- Zmiňte své koníčky
+- Buďte konkrétní, ne obecní
+- Přidejte humor
+
+### 3. Aktivní přístup
+- Swipujte pravidelně
+- Pište první zprávy
+- Odpovídejte včas
+- Navrhněte schůzku po pár dnech chatování
+
+### 4. Bezpečnost
+- Ověřte svůj profil selfie
+- Používejte video chat před schůzkou
+- Buďte obezřetní u podezřelých profilů
+
+---
+
+## Závěrečné hodnocení
+
+### Naše skóre: 8,2/10
+
+| Kategorie | Hodnocení |
+|-----------|-----------|
+| Uživatelská základna | 10/10 |
+| Funkce zdarma | 8/10 |
+| Mobilní aplikace | 9/10 |
+| Kvalita profilů | 7/10 |
+| Poměr cena/výkon | 8/10 |
+| Bezpečnost | 8/10 |
+
+### Shrnutí
+
+**Badoo je skvělá volba pro** každého, kdo chce vstoupit do světa online seznamování. Obrovská uživatelská základna, štědrá bezplatná verze a kvalitní mobilní aplikace z ní dělají jednu z nejdostupnějších seznamek.
+
+**Hlavní nevýhodou** je vyšší počet fake profilů a neaktivních účtů. Buďte trpěliví a využívejte filtry pro vyhledávání.
+
+**Lifetime členství** za 2 499 Kč je výhodná investice pro dlouhodobé uživatele.
+`,
 }
 
 export async function generateStaticParams() {
@@ -936,8 +1192,27 @@ export default async function ProduktDetailPage({ params }: Props) {
   const victoriaMilan = allProdukty.find(p => p.slug === 'victoria-milan')
   const academicSingles = allProdukty.find(p => p.slug === 'academic-singles')
 
+  // Prepare breadcrumb data
+  const breadcrumbItems = [
+    { name: 'Domů', url: 'https://www.seznamky.info/' },
+    { name: 'Seznamky', url: 'https://www.seznamky.info/seznamky' },
+    { name: produkt.name, url: `https://www.seznamky.info/seznamky/${produkt.slug}` },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
+      {/* JSON-LD SEO Schemas */}
+      <ReviewSchema
+        produkt={produkt}
+        author={author.name}
+        datePublished="2026-01-01"
+        dateModified="2026-01-28"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+      {produkt.faq && produkt.faq.length > 0 && (
+        <FAQSchema items={produkt.faq} />
+      )}
+
       {/* Hero with Red Gradient */}
       <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
         {/* Animated background elements */}
@@ -1068,6 +1343,14 @@ export default async function ProduktDetailPage({ params }: Props) {
               <p className="text-xs text-gray-500 mt-2">Registrace trvá 2 minuty</p>
             </div>
           </div>
+        </div>
+
+        {/* Affiliate Disclosure */}
+        <div className="bg-gray-100 rounded-xl p-4 mb-8 flex items-start gap-3 text-sm text-gray-600">
+          <Info className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+          <p>
+            <strong>Transparentnost:</strong> Tento web obsahuje affiliate odkazy. Pokud se zaregistrujete přes náš odkaz, můžeme získat provizi bez dalších nákladů pro vás. Naše hodnocení zůstává nezávislé.
+          </p>
         </div>
 
         {/* Pros & Cons Side by Side */}

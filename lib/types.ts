@@ -3,6 +3,26 @@ export interface FaqItem {
   answer: string
 }
 
+export interface PricingTier {
+  name: string
+  duration: string
+  price: string
+  pricePerMonth?: string
+  isPopular?: boolean
+  isFree?: boolean
+}
+
+export interface RegistrationStep {
+  title: string
+  description: string
+  duration?: string
+}
+
+export interface ScoreCategory {
+  label: string
+  score: number
+}
+
 export interface Produkt {
   id: string
   slug: string
@@ -33,6 +53,16 @@ export interface Produkt {
   freeVersion?: boolean
   freeFeatures?: string[]
   faq?: FaqItem[]
+  // Enhanced fields for review hub
+  pricing?: PricingTier[]
+  pricingNote?: string
+  registrationSteps?: RegistrationStep[]
+  scoreCategories?: ScoreCategory[]
+  idealFor?: string[]
+  notIdealFor?: string[]
+  safetyInfo?: string
+  verdict?: string
+  lastUpdated?: string
 }
 
 export interface Clanek {
