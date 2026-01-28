@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { saveLead, markEmailSent, LeadSource } from '@/lib/leads'
-import { sendEbookEmail } from '@/lib/email'
+import { sendEbookEmail, sendAdminNotification } from '@/lib/email'
 import { checkRateLimit, getClientIP } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
@@ -61,6 +61,14 @@ export async function POST(request: NextRequest) {
       console.error('Failed to send email:', emailResult.error)
       // Nevracíme chybu uživateli, lead je uložený
     }
+
+    // Odeslat notifikaci adminovi
+    await sendAdminNotification({
+      email,
+      source: leadSource,
+      sourcePage: sourcePage || undefined,
+      isNew,
+    })
 
     return NextResponse.json({
       success: true,

@@ -93,15 +93,17 @@ export default async function Home() {
             </div>
 
             {/* CTA Button */}
-            <Link
-              href="/api/affiliate/elite-date?source=homepage&placement=hero-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 border border-white/20"
-            >
-              <span className="text-lg">🏆 Vyzkoušet #1 ELITE Date zdarma</span>
-              <Sparkles className="w-5 h-5" />
-            </Link>
+            {eliteDate && (
+              <AffiliateLink
+                produkt={eliteDate}
+                source="homepage"
+                placement="hero-cta"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 border border-white/20"
+              >
+                <span className="text-lg">🏆 Vyzkoušet #1 ELITE Date zdarma</span>
+                <Sparkles className="w-5 h-5" />
+              </AffiliateLink>
+            )}
           </div>
         </div>
 

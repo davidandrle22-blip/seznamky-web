@@ -51,7 +51,7 @@ export default function KontaktPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@seznamkysrovnani.cz</p>
+                    <p className="text-gray-600">info@seznamky.info</p>
                   </div>
                 </div>
               </div>

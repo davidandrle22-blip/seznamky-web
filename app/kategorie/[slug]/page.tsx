@@ -62,7 +62,7 @@ export default async function KategoriePage({ params }: Props) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <CategoryHero kategorie={kategorie} productCount={produkty.length} />
+      <CategoryHero kategorie={kategorie} productCount={produkty.length} eliteDate={eliteDate} />
 
       {/* Top 3 Recommendations - ELITE Date, Victoria Milan & Academic Singles */}
       <section className="py-6 bg-gradient-to-r from-romantic-50 via-white to-romantic-50">

@@ -55,6 +55,25 @@
       "placement": "mid-banner",
       "timestamp": "2026-01-28T14:15:23.149Z",
       "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+    },
+    {
+      "id": "fbe6f3a7-ea21-4bd3-8de4-a4c26126b584",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "detail",
+      "placement": "info-box",
+      "timestamp": "2026-01-28T15:39:30.202Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "referer": "http://localhost:3001/seznamky/elite-date"
+    },
+    {
+      "id": "a12f3d69-b450-4642-bfdf-545b6c772350",
+      "produktSlug": "elite-date",
+      "produktName": "ELITE Date",
+      "source": "detail",
+      "placement": "info-box",
+      "timestamp": "2026-01-28T15:39:30.537Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
     }
   ]
 }

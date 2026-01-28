@@ -1608,14 +1608,6 @@ export default async function ProduktDetailPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Affiliate Disclosure */}
-        <div className="bg-gray-100 rounded-xl p-4 mb-8 flex items-start gap-3 text-sm text-gray-600">
-          <Info className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-          <p>
-            <strong>Transparentnost:</strong> Tento web obsahuje affiliate odkazy. Pokud se zaregistrujete přes náš odkaz, můžeme získat provizi bez dalších nákladů pro vás. Naše hodnocení zůstává nezávislé.
-          </p>
-        </div>
-
         {/* Editorial Box - E-E-A-T */}
         <EditorialBox
           authorName={author.name}

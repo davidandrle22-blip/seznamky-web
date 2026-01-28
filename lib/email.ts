@@ -4,6 +4,7 @@ import { generateDownloadUrl } from './download-token'
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const FROM_EMAIL = process.env.FROM_EMAIL || 'Seznamky.info <noreply@seznamky.info>'
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'info@seznamky.info'
+const ADMIN_NOTIFICATION_EMAIL = process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL
 
 interface SendEmailOptions {
   to: string
@@ -203,6 +204,97 @@ Seznamky.info – Váš nezávislý průvodce online seznamováním
 
   return sendEmail({
     to: email,
+    subject,
+    html,
+    text,
+  })
+}
+
+/**
+ * Odešle notifikaci adminovi o novém leadu
+ */
+export async function sendAdminNotification(data: {
+  email: string
+  source: string
+  sourcePage?: string
+  isNew: boolean
+}): Promise<{ success: boolean; error?: string }> {
+  if (!ADMIN_NOTIFICATION_EMAIL) {
+    console.log('Admin notification email not configured')
+    return { success: false, error: 'Admin email not configured' }
+  }
+
+  const subject = data.isNew
+    ? `🎉 Nový lead: ${data.email}`
+    : `🔄 Opakovaný lead: ${data.email}`
+
+  const timestamp = new Date().toLocaleString('cs-CZ', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+
+  const html = `
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>${subject}</title>
+</head>
+<body style="margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f5;">
+  <div style="max-width: 500px; margin: 0 auto; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <h2 style="color: ${data.isNew ? '#059669' : '#d97706'}; margin: 0 0 20px;">
+      ${data.isNew ? '🎉 Nový lead!' : '🔄 Opakovaný lead'}
+    </h2>
+
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">Email:</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600;">${data.email}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">Zdroj:</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">${data.source}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">Stránka:</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">${data.sourcePage || 'N/A'}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; color: #6b7280;">Čas:</td>
+        <td style="padding: 10px 0;">${timestamp}</td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center;">
+      <a href="https://www.seznamky.info/admin/leads" style="display: inline-block; background: #be123c; color: white; text-decoration: none; padding: 10px 25px; border-radius: 8px; font-weight: 600;">
+        Zobrazit v adminu →
+      </a>
+    </div>
+
+    <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 20px 0 0;">
+      Seznamky.info Lead Magnet System
+    </p>
+  </div>
+</body>
+</html>
+`
+
+  const text = `
+${data.isNew ? 'Nový lead!' : 'Opakovaný lead'}
+
+Email: ${data.email}
+Zdroj: ${data.source}
+Stránka: ${data.sourcePage || 'N/A'}
+Čas: ${timestamp}
+
+Admin: https://www.seznamky.info/admin/leads
+`
+
+  return sendEmail({
+    to: ADMIN_NOTIFICATION_EMAIL,
     subject,
     html,
     text,

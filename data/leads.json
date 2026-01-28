@@ -1,3 +1,15 @@
 {
-  "leads": []
+  "leads": [
+    {
+      "id": "33f1226a-e9da-4a3a-9e2b-356b9c0ae96c",
+      "email": "davidandrle22@gmail.com",
+      "source": "ebook",
+      "sourcePage": "/seznamky/elite-date",
+      "ipHash": "b2d4e0be8760304d",
+      "status": "active",
+      "createdAt": "2026-01-28T15:39:15.231Z",
+      "updatedAt": "2026-01-28T16:47:47.307Z",
+      "emailSentAt": "2026-01-28T15:39:15.233Z"
+    }
+  ]
 }
