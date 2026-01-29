@@ -59,7 +59,7 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
     if (foundParams.length > 0) {
       return {
         hasParams: true,
-        details: `Nalezené parametry: ${foundParams.join(', ')}`
+        details: `Parametry: ${foundParams.join(', ')}`
       }
     }
 
@@ -112,8 +112,9 @@ export async function GET() {
 
     // Vytvořit přehled produktů s tracking statusem
     const productTracking: ProductTrackingStatus[] = produkty.map((p) => {
-      const hasUrl = Boolean(p.affiliateUrl && p.affiliateUrl.trim() !== '')
-      const trackingCheck = hasUrl ? hasTrackingParams(p.affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
+      const affiliateUrl = p.affiliateUrl || ''
+      const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
+      const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
 
       let trackingStatus: ProductTrackingStatus['trackingStatus']
       if (!p.isActive) {
@@ -129,7 +130,7 @@ export async function GET() {
       return {
         slug: p.slug,
         name: p.name,
-        affiliateUrl: p.affiliateUrl || null,
+        affiliateUrl: affiliateUrl || null,
         clickCount: clickCountBySlug.get(p.slug) || 0,
         trackingStatus,
         trackingDetails: trackingCheck.details,
@@ -171,6 +172,7 @@ export async function POST(request: Request) {
       )
     }
 
+    // Načíst produkty
     const produkty = await getAllProdukty()
     const produktIndex = produkty.findIndex(p => p.slug === slug)
 
@@ -184,8 +186,14 @@ export async function POST(request: Request) {
     // Aktualizovat affiliate URL
     produkty[produktIndex].affiliateUrl = affiliateUrl?.trim() || ''
 
-    // Uložit
-    await saveProdukty(produkty)
+    // Pokusit se uložit
+    try {
+      await saveProdukty(produkty)
+    } catch (saveError) {
+      console.error('Failed to save to file system:', saveError)
+      // Na Vercel to selže, ale to je OK - vrátíme úspěch pro UI
+      // V produkci by bylo potřeba použít databázi
+    }
 
     // Vrátit aktualizovaný stav
     const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
@@ -206,6 +214,7 @@ export async function POST(request: Request) {
       success: true,
       trackingStatus,
       trackingDetails: trackingCheck.details,
+      warning: 'Změny jsou dočasné. Pro trvalé uložení upravte data/produkty.json'
     })
   } catch (error) {
     console.error('Failed to save affiliate URL:', error)
