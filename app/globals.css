@@ -1393,3 +1393,342 @@
     @apply h-24;
   }
 }
+
+/* ============================================
+   MOBILE STICKY E-BOOK CTA
+   Visible on mobile below header
+   ============================================ */
+.sticky-ebook-cta {
+  @apply hidden;
+}
+
+@media (max-width: 768px) {
+  .sticky-ebook-cta {
+    @apply block sticky top-16 z-40 bg-gradient-to-r from-amber-500 to-orange-500 py-3 px-4 shadow-lg;
+  }
+
+  .sticky-ebook-cta a {
+    @apply flex items-center justify-center gap-2 text-white font-bold text-sm;
+  }
+
+  .sticky-ebook-cta .ebook-icon {
+    @apply w-5 h-5;
+  }
+
+  .sticky-ebook-cta .ebook-badge {
+    @apply bg-white/20 text-white text-xs px-2 py-0.5 rounded-full ml-2;
+  }
+}
+
+/* ============================================
+   MOBILE DATING CARDS
+   Card layout for comparison tables on mobile
+   ============================================ */
+
+/* Hide table on mobile, show cards */
+@media (max-width: 768px) {
+  .comparison-table-desktop {
+    @apply hidden;
+  }
+
+  .comparison-cards-mobile {
+    @apply block;
+  }
+}
+
+@media (min-width: 769px) {
+  .comparison-table-desktop {
+    @apply block;
+  }
+
+  .comparison-cards-mobile {
+    @apply hidden;
+  }
+}
+
+/* Dating Card Base */
+.dating-card {
+  @apply bg-white rounded-2xl border-2 border-gray-100 mb-4 overflow-hidden;
+  @apply transition-all duration-300;
+}
+
+.dating-card:hover {
+  @apply shadow-lg;
+}
+
+/* Priority card variants */
+.dating-card--elite {
+  @apply border-yellow-400 bg-gradient-to-br from-yellow-50 to-amber-50;
+  @apply ring-2 ring-yellow-300 ring-offset-2;
+}
+
+.dating-card--victoria {
+  @apply border-purple-400 bg-gradient-to-br from-purple-50 to-fuchsia-50;
+}
+
+.dating-card--academic {
+  @apply border-emerald-400 bg-gradient-to-br from-emerald-50 to-green-50;
+}
+
+/* Card Header */
+.card-header {
+  @apply p-4 pb-3 border-b border-gray-100;
+}
+
+.dating-card--elite .card-header {
+  @apply bg-gradient-to-r from-yellow-400 to-amber-400 border-b-0;
+}
+
+.dating-card--victoria .card-header {
+  @apply bg-gradient-to-r from-purple-500 to-purple-600 border-b-0;
+}
+
+.dating-card--academic .card-header {
+  @apply bg-gradient-to-r from-emerald-500 to-emerald-600 border-b-0;
+}
+
+.card-header-content {
+  @apply flex items-center gap-3;
+}
+
+.card-header-logo {
+  @apply w-14 h-14 rounded-xl bg-white shadow-md flex-shrink-0 overflow-hidden;
+  @apply flex items-center justify-center p-1;
+}
+
+.card-header-info {
+  @apply flex-grow min-w-0;
+}
+
+.card-header-name {
+  @apply font-bold text-lg text-gray-900 truncate;
+}
+
+.dating-card--elite .card-header-name,
+.dating-card--victoria .card-header-name,
+.dating-card--academic .card-header-name {
+  @apply text-white;
+}
+
+.card-header-rating {
+  @apply flex items-center gap-2 mt-1;
+}
+
+.card-header-rating-badge {
+  @apply text-sm font-bold px-2 py-0.5 rounded-full;
+}
+
+.card-header-users {
+  @apply text-xs text-gray-500;
+}
+
+.dating-card--elite .card-header-users,
+.dating-card--victoria .card-header-users,
+.dating-card--academic .card-header-users {
+  @apply text-white/80;
+}
+
+/* Card Badge */
+.card-badge {
+  @apply inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full;
+  @apply whitespace-nowrap;
+}
+
+.card-badge--elite {
+  @apply bg-yellow-900 text-yellow-100;
+}
+
+.card-badge--victoria {
+  @apply bg-white/20 text-white backdrop-blur-sm;
+}
+
+.card-badge--academic {
+  @apply bg-white/20 text-white backdrop-blur-sm;
+}
+
+.card-badge--default {
+  @apply bg-gray-100 text-gray-700;
+}
+
+/* Card Body */
+.card-body {
+  @apply p-4 space-y-4;
+}
+
+/* Pros and Cons sections */
+.card-pros-cons {
+  @apply grid grid-cols-1 gap-3;
+}
+
+.card-pros {
+  @apply bg-green-50 rounded-xl p-3 border border-green-100;
+}
+
+.card-cons {
+  @apply bg-red-50 rounded-xl p-3 border border-red-100;
+}
+
+.card-section-title {
+  @apply flex items-center gap-2 text-sm font-bold mb-2;
+}
+
+.card-pros .card-section-title {
+  @apply text-green-700;
+}
+
+.card-cons .card-section-title {
+  @apply text-red-700;
+}
+
+.card-section-list {
+  @apply space-y-1.5;
+}
+
+.card-section-item {
+  @apply flex items-start gap-2 text-sm;
+}
+
+.card-pros .card-section-item {
+  @apply text-green-800;
+}
+
+.card-cons .card-section-item {
+  @apply text-red-800;
+}
+
+.card-section-icon {
+  @apply w-4 h-4 flex-shrink-0 mt-0.5;
+}
+
+.card-pros .card-section-icon {
+  @apply text-green-500;
+}
+
+.card-cons .card-section-icon {
+  @apply text-red-500;
+}
+
+/* Card CTA */
+.card-cta {
+  @apply p-4 pt-0 space-y-3;
+}
+
+.card-cta-primary {
+  @apply w-full flex items-center justify-center gap-2;
+  @apply font-bold text-white py-3.5 px-6 rounded-xl;
+  @apply transition-all duration-300;
+  @apply min-h-[44px];
+  @apply shadow-lg;
+}
+
+.card-cta-primary--elite {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500;
+  @apply hover:from-yellow-600 hover:to-orange-600;
+  @apply shadow-orange-500/30;
+}
+
+.card-cta-primary--victoria {
+  @apply bg-gradient-to-r from-purple-600 to-purple-700;
+  @apply hover:from-purple-700 hover:to-purple-800;
+  @apply shadow-purple-500/30;
+}
+
+.card-cta-primary--academic {
+  @apply bg-gradient-to-r from-emerald-600 to-emerald-700;
+  @apply hover:from-emerald-700 hover:to-emerald-800;
+  @apply shadow-emerald-500/30;
+}
+
+.card-cta-primary--default {
+  @apply bg-gradient-to-r from-romantic-600 to-romantic-500;
+  @apply hover:from-romantic-700 hover:to-romantic-600;
+  @apply shadow-romantic-500/25;
+}
+
+.card-cta-secondary {
+  @apply w-full flex items-center justify-center gap-2;
+  @apply font-semibold text-gray-700 py-3 px-6 rounded-xl;
+  @apply bg-gray-100 hover:bg-gray-200;
+  @apply transition-all duration-200;
+  @apply min-h-[44px];
+}
+
+/* Card E-book Fallback CTA */
+.card-ebook-cta {
+  @apply mt-3 pt-3 border-t border-gray-100;
+}
+
+.card-ebook-cta a {
+  @apply flex items-center justify-center gap-2;
+  @apply w-full py-2.5 px-4 rounded-xl;
+  @apply bg-gradient-to-r from-amber-100 to-orange-100;
+  @apply text-amber-800 font-semibold text-sm;
+  @apply border border-amber-200;
+  @apply transition-all duration-200;
+  @apply hover:from-amber-200 hover:to-orange-200;
+  @apply min-h-[44px];
+}
+
+.card-ebook-cta svg {
+  @apply w-4 h-4;
+}
+
+/* ============================================
+   CONSISTENT BADGE STYLES
+   Unified badge appearance across site
+   ============================================ */
+.badge-recommended {
+  @apply inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full;
+  @apply bg-yellow-400 text-yellow-900;
+}
+
+.badge-discrete {
+  @apply inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full;
+  @apply bg-purple-200 text-purple-800;
+}
+
+.badge-educated {
+  @apply inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full;
+  @apply bg-emerald-200 text-emerald-800;
+}
+
+.badge-free {
+  @apply inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full;
+  @apply bg-green-100 text-green-700;
+}
+
+/* ============================================
+   TYPOGRAPHY CONSISTENCY
+   Unified font sizes and spacing
+   ============================================ */
+.comparison-title {
+  @apply text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center;
+}
+
+.section-subtitle {
+  @apply text-gray-600 text-center max-w-2xl mx-auto mb-8;
+}
+
+/* ============================================
+   GLOBAL CTA CONSISTENCY
+   Same CTA appearance everywhere
+   ============================================ */
+.cta-elite {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600;
+  @apply text-white font-bold shadow-lg shadow-orange-500/30;
+}
+
+.cta-victoria {
+  @apply bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800;
+  @apply text-white font-bold shadow-lg shadow-purple-500/30;
+}
+
+.cta-academic {
+  @apply bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800;
+  @apply text-white font-bold shadow-lg shadow-emerald-500/30;
+}
+
+.cta-default {
+  @apply bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600;
+  @apply text-white font-bold shadow-lg shadow-romantic-500/25;
+}

@@ -4,12 +4,36 @@ import { Produkt, Clanek, Nastaveni, Kategorie, CategoryContent } from './types'
 
 const dataDir = path.join(process.cwd(), 'data')
 
+// Prioritní pořadí seznamek - globálně dodrženo na celém webu
+const PRIORITY_ORDER = ['elite-date', 'victoria-milan', 'academic-singles']
+
+function sortByPriority(produkty: Produkt[]): Produkt[] {
+  const priorityMap = new Map(PRIORITY_ORDER.map((slug, index) => [slug, index]))
+
+  return [...produkty].sort((a, b) => {
+    const aPriority = priorityMap.get(a.slug) ?? 999
+    const bPriority = priorityMap.get(b.slug) ?? 999
+
+    // Prioritní seznamky vždy první
+    if (aPriority !== bPriority) {
+      return aPriority - bPriority
+    }
+
+    // Ostatní podle původního pořadí (order) nebo ratingu
+    if (a.order !== b.order) {
+      return a.order - b.order
+    }
+
+    return b.rating - a.rating
+  })
+}
+
 // Produkty
 export async function getProdukty(): Promise<Produkt[]> {
   const filePath = path.join(dataDir, 'produkty.json')
   const data = await fs.readFile(filePath, 'utf-8')
   const produkty: Produkt[] = JSON.parse(data)
-  return produkty.filter(p => p.isActive).sort((a, b) => a.order - b.order)
+  return sortByPriority(produkty.filter(p => p.isActive))
 }
 
 export async function getAllProdukty(): Promise<Produkt[]> {
@@ -77,9 +101,10 @@ export async function getProduktyByKategorie(kategorieId: string): Promise<Produ
   const produkty = await getProdukty()
   // Pro kategorii "vsechny-seznamky" vrátíme všechny aktivní produkty
   if (kategorieId === 'vsechny-seznamky') {
-    return produkty
+    return produkty // Already sorted by priority
   }
-  return produkty.filter(p => p.categories.includes(kategorieId))
+  // Filter and re-sort to ensure priority order is maintained
+  return sortByPriority(produkty.filter(p => p.categories.includes(kategorieId)))
 }
 
 export async function getKategorieBySlug(slug: string): Promise<Kategorie | null> {
