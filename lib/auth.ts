@@ -2,6 +2,7 @@ import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET || 'seznamky-info-admin-secret-key-2024',
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -35,6 +36,18 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/admin/login',
+  },
+  debug: process.env.NODE_ENV === 'development',
+  cookies: {
+    sessionToken: {
+      name: `next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: process.env.NODE_ENV === 'production',
+      },
+    },
   },
   callbacks: {
     async jwt({ token, user }) {
