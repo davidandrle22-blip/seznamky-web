@@ -129,33 +129,35 @@ export default function Header() {
             {/* E-book Button */}
             <Link
               href={ebookLink}
-              className="ml-2 inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-all shadow-md hover:scale-105 text-sm"
+              className="header-cta-secondary--desktop ml-2"
             >
-              <BookOpen className="w-4 h-4" />
-              E-book zdarma
+              <BookOpen className="header-cta-icon" />
+              <span>E-book zdarma</span>
             </Link>
 
             {/* CTA Button */}
             <Link
               href="/seznamky"
-              className="ml-2 inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic hover:scale-105"
+              className="header-cta-primary--desktop ml-2"
             >
-              <Heart className="w-4 h-4" fill="currentColor" />
-              Najít lásku
+              <Heart className="header-cta-icon" fill="currentColor" />
+              <span>Najít lásku</span>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-2">
             <Link
               href="/seznamky"
-              className="bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition-all"
+              className="header-cta-primary--mobile-header"
             >
-              Srovnat
+              <Heart className="header-cta-icon" fill="currentColor" />
+              <span>Najít lásku</span>
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-rose-600 p-2 rounded-lg hover:bg-rose-50 transition-colors"
+              className="text-gray-700 hover:text-rose-600 p-2.5 rounded-xl hover:bg-rose-50 transition-colors focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
+              aria-label={isOpen ? 'Zavřít menu' : 'Otevřít menu'}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -197,19 +199,19 @@ export default function Header() {
             <div className="mt-4 px-3 space-y-3">
               <Link
                 href={ebookLink}
-                className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                className="header-cta-secondary--mobile-menu"
                 onClick={() => setIsOpen(false)}
               >
-                <BookOpen className="w-5 h-5" />
-                E-book zdarma
+                <BookOpen className="header-cta-icon--mobile" />
+                <span>E-book zdarma</span>
               </Link>
               <Link
                 href="/seznamky"
-                className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                className="header-cta-primary--mobile-menu"
                 onClick={() => setIsOpen(false)}
               >
-                <Heart className="w-5 h-5" fill="currentColor" />
-                Najít lásku
+                <Heart className="header-cta-icon--mobile" fill="currentColor" />
+                <span>Najít lásku</span>
               </Link>
             </div>
           </div>

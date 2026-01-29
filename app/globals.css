@@ -1732,3 +1732,107 @@
   @apply bg-gradient-to-r from-romantic-600 to-romantic-500 hover:from-romantic-700 hover:to-romantic-600;
   @apply text-white font-bold shadow-lg shadow-romantic-500/25;
 }
+
+/* ============================================
+   HEADER CTA BUTTONS
+   Unified, accessible header CTAs
+   ============================================ */
+
+/* Base header CTA - shared styles */
+.header-cta {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply font-semibold rounded-xl;
+  @apply transition-all duration-200 ease-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply transform active:scale-[0.98];
+}
+
+/* Primary CTA - Main action (Najít lásku) */
+.header-cta-primary {
+  @apply header-cta;
+  @apply bg-gradient-to-r from-rose-500 to-rose-600;
+  @apply hover:from-rose-600 hover:to-rose-700;
+  @apply text-white;
+  @apply shadow-md shadow-rose-500/25 hover:shadow-lg hover:shadow-rose-500/30;
+  @apply focus:ring-rose-500;
+  @apply py-2.5 px-5;
+}
+
+/* Desktop size */
+.header-cta-primary--desktop {
+  @apply header-cta-primary;
+  @apply text-sm py-2.5 px-5;
+}
+
+/* Mobile header compact */
+.header-cta-primary--mobile-header {
+  @apply header-cta-primary;
+  @apply text-sm py-2 px-4;
+  @apply min-h-[40px];
+}
+
+/* Mobile menu full width */
+.header-cta-primary--mobile-menu {
+  @apply header-cta-primary;
+  @apply w-full text-base py-3.5 px-6;
+  @apply min-h-[48px];
+}
+
+/* Secondary CTA - E-book */
+.header-cta-secondary {
+  @apply header-cta;
+  @apply bg-gradient-to-r from-amber-500 to-orange-500;
+  @apply hover:from-amber-600 hover:to-orange-600;
+  @apply text-white;
+  @apply shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/30;
+  @apply focus:ring-amber-500;
+  @apply py-2.5 px-5;
+}
+
+/* Desktop size */
+.header-cta-secondary--desktop {
+  @apply header-cta-secondary;
+  @apply text-sm py-2.5 px-4;
+}
+
+/* Mobile header compact - hidden by default, shown via config */
+.header-cta-secondary--mobile-header {
+  @apply header-cta-secondary;
+  @apply text-xs py-1.5 px-3;
+  @apply min-h-[36px];
+}
+
+/* Mobile menu full width */
+.header-cta-secondary--mobile-menu {
+  @apply header-cta-secondary;
+  @apply w-full text-base py-3.5 px-6;
+  @apply min-h-[48px];
+}
+
+/* Outline variant for less prominent actions */
+.header-cta-outline {
+  @apply header-cta;
+  @apply bg-white hover:bg-rose-50;
+  @apply text-rose-600 hover:text-rose-700;
+  @apply border-2 border-rose-200 hover:border-rose-300;
+  @apply shadow-sm hover:shadow-md;
+  @apply focus:ring-rose-500;
+  @apply py-2 px-4;
+}
+
+/* Mobile menu outline */
+.header-cta-outline--mobile-menu {
+  @apply header-cta-outline;
+  @apply w-full text-base py-3 px-6;
+  @apply min-h-[48px];
+}
+
+/* Icon inside CTA */
+.header-cta-icon {
+  @apply w-4 h-4 flex-shrink-0;
+}
+
+/* Mobile menu CTA icon */
+.header-cta-icon--mobile {
+  @apply w-5 h-5 flex-shrink-0;
+}
