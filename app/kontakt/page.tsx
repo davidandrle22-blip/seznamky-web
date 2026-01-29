@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle } from 'lucide-react'
 
 export default function KontaktPage() {
   const [formData, setFormData] = useState({
@@ -11,13 +11,32 @@ export default function KontaktPage() {
     message: ''
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In real app, send to API
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Odeslání se nezdařilo')
+      }
+
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+    } catch {
+      setError('Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -46,36 +65,29 @@ export default function KontaktPage() {
             <div className="space-y-6">
               <div className="card p-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary-500" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-rose-500" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@seznamky.info</p>
+                    <h3 className="font-semibold text-gray-900">E-mail</h3>
+                    <a
+                      href="mailto:seznamky-info@seznam.cz"
+                      className="text-rose-600 hover:text-rose-700 hover:underline"
+                    >
+                      seznamky-info@seznam.cz
+                    </a>
                   </div>
                 </div>
               </div>
 
               <div className="card p-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary-500" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Telefon</h3>
-                    <p className="text-gray-600">+420 123 456 789</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary-500" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-rose-500" />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-gray-900">Adresa</h3>
-                    <p className="text-gray-600">Praha, Česká republika</p>
+                    <p className="text-gray-600">Kaprova 42/14, Praha 1</p>
                   </div>
                 </div>
               </div>
@@ -96,13 +108,19 @@ export default function KontaktPage() {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="text-primary-500 hover:text-primary-600 font-medium"
+                    className="text-rose-500 hover:text-rose-600 font-medium"
                   >
                     Odeslat další zprávu
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div className="bg-red-50 text-red-700 p-4 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -122,7 +140,7 @@ export default function KontaktPage() {
 
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email *
+                        E-mail *
                       </label>
                       <input
                         type="email"
@@ -176,10 +194,17 @@ export default function KontaktPage() {
 
                   <button
                     type="submit"
-                    className="btn-primary w-full flex items-center justify-center"
+                    disabled={isLoading}
+                    className="btn-primary w-full flex items-center justify-center disabled:opacity-50"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Odeslat zprávu
+                    {isLoading ? (
+                      <span>Odesílám...</span>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Odeslat zprávu
+                      </>
+                    )}
                   </button>
                 </form>
               )}

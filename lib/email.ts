@@ -3,7 +3,7 @@ import { generateDownloadUrl } from './download-token'
 // Resend API
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const FROM_EMAIL = process.env.FROM_EMAIL || 'Seznamky.info <noreply@seznamky.info>'
-const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'info@seznamky.info'
+const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'seznamky-info@seznam.cz'
 const ADMIN_NOTIFICATION_EMAIL = process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL
 
 // Test mode: všechny emaily jdou na tuto adresu místo skutečným uživatelům
