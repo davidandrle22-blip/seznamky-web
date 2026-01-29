@@ -389,7 +389,7 @@ export default function AffiliateDashboard() {
                 <th className="text-left px-4 sm:px-6 py-4">
                   <span className="font-semibold text-gray-700">Affiliate URL</span>
                 </th>
-                <th className="text-left px-4 sm:px-6 py-4 w-20">
+                <th className="text-left px-4 sm:px-6 py-4 w-32">
                   <span className="font-semibold text-gray-700">Akce</span>
                 </th>
               </tr>
@@ -414,17 +414,17 @@ export default function AffiliateDashboard() {
                   </td>
                   <td className="px-4 sm:px-6 py-4">
                     {editingSlug === product.slug ? (
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-2 min-w-[300px]">
                         <input
                           type="url"
                           value={editingUrl}
                           onChange={(e) => setEditingUrl(e.target.value)}
-                          placeholder="https://example.com/?aff_id=123"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-romantic-500 focus:border-romantic-500"
+                          placeholder="https://example.com/?aff_id=123&offer_id=456"
+                          className="w-full px-3 py-2.5 border-2 border-blue-500 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-600 bg-blue-50"
                           autoFocus
                         />
                         {saveError && (
-                          <p className="text-xs text-red-600">{saveError}</p>
+                          <p className="text-xs text-red-600 font-medium">{saveError}</p>
                         )}
                       </div>
                     ) : (
@@ -452,31 +452,31 @@ export default function AffiliateDashboard() {
                         <button
                           onClick={saveUrl}
                           disabled={saving}
-                          className="p-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors disabled:opacity-50"
-                          title="Uložit"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
                         >
                           {saving ? (
                             <Loader2 className="w-4 h-4 animate-spin" />
                           ) : (
                             <Save className="w-4 h-4" />
                           )}
+                          Uložit
                         </button>
                         <button
                           onClick={cancelEditing}
                           disabled={saving}
-                          className="p-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50"
-                          title="Zrušit"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
                         >
                           <X className="w-4 h-4" />
+                          Zrušit
                         </button>
                       </div>
                     ) : (
                       <button
                         onClick={() => startEditing(product)}
-                        className="p-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
-                        title="Upravit URL"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
                       >
                         <Edit3 className="w-4 h-4" />
+                        Upravit
                       </button>
                     )}
                   </td>
