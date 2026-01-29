@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getClickStats, getRecentClicks, getClicks } from '@/lib/affiliate'
-import { getAllProdukty, saveProdukty } from '@/lib/data'
+import { getAllProdukty } from '@/lib/data'
+import { put, list } from '@vercel/blob'
 
 export interface ProductTrackingStatus {
   slug: string
@@ -10,6 +11,68 @@ export interface ProductTrackingStatus {
   trackingStatus: 'ACTIVE' | 'MISSING_PARAMS' | 'MISSING_URL' | 'INACTIVE'
   trackingDetails: string
   isActive: boolean
+}
+
+interface AffiliateOverrides {
+  [slug: string]: string
+}
+
+const BLOB_FILENAME = 'affiliate-overrides.json'
+
+/**
+ * Načte affiliate URL overrides z Vercel Blob
+ */
+async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
+  try {
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      return {}
+    }
+
+    const { blobs } = await list({ prefix: BLOB_FILENAME })
+    if (blobs.length === 0) {
+      return {}
+    }
+
+    const response = await fetch(blobs[0].url)
+    if (response.ok) {
+      return await response.json()
+    }
+    return {}
+  } catch (error) {
+    console.log('Could not load affiliate overrides:', error)
+    return {}
+  }
+}
+
+/**
+ * Uloží affiliate URL override do Vercel Blob
+ */
+async function saveAffiliateOverride(slug: string, url: string): Promise<boolean> {
+  try {
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      console.log('BLOB_READ_WRITE_TOKEN not configured')
+      return false
+    }
+
+    const overrides = await getAffiliateOverrides()
+
+    if (url && url.trim()) {
+      overrides[slug] = url.trim()
+    } else {
+      delete overrides[slug]
+    }
+
+    await put(BLOB_FILENAME, JSON.stringify(overrides, null, 2), {
+      access: 'public',
+      addRandomSuffix: false,
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    })
+
+    return true
+  } catch (error) {
+    console.error('Failed to save affiliate override:', error)
+    return false
+  }
 }
 
 /**
@@ -23,7 +86,6 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
   try {
     const urlObj = new URL(url)
 
-    // Seznam známých affiliate/tracking parametrů
     const trackingParams = [
       'aff', 'aff_id', 'affiliate', 'affiliate_id',
       'ref', 'referer', 'referrer', 'ref_id',
@@ -39,7 +101,6 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
       'a_aid', 'a_bid', 'chan',
     ]
 
-    // Zkontrolovat query parametry
     const searchParams = urlObj.searchParams
     const foundParams: string[] = []
 
@@ -49,8 +110,6 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
       }
     }
 
-    // Zkontrolovat i path - některé affiliate systémy používají path-based tracking
-    // např. /aff_c?offer_id=123 nebo /click/123
     const pathIndicators = ['/aff_c', '/aff/', '/click/', '/track/', '/go/', '/redirect/']
     const hasPathTracking = pathIndicators.some(indicator =>
       urlObj.pathname.toLowerCase().includes(indicator.toLowerCase())
@@ -70,7 +129,6 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
       }
     }
 
-    // Zkontrolovat, zda URL není jen základní doména
     const isBasicDomain = (
       urlObj.pathname === '/' ||
       urlObj.pathname === ''
@@ -83,7 +141,6 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
       }
     }
 
-    // URL má nějakou path, ale žádné známé tracking parametry
     return {
       hasParams: false,
       details: 'Žádné tracking parametry nenalezeny'
@@ -96,23 +153,23 @@ function hasTrackingParams(url: string): { hasParams: boolean; details: string }
 
 export async function GET() {
   try {
-    const [stats, recentClicks, allClicks, produkty] = await Promise.all([
+    const [stats, recentClicks, allClicks, produkty, overrides] = await Promise.all([
       getClickStats(),
       getRecentClicks(100),
       getClicks(),
       getAllProdukty(),
+      getAffiliateOverrides(),
     ])
 
-    // Spočítat kliknutí pro každý produkt
     const clickCountBySlug = new Map<string, number>()
     for (const click of allClicks) {
       const current = clickCountBySlug.get(click.produktSlug) || 0
       clickCountBySlug.set(click.produktSlug, current + 1)
     }
 
-    // Vytvořit přehled produktů s tracking statusem
     const productTracking: ProductTrackingStatus[] = produkty.map((p) => {
-      const affiliateUrl = p.affiliateUrl || ''
+      // Použít override pokud existuje, jinak původní URL
+      const affiliateUrl = overrides[p.slug] || p.affiliateUrl || ''
       const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
       const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
 
@@ -138,7 +195,6 @@ export async function GET() {
       }
     })
 
-    // Seřadit podle kliknutí (DESC), pak podle názvu
     productTracking.sort((a, b) => {
       if (b.clickCount !== a.clickCount) {
         return b.clickCount - a.clickCount
@@ -150,6 +206,7 @@ export async function GET() {
       stats,
       recentClicks,
       productTracking,
+      blobConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
     })
   } catch (error) {
     console.error('Failed to get affiliate stats:', error)
@@ -160,7 +217,6 @@ export async function GET() {
   }
 }
 
-// POST - Uložit affiliate URL pro produkt
 export async function POST(request: Request) {
   try {
     const { slug, affiliateUrl } = await request.json()
@@ -172,37 +228,22 @@ export async function POST(request: Request) {
       )
     }
 
-    // Načíst produkty
-    const produkty = await getAllProdukty()
-    const produktIndex = produkty.findIndex(p => p.slug === slug)
+    // Uložit do Blob storage
+    const saved = await saveAffiliateOverride(slug, affiliateUrl)
 
-    if (produktIndex === -1) {
-      return NextResponse.json(
-        { error: 'Produkt nenalezen' },
-        { status: 404 }
-      )
+    if (!saved && !process.env.BLOB_READ_WRITE_TOKEN) {
+      return NextResponse.json({
+        success: false,
+        error: 'Blob storage není nakonfigurován. Přidejte BLOB_READ_WRITE_TOKEN do environment variables na Vercelu.',
+        setupRequired: true,
+      }, { status: 400 })
     }
 
-    // Aktualizovat affiliate URL
-    produkty[produktIndex].affiliateUrl = affiliateUrl?.trim() || ''
-
-    // Pokusit se uložit
-    try {
-      await saveProdukty(produkty)
-    } catch (saveError) {
-      console.error('Failed to save to file system:', saveError)
-      // Na Vercel to selže, ale to je OK - vrátíme úspěch pro UI
-      // V produkci by bylo potřeba použít databázi
-    }
-
-    // Vrátit aktualizovaný stav
     const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
     const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
 
     let trackingStatus: ProductTrackingStatus['trackingStatus']
-    if (!produkty[produktIndex].isActive) {
-      trackingStatus = 'INACTIVE'
-    } else if (!hasUrl) {
+    if (!hasUrl) {
       trackingStatus = 'MISSING_URL'
     } else if (trackingCheck.hasParams) {
       trackingStatus = 'ACTIVE'
@@ -214,7 +255,6 @@ export async function POST(request: Request) {
       success: true,
       trackingStatus,
       trackingDetails: trackingCheck.details,
-      warning: 'Změny jsou dočasné. Pro trvalé uložení upravte data/produkty.json'
     })
   } catch (error) {
     console.error('Failed to save affiliate URL:', error)
