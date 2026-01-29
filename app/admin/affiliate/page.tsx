@@ -1,44 +1,50 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { BarChart3, TrendingUp, MousePointer, Calendar, Package, ExternalLink, RefreshCw } from 'lucide-react'
+import {
+  MousePointer,
+  RefreshCw,
+  CheckCircle,
+  XCircle,
+  MinusCircle,
+  ExternalLink,
+  ArrowUpDown,
+  TrendingUp,
+  Calendar,
+  BarChart3
+} from 'lucide-react'
 
 interface ClickStats {
   totalClicks: number
   todayClicks: number
   weekClicks: number
   monthClicks: number
-  topProducts: { slug: string; name: string; count: number }[]
-  topSources: { source: string; count: number }[]
-  dailyClicks: { date: string; count: number }[]
 }
 
-interface AffiliateClick {
-  id: string
-  produktSlug: string
-  produktName: string
-  source: string
-  placement?: string
-  timestamp: string
+interface ProductTrackingStatus {
+  slug: string
+  name: string
+  affiliateUrl: string | null
+  clickCount: number
+  trackingStatus: 'OK' | 'MISSING' | 'INACTIVE'
+  isActive: boolean
 }
 
 interface AffiliateData {
   stats: ClickStats
-  recentClicks: AffiliateClick[]
+  productTracking: ProductTrackingStatus[]
 }
 
-const sourceLabels: Record<string, string> = {
-  homepage: 'Homepage',
-  category: 'Kategorie',
-  detail: 'Detail produktu',
-  table: 'Srovnávací tabulka',
-  sidebar: 'Sidebar',
-}
+type SortField = 'clicks' | 'name' | 'status'
+type SortOrder = 'asc' | 'desc'
 
 export default function AffiliateDashboard() {
   const [data, setData] = useState<AffiliateData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [sortField, setSortField] = useState<SortField>('clicks')
+  const [sortOrder, setSortOrder] = useState<SortOrder>('desc')
+  const [showInactive, setShowInactive] = useState(false)
 
   const fetchData = async () => {
     setLoading(true)
@@ -59,19 +65,72 @@ export default function AffiliateDashboard() {
     fetchData()
   }, [])
 
-  const formatDate = (timestamp: string) => {
-    return new Date(timestamp).toLocaleString('cs-CZ', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    })
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortField(field)
+      setSortOrder(field === 'clicks' ? 'desc' : 'asc')
+    }
   }
 
-  const formatShortDate = (dateStr: string) => {
-    const date = new Date(dateStr)
-    return date.toLocaleDateString('cs-CZ', { day: '2-digit', month: '2-digit' })
+  const getSortedProducts = () => {
+    if (!data) return []
+
+    let products = [...data.productTracking]
+
+    // Filter inactive if needed
+    if (!showInactive) {
+      products = products.filter(p => p.isActive)
+    }
+
+    // Sort
+    products.sort((a, b) => {
+      let comparison = 0
+
+      switch (sortField) {
+        case 'clicks':
+          comparison = a.clickCount - b.clickCount
+          break
+        case 'name':
+          comparison = a.name.localeCompare(b.name)
+          break
+        case 'status':
+          const statusOrder = { 'MISSING': 0, 'OK': 1, 'INACTIVE': 2 }
+          comparison = statusOrder[a.trackingStatus] - statusOrder[b.trackingStatus]
+          break
+      }
+
+      return sortOrder === 'asc' ? comparison : -comparison
+    })
+
+    return products
+  }
+
+  const getStatusBadge = (status: ProductTrackingStatus['trackingStatus']) => {
+    switch (status) {
+      case 'OK':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+            <CheckCircle className="w-3.5 h-3.5" />
+            OK
+          </span>
+        )
+      case 'MISSING':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">
+            <XCircle className="w-3.5 h-3.5" />
+            CHYBÍ
+          </span>
+        )
+      case 'INACTIVE':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+            <MinusCircle className="w-3.5 h-3.5" />
+            NEAKTIVNÍ
+          </span>
+        )
+    }
   }
 
   if (loading) {
@@ -99,191 +158,212 @@ export default function AffiliateDashboard() {
 
   if (!data) return null
 
-  const { stats, recentClicks } = data
-  const maxDailyClicks = Math.max(...stats.dailyClicks.map(d => d.count), 1)
-  const maxProductClicks = Math.max(...stats.topProducts.map(p => p.count), 1)
+  const { stats, productTracking } = data
+  const sortedProducts = getSortedProducts()
+  const missingCount = productTracking.filter(p => p.trackingStatus === 'MISSING' && p.isActive).length
+  const okCount = productTracking.filter(p => p.trackingStatus === 'OK').length
 
   return (
     <div>
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Affiliate Dashboard</h1>
-          <p className="text-gray-600">Přehled kliknutí na affiliate odkazy</p>
+          <h1 className="text-2xl font-bold text-gray-900">Affiliate Přehled</h1>
+          <p className="text-gray-600">Přehled kliknutí a stavu tracking odkazů</p>
         </div>
         <button
           onClick={fetchData}
-          className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors"
         >
           <RefreshCw className="w-4 h-4" />
           Obnovit
         </button>
       </div>
 
-      {/* Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-romantic-100 rounded-xl flex items-center justify-center">
-              <MousePointer className="w-6 h-6 text-romantic-600" />
+      {/* Stats Cards */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-romantic-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <MousePointer className="w-5 h-5 sm:w-6 sm:h-6 text-romantic-600" />
             </div>
-            <div>
-              <p className="text-sm text-gray-600">Celkem kliknutí</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.totalClicks}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-green-600" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Dnes</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.todayClicks}</p>
+            <div className="min-w-0">
+              <p className="text-xs sm:text-sm text-gray-600 truncate">Celkem</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{stats.totalClicks}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-              <Calendar className="w-6 h-6 text-blue-600" />
+        <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
             </div>
-            <div>
-              <p className="text-sm text-gray-600">Tento týden</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.weekClicks}</p>
+            <div className="min-w-0">
+              <p className="text-xs sm:text-sm text-gray-600 truncate">Dnes</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{stats.todayClicks}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-              <BarChart3 className="w-6 h-6 text-purple-600" />
+        <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
             </div>
-            <div>
-              <p className="text-sm text-gray-600">Tento měsíc</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.monthClicks}</p>
+            <div className="min-w-0">
+              <p className="text-xs sm:text-sm text-gray-600 truncate">Týden</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{stats.weekClicks}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs sm:text-sm text-gray-600 truncate">Měsíc</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{stats.monthClicks}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {/* Daily Clicks Chart */}
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Kliknutí za posledních 30 dní</h2>
-          <div className="h-48 flex items-end gap-1">
-            {stats.dailyClicks.slice(-30).map((day, i) => (
-              <div key={day.date} className="flex-1 flex flex-col items-center">
-                <div
-                  className="w-full bg-romantic-500 rounded-t transition-all hover:bg-romantic-600"
-                  style={{ height: `${(day.count / maxDailyClicks) * 100}%`, minHeight: day.count > 0 ? '4px' : '0' }}
-                  title={`${formatShortDate(day.date)}: ${day.count} kliknutí`}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-between text-xs text-gray-500 mt-2">
-            <span>{formatShortDate(stats.dailyClicks[0]?.date || '')}</span>
-            <span>{formatShortDate(stats.dailyClicks[stats.dailyClicks.length - 1]?.date || '')}</span>
-          </div>
+      {/* Tracking Status Summary */}
+      <div className="flex flex-wrap gap-4 mb-6">
+        <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-lg border border-green-200">
+          <CheckCircle className="w-5 h-5" />
+          <span className="font-medium">{okCount} OK</span>
         </div>
-
-        {/* Top Products */}
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Top produkty</h2>
-          {stats.topProducts.length === 0 ? (
-            <p className="text-gray-500 text-center py-8">Zatím žádná data</p>
-          ) : (
-            <div className="space-y-3">
-              {stats.topProducts.slice(0, 5).map((product, i) => (
-                <div key={product.slug} className="flex items-center gap-3">
-                  <span className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center text-sm font-medium text-gray-600">
-                    {i + 1}
-                  </span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-medium text-gray-900">{product.name}</span>
-                      <span className="text-sm text-gray-600">{product.count}</span>
-                    </div>
-                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-romantic-500 rounded-full"
-                        style={{ width: `${(product.count / maxProductClicks) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        {missingCount > 0 && (
+          <div className="flex items-center gap-2 bg-red-50 text-red-700 px-4 py-2 rounded-lg border border-red-200">
+            <XCircle className="w-5 h-5" />
+            <span className="font-medium">{missingCount} chybí tracking</span>
+          </div>
+        )}
+        <label className="flex items-center gap-2 ml-auto cursor-pointer">
+          <input
+            type="checkbox"
+            checked={showInactive}
+            onChange={(e) => setShowInactive(e.target.checked)}
+            className="w-4 h-4 rounded border-gray-300 text-romantic-600 focus:ring-romantic-500"
+          />
+          <span className="text-sm text-gray-600">Zobrazit neaktivní</span>
+        </label>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        {/* Top Sources */}
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Kliknutí podle zdroje</h2>
-          {stats.topSources.length === 0 ? (
-            <p className="text-gray-500 text-center py-8">Zatím žádná data</p>
-          ) : (
-            <div className="space-y-3">
-              {stats.topSources.map((source) => (
-                <div key={source.source} className="flex items-center justify-between">
-                  <span className="text-gray-700">{sourceLabels[source.source] || source.source}</span>
-                  <span className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                    {source.count}
-                  </span>
-                </div>
+      {/* Products Table */}
+      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="text-left px-4 sm:px-6 py-4">
+                  <button
+                    onClick={() => handleSort('name')}
+                    className="flex items-center gap-2 font-semibold text-gray-700 hover:text-gray-900"
+                  >
+                    Seznamka
+                    <ArrowUpDown className="w-4 h-4 text-gray-400" />
+                  </button>
+                </th>
+                <th className="text-left px-4 sm:px-6 py-4">
+                  <button
+                    onClick={() => handleSort('clicks')}
+                    className="flex items-center gap-2 font-semibold text-gray-700 hover:text-gray-900"
+                  >
+                    Kliknutí
+                    <ArrowUpDown className="w-4 h-4 text-gray-400" />
+                  </button>
+                </th>
+                <th className="text-left px-4 sm:px-6 py-4">
+                  <button
+                    onClick={() => handleSort('status')}
+                    className="flex items-center gap-2 font-semibold text-gray-700 hover:text-gray-900"
+                  >
+                    Tracking
+                    <ArrowUpDown className="w-4 h-4 text-gray-400" />
+                  </button>
+                </th>
+                <th className="text-left px-4 sm:px-6 py-4 hidden lg:table-cell">
+                  <span className="font-semibold text-gray-700">Affiliate URL</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {sortedProducts.map((product) => (
+                <tr
+                  key={product.slug}
+                  className={`hover:bg-gray-50 transition-colors ${
+                    product.trackingStatus === 'MISSING' ? 'bg-red-50/50' : ''
+                  } ${!product.isActive ? 'opacity-60' : ''}`}
+                >
+                  <td className="px-4 sm:px-6 py-4">
+                    <div className="font-medium text-gray-900">{product.name}</div>
+                    <div className="text-xs text-gray-500 lg:hidden mt-1 truncate max-w-[200px]">
+                      {product.affiliateUrl ? (
+                        <a
+                          href={product.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:underline"
+                        >
+                          {product.affiliateUrl}
+                        </a>
+                      ) : (
+                        <span className="text-red-600">Není nastaven</span>
+                      )}
+                    </div>
+                  </td>
+                  <td className="px-4 sm:px-6 py-4">
+                    <span className={`font-semibold ${product.clickCount > 0 ? 'text-gray-900' : 'text-gray-400'}`}>
+                      {product.clickCount}
+                    </span>
+                  </td>
+                  <td className="px-4 sm:px-6 py-4">
+                    {getStatusBadge(product.trackingStatus)}
+                  </td>
+                  <td className="px-4 sm:px-6 py-4 hidden lg:table-cell">
+                    {product.affiliateUrl ? (
+                      <a
+                        href={product.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 hover:underline max-w-[300px] truncate"
+                      >
+                        <span className="truncate">{product.affiliateUrl}</span>
+                        <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+                      </a>
+                    ) : (
+                      <span className="text-sm text-red-600 font-medium">Není nastaven</span>
+                    )}
+                  </td>
+                </tr>
               ))}
-            </div>
-          )}
+            </tbody>
+          </table>
         </div>
 
-        {/* Recent Clicks Table */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Poslední kliknutí</h2>
-          {recentClicks.length === 0 ? (
-            <p className="text-gray-500 text-center py-8">Zatím žádná kliknutí</p>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="text-left text-sm text-gray-500 border-b border-gray-100">
-                    <th className="pb-3 font-medium">Produkt</th>
-                    <th className="pb-3 font-medium">Zdroj</th>
-                    <th className="pb-3 font-medium">Umístění</th>
-                    <th className="pb-3 font-medium">Čas</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {recentClicks.slice(0, 20).map((click) => (
-                    <tr key={click.id} className="border-b border-gray-50 hover:bg-gray-50">
-                      <td className="py-3">
-                        <div className="flex items-center gap-2">
-                          <Package className="w-4 h-4 text-gray-400" />
-                          <span className="font-medium text-gray-900">{click.produktName}</span>
-                        </div>
-                      </td>
-                      <td className="py-3 text-gray-600">
-                        {sourceLabels[click.source] || click.source}
-                      </td>
-                      <td className="py-3 text-gray-600">
-                        {click.placement || '-'}
-                      </td>
-                      <td className="py-3 text-gray-500">
-                        {formatDate(click.timestamp)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
+        {sortedProducts.length === 0 && (
+          <div className="text-center py-12 text-gray-500">
+            Žádné produkty k zobrazení
+          </div>
+        )}
+      </div>
+
+      {/* Info */}
+      <div className="mt-6 text-sm text-gray-500 bg-gray-50 rounded-lg p-4">
+        <p className="font-medium text-gray-700 mb-2">Jak funguje tracking:</p>
+        <ul className="list-disc list-inside space-y-1">
+          <li><strong>OK</strong> – Affiliate URL je nastavena, kliknutí se počítají</li>
+          <li><strong>CHYBÍ</strong> – Affiliate URL není nastavena, kliknutí se nepočítají</li>
+          <li><strong>NEAKTIVNÍ</strong> – Produkt je deaktivován a nezobrazuje se na webu</li>
+        </ul>
+        <p className="mt-3">
+          Všechny affiliate odkazy procházejí přes <code className="bg-gray-200 px-1.5 py-0.5 rounded">/api/affiliate/[slug]</code> a jsou trackované server-side.
+        </p>
       </div>
     </div>
   )
