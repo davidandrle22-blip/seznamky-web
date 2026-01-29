@@ -1694,6 +1694,7 @@ export default async function ProduktDetailPage({ params }: Props) {
 
           {extended && (
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={{
                 h2: ({ children }) => <h2 id={String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}>{children}</h2>,
                 h3: ({ children }) => <h3 id={String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}>{children}</h3>,
