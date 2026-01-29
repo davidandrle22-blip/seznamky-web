@@ -87,7 +87,8 @@ export default async function Footer() {
         <div className="border-t border-rose-100 mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
             <p>&copy; {new Date().getFullYear()} Seznamky.info - Najděte svou lásku online</p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-4 md:gap-6">
+              <Link href="/provozovatel" className="hover:text-rose-600 transition-colors">Provozovatel</Link>
               <Link href="/podminky" className="hover:text-rose-600 transition-colors">Podmínky</Link>
               <Link href="/soukromi" className="hover:text-rose-600 transition-colors">Soukromí</Link>
               <Link href="/cookies" className="hover:text-rose-600 transition-colors">Cookies</Link>

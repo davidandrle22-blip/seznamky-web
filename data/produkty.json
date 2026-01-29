@@ -1262,7 +1262,7 @@
       {"icon": "shield", "text": "Ověřené profily"}
     ],
     "order": 23,
-    "isActive": true,
+    "isActive": false,
     "isFeatured": false,
     "isNew": true,
     "freeVersion": true,
@@ -1317,7 +1317,7 @@
       {"icon": "star", "text": "Luxusní události"}
     ],
     "order": 24,
-    "isActive": true,
+    "isActive": false,
     "isFeatured": false,
     "isNew": true,
     "freeVersion": true,
