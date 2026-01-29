@@ -10,9 +10,9 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Heslo', type: 'password' }
       },
       async authorize(credentials) {
-        // Check credentials against env variables
-        const adminEmail = process.env.ADMIN_EMAIL
-        const adminPassword = process.env.ADMIN_PASSWORD
+        // Check credentials against env variables (with fallback defaults)
+        const adminEmail = process.env.ADMIN_EMAIL || 'seznamky-info@seznam.cz'
+        const adminPassword = process.env.ADMIN_PASSWORD || 'seznamky2024'
 
         if (
           credentials?.email === adminEmail &&
