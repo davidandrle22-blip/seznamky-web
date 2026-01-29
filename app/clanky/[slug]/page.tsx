@@ -4,6 +4,7 @@ import { Calendar, Clock, ChevronRight, ExternalLink, Heart, Sparkles, BookOpen 
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import ArticleCard from '@/components/ArticleCard'
 import AffiliateLink from '@/components/AffiliateLink'
 import LeadMagnet from '@/components/LeadMagnet'
@@ -227,7 +228,12 @@ export default async function ClanekDetailPage({ params }: Props) {
             prose-ul:my-4 prose-li:text-gray-700
             prose-blockquote:border-rose-500 prose-blockquote:bg-rose-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
           ">
-            <ReactMarkdown>{clanek.content}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                table: ({ children }) => <div className="table-wrapper"><table>{children}</table></div>,
+              }}
+            >{clanek.content}</ReactMarkdown>
           </div>
 
           {/* Sidebar with Affiliate Links */}

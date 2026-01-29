@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, ChevronDown } from 'lucide-react'
+import { Menu, X, Heart, ChevronDown, BookOpen } from 'lucide-react'
 
 const kategorieItems = [
   { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
@@ -41,6 +41,9 @@ export default function Header() {
     { name: 'Blog', href: '/clanky' },
     { name: 'Kontakt', href: '/kontakt' },
   ]
+
+  // E-book link - scrolls to lead magnet or goes to dedicated page
+  const ebookLink = '/ebook'
 
   return (
     <header className={`
@@ -123,10 +126,19 @@ export default function Header() {
               </Link>
             </div>
 
+            {/* E-book Button */}
+            <Link
+              href={ebookLink}
+              className="ml-2 inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-all shadow-md hover:scale-105 text-sm"
+            >
+              <BookOpen className="w-4 h-4" />
+              E-book zdarma
+            </Link>
+
             {/* CTA Button */}
             <Link
               href="/seznamky"
-              className="ml-4 inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic hover:scale-105"
+              className="ml-2 inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-2 px-5 rounded-lg transition-all shadow-romantic hover:scale-105"
             >
               <Heart className="w-4 h-4" fill="currentColor" />
               Najít lásku
@@ -181,8 +193,16 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Mobile CTA */}
-            <div className="mt-4 px-3">
+            {/* Mobile CTAs */}
+            <div className="mt-4 px-3 space-y-3">
+              <Link
+                href={ebookLink}
+                className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                <BookOpen className="w-5 h-5" />
+                E-book zdarma
+              </Link>
               <Link
                 href="/seznamky"
                 className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"

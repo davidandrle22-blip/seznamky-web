@@ -74,6 +74,15 @@
       "placement": "info-box",
       "timestamp": "2026-01-28T15:39:30.537Z",
       "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+    },
+    {
+      "id": "b984eca1-4b31-4bc5-880c-644ac29dce97",
+      "produktSlug": "be2",
+      "produktName": "Be2",
+      "source": "detail",
+      "placement": "info-box",
+      "timestamp": "2026-01-28T20:49:14.669Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
     }
   ]
 }

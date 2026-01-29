@@ -4,6 +4,7 @@ import { Star, Users, Check, X, ExternalLink, ChevronRight, Clock, Calendar, Awa
 import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import AffiliateLink from '@/components/AffiliateLink'
 import { ReviewSchema, FAQSchema, BreadcrumbSchema } from '@/components/seo'
 import { EditorialBox } from '@/components/review'
@@ -1678,6 +1679,7 @@ export default async function ProduktDetailPage({ params }: Props) {
           <p>{produkt.description}</p>
 
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               h2: ({ children }) => <h2 id={String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}>{children}</h2>,
               h3: ({ children }) => <h3 id={String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}>{children}</h3>,
