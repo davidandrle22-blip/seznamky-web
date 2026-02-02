@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getClickStats, getRecentClicks, getClicks } from '@/lib/affiliate'
 import { getAllProdukty } from '@/lib/data'
-import { put, list } from '@vercel/blob'
+import { kv } from '@vercel/kv'
 
 export const runtime = 'nodejs'
 
@@ -19,23 +19,15 @@ interface AffiliateOverrides {
   [slug: string]: string
 }
 
-const BLOB_FILENAME = 'affiliate-overrides.json'
+const KV_KEY = 'affiliate-overrides'
 
 /**
- * Načte affiliate URL overrides z Vercel Blob
+ * Načte affiliate URL overrides z Vercel KV
  */
 async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
   try {
-    const { blobs } = await list({ prefix: BLOB_FILENAME })
-    if (blobs.length === 0) {
-      return {}
-    }
-
-    const response = await fetch(blobs[0].url, { cache: 'no-store' })
-    if (response.ok) {
-      return await response.json()
-    }
-    return {}
+    const overrides = await kv.get<AffiliateOverrides>(KV_KEY)
+    return overrides || {}
   } catch (error) {
     console.error('Could not load affiliate overrides:', error)
     return {}
@@ -43,7 +35,7 @@ async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
 }
 
 /**
- * Uloží affiliate URL override do Vercel Blob
+ * Uloží affiliate URL override do Vercel KV
  */
 async function saveAffiliateOverride(slug: string, url: string): Promise<void> {
   const overrides = await getAffiliateOverrides()
@@ -54,10 +46,7 @@ async function saveAffiliateOverride(slug: string, url: string): Promise<void> {
     delete overrides[slug]
   }
 
-  await put(BLOB_FILENAME, JSON.stringify(overrides, null, 2), {
-    access: 'public',
-    addRandomSuffix: false,
-  })
+  await kv.set(KV_KEY, overrides)
 }
 
 /**
@@ -212,7 +201,7 @@ export async function POST(request: Request) {
       )
     }
 
-    // Uložit do Blob storage
+    // Uložit do KV storage
     await saveAffiliateOverride(slug, affiliateUrl)
 
     const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')

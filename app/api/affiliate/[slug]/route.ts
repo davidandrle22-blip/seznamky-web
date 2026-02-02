@@ -1,28 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getProduktBySlug } from '@/lib/data'
 import { saveClick, buildAffiliateUrl, AffiliateClick } from '@/lib/affiliate'
-import { list } from '@vercel/blob'
+import { kv } from '@vercel/kv'
 
 export const runtime = 'nodejs'
 
-const BLOB_FILENAME = 'affiliate-overrides.json'
+interface AffiliateOverrides {
+  [slug: string]: string
+}
+
+const KV_KEY = 'affiliate-overrides'
 
 /**
- * Načte affiliate URL override z Vercel Blob (pokud existuje)
+ * Načte affiliate URL override z Vercel KV (pokud existuje)
  */
 async function getAffiliateOverride(slug: string): Promise<string | null> {
   try {
-    const { blobs } = await list({ prefix: BLOB_FILENAME })
-    if (blobs.length === 0) {
-      return null
-    }
-
-    const response = await fetch(blobs[0].url, { cache: 'no-store' })
-    if (response.ok) {
-      const overrides = await response.json()
-      return overrides[slug] || null
-    }
-    return null
+    const overrides = await kv.get<AffiliateOverrides>(KV_KEY)
+    return overrides?.[slug] || null
   } catch (error) {
     console.error('Could not load affiliate override:', error)
     return null
