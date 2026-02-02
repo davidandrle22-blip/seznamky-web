@@ -40,7 +40,6 @@ interface ProductTrackingStatus {
 interface AffiliateData {
   stats: ClickStats
   productTracking: ProductTrackingStatus[]
-  blobConfigured?: boolean
 }
 
 type SortField = 'clicks' | 'name' | 'status'
@@ -250,7 +249,7 @@ export default function AffiliateDashboard() {
 
   if (!data) return null
 
-  const { stats, productTracking, blobConfigured } = data
+  const { stats, productTracking } = data
   const sortedProducts = getSortedProducts()
 
   const activeCount = productTracking.filter(p => p.trackingStatus === 'ACTIVE').length
@@ -353,27 +352,6 @@ export default function AffiliateDashboard() {
           <span className="text-sm text-gray-600">Zobrazit neaktivní</span>
         </label>
       </div>
-
-      {/* Blob Storage Warning */}
-      {blobConfigured === false && (
-        <div className="mb-6 bg-amber-50 border border-amber-300 rounded-xl p-4">
-          <div className="flex gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-amber-800">
-              <p className="font-semibold mb-1">Blob Storage není nakonfigurován</p>
-              <p className="text-amber-700 mb-2">
-                Pro ukládání změn affiliate URL je potřeba nastavit Vercel Blob Storage.
-              </p>
-              <ol className="list-decimal list-inside space-y-1 text-amber-700">
-                <li>Jděte do <strong>Vercel Dashboard → váš projekt → Storage</strong></li>
-                <li>Klikněte na <strong>"Create Database"</strong> → vyberte <strong>"Blob"</strong></li>
-                <li>Zkopírujte <strong>BLOB_READ_WRITE_TOKEN</strong> do Environment Variables</li>
-                <li>Proveďte redeploy projektu</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Products Table */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">

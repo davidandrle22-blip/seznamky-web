@@ -3,6 +3,8 @@ import { getClickStats, getRecentClicks, getClicks } from '@/lib/affiliate'
 import { getAllProdukty } from '@/lib/data'
 import { put, list } from '@vercel/blob'
 
+export const runtime = 'nodejs'
+
 export interface ProductTrackingStatus {
   slug: string
   name: string
@@ -24,22 +26,18 @@ const BLOB_FILENAME = 'affiliate-overrides.json'
  */
 async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
   try {
-    if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      return {}
-    }
-
     const { blobs } = await list({ prefix: BLOB_FILENAME })
     if (blobs.length === 0) {
       return {}
     }
 
-    const response = await fetch(blobs[0].url)
+    const response = await fetch(blobs[0].url, { cache: 'no-store' })
     if (response.ok) {
       return await response.json()
     }
     return {}
   } catch (error) {
-    console.log('Could not load affiliate overrides:', error)
+    console.error('Could not load affiliate overrides:', error)
     return {}
   }
 }
@@ -47,32 +45,19 @@ async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
 /**
  * Uloží affiliate URL override do Vercel Blob
  */
-async function saveAffiliateOverride(slug: string, url: string): Promise<boolean> {
-  try {
-    if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      console.log('BLOB_READ_WRITE_TOKEN not configured')
-      return false
-    }
+async function saveAffiliateOverride(slug: string, url: string): Promise<void> {
+  const overrides = await getAffiliateOverrides()
 
-    const overrides = await getAffiliateOverrides()
-
-    if (url && url.trim()) {
-      overrides[slug] = url.trim()
-    } else {
-      delete overrides[slug]
-    }
-
-    await put(BLOB_FILENAME, JSON.stringify(overrides, null, 2), {
-      access: 'public',
-      addRandomSuffix: false,
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-    })
-
-    return true
-  } catch (error) {
-    console.error('Failed to save affiliate override:', error)
-    return false
+  if (url && url.trim()) {
+    overrides[slug] = url.trim()
+  } else {
+    delete overrides[slug]
   }
+
+  await put(BLOB_FILENAME, JSON.stringify(overrides, null, 2), {
+    access: 'public',
+    addRandomSuffix: false,
+  })
 }
 
 /**
@@ -206,7 +191,6 @@ export async function GET() {
       stats,
       recentClicks,
       productTracking,
-      blobConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
     })
   } catch (error) {
     console.error('Failed to get affiliate stats:', error)
@@ -229,15 +213,7 @@ export async function POST(request: Request) {
     }
 
     // Uložit do Blob storage
-    const saved = await saveAffiliateOverride(slug, affiliateUrl)
-
-    if (!saved && !process.env.BLOB_READ_WRITE_TOKEN) {
-      return NextResponse.json({
-        success: false,
-        error: 'Blob storage není nakonfigurován. Přidejte BLOB_READ_WRITE_TOKEN do environment variables na Vercelu.',
-        setupRequired: true,
-      }, { status: 400 })
-    }
+    await saveAffiliateOverride(slug, affiliateUrl)
 
     const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
     const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
