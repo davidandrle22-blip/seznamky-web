@@ -1,6 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getProduktBySlug } from '@/lib/data'
 import { saveClick, buildAffiliateUrl, AffiliateClick } from '@/lib/affiliate'
+import { list } from '@vercel/blob'
+
+export const runtime = 'nodejs'
+
+const BLOB_FILENAME = 'affiliate-overrides.json'
+
+/**
+ * Načte affiliate URL override z Vercel Blob (pokud existuje)
+ */
+async function getAffiliateOverride(slug: string): Promise<string | null> {
+  try {
+    const { blobs } = await list({ prefix: BLOB_FILENAME })
+    if (blobs.length === 0) {
+      return null
+    }
+
+    const response = await fetch(blobs[0].url, { cache: 'no-store' })
+    if (response.ok) {
+      const overrides = await response.json()
+      return overrides[slug] || null
+    }
+    return null
+  } catch (error) {
+    console.error('Could not load affiliate override:', error)
+    return null
+  }
+}
 
 export async function GET(
   request: NextRequest,
@@ -34,12 +61,14 @@ export async function GET(
     console.error('Failed to save click:', error)
   }
 
+  // Zkontrolovat, zda existuje override URL z admin dashboardu
+  const overrideUrl = await getAffiliateOverride(slug)
+  const affiliateUrl = overrideUrl || produkt.affiliateUrl
+
   // Sestavit cílovou URL s tracking parametry
-  // Pro produkty s vlastním affiliate (např. EliteDate) se použije centrální config
-  // Detekce zařízení pro správné offer_id (mobilní/desktop)
   const userAgent = request.headers.get('user-agent') || undefined
   const targetUrl = buildAffiliateUrl(
-    produkt.affiliateUrl,
+    affiliateUrl,
     { source, placement },
     produkt.slug,
     userAgent
