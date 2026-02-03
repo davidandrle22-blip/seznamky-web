@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ['localhost'],
   },
   experimental: {
-    serverComponentsExternalPackages: ['@vercel/kv'],
+    serverComponentsExternalPackages: ['@vercel/blob'],
   },
 }
 

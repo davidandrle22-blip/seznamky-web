@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getClickStats, getRecentClicks, getClicks } from '@/lib/affiliate'
 import { getAllProdukty } from '@/lib/data'
-import { kv } from '@vercel/kv'
+import { put, list } from '@vercel/blob'
 
 export const runtime = 'nodejs'
 
@@ -19,15 +19,26 @@ interface AffiliateOverrides {
   [slug: string]: string
 }
 
-const KV_KEY = 'affiliate-overrides'
+const BLOB_FILENAME = 'affiliate-overrides.json'
 
 /**
- * Načte affiliate URL overrides z Vercel KV
+ * Načte affiliate URL overrides z Vercel Blob
  */
 async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
   try {
-    const overrides = await kv.get<AffiliateOverrides>(KV_KEY)
-    return overrides || {}
+    // Najít blob soubor v seznamu
+    const { blobs } = await list({ prefix: BLOB_FILENAME })
+
+    if (blobs.length === 0) {
+      return {}
+    }
+
+    // Stáhnout obsah
+    const response = await fetch(blobs[0].url, { cache: 'no-store' })
+    if (response.ok) {
+      return await response.json()
+    }
+    return {}
   } catch (error) {
     console.error('Could not load affiliate overrides:', error)
     return {}
@@ -35,7 +46,7 @@ async function getAffiliateOverrides(): Promise<AffiliateOverrides> {
 }
 
 /**
- * Uloží affiliate URL override do Vercel KV
+ * Uloží affiliate URL override do Vercel Blob
  */
 async function saveAffiliateOverride(slug: string, url: string): Promise<void> {
   const overrides = await getAffiliateOverrides()
@@ -46,7 +57,11 @@ async function saveAffiliateOverride(slug: string, url: string): Promise<void> {
     delete overrides[slug]
   }
 
-  await kv.set(KV_KEY, overrides)
+  await put(BLOB_FILENAME, JSON.stringify(overrides, null, 2), {
+    access: 'public',
+    addRandomSuffix: false,
+    allowOverwrite: true,
+  })
 }
 
 /**
@@ -142,7 +157,6 @@ export async function GET() {
     }
 
     const productTracking: ProductTrackingStatus[] = produkty.map((p) => {
-      // Použít override pokud existuje, jinak původní URL
       const affiliateUrl = overrides[p.slug] || p.affiliateUrl || ''
       const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
       const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
@@ -201,7 +215,6 @@ export async function POST(request: Request) {
       )
     }
 
-    // Uložit do KV storage
     await saveAffiliateOverride(slug, affiliateUrl)
 
     const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
