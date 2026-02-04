@@ -90,7 +90,7 @@ export default async function Footer() {
             <div className="flex flex-wrap gap-4 md:gap-6">
               <Link href="/provozovatel" className="hover:text-rose-600 transition-colors">Provozovatel</Link>
               <Link href="/podminky" className="hover:text-rose-600 transition-colors">Podmínky</Link>
-              <Link href="/soukromi" className="hover:text-rose-600 transition-colors">Soukromí</Link>
+              <Link href="/ochrana-osobnich-udaju" className="hover:text-rose-600 transition-colors">Ochrana osobních údajů</Link>
               <Link href="/cookies" className="hover:text-rose-600 transition-colors">Cookies</Link>
             </div>
           </div>

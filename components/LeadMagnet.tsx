@@ -206,7 +206,7 @@ export default function LeadMagnet({
                 />
                 <span className="text-xs text-gray-600 leading-tight">
                   Souhlasím se{' '}
-                  <a href="/ochrana-soukromi" className="text-rose-600 hover:underline">
+                  <a href="/ochrana-osobnich-udaju" className="text-rose-600 hover:underline">
                     zpracováním e-mailu
                   </a>
                 </span>
@@ -349,8 +349,8 @@ export default function LeadMagnet({
                   />
                   <span className="text-sm text-gray-600">
                     Souhlasím se zpracováním e-mailu za účelem zaslání e-booku.{' '}
-                    <a href="/ochrana-soukromi" className="text-rose-600 hover:underline">
-                      Zásady ochrany soukromí
+                    <a href="/ochrana-osobnich-udaju" className="text-rose-600 hover:underline">
+                      Zásady ochrany osobních údajů
                     </a>
                   </span>
                 </label>
