@@ -61,7 +61,7 @@ export default function Header() {
                   Seznamky<span className="text-rose-600">.info</span>
                 </span>
                 <span className="text-[10px] text-gray-500 hidden sm:block">
-                  Najděte svou lásku
+                  Najdi svou lásku
                 </span>
               </div>
             </Link>
