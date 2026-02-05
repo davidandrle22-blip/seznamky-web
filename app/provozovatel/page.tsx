@@ -40,8 +40,12 @@ export default function ProvozovatelPage() {
               <dd className="text-gray-900">Společnost s ručením omezeným</dd>
             </div>
             <div className="flex flex-col sm:flex-row sm:gap-4">
+              <dt className="font-semibold text-gray-700 sm:w-40 flex-shrink-0">IČO:</dt>
+              <dd className="text-gray-900">17409411</dd>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:gap-4">
               <dt className="font-semibold text-gray-700 sm:w-40 flex-shrink-0">Sídlo:</dt>
-              <dd className="text-gray-900">Česká republika</dd>
+              <dd className="text-gray-900">Korunní 2569/108, Vinohrady (Praha 10), 101 00 Praha</dd>
             </div>
             <div className="flex flex-col sm:flex-row sm:gap-4">
               <dt className="font-semibold text-gray-700 sm:w-40 flex-shrink-0">E-mail:</dt>
