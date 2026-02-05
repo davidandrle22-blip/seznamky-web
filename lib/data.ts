@@ -5,7 +5,7 @@ import { Produkt, Clanek, Nastaveni, Kategorie, CategoryContent } from './types'
 const dataDir = path.join(process.cwd(), 'data')
 
 // Prioritní pořadí seznamek - globálně dodrženo na celém webu
-const PRIORITY_ORDER = ['elite-date', 'victoria-milan', 'academic-singles']
+const PRIORITY_ORDER = ['elite-date', 'victoria-milan', 'academic-singles', 'divoke-rande']
 
 function sortByPriority(produkty: Produkt[]): Produkt[] {
   const priorityMap = new Map(PRIORITY_ORDER.map((slug, index) => [slug, index]))

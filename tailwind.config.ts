@@ -99,6 +99,7 @@ const config: Config = {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
         'bounce-slow': 'bounce 3s infinite',
         'shimmer': 'shimmer 2s linear infinite',
         'gradient': 'gradient 8s ease infinite',
@@ -143,6 +144,10 @@ const config: Config = {
           '28%': { transform: 'scale(1)' },
           '42%': { transform: 'scale(1.1)' },
           '70%': { transform: 'scale(1)' },
+        },
+        pulseSubtle: {
+          '0%, 100%': { boxShadow: '0 4px 15px rgba(244, 63, 94, 0.4)' },
+          '50%': { boxShadow: '0 4px 25px rgba(244, 63, 94, 0.6)' },
         },
       },
       fontFamily: {

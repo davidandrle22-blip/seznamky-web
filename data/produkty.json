@@ -1327,5 +1327,60 @@
       {"question": "Kolik stojí členství?", "answer": "Rich Meet Beautiful nabízí prémiové členství pro přístup ke všem funkcím."},
       {"question": "Jak se ověřuje příjem?", "answer": "Uživatelé mohou volitelně ověřit svůj příjem pro získání speciálního označení."}
     ]
+  },
+  {
+    "id": "25",
+    "slug": "divoke-rande",
+    "name": "Divoké Rande",
+    "logo": "/images/seznamky/divoke-rande.jpg",
+    "description": "Česká seznamka pro odvážné singles, kteří hledají vzrušení a nové zážitky. Moderní přístup k online seznamování s důrazem na autentické spojení.",
+    "shortDescription": "Pro odvážné a dobrodružné singles",
+    "fullDescription": "## Divoké Rande - Kompletní recenze 2026\n\n**Divoké Rande** je **česká seznamka nové generace** zaměřená na singles, kteří hledají vzrušující vztahy plné dobrodružství a autentických zážitků.\n\n### 🎯 Pro koho je Divoké Rande určena?\n\nDivoké Rande je ideální pro:\n- **Odvážné singles 25-45 let** hledající vzrušení\n- Lidi, kteří chtějí vybočit ze stereotypu tradičních seznamek\n- Ty, kteří hledají partnera pro společné dobrodružství\n- Singles otevřené novým zkušenostem a zážitkům\n\n### 🔥 Proč zvolit Divoké Rande?\n\n**1. 100% česká platforma**\nNa rozdíl od zahraničních seznamek je Divoké Rande vytvořena přímo pro české uživatele. Rozumí české mentalitě a preferencím.\n\n**2. Moderní a svěží přístup**\nŽádné nudné dotazníky. Divoké Rande staví na spontánnosti a autenticitě. Profily jsou živé a zajímavé.\n\n**3. Aktivní komunita**\nUživatelé Divokého Rande jsou aktivní a otevření. Odezva na zprávy je nadprůměrná.\n\n**4. Bezpečné prostředí**\nI přes odvážný název platforma dbá na bezpečnost. Profily jsou ověřovány a podezřelé účty rychle mazány.\n\n### ✅ Hlavní výhody\n\n- **Rychlá registrace** - začněte během 5 minut\n- **Živá komunita** - tisíce aktivních českých uživatelů\n- **Moderní design** - přehledné a intuitivní rozhraní\n- **Mobilní verze** - plně responzivní web\n- **Férové ceny** - dostupné i pro studenty\n\n### 💰 Cenové možnosti\n\n| Členství | Cena/měsíc | Funkce |\n|----------|------------|--------|\n| Základní | Zdarma | Registrace, prohlížení |\n| Premium 1 měsíc | cca 499 Kč | Neomezené zprávy |\n| Premium 3 měsíce | cca 399 Kč | Plný přístup + bonus |\n| Premium 6 měsíců | cca 299 Kč | Nejlepší hodnota |\n\n### 📊 Statistiky\n\n- **180K+** registrovaných uživatelů\n- **45K** aktivních měsíčně\n- **72%** úspěšnost při navázání kontaktu\n- **4.5/5** hodnocení uživatelů\n\n### 🛡️ Bezpečnost\n\n- Ověřování profilů\n- Možnost nahlášení podezřelých účtů\n- SSL šifrování\n- GDPR compliance\n- Zákaznická podpora v češtině\n\n### Verdikt\n\nDivoké Rande je **skvělá volba pro české singles**, kteří hledají něco jiného než tradiční seznamky. Kombinace moderního přístupu, aktivní komunity a férových cen z ní dělá jednu z nejzajímavějších českých seznamek na trhu.",
+    "affiliateUrl": "https://www.divokerande.cz",
+    "rating": 8.7,
+    "userRating": 4.5,
+    "expertRating": 8.7,
+    "users": "180K+",
+    "activeUsers": "45K",
+    "successRate": "72%",
+    "ageRange": "25-45",
+    "genderRatio": "48/52",
+    "categories": ["nejlepsi-seznamky", "flirt-seznamky", "seznamky-zdarma"],
+    "targetAudience": "Odvážní singles hledající vzrušení a dobrodružství",
+    "pros": [
+      "100% česká seznamka",
+      "Moderní a svěží přístup",
+      "Aktivní a otevřená komunita",
+      "Rychlá registrace za 5 minut",
+      "Férové a dostupné ceny"
+    ],
+    "cons": [
+      "Menší uživatelská základna než globální platformy",
+      "Zatím bez mobilní aplikace",
+      "Méně funkcí v základní verzi"
+    ],
+    "features": [
+      "Rychlá registrace",
+      "Chat v reálném čase",
+      "Ověřené profily",
+      "Pokročilé vyhledávání",
+      "Mobilní verze webu"
+    ],
+    "highlights": [
+      {"icon": "flag", "text": "100% česká seznamka"},
+      {"icon": "zap", "text": "Aktivní komunita"},
+      {"icon": "heart", "text": "72% úspěšnost"}
+    ],
+    "order": 4,
+    "isActive": true,
+    "isFeatured": true,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": ["Registrace", "Prohlížení profilů", "Základní vyhledávání"],
+    "faq": [
+      {"question": "Je Divoké Rande zdarma?", "answer": "Registrace a prohlížení profilů je zdarma. Pro odesílání zpráv je potřeba premium členství."},
+      {"question": "Je Divoké Rande bezpečná?", "answer": "Ano, platforma ověřuje profily a dbá na bezpečnost uživatelů."},
+      {"question": "Pro koho je Divoké Rande vhodná?", "answer": "Pro odvážné singles 25-45 let, kteří hledají vzrušující vztahy a nové zážitky."}
+    ]
   }
 ]

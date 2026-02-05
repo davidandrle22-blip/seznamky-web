@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, ChevronDown, BookOpen } from 'lucide-react'
+import { Menu, X, Heart, ChevronDown, Sparkles } from 'lucide-react'
 
 const kategorieItems = [
   { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
@@ -41,9 +41,6 @@ export default function Header() {
     { name: 'Blog', href: '/clanky' },
     { name: 'Kontakt', href: '/kontakt' },
   ]
-
-  // E-book link - scrolls to lead magnet or goes to dedicated page
-  const ebookLink = '/ebook'
 
   return (
     <header className={`
@@ -104,7 +101,7 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Top 3 Dating Sites */}
+            {/* Top Dating Sites */}
             <div className="hidden xl:flex items-center gap-2 ml-2 pl-4 border-l border-rose-200">
               <Link
                 href="/seznamky/elite-date"
@@ -119,29 +116,21 @@ export default function Header() {
                 Victoria Milan
               </Link>
               <Link
-                href="/seznamky/academic-singles"
-                className="text-sm font-medium text-amber-600 hover:text-amber-700 hover:bg-amber-50 px-2 py-1 rounded transition-colors"
+                href="/seznamky/divoke-rande"
+                className="text-sm font-medium text-orange-600 hover:text-orange-700 hover:bg-orange-50 px-2 py-1 rounded transition-colors"
               >
-                Academic Singles
+                Divoké Rande
               </Link>
             </div>
 
-            {/* E-book Button */}
-            <Link
-              href={ebookLink}
-              className="header-cta-secondary--desktop ml-2"
-            >
-              <BookOpen className="header-cta-icon" />
-              <span>E-book zdarma</span>
-            </Link>
-
-            {/* CTA Button */}
+            {/* CTA Button - Vylepšené */}
             <Link
               href="/seznamky"
-              className="header-cta-primary--desktop ml-2"
+              className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse-subtle"
             >
-              <Heart className="header-cta-icon" fill="currentColor" />
+              <Sparkles className="w-4 h-4" />
               <span>Najít lásku</span>
+              <Heart className="w-4 h-4" fill="currentColor" />
             </Link>
           </div>
 
@@ -149,9 +138,9 @@ export default function Header() {
           <div className="lg:hidden flex items-center gap-2">
             <Link
               href="/seznamky"
-              className="header-cta-primary--mobile-header"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-semibold rounded-full shadow-md text-sm transition-all"
             >
-              <Heart className="header-cta-icon" fill="currentColor" />
+              <Sparkles className="w-3.5 h-3.5" />
               <span>Najít lásku</span>
             </Link>
             <button
@@ -196,22 +185,15 @@ export default function Header() {
             </div>
 
             {/* Mobile CTAs */}
-            <div className="mt-4 px-3 space-y-3">
-              <Link
-                href={ebookLink}
-                className="header-cta-secondary--mobile-menu"
-                onClick={() => setIsOpen(false)}
-              >
-                <BookOpen className="header-cta-icon--mobile" />
-                <span>E-book zdarma</span>
-              </Link>
+            <div className="mt-4 px-3">
               <Link
                 href="/seznamky"
-                className="header-cta-primary--mobile-menu"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 text-white font-semibold rounded-xl shadow-lg transition-all"
                 onClick={() => setIsOpen(false)}
               >
-                <Heart className="header-cta-icon--mobile" fill="currentColor" />
+                <Sparkles className="w-5 h-5" />
                 <span>Najít lásku</span>
+                <Heart className="w-5 h-5" fill="currentColor" />
               </Link>
             </div>
           </div>
