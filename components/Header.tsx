@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, ChevronDown, Sparkles } from 'lucide-react'
+import { Menu, X, Heart, ChevronDown } from 'lucide-react'
 
 const kategorieItems = [
   { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
@@ -126,14 +126,13 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* CTA Button - Vylepšené */}
+            {/* CTA Button - Odlišený design */}
             <Link
               href="/seznamky"
-              className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse-subtle"
+              className="ml-6 inline-flex items-center gap-2 px-6 py-2.5 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-lg shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-200 bg-white/80 backdrop-blur-sm"
             >
-              <Sparkles className="w-4 h-4" />
+              <Heart className="w-5 h-5" fill="currentColor" />
               <span>Najít lásku</span>
-              <Heart className="w-4 h-4" fill="currentColor" />
             </Link>
           </div>
 
@@ -141,9 +140,9 @@ export default function Header() {
           <div className="lg:hidden flex items-center gap-2">
             <Link
               href="/seznamky"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-semibold rounded-full shadow-md text-sm transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-2 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-lg text-sm transition-all bg-white/80"
             >
-              <Sparkles className="w-3.5 h-3.5" />
+              <Heart className="w-4 h-4" fill="currentColor" />
               <span>Najít lásku</span>
             </Link>
             <button
@@ -191,12 +190,11 @@ export default function Header() {
             <div className="mt-4 px-3">
               <Link
                 href="/seznamky"
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 text-white font-semibold rounded-xl shadow-lg transition-all"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-xl transition-all bg-white"
                 onClick={() => setIsOpen(false)}
               >
-                <Sparkles className="w-5 h-5" />
-                <span>Najít lásku</span>
                 <Heart className="w-5 h-5" fill="currentColor" />
+                <span>Najít lásku</span>
               </Link>
             </div>
           </div>
