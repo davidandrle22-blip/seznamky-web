@@ -101,24 +101,27 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Top Dating Sites */}
-            <div className="hidden xl:flex items-center gap-2 ml-2 pl-4 border-l border-rose-200">
+            {/* Top Dating Sites - Výrazné buttony */}
+            <div className="hidden xl:flex items-center gap-3 ml-3 pl-4 border-l border-rose-200">
               <Link
                 href="/seznamky/elite-date"
-                className="text-sm font-medium text-rose-600 hover:text-rose-700 hover:bg-rose-50 px-2 py-1 rounded transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
+                <span className="text-rose-200">★</span>
                 ELITE Date
               </Link>
               <Link
                 href="/seznamky/victoria-milan"
-                className="text-sm font-medium text-purple-600 hover:text-purple-700 hover:bg-purple-50 px-2 py-1 rounded transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
+                <span className="text-purple-200">♥</span>
                 Victoria Milan
               </Link>
               <Link
                 href="/seznamky/divoke-rande"
-                className="text-sm font-medium text-orange-600 hover:text-orange-700 hover:bg-orange-50 px-2 py-1 rounded transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
+                <span className="text-orange-200">🔥</span>
                 Divoké Rande
               </Link>
             </div>
