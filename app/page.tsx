@@ -59,7 +59,7 @@ export default async function Home() {
             {/* Trust badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
               <Heart className="w-4 h-4 text-rose-300 animate-pulse" fill="#fda4af" />
-              <span className="text-sm font-medium text-rose-200">Ověřené recenze 2026</span>
+              <span className="text-sm font-medium text-rose-200">Ověřené recenze 2026.</span>
               <Sparkles className="w-4 h-4 text-amber-400" />
             </div>
 
