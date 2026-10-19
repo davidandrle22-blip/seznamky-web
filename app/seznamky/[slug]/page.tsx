@@ -86,7 +86,7 @@ export default async function ProduktDetailPage({ params }: Props) {
 
   const facts = [
     { icon: CalendarRange, label: 'Věk uživatelů', value: produkt.ageRange },
-    { icon: Users, label: 'Registrovaných', value: produkt.users },
+    ...(produkt.users ? [{ icon: Users, label: 'Registrovaných', value: produkt.users }] : []),
     { icon: Gift, label: 'Registrace zdarma', value: produkt.freeVersion ? 'Ano' : 'Ne' },
     { icon: Smartphone, label: 'Mobilní aplikace', value: produkt.hasApp ? 'iOS / Android' : 'Jen web' },
     ...(produkt.genderRatio ? [{ icon: ShieldCheck, label: 'Muži / ženy', value: `${produkt.genderRatio} %` }] : []),

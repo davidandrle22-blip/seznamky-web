@@ -83,8 +83,8 @@ export const AFFILIATE_LINKS: Record<string, AffiliateConfig> = {
     supportsSubTracking: true,
   },
 
-  // ===== Rich Meet Beautiful (značka ukončena – přesměrování na Elite Meets Beauty) =====
-  'rich-meet-beautiful': {
+  // ===== Elite Meets Beauty (dříve Rich Meet Beautiful) =====
+  'elite-meets-beauty': {
     baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
     offerId: '1139',
     affId: '24115',

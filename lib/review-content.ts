@@ -3,6 +3,133 @@
 
 // Rozšířený obsah pro top seznamky
 export const extendedContent: Record<string, string> = {
+  'elite-meets-beauty': `
+Elite Meets Beauty (dříve Rich Meet Beautiful) je mezinárodní seznamka, která propojuje úspěšné a finančně zajištěné lidi s atraktivními singles.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | luxusní seznamování, „sugar dating" |
+| **Registrace** | zdarma |
+| **Komunikace** | prémiové funkce za poplatek |
+| **Ovládání** | web i mobil |
+
+## Pro koho je
+
+- pro úspěšné lidi, kteří chtějí partnera, jenž ocení jejich životní styl,
+- pro ty, kdo hledají vztah s jasně nastavenými očekáváními,
+- pro dospělé, kterým vyhovuje mezinárodní komunita.
+
+## Na co si dát pozor
+
+- Ujasněte si předem, co hledáte, a buďte upřímní.
+- Nikdy neposílejte peníze předem lidem, které jste nepotkali.
+- Ověřte si protějšek videohovorem.
+
+## Verdikt
+
+Elite Meets Beauty je specifická seznamka pro luxusní seznamování. Pokud hledáte klasický vážný vztah s vysokou úrovní, vyzkoušejte spíš [ELITE Date](/seznamky/elite-date) nebo [Academic Singles](/seznamky/academic-singles).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'chci-sex-rande': `
+Chci sex rande (chcisexrande.cz) je česká seznamka pro dospělé 18+. Jak napovídá název, je určená lidem, kteří hledají nezávazná intimní setkání bez dlouhého úvodu.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | sex seznamka 18+ |
+| **Registrace** | zdarma (s potvrzením e-mailu) |
+| **Komunikace** | plné funkce za poplatek |
+| **Ovládání** | web, mobilní verze |
+
+## Pro koho je
+
+- pro dospělé, kteří chtějí jasná pravidla: žádný vztah, jen setkání,
+- pro ty, kdo hledají českou komunitu.
+
+## Bezpečnost
+
+- Používejte přezdívku a samostatný e-mail.
+- První setkání vždy na veřejném místě.
+- Nikomu neposílejte peníze, ani když o ně žádá „ověřený" profil.
+
+## Verdikt
+
+Chci sex rande je jednoduchá česká sex seznamka. Hodí se jako doplněk k větším platformám typu [Victoria Milan](/seznamky/victoria-milan) nebo [FlirtKontakt](/seznamky/flirtkontakt).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'eroticky-kontakt': `
+Erotický kontakt (erotickykontakt.cz) je česká erotická seznamka pro dospělé 18+, kteří hledají nezávazná setkání. Zaměřuje se na českou komunitu a diskrétní prostředí.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | erotické seznámení 18+ |
+| **Registrace** | zdarma (s potvrzením e-mailu) |
+| **Komunikace** | plné funkce za poplatek |
+| **Ovládání** | web, mobilní verze |
+
+## Pro koho je Erotický kontakt
+
+- pro dospělé, kteří hledají nezávazná intimní setkání,
+- pro ty, kdo chtějí českou erotickou seznamku místo mezinárodní,
+- pro uživatele, kteří ocení diskrétnost.
+
+## Na co si dát pozor
+
+- Profily, které po vás chtějí peníze nebo kontakt mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Před nákupem si zkontrolujte, jestli se předplatné automaticky obnovuje.
+
+Další zásady najdete v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [red flags na seznamce](/clanky/red-flags-seznamky).
+
+## Verdikt
+
+Erotický kontakt je přímočará česká seznamka pro dospělé. Registrace je zdarma, takže si ji můžete vyzkoušet bez rizika.
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'zrala-laska': `
+Zralá láska (zralalaska.cz) je česká seznamka pro zralé singles, kteří hledají partnera nebo nové přátelství ve věku kolem padesátky a výš. Provozuje ji společnost CB Media Limited.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | seznamování 50+ |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce za poplatek |
+| **Ovládání** | web, mobilní verze |
+
+## Pro koho je Zralá láska
+
+- pro lidi zhruba 50+, kteří chtějí poznat vrstevníky,
+- pro ty, kdo preferují jednoduchou českou seznamku,
+- jako doplněk k [Singles50](/seznamky/singles50) nebo [ELITE Date](/seznamky/elite-date).
+
+## Jak funguje
+
+Registrace je zdarma a rychlá. Potvrdíte e-mail, vyplníte profil a můžete procházet lidi ve svém okolí. Pro neomezené psaní je potřeba placené členství.
+
+## Bezpečnost
+
+Starší uživatelé jsou častým cílem podvodníků. Nikdy nikomu neposílejte peníze a před schůzkou si dejte videohovor. Podrobně v článku [bezpečné seznamování pro seniory](/clanky/senior-bezpecnost-seznamovani).
+
+## Verdikt
+
+Zralá láska je jednoduchá česká seznamka pro generaci 50+. Pokud hledáte spíš vážný vztah s párováním podle osobnosti, začněte se [Singles50](/seznamky/singles50) a Zralou lásku používejte jako doplněk.
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
   'elite-date': `
 ELITE Date patří mezi nejznámější placené seznamky na českém trhu a specializuje se na uživatele, kteří hledají vážný, dlouhodobý vztah. Na rozdíl od aplikací založených na swipování zde najdete propracovaný systém vědeckého párování založený na osobnostním testu.
 
@@ -614,118 +741,40 @@ Doporučujeme všem, kdo už vědí, co od vztahu chtějí, a preferují kvalitn
 
 `,
   'flirt-com': `
-Flirt.com je jedna z největších mezinárodních seznamek zaměřená na flirt a nezávazné seznamování. S více než 9 miliony uživatelů nabízí obrovskou základnu pro ty, kdo hledají zábavu a nové známosti.
+Flirt.com je mezinárodní seznamka zaměřená na flirt a nezávazné seznámení. Provozuje ji skupina Together Networks, stejná jako BeNaughty. Funguje přes web i mobilní aplikaci a je dostupná v řadě zemí včetně Česka.
 
----
-
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
-|----------|---------|
-| **Celkové hodnocení** | {{RATING}}/10 |
-| **Uživatelů celosvětově** | 9 000 000+ |
-| **Poměr pohlaví** | 50% mužů / 50% žen |
-| **Pro ženy** | ZDARMA |
-| **Cena pro muže** | od 36 Kč/měsíc |
-| **Věková skupina** | 18+ |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | flirt, nezávazné seznámení |
+| **Věk** | 18+ |
+| **Registrace** | zdarma |
+| **Komunikace** | pro plné využití placené členství |
 
----
+## Pro koho je Flirt.com
 
-## ✅ Hlavní výhody
+- pro dospělé, kteří hledají flirt a nové známosti bez závazků,
+- pro ty, kdo chtějí velkou mezinárodní komunitu,
+- pro uživatele, kterým nevadí platit za prémiové funkce.
 
-- 👩 **Pro ženy zcela zdarma** – plný přístup ke všem funkcím
-- 🌍 **Obrovská mezinárodní komunita** – 9+ milionů uživatelů
-- ⚖️ **Perfektní poměr pohlaví** – 50:50
-- 💰 **Dostupné VIP balíčky** – od 36 Kč/měsíc
-- 🔒 **Bezpečné prostředí** – šifrování a ověřování
+Pro vážný vztah doporučujeme spíš [seznamky pro vážný vztah](/kategorie/vazne-vztahy).
 
----
+## Jak funguje
 
-## ❌ Nevýhody
+Registrace zabere pár minut: e-mail, základní údaje a fotka. Pak můžete procházet profily, lajkovat a psát. Pro neomezenou komunikaci a pokročilé funkce je potřeba placené členství. Ceny se liší podle délky a balíčku, aktuální nabídku najdete na webu Flirt.com.
 
-- ⚠️ Muži musí platit za plný přístup
-- ⚠️ Automatické obnovování členství
-- ⚠️ Zaměřeno na flirt, ne vážné vztahy
-- ⚠️ Některé profily bez fotky
+## Na co si dát pozor
 
----
+- **Automatické prodlužování** – po nákupu si zkontrolujte nastavení. Viz [jak zrušit předplatné seznamky](/clanky/jak-zrusit-predplatne-seznamky).
+- **Falešné profily** – jako na každé flirt seznamce buďte opatrní u profilů, které rychle chtějí kontakt mimo web nebo peníze.
 
-## 👤 Pro koho je Flirt.com?
+## Verdikt
 
-**Ideální pro:**
-- 💃 Uživatele hledající flirt a nezávazné vztahy
-- 👩 Ženy – plný přístup zdarma
-- 🌍 Ty, kdo oceňují mezinárodní komunitu
-- 🔥 Singles nad 18 let preferující zábavné seznamování
-
-**Není vhodná pro:**
-- Hledače vážného dlouhodobého vztahu
-- Muže, kteří nechtějí platit
-
----
-
-## 🎯 Jak funguje Flirt.com?
-
-### Hlavní funkce:
-- **Pokročilé vyhledávání** – filtry podle věku, lokality, zájmů
-- **„Líbí se mi" galerie** – rychlé hodnocení profilů
-- **Koketní zprávy** – oslovte více lidí najednou
-- **Video profily** – nahrajte krátké video
-- **Chat** – komunikace v reálném čase
-
-### Registrace (3 minuty):
-1. Zadejte email a základní údaje
-2. Nahrajte profilovou fotku
-3. Popište sebe a co hledáte
-4. Začněte flirtovat!
-
----
-
-## 💰 Ceník členství 2026
-
-### Pro ženy: ZDARMA
-Všechny funkce bez jakýchkoliv poplatků.
-
-### Pro muže:
-
-| Balíček | Cena | Co získáte |
-|---------|------|------------|
-| **Chataholik** | 36 Kč/měsíc | Neomezený chat |
-| **Extra zabezpečení** | 66 Kč/měsíc | + Anonymní prohlížení |
-| **Prémiový randič** ⭐ | 314 Kč | Všechny funkce + boost |
-
-💡 **Náš tip:** Začněte s balíčkem Chataholik za 36 Kč/měsíc – dostanete vše potřebné pro flirtování.
-
----
-
-## 🛡️ Bezpečnost a soukromí
-
-| Funkce | Dostupnost |
-|--------|------------|
-| HTTPS šifrování | ✅ |
-| Ověřování profilů | ✅ |
-| Blokování uživatelů | ✅ |
-| Anonymní prohlížení | ✅ (VIP) |
-| GDPR compliance | ✅ |
-
----
-
-## 💡 Tip pro nové uživatele
-
-> **Kvalitní profilová fotka je základ úspěchu.** Na Flirt.com je velká konkurence – zajímavý profil s úsměvem na fotce vás odliší od ostatních. Buďte aktivní a nebojte se psát první.
-
----
-
-## 🏆 Verdikt
-
-Flirt.com je **skvělá volba pro nezávazné seznamování** s mezinárodním dosahem. Perfektní poměr pohlaví 50:50 a fakt, že ženy mají vše zdarma, z ní dělá atraktivní platformu. Pro muže jsou ceny velmi dostupné.
+Flirt.com je solidní mezinárodní flirt seznamka s jednoduchým ovládáním. Česká komunita je menší než u domácích seznamek, proto ji doporučujeme kombinovat s českou [FlirtKontakt](/seznamky/flirtkontakt).
 
 **Hodnocení redakce: {{RATING}}/10**
-
-Doporučujeme všem, kdo hledají flirt, zábavu a nové známosti bez závazků.
-
----
-
 `,
   'be-naughty': `
 BeNaughty je mezinárodní seznamka zaměřená na flirt a nezávazné seznamování. Platforma nabízí moderní rozhraní a různé balíčky pro uživatele hledající zábavu a nové známosti.
@@ -828,132 +877,38 @@ Pokud hledáte spolehlivější platformu, zvažte Flirt.com nebo Divoké rande.
 
 `,
   'dateefy': `
-Dateefy je česká seznamka zaměřená na flirt a nezávazné seznamování. Hlavní předností je důraz na ověřování profilů – zejména u žen, což snižuje riziko falešných účtů.
+Dateefy (cz.dateefy.com) je flirt seznamka pro dospělé, kteří hledají nezávazné seznámení a zábavu. V Česku se prezentuje jako „největší česká flirtová seznamka". Provozuje ji britská společnost CB Media Limited.
 
----
-
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
-|----------|---------|
-| **Celkové hodnocení** | {{RATING}}/10 |
-| **Uživatelů v ČR** | 200 000+ |
-| **Poměr pohlaví** | 57% mužů / 43% žen |
-| **Pro ženy** | VIP ZDARMA |
-| **Cena pro muže** | od 99 Kč/měsíc |
-| **Zaměření** | Flirt, nezávazné vztahy |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | flirt, nezávazné seznámení 18+ |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce za poplatek |
+| **Ovládání** | web, mobilní verze |
 
----
+## Pro koho je Dateefy
 
-## ✅ Hlavní výhody
+- pro dospělé, kteří chtějí rychlé a nezávazné seznámení,
+- pro ty, kdo preferují českou flirt komunitu,
+- pro uživatele, kterým stačí webová verze v telefonu.
 
-- 👩 **Ženy mají VIP zdarma** – po ověření fotky
-- **Ověřované profily** – méně falešných účtů
-- 🇨🇿 **Česká komunita** – lokální uživatelé
-- 💰 **Dostupné ceny** – od 99 Kč/měsíc
-- 📱 **Jednoduché rozhraní** – rychlá registrace
+## Jak funguje
 
----
+Registrace je rychlá a zdarma, s potvrzením e-mailu. Po přihlášení procházíte profily v okolí, posíláte zprávy a flirtujete. Pokročilé funkce a neomezená komunikace jsou placené. Aktuální ceník najdete po registraci.
 
-## ❌ Nevýhody
+## Na co si dát pozor
 
-- ⚠️ Muži bez VIP se prakticky neseznámí
-- ⚠️ Zaměřeno na flirt, ne vážné vztahy
-- ⚠️ Některé profily bez fotografií
-- ⚠️ Automatické obnovování členství
+- Před nákupem si přečtěte podmínky a zjistěte, jestli se členství automaticky obnovuje.
+- Chraňte si soukromí: přezdívka, fotky, které nejsou na sociálních sítích, a žádné peníze neznámým lidem. Viz [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost).
 
----
+## Verdikt
 
-## 👤 Pro koho je Dateefy?
-
-**Ideální pro:**
-- 👩 Ženy – VIP zdarma po ověření
-- 🔥 Uživatele hledající flirt a nezávazné vztahy
-- 🇨🇿 Ty, kdo preferují českou komunitu
-- 💰 Muže s menším rozpočtem (od 99 Kč/měsíc)
-
-**Není vhodná pro:**
-- Hledače vážného dlouhodobého vztahu
-- Muže, kteří nechtějí platit
-
----
-
-## 🎯 Jak funguje Dateefy?
-
-### Hlavní funkce:
-- **Hra „Setkání"** – swipování profilů (líbí/nelíbí)
-- **Chat** – neomezená komunikace s VIP
-- **Návštěvníci** – vidíte, kdo si prohlédl váš profil
-- **„Chtějí mě"** – přehled, komu se líbíte
-- **Oblíbené** – ukládejte zajímavé profily
-
-### Registrace (3 minuty):
-1. Zadejte email a přezdívku
-2. Nahrajte profilovou fotku
-3. **Ženy:** Ověřte fotku → VIP zdarma
-4. **Muži:** Zvolte VIP členství
-
----
-
-## 💰 Ceník VIP členství 2026
-
-### Pro ženy: ZDARMA
-Po ověření profilové fotografie získáte plný přístup.
-
-### Pro muže:
-
-| Členství | Délka | Celková cena | Cena/měsíc |
-|----------|-------|--------------|------------|
-| **Basic** | 1 měsíc | 299 Kč | 299 Kč |
-| **Standard** | 3 měsíce | 597 Kč | 199 Kč |
-| **Premium** ⭐ | 12 měsíců | 1 188 Kč | **99 Kč** |
-
-💡 **Náš tip:** Roční členství za 99 Kč/měsíc je nejlepší hodnota – ušetříte 2/3 oproti měsíčnímu.
-
----
-
-## 🆓 Zdarma vs. VIP
-
-| Funkce | Zdarma | VIP |
-|--------|--------|-----|
-| Prohlížení profilů | ✅ | ✅ |
-| Hra „Setkání" | ✅ | ✅ |
-| Čtení zpráv | ❌ | ✅ |
-| Odesílání zpráv | ❌ | ✅ |
-| Návštěvníci profilu | ❌ | ✅ |
-| „Chtějí mě" | ❌ | ✅ |
-
----
-
-## 🛡️ Bezpečnost
-
-| Funkce | Dostupnost |
-|--------|------------|
-| Ověřování fotek (ženy) | ✅ |
-| Blokování uživatelů | ✅ |
-| SSL šifrování | ✅ |
-| GDPR compliance | ✅ |
-
----
-
-## 💡 Tip pro nové uživatele
-
-> **Kvalitní profilová fotka je klíčová.** Na Dateefy rozhoduje první dojem – investujte do dobré fotky s úsměvem. Muži by měli psát personalizované zprávy, ne obecné „ahoj".
-
-⚠️ **Nezapomeňte:** Členství se automaticky obnovuje – nastavte si připomínku, pokud nechcete prodloužení.
-
----
-
-## 🏆 Verdikt
-
-Dateefy je **solidní česká volba pro flirt a nezávazné vztahy**. Ověřování profilů snižuje riziko podvodů a pro ženy je služba zcela zdarma. Muži ocení dostupné ceny zejména u ročního členství.
+Dateefy je jednoduchá česká flirt seznamka pro ty, kdo hledají zábavu bez závazků. Vyzkoušet ji můžete zdarma.
 
 **Hodnocení redakce: {{RATING}}/10**
-
-Doporučujeme všem, kdo hledají českou alternativu k mezinárodním flirt seznamkám.
-
----
-
 `,
   'badoo': `
 Badoo je největší seznamovací platforma na světě s více než 500 miliony registrovaných uživatelů. Působí ve 190 zemích a nabízí univerzální řešení pro ty, kdo hledají flirt, přátelství i vážný vztah.

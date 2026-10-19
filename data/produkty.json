@@ -291,7 +291,7 @@
         "text": "Hodně funkcí zdarma"
       }
     ],
-    "order": 9,
+    "order": 20,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
@@ -369,7 +369,7 @@
         "text": "20+ zemí Evropy"
       }
     ],
-    "order": 8,
+    "order": 19,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
@@ -450,7 +450,7 @@
         "text": "Česká komunita"
       }
     ],
-    "order": 6,
+    "order": 7,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -610,7 +610,7 @@
         "text": "Flexibilní možnosti"
       }
     ],
-    "order": 14,
+    "order": 13,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
@@ -692,7 +692,7 @@
         "text": "Zdarma základní verze"
       }
     ],
-    "order": 16,
+    "order": 22,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
@@ -775,7 +775,7 @@
         "text": "Dostupné VIP"
       }
     ],
-    "order": 17,
+    "order": 23,
     "isActive": true,
     "isFeatured": false,
     "isNew": false,
@@ -860,7 +860,7 @@
         "text": "Okamžité matche"
       }
     ],
-    "order": 10,
+    "order": 21,
     "isActive": true,
     "isFeatured": true,
     "isNew": true,
@@ -948,7 +948,7 @@
         "text": "Aktivní komunita"
       }
     ],
-    "order": 13,
+    "order": 14,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1031,7 +1031,7 @@
         "text": "70M+ uživatelů"
       }
     ],
-    "order": 12,
+    "order": 17,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1112,7 +1112,7 @@
         "text": "Ověřené profily"
       }
     ],
-    "order": 11,
+    "order": 16,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1195,7 +1195,7 @@
         "text": "Okamžitý chat"
       }
     ],
-    "order": 19,
+    "order": 25,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1274,7 +1274,7 @@
         "text": "Více než hookups"
       }
     ],
-    "order": 20,
+    "order": 26,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1356,7 +1356,7 @@
         "text": "Více než seznamka"
       }
     ],
-    "order": 21,
+    "order": 27,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1382,167 +1382,6 @@
       }
     ],
     "lastUpdated": "2026-10-19",
-    "hasApp": true
-  },
-  {
-    "id": "18",
-    "slug": "ourtime",
-    "name": "OurTime",
-    "logo": "/images/seznamky/ourtime.svg",
-    "description": "Mezinárodní seznamka pro seniory 50+. Jednoduché ovládání, ověřené profily a komunita zaměřená na vážné vztahy.",
-    "shortDescription": "Mezinárodní senior seznamka",
-    "fullDescription": "**OurTime** je **mezinárodní seznamka určená výhradně pro seniory nad 50 let**.\n\n### Proč OurTime?\n\n- **Pro 50+** - všichni uživatelé jsou ve vašem věku\n- **Jednoduché** - intuitivní rozhraní pro seniory\n- **Bezpečné** - ověřené profily\n- **Mezinárodní** - uživatelé z celé Evropy\n\n### Jak OurTime funguje?\n\n1. Vytvořte profil s fotkami\n2. Vyplňte co hledáte\n3. Prohlížejte doporučení\n4. Posílejte zprávy a flirty",
-    "affiliateUrl": "https://ourtime.cz",
-    "rating": 7.8,
-    "userRating": 3.9,
-    "expertRating": 7.8,
-    "users": "1.5M+",
-    "activeUsers": "400K",
-    "ageRange": "50+",
-    "genderRatio": "45/55",
-    "categories": [
-      "senior-seznamky",
-      "vazne-vztahy"
-    ],
-    "targetAudience": "Singles nad 50 let",
-    "pros": [
-      "Výhradně pro 50+",
-      "Jednoduché ovládání",
-      "Ověřené profily",
-      "Mezinárodní dosah",
-      "Kvalitní mobilní aplikace"
-    ],
-    "cons": [
-      "Menší uživatelská základna v ČR",
-      "Omezené bezplatné funkce",
-      "Pomalejší odezva podpory"
-    ],
-    "features": [
-      "Jednoduchý profil",
-      "Denní doporučení",
-      "Flirty",
-      "Zprávy",
-      "Kdo mě navštívil"
-    ],
-    "highlights": [
-      {
-        "icon": "users",
-        "text": "Pouze 50+"
-      },
-      {
-        "icon": "smartphone",
-        "text": "Jednoduchá aplikace"
-      },
-      {
-        "icon": "shield",
-        "text": "Ověřené profily"
-      }
-    ],
-    "order": 22,
-    "isActive": false,
-    "isFeatured": false,
-    "isNew": true,
-    "freeVersion": true,
-    "freeFeatures": [
-      "Registrace",
-      "Prohlížení",
-      "Odesílání flirtů"
-    ],
-    "faq": [
-      {
-        "question": "Je OurTime pouze pro 50+?",
-        "answer": "Ano, registrovat se mohou pouze uživatelé starší 50 let."
-      },
-      {
-        "question": "Je ovládání jednoduché?",
-        "answer": "Ano, rozhraní je navrženo speciálně pro seniory."
-      },
-      {
-        "question": "Mohu používat zdarma?",
-        "answer": "Základní prohlížení a flirty jsou zdarma, zprávy vyžadují premium."
-      }
-    ],
-    "lastUpdated": "2026-10-19",
-    "inactiveReason": "ourtime.cz nefunguje, služba v ČR není dostupná",
-    "hasApp": true
-  },
-  {
-    "id": "19",
-    "slug": "silversingles",
-    "name": "SilverSingles",
-    "logo": "/images/seznamky/silversingles.svg",
-    "description": "Prémiová seznamka pro seniory 50+ s vědeckým matchmakingem. Osobnostní test, ověřené profily a kvalitní komunita.",
-    "shortDescription": "Prémiová senior seznamka",
-    "fullDescription": "**SilverSingles** je **prémiová seznamka pro seriózní singles nad 50 let** s důrazem na vědecký matching.\n\n### Jak SilverSingles funguje?\n\n1. **Osobnostní test** - 125 otázek analyzuje vaše vlastnosti\n2. **Denní návrhy** - 3-7 kompatibilních profilů denně\n3. **Komunikace** - smajlíci, zprávy, otázky\n4. **Reálné schůzky** - poznejte se osobně\n\n### Proč SilverSingles?\n\n- **Vědecký matching** - algoritmus založený na výzkumu\n- **Kvalitní profily** - 80% uživatelů s VŠ vzděláním\n- **Bezpečné** - ověření každého profilu\n- **Profesionální** - seriózní uživatelé",
-    "affiliateUrl": "https://silversingles.cz",
-    "rating": 8.3,
-    "userRating": 4.2,
-    "expertRating": 8.3,
-    "users": "800K+",
-    "activeUsers": "180K",
-    "ageRange": "50+",
-    "genderRatio": "47/53",
-    "categories": [
-      "senior-seznamky",
-      "vazne-vztahy",
-      "nejlepsi-seznamky"
-    ],
-    "targetAudience": "Vzdělaní singles nad 50 let",
-    "pros": [
-      "Vědecký matching algoritmus",
-      "80% s VŠ vzděláním",
-      "Kvalitní ověřené profily",
-      "Denní návrhy partnerů",
-      "Seriózní komunita"
-    ],
-    "cons": [
-      "Vyšší cena členství",
-      "Povinný dlouhý test",
-      "Menší uživatelská základna"
-    ],
-    "features": [
-      "125 otázkový test",
-      "Denní návrhy",
-      "% kompatibilita",
-      "Wildcard",
-      "Mobilní aplikace"
-    ],
-    "highlights": [
-      {
-        "icon": "brain",
-        "text": "Vědecký matching"
-      },
-      {
-        "icon": "graduation-cap",
-        "text": "80% s VŠ vzděláním"
-      }
-    ],
-    "order": 23,
-    "isActive": false,
-    "isFeatured": false,
-    "isNew": true,
-    "freeVersion": true,
-    "freeFeatures": [
-      "Registrace",
-      "Osobnostní test",
-      "Prohlížení návrhů"
-    ],
-    "faq": [
-      {
-        "question": "Jak dlouhý je osobnostní test?",
-        "answer": "Test obsahuje 125 otázek a trvá přibližně 20-25 minut."
-      },
-      {
-        "question": "Je SilverSingles vhodná pro seniory?",
-        "answer": "Ano, platforma je navržena speciálně pro uživatele nad 50 let."
-      },
-      {
-        "question": "Co znamená % kompatibilita?",
-        "answer": "Ukazuje shodu vašich osobnostních rysů s druhým uživatelem."
-      }
-    ],
-    "lastUpdated": "2026-10-19",
-    "inactiveReason": "silversingles.cz nefunguje, služba v ČR není dostupná",
     "hasApp": true
   },
   {
@@ -1599,7 +1438,7 @@
         "text": "Řízená ženami"
       }
     ],
-    "order": 15,
+    "order": 18,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1682,7 +1521,7 @@
         "text": "Silná free verze"
       }
     ],
-    "order": 18,
+    "order": 24,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -1709,88 +1548,6 @@
     ],
     "lastUpdated": "2026-10-19",
     "hasApp": true
-  },
-  {
-    "id": "22",
-    "slug": "secret",
-    "name": "Secret.cz",
-    "logo": "/images/seznamky/secret.svg",
-    "description": "Česká erotická seznamka pro dospělé. Diskrétní prostředí, aktivní česká komunita a dostupné ceny.",
-    "shortDescription": "Česká erotická seznamka",
-    "fullDescription": "**Secret.cz** je **česká erotická seznamka** pro dospělé hledající diskrétní nezávazné vztahy.\n\n### Pro koho je Secret.cz?\n\n- Singles hledající nezávazný sex\n- Páry hledající zpestření\n- Lidé hledající FWB vztahy\n- Česká komunita\n\n### Hlavní funkce\n\n- **Lokální vyhledávání** - najdete partnery ve vašem okolí\n- **Diskrétní profily** - možnost skrýt tvář\n- **Video profily** - představte se lépe\n- **Soukromé galerie** - fotky pouze pro vybrané",
-    "affiliateUrl": "https://secret.cz",
-    "rating": 7.5,
-    "userRating": 3.8,
-    "expertRating": 7.5,
-    "users": "180K+",
-    "activeUsers": "35K",
-    "ageRange": "18-50",
-    "genderRatio": "40/60",
-    "categories": [
-      "sex-seznamky",
-      "flirt-seznamky"
-    ],
-    "targetAudience": "Čeští dospělí hledající nezávazné erotické vztahy",
-    "pros": [
-      "Česká platforma a komunita",
-      "Zdarma pro ženy",
-      "Dostupné ceny pro muže",
-      "Diskrétní prostředí",
-      "Lokální uživatelé"
-    ],
-    "cons": [
-      "Menší uživatelská základna",
-      "Základní design",
-      "Omezené pokročilé funkce"
-    ],
-    "features": [
-      "Lokální vyhledávání",
-      "Diskrétní profily",
-      "Video profily",
-      "Soukromé galerie",
-      "Chat"
-    ],
-    "highlights": [
-      {
-        "icon": "map-pin",
-        "text": "Česká komunita"
-      },
-      {
-        "icon": "gift",
-        "text": "Zdarma pro ženy"
-      },
-      {
-        "icon": "shield",
-        "text": "Diskrétní prostředí"
-      }
-    ],
-    "order": 24,
-    "isActive": false,
-    "isFeatured": false,
-    "isNew": true,
-    "freeVersion": true,
-    "freeFeatures": [
-      "Registrace",
-      "Prohlížení",
-      "Kompletně zdarma pro ženy"
-    ],
-    "faq": [
-      {
-        "question": "Je Secret.cz česká platforma?",
-        "answer": "Ano, Secret.cz je česká seznamka s převážně českou komunitou."
-      },
-      {
-        "question": "Je pro ženy zdarma?",
-        "answer": "Ano, ženy mají plný přístup ke všem funkcím zdarma."
-      },
-      {
-        "question": "Jsou tam opravdoví lidé?",
-        "answer": "Ano, ale jako u každé platformy doporučujeme opatrnost."
-      }
-    ],
-    "lastUpdated": "2026-10-19",
-    "inactiveReason": "secret.cz nefunguje",
-    "hasApp": false
   },
   {
     "id": "23",
@@ -1871,87 +1628,6 @@
     "hasApp": true
   },
   {
-    "id": "24",
-    "slug": "rich-meet-beautiful",
-    "name": "Rich Meet Beautiful",
-    "logo": "/images/seznamky/rich-meet-beautiful.png",
-    "description": "Exkluzivní seznamka pro úspěšné a atraktivní singles. Spojení luxusu s romancí pro náročné uživatele.",
-    "shortDescription": "Pro úspěšné a atraktivní",
-    "fullDescription": "**Rich Meet Beautiful** je **luxusní seznamka** pro úspěšné profesionály a atraktivní singles.\n\n### Pro koho je Rich Meet Beautiful?\n\n- Úspěšní podnikatelé a profesionálové\n- Atraktivní singles hledající úspěšného partnera\n- Lidé preferující kvalitní životní styl\n- Ti, kteří hledají partnera na stejné úrovni\n\n### Co nabízí?\n\n- **Ověření příjmů** - autentická komunita\n- **Exkluzivní členská základna** - kvalita před kvantitou\n- **Luxusní události** - networking v reálném světě",
-    "affiliateUrl": "https://espolupracecz.go2cloud.org/aff_c?offer_id=1139&aff_id=24115",
-    "rating": 7.8,
-    "userRating": 3.9,
-    "expertRating": 7.8,
-    "users": "150K+",
-    "activeUsers": "30K",
-    "ageRange": "25-50",
-    "genderRatio": "40/60",
-    "categories": [
-      "luxusni-seznamky"
-    ],
-    "targetAudience": "Úspěšní profesionálové a atraktivní singles",
-    "pros": [
-      "Exkluzivní komunita",
-      "Ověření příjmů a statusu",
-      "Kvalitní profily",
-      "Luxusní události pro členy",
-      "Diskrétní prostředí"
-    ],
-    "cons": [
-      "Vysoká cena členství",
-      "Menší uživatelská základna",
-      "Přísný schvalovací proces"
-    ],
-    "features": [
-      "Ověření příjmů",
-      "Premium profily",
-      "Exkluzivní události",
-      "Pokročilé filtry",
-      "Diskrétní mód"
-    ],
-    "highlights": [
-      {
-        "icon": "crown",
-        "text": "Exkluzivní komunita"
-      },
-      {
-        "icon": "check-circle",
-        "text": "Ověřené profily"
-      },
-      {
-        "icon": "star",
-        "text": "Luxusní události"
-      }
-    ],
-    "order": 25,
-    "isActive": false,
-    "isFeatured": false,
-    "isNew": true,
-    "freeVersion": true,
-    "freeFeatures": [
-      "Registrace",
-      "Prohlížení",
-      "Základní vyhledávání"
-    ],
-    "faq": [
-      {
-        "question": "Je Rich Meet Beautiful legit?",
-        "answer": "Ano, platforma ověřuje profily a příjmy uživatelů."
-      },
-      {
-        "question": "Kolik stojí členství?",
-        "answer": "Rich Meet Beautiful nabízí prémiové členství pro přístup ke všem funkcím."
-      },
-      {
-        "question": "Jak se ověřuje příjem?",
-        "answer": "Uživatelé mohou volitelně ověřit svůj příjem pro získání speciálního označení."
-      }
-    ],
-    "lastUpdated": "2026-10-19",
-    "inactiveReason": "Značka ukončena (přesměrování na elitemeetsbeauty.com)",
-    "hasApp": false
-  },
-  {
     "id": "25",
     "slug": "divoke-rande",
     "name": "Divoké Rande",
@@ -1998,7 +1674,7 @@
         "text": "Aktivní komunita"
       }
     ],
-    "order": 7,
+    "order": 15,
     "isActive": true,
     "isFeatured": false,
     "isNew": true,
@@ -2024,5 +1700,309 @@
     ],
     "lastUpdated": "2026-10-19",
     "hasApp": false
+  },
+  {
+    "id": "elite-meets-beauty",
+    "shortDescription": "Luxusní seznamování pro úspěšné",
+    "fullDescription": "",
+    "expertRating": 7.8,
+    "activeUsers": "",
+    "targetAudience": "Úspěšní a náročné singles 21+",
+    "features": [
+      "Soukromá alba",
+      "Ověření profilu",
+      "Pokročilé filtry",
+      "Chat"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Co se stalo s Rich Meet Beautiful?",
+        "answer": "Seznamka Rich Meet Beautiful byla přejmenována na Elite Meets Beauty a odkazy na původní značku sem přesměrovávají."
+      },
+      {
+        "question": "Je registrace zdarma?",
+        "answer": "Ano, registrace je zdarma, prémiové funkce jsou placené."
+      }
+    ],
+    "lastUpdated": "2026-10-19",
+    "hasApp": true,
+    "slug": "elite-meets-beauty",
+    "name": "Elite Meets Beauty",
+    "logo": "/images/seznamky/elite-meets-beauty.svg",
+    "description": "Mezinárodní luxusní seznamka (dříve Rich Meet Beautiful) pro úspěšné singles a atraktivní protějšky.",
+    "affiliateUrl": "https://espolupracecz.go2cloud.org/aff_c?offer_id=1139&aff_id=24115",
+    "rating": 7.8,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "luxusni-seznamky",
+      "seznamky-pro-zadane"
+    ],
+    "pros": [
+      "Jasně nastavená očekávání",
+      "Rozmazání fotek a soukromí",
+      "Mezinárodní komunita",
+      "Mobilní verze i aplikace"
+    ],
+    "cons": [
+      "Specifické zaměření („sugar dating\")",
+      "Prémiové funkce jsou placené",
+      "Menší česká komunita"
+    ],
+    "order": 6
+  },
+  {
+    "id": "dateefy",
+    "shortDescription": "Česká flirt seznamka 18+",
+    "fullDescription": "",
+    "expertRating": 7.6,
+    "activeUsers": "",
+    "targetAudience": "Dospělí hledající flirt a zábavu",
+    "features": [
+      "Profily v okolí",
+      "Chat",
+      "Mobilní web"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-19",
+    "hasApp": false,
+    "slug": "dateefy",
+    "name": "Dateefy",
+    "logo": "/images/seznamky/dateefy.jpg",
+    "description": "Česká flirt seznamka pro dospělé, kteří hledají nezávazné seznámení a zábavu.",
+    "affiliateUrl": "https://cz.dateefy.com/",
+    "rating": 7.6,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "sex-seznamky",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Česká komunita",
+      "Rychlá registrace zdarma",
+      "Jednoduché ovládání v mobilu"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Zaměření jen na nezávazné seznámení",
+      "Bez samostatné aplikace (jen mobilní web)"
+    ],
+    "order": 9
+  },
+  {
+    "id": "eroticky-kontakt",
+    "shortDescription": "Česká erotická seznamka 18+",
+    "fullDescription": "",
+    "expertRating": 7.4,
+    "activeUsers": "",
+    "targetAudience": "Dospělí hledající erotická setkání",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Mobilní web"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-19",
+    "hasApp": false,
+    "slug": "eroticky-kontakt",
+    "name": "Erotický kontakt",
+    "logo": "/images/seznamky/eroticky-kontakt.svg",
+    "description": "Česká erotická seznamka pro dospělé 18+ hledající nezávazná a diskrétní setkání.",
+    "affiliateUrl": "https://www.erotickykontakt.cz/",
+    "rating": 7.4,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "flirt-seznamky"
+    ],
+    "pros": [
+      "Česká erotická komunita",
+      "Registrace zdarma",
+      "Diskrétní prostředí"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Menší komunita než velké platformy",
+      "Bez samostatné aplikace (jen mobilní web)"
+    ],
+    "order": 8
+  },
+  {
+    "id": "chci-sex-rande",
+    "shortDescription": "Česká sex seznamka 18+",
+    "fullDescription": "",
+    "expertRating": 7.2,
+    "activeUsers": "",
+    "targetAudience": "Dospělí hledající nezávazný sex",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Mobilní web"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-19",
+    "hasApp": false,
+    "slug": "chci-sex-rande",
+    "name": "Chci sex rande",
+    "logo": "/images/seznamky/chci-sex-rande.svg",
+    "description": "Česká sex seznamka pro dospělé 18+, kteří hledají nezávazná intimní setkání.",
+    "affiliateUrl": "https://www.chcisexrande.cz/",
+    "rating": 7.2,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Jasný účel bez přetvářky",
+      "Česká komunita",
+      "Registrace zdarma"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Úzce zaměřená",
+      "Bez samostatné aplikace (jen mobilní web)"
+    ],
+    "order": 11
+  },
+  {
+    "id": "zrala-laska",
+    "shortDescription": "Česká seznamka pro 50+",
+    "fullDescription": "",
+    "expertRating": 7.5,
+    "activeUsers": "",
+    "targetAudience": "Zralí singles 50+",
+    "features": [
+      "Profily v okolí",
+      "Chat",
+      "Mobilní web"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Pro koho je Zralá láska?",
+        "answer": "Pro lidi zhruba od 50 let, kteří hledají partnera nebo přátelství mezi vrstevníky."
+      }
+    ],
+    "lastUpdated": "2026-10-19",
+    "hasApp": false,
+    "slug": "zrala-laska",
+    "name": "Zralá láska",
+    "logo": "/images/seznamky/zrala-laska.svg",
+    "description": "Česká seznamka pro zralé singles 50+, kteří hledají partnera nebo nové přátelství.",
+    "affiliateUrl": "https://www.zralalaska.cz/",
+    "rating": 7.5,
+    "users": "",
+    "ageRange": "50+",
+    "categories": [
+      "senior-seznamky",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Zaměření na generaci 50+",
+      "Česká komunita",
+      "Jednoduché ovládání"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Bez osobnostního testu",
+      "Bez samostatné aplikace (jen mobilní web)"
+    ],
+    "order": 10
+  },
+  {
+    "id": "flirt-com",
+    "shortDescription": "Mezinárodní flirt seznamka",
+    "fullDescription": "",
+    "expertRating": 7.3,
+    "activeUsers": "",
+    "targetAudience": "Dospělí hledající flirt",
+    "features": [
+      "Vyhledávání",
+      "Chat",
+      "Aplikace"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-19",
+    "hasApp": true,
+    "slug": "flirt-com",
+    "name": "Flirt.com",
+    "logo": "/images/seznamky/flirt-com.jpg",
+    "description": "Mezinárodní flirt seznamka skupiny Together Networks pro nezávazné seznámení.",
+    "affiliateUrl": "https://www.flirt.com/",
+    "rating": 7.3,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Velká mezinárodní komunita",
+      "Web i mobilní aplikace",
+      "Rychlá registrace"
+    ],
+    "cons": [
+      "Menší česká komunita",
+      "Prémiové funkce jsou placené",
+      "Automatické prodlužování členství"
+    ],
+    "order": 12
   }
 ]

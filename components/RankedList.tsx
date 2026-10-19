@@ -93,7 +93,7 @@ export default function RankedList({ produkty, source, limit, startRank = 1, hig
                 </ul>
                 <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-400">
                   <span className="inline-flex items-center gap-1"><CalendarRange className="w-3.5 h-3.5" /> Věk {p.ageRange}</span>
-                  <span className="inline-flex items-center gap-1"><Users className="w-3.5 h-3.5" /> {p.users} registrací</span>
+                  {p.users && <span className="inline-flex items-center gap-1"><Users className="w-3.5 h-3.5" /> {p.users} registrací</span>}
                   {p.freeVersion && <span className="inline-flex items-center gap-1"><Gift className="w-3.5 h-3.5" /> Registrace zdarma</span>}
                 </div>
               </div>

@@ -27,6 +27,12 @@ export const MONETIZATION: Record<string, Monetization> = {
   'singles50':        { status: 'tracking', network: 'eSpolupráce (offer 1165)', commission: '≈ 50 Kč / registrace 40+' },
   'be2':              { status: 'tracking', network: 'eSpolupráce (offer 1081 / 1173 mobil)', commission: 'CPL za registraci' },
   'flirtkontakt':     { status: 'tracking', network: 'eSpolupráce (offer 762)', commission: 'CPL / CPS' },
+  'elite-meets-beauty': { status: 'tracking', network: 'eSpolupráce (offer 1139)', commission: 'CPL / CPA (LoveRevenue)' },
+  'eroticky-kontakt': { status: 'available', network: 'Paysale (CB Media)', commission: '≈ 5,04 $ / registrace DOI' },
+  'dateefy':          { status: 'available', network: 'Conversand / Paysale (CB Media)', commission: '≈ 18,75 $ CPS nebo 1,67 $ CPL' },
+  'zrala-laska':      { status: 'available', network: 'Paysale (CB Media)', commission: 'CPL DOI (sazba po registraci)' },
+  'chci-sex-rande':   { status: 'available', network: 'Paysale', commission: 'CPL DOI (sazba po registraci)' },
+  'flirt-com':        { status: 'available', network: 'Together Networks (affiliates.flirt.com)', commission: 'PPL / PPS / revshare' },
   'divoke-rande':     { status: 'available', network: 'přímo provozovatel', commission: 'neznámé – vyžádat' },
   'c-date':           { status: 'available', network: 'vlastní program / Awin', commission: 'CPS' },
   'ashley-madison':   { status: 'available', network: 'vlastní program', commission: 'CPS (první platba)' },
@@ -51,7 +57,14 @@ export const PRIORITY_ORDER = [
   'academic-singles',
   'singles50',
   'be2',
+  'elite-meets-beauty',
   'flirtkontakt',
+  // čekají na affiliate odkaz (Paysale / Together Networks) – seřazeno podle provize
+  'eroticky-kontakt',
+  'dateefy',
+  'zrala-laska',
+  'chci-sex-rande',
+  'flirt-com',
 ]
 
 /**
@@ -62,11 +75,11 @@ export const CATEGORY_PICKS: Record<string, string[]> = {
   'nejlepsi-seznamky': ['elite-date', 'victoria-milan', 'academic-singles'],
   'vsechny-seznamky': ['elite-date', 'victoria-milan', 'academic-singles'],
   'vazne-vztahy': ['elite-date', 'academic-singles', 'be2'],
-  'senior-seznamky': ['singles50', 'elite-date', 'academic-singles'],
-  'luxusni-seznamky': ['elite-date', 'academic-singles', 'victoria-milan'],
-  'seznamky-pro-zadane': ['victoria-milan', 'flirtkontakt'],
-  'sex-seznamky': ['victoria-milan', 'flirtkontakt'],
-  'flirt-seznamky': ['flirtkontakt', 'victoria-milan'],
+  'senior-seznamky': ['singles50', 'elite-date', 'academic-singles', 'zrala-laska'],
+  'luxusni-seznamky': ['elite-date', 'academic-singles', 'elite-meets-beauty', 'victoria-milan'],
+  'seznamky-pro-zadane': ['victoria-milan', 'elite-meets-beauty', 'flirtkontakt'],
+  'sex-seznamky': ['victoria-milan', 'flirtkontakt', 'eroticky-kontakt', 'dateefy', 'chci-sex-rande'],
+  'flirt-seznamky': ['flirtkontakt', 'victoria-milan', 'dateefy', 'flirt-com'],
   'seznamky-zdarma': ['elite-date', 'flirtkontakt', 'victoria-milan'],
   'gay-seznamky': [],
 }
@@ -79,6 +92,9 @@ export const AWARDS: Record<string, string> = {
   'singles50': 'Nejlepší pro 50+',
   'be2': 'Vědecké párování',
   'flirtkontakt': 'Nejlepší český flirt',
+  'elite-meets-beauty': 'Luxusní seznamování',
+  'eroticky-kontakt': 'Česká erotická seznamka',
+  'zrala-laska': 'Česká seznamka 50+',
 }
 
 export function isTracked(slug: string): boolean {
