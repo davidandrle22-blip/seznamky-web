@@ -50,8 +50,9 @@ export function ReviewSchema({
       worstRating: 1
     },
     author: {
-      '@type': 'Person',
-      name: author
+      '@type': 'Organization',
+      name: author,
+      url: 'https://www.seznamky.info/o-nas'
     },
     publisher: {
       '@type': 'Organization',
@@ -60,7 +61,9 @@ export function ReviewSchema({
     },
     datePublished,
     dateModified,
-    reviewBody: produkt.description
+    reviewBody: produkt.verdict || produkt.description,
+    url: `https://www.seznamky.info/seznamky/${produkt.slug}`,
+    inLanguage: 'cs-CZ'
   }
 
   return (
@@ -208,4 +211,57 @@ export function OrganizationSchema() {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   )
+}
+
+// ItemList schema – žebříčky seznamek (homepage, kategorie, srovnání)
+export function ItemListSchema({ name, items }: { name: string; items: { name: string; url: string }[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    itemListOrder: 'https://schema.org/ItemListOrderDescending',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+// Article schema – magazín
+export function ArticleSchema({
+  headline,
+  description,
+  url,
+  image,
+  datePublished,
+  dateModified,
+  section,
+}: {
+  headline: string
+  description: string
+  url: string
+  image?: string
+  datePublished: string
+  dateModified?: string
+  section?: string
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline,
+    description,
+    mainEntityOfPage: url,
+    image: image ? [image] : undefined,
+    datePublished,
+    dateModified: dateModified || datePublished,
+    articleSection: section,
+    inLanguage: 'cs-CZ',
+    author: { '@type': 'Organization', name: 'Redakce Seznamky.info', url: 'https://www.seznamky.info/o-nas' },
+    publisher: { '@id': 'https://www.seznamky.info/#organization' },
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }

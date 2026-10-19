@@ -1,168 +1,177 @@
-import { getKategorie, getKategorieBySlug, getProduktyByKategorie, getCategoryContentBySlug, getProdukty } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import CategoryHero from '@/components/CategoryHero'
-import CategoryQuickTable from '@/components/CategoryQuickTable'
-import CategorySeoContent from '@/components/CategorySeoContent'
-import FaqSection from '@/components/FaqSection'
+import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+import { ChevronRight, Check } from 'lucide-react'
+import { getKategorie, getKategorieBySlug, getProduktyByKategorie, getCategoryContentBySlug, getProdukty } from '@/lib/data'
+import RankedList, { ScoreBadge } from '@/components/RankedList'
 import ComparisonTable from '@/components/ComparisonTable'
-import { CategoryEliteDateBanner, CategoryVictoriaMilanBanner, CategoryAcademicSinglesBanner, CategoryBottomCTA } from '@/components/CategoryAffiliateLinks'
-import { ArrowRight, Crown, Heart, Smile, Flame, Users, EyeOff, Rainbow, Gift, List } from 'lucide-react'
+import FaqSection from '@/components/FaqSection'
+import AffiliateLink from '@/components/AffiliateLink'
+import { ItemListSchema, BreadcrumbSchema, FAQSchema } from '@/components/seo'
+import { CATEGORY_PICKS, AWARDS, isTracked } from '@/lib/monetization'
+import { CURRENT_YEAR, monthYear, SITE_URL } from '@/lib/site'
 
 interface Props {
   params: { slug: string }
 }
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  crown: Crown,
-  heart: Heart,
-  smile: Smile,
-  flame: Flame,
-  users: Users,
-  'eye-off': EyeOff,
-  rainbow: Rainbow,
-  gift: Gift,
-  list: List,
-}
+const withYear = (s?: string) => (s || '').split('{Y}').join(String(CURRENT_YEAR))
 
 export async function generateStaticParams() {
   const kategorie = await getKategorie()
-  return kategorie.map((k) => ({ slug: k.slug }))
+  return kategorie.map(k => ({ slug: k.slug }))
 }
 
 export async function generateMetadata({ params }: Props) {
   const kategorie = await getKategorieBySlug(params.slug)
   if (!kategorie) return { title: 'Nenalezeno' }
-
+  const canonical = params.slug === 'vsechny-seznamky' ? '/seznamky' : `/kategorie/${kategorie.slug}`
+  const title = withYear(kategorie.metaTitle) || kategorie.name
+  const description = withYear(kategorie.metaDescription) || kategorie.description
   return {
-    title: kategorie.metaTitle || `${kategorie.name} | Srovnání seznamek`,
-    description: kategorie.metaDescription || kategorie.description,
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: `${SITE_URL}${canonical}`, type: 'website' },
   }
 }
 
 export default async function KategoriePage({ params }: Props) {
   const kategorie = await getKategorieBySlug(params.slug)
+  if (!kategorie) notFound()
 
-  if (!kategorie) {
-    notFound()
-  }
+  const [produkty, content, allKategorie, allProdukty] = await Promise.all([
+    getProduktyByKategorie(kategorie.id),
+    getCategoryContentBySlug(params.slug),
+    getKategorie(),
+    getProdukty(),
+  ])
 
-  const produkty = await getProduktyByKategorie(kategorie.id)
-  const categoryContent = await getCategoryContentBySlug(params.slug)
-  const allKategorie = await getKategorie()
-  const allProdukty = await getProdukty()
-  const eliteDate = allProdukty.find(p => p.slug === 'elite-date')
-  const victoriaMilan = allProdukty.find(p => p.slug === 'victoria-milan')
-  const academicSingles = allProdukty.find(p => p.slug === 'academic-singles')
+  const pickSlugs = CATEGORY_PICKS[params.slug] ?? []
+  const picks = pickSlugs
+    .map(s => allProdukty.find(p => p.slug === s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
 
-  const relatedCategories = categoryContent?.relatedCategories
-    ? allKategorie.filter(k => categoryContent.relatedCategories.includes(k.slug))
+  // Doporučené seznamky kategorie vždy nahoře žebříčku, zbytek podle priority
+  const ranked = [...picks, ...produkty.filter(p => !pickSlugs.includes(p.slug))]
+  const main = picks[0] || produkty[0]
+
+  const related = (content?.relatedCategories?.length
+    ? allKategorie.filter(k => content.relatedCategories.includes(k.slug))
     : allKategorie.filter(k => k.slug !== params.slug).slice(0, 3)
+  ).filter(k => k.slug !== params.slug)
+
+  const h1 = withYear(content?.heroTitle) || `${kategorie.name} ${CURRENT_YEAR}`
+  const breadcrumbs = [
+    { name: 'Domů', url: `${SITE_URL}/` },
+    { name: 'Kategorie', url: `${SITE_URL}/seznamky` },
+    { name: kategorie.name, url: `${SITE_URL}/kategorie/${kategorie.slug}` },
+  ]
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <CategoryHero kategorie={kategorie} productCount={produkty.length} eliteDate={eliteDate} />
+    <div>
+      <ItemListSchema name={h1} items={ranked.map(p => ({ name: p.name, url: `${SITE_URL}/seznamky/${p.slug}` }))} />
+      <BreadcrumbSchema items={breadcrumbs} />
+      {content?.faq?.length ? <FAQSchema items={content.faq} /> : null}
 
-      {/* Top 3 Recommendations - ELITE Date, Victoria Milan & Academic Singles */}
-      <section className="py-6 bg-gradient-to-r from-romantic-50 via-white to-romantic-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          {/* ELITE Date - vždy první */}
-          {eliteDate && <CategoryEliteDateBanner produkt={eliteDate} />}
-
-          {/* Victoria Milan - pro diskrétní, sex a všechny */}
-          {victoriaMilan && (params.slug === 'sex-seznamky' || params.slug === 'seznamky-pro-zadane' || params.slug === 'nejlepsi-seznamky' || params.slug === 'flirt-seznamky' || params.slug === 'vsechny-seznamky') && (
-            <CategoryVictoriaMilanBanner produkt={victoriaMilan} />
-          )}
-
-          {/* Academic Singles - pro vážné vztahy, seniory a vzdělané */}
-          {academicSingles && (params.slug === 'vazne-vztahy' || params.slug === 'senior-seznamky' || params.slug === 'nejlepsi-seznamky' || params.slug === 'vsechny-seznamky') && (
-            <CategoryAcademicSinglesBanner produkt={academicSingles} />
-          )}
-        </div>
-      </section>
-
-      {/* Quick Conversion Table - Above the fold */}
-      {produkty.length > 0 && (
-        <CategoryQuickTable produkty={produkty} limit={5} categoryName={kategorie.name} />
-      )}
-
-      {/* Full Comparison Table */}
-      {produkty.length > 0 && (
-        <section className="py-8 lg:py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              Srovnání: {kategorie.name}
-            </h2>
-            <ComparisonTable produkty={produkty} source="category" />
+      <section className="hero-dark">
+        <div className="relative z-10 container-wide py-14 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+          <div>
+            <nav className="text-sm text-white/50 mb-6" aria-label="Drobečková navigace">
+              <Link href="/" className="hover:text-white">Domů</Link><span className="mx-1.5">/</span>
+              <Link href="/seznamky" className="hover:text-white">Seznamky</Link><span className="mx-1.5">/</span>
+              <span className="text-white/80">{kategorie.name}</span>
+            </nav>
+            <p className="eyebrow-light">Aktualizováno: {monthYear()} · {ranked.length} seznamek</p>
+            <h1 className="mt-4 text-4xl md:text-5xl font-semibold text-white text-balance">{h1}</h1>
+            <p className="mt-5 text-lg text-white/65 max-w-2xl">{content?.heroSubtitle || kategorie.description}</p>
           </div>
-        </section>
-      )}
 
-      {/* SEO Content */}
-      {categoryContent && (
-        <CategorySeoContent content={categoryContent} />
-      )}
-
-      {/* FAQ Section */}
-      {categoryContent?.faq && categoryContent.faq.length > 0 && (
-        <FaqSection items={categoryContent.faq} />
-      )}
-
-      {/* Related Categories */}
-      {relatedCategories.length > 0 && (
-        <section className="py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              Související kategorie
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedCategories.map((kat) => {
-                const IconComponent = iconMap[kat.icon] || Heart
-                return (
-                  <Link
-                    key={kat.id}
-                    href={`/kategorie/${kat.slug}`}
-                    className="bg-white rounded-2xl border-2 border-gray-100 hover:border-romantic-300 p-6 transition-all duration-300 hover:shadow-lg group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-romantic-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-romantic-200 transition-colors">
-                        <IconComponent className="w-6 h-6 text-romantic-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900 group-hover:text-romantic-600 transition-colors">
-                          {kat.name}
-                        </h3>
-                        <p className="text-sm text-gray-600 mt-1 line-clamp-2">
-                          {kat.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4 flex items-center text-romantic-600 font-medium text-sm">
-                      Prohlédnout
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                )
-              })}
+          {main && (
+            <div className="rounded-3xl bg-white p-6 text-ink-900 shadow-2xl">
+              <p className="eyebrow">Doporučení redakce</p>
+              <div className="mt-4 flex items-center gap-4">
+                <span className="relative w-16 h-16 shrink-0 rounded-xl border border-ivory-300 overflow-hidden">
+                  <Image src={main.logo} alt={`${main.name} logo`} fill sizes="64px" className="object-contain p-1.5" />
+                </span>
+                <div className="flex-1">
+                  <Link href={`/seznamky/${main.slug}`} className="font-display text-2xl font-semibold hover:text-rose-700">{main.name}</Link>
+                  {AWARDS[main.slug] && <p className="text-sm text-gold-700">{AWARDS[main.slug]}</p>}
+                </div>
+                <ScoreBadge rating={main.rating} />
+              </div>
+              <ul className="mt-4 space-y-1.5">
+                {main.pros.slice(0, 3).map((p, i) => (
+                  <li key={i} className="flex gap-2 text-sm text-ink-600"><Check className="w-4 h-4 mt-0.5 text-emerald-600 shrink-0" />{p}</li>
+                ))}
+              </ul>
+              <AffiliateLink produkt={main} source="category" placement={`hero-${params.slug}`} className={`${isTracked(main.slug) ? 'btn-gold' : 'btn-line'} w-full mt-5`}>
+                Vyzkoušet {main.name} zdarma <ChevronRight className="w-4 h-4" />
+              </AffiliateLink>
             </div>
+          )}
+        </div>
+      </section>
+
+      {content?.introText && (
+        <section className="container-x pt-12">
+          <div className="prose-review mx-auto">
+            <ReactMarkdown>{content.introText}</ReactMarkdown>
           </div>
         </section>
       )}
 
-      {/* CTA Section */}
-      <section className="py-12 lg:py-16 bg-gradient-to-r from-romantic-600 to-crimson-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Připraveni najít lásku?
-          </h2>
-          <p className="text-romantic-100 mb-8 text-lg">
-            Vyzkoušejte naši doporučenou seznamku a začněte hledat ještě dnes.
-          </p>
-          {produkty.length > 0 && <CategoryBottomCTA produkt={produkty[0]} />}
-        </div>
+      <section className="container-wide pt-12">
+        <h2 className="h-section mb-8">Žebříček: {kategorie.name.toLowerCase()} ({monthYear()})</h2>
+        {ranked.length > 0 ? (
+          <RankedList produkty={ranked} source="category" />
+        ) : (
+          <p className="text-ink-500">V této kategorii zatím nemáme hodnocené seznamky.</p>
+        )}
       </section>
+
+      {ranked.length > 1 && (
+        <section className="container-wide pt-16">
+          <h2 className="h-section mb-8">Srovnávací tabulka</h2>
+          <ComparisonTable produkty={ranked} source="category" keepOrder />
+        </section>
+      )}
+
+      {content?.sections?.length ? (
+        <section className="container-x pt-16">
+          <div className="prose-review mx-auto">
+            {content.sections.map((s, i) => (
+              <div key={i}>
+                <h2>{withYear(s.title)}</h2>
+                <ReactMarkdown>{withYear(s.content)}</ReactMarkdown>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {content?.faq?.length ? <FaqSection items={content.faq} title={`Časté otázky: ${kategorie.name.toLowerCase()}`} /> : null}
+
+      {related.length > 0 && (
+        <section className="container-wide pt-4">
+          <h2 className="h-section mb-6">Související kategorie</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {related.map(k => (
+              <Link key={k.id} href={`/kategorie/${k.slug}`} className="panel-hover p-6 group">
+                <h3 className="text-xl font-semibold text-ink-900 group-hover:text-rose-700">{k.name}</h3>
+                <p className="mt-2 text-sm text-ink-500 line-clamp-2">{k.description}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-rose-700">Prohlédnout <ChevronRight className="w-4 h-4" /></span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <p className="container-x disclosure pt-10">
+        Stránka obsahuje affiliate odkazy. Pokud se přes ně zaregistrujete, můžeme získat provizi. Cena se pro vás nemění.
+        Ceny a funkce seznamek se mohou měnit, aktuální podmínky ověřte na webu provozovatele.
+      </p>
     </div>
   )
 }

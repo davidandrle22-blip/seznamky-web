@@ -4,29 +4,7 @@ import { Produkt, Clanek, Nastaveni, Kategorie, CategoryContent } from './types'
 
 const dataDir = path.join(process.cwd(), 'data')
 
-// Prioritní pořadí seznamek - globálně dodrženo na celém webu
-const PRIORITY_ORDER = ['elite-date', 'victoria-milan', 'academic-singles', 'divoke-rande']
-
-function sortByPriority(produkty: Produkt[]): Produkt[] {
-  const priorityMap = new Map(PRIORITY_ORDER.map((slug, index) => [slug, index]))
-
-  return [...produkty].sort((a, b) => {
-    const aPriority = priorityMap.get(a.slug) ?? 999
-    const bPriority = priorityMap.get(b.slug) ?? 999
-
-    // Prioritní seznamky vždy první
-    if (aPriority !== bPriority) {
-      return aPriority - bPriority
-    }
-
-    // Ostatní podle původního pořadí (order) nebo ratingu
-    if (a.order !== b.order) {
-      return a.order - b.order
-    }
-
-    return b.rating - a.rating
-  })
-}
+import { sortByPriority } from './monetization'
 
 // Produkty
 export async function getProdukty(): Promise<Produkt[]> {

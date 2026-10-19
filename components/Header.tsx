@@ -2,201 +2,141 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X, Heart, ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import Logo from './Logo'
 
 const kategorieItems = [
-  { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky' },
-  { name: 'Vážné vztahy', href: '/kategorie/vazne-vztahy' },
-  { name: 'Flirt & nezávazné', href: '/kategorie/flirt-seznamky' },
-  { name: 'Sex seznamky 18+', href: '/kategorie/sex-seznamky' },
-  { name: 'Senior 50+', href: '/kategorie/senior-seznamky' },
-  { name: 'Pro zadané', href: '/kategorie/seznamky-pro-zadane' },
-  { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky' },
-  { name: 'Zdarma', href: '/kategorie/seznamky-zdarma' },
-  { name: 'Luxusní seznamky', href: '/kategorie/luxusni-seznamky' },
-  { name: 'Všechny seznamky', href: '/seznamky' },
+  { name: 'Nejlepší seznamky', href: '/kategorie/nejlepsi-seznamky', note: 'Top výběr redakce' },
+  { name: 'Vážné vztahy', href: '/kategorie/vazne-vztahy', note: 'Pro dlouhodobý vztah' },
+  { name: 'Senior seznamky 50+', href: '/kategorie/senior-seznamky', note: 'Pro zralé singles' },
+  { name: 'Luxusní seznamky', href: '/kategorie/luxusni-seznamky', note: 'Pro náročné' },
+  { name: 'Seznamky pro zadané', href: '/kategorie/seznamky-pro-zadane', note: 'Diskrétní seznámení' },
+  { name: 'Flirt & nezávazné', href: '/kategorie/flirt-seznamky', note: 'Flirt a zábava' },
+  { name: 'Sex seznamky 18+', href: '/kategorie/sex-seznamky', note: 'Pro dospělé' },
+  { name: 'Gay & LGBT', href: '/kategorie/gay-seznamky', note: 'Pro LGBTQ+ komunitu' },
+  { name: 'Seznamky zdarma', href: '/kategorie/seznamky-zdarma', note: 'Bez placení' },
+]
+
+const topRecenze = [
+  { name: 'ELITE Date', href: '/seznamky/elite-date' },
+  { name: 'Victoria Milan', href: '/seznamky/victoria-milan' },
+  { name: 'Academic Singles', href: '/seznamky/academic-singles' },
+  { name: 'Singles50', href: '/seznamky/singles50' },
+  { name: 'be2', href: '/seznamky/be2' },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [megaOpen, setMegaOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => setIsScrolled(window.scrollY > 8)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navigation = [
-    { name: 'Domů', href: '/' },
-    {
-      name: 'Kategorie',
-      href: '/seznamky',
-      dropdown: kategorieItems
-    },
-    { name: 'Srovnání', href: '/seznamky' },
-    { name: 'Blog', href: '/clanky' },
-    { name: 'Kontakt', href: '/kontakt' },
-  ]
+  useEffect(() => {
+    setIsOpen(false)
+    setMegaOpen(false)
+  }, [pathname])
+
+  const navLink = (href: string) =>
+    `px-3.5 py-2 rounded-lg text-[15px] font-medium transition-colors ${
+      pathname === href ? 'text-ink-900' : 'text-ink-500 hover:text-ink-900'
+    }`
 
   return (
-    <header className={`
-      sticky top-0 z-50 transition-all duration-300 bg-white
-      ${isScrolled ? 'shadow-md' : 'shadow-sm'}
-      border-b border-rose-100
-    `}>
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-rose-600 rounded-lg flex items-center justify-center group-hover:from-rose-600 group-hover:to-rose-700 transition-all shadow-romantic">
-                <Heart className="h-6 w-6 text-white" fill="white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">
-                  Seznamky<span className="text-rose-600">.info</span>
-                </span>
-                <span className="text-[10px] text-gray-500 hidden sm:block">
-                  Najdi svou lásku
-                </span>
-              </div>
-            </Link>
-          </div>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-[0_1px_0_rgba(23,17,28,0.06),0_8px_24px_-16px_rgba(23,17,28,0.25)]' : 'bg-ivory'
+      }`}
+    >
+      <nav className="container-wide" aria-label="Hlavní navigace">
+        <div className="flex items-center justify-between h-[68px]">
+          <Logo />
 
-          {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navigation.map((item) => (
-              <div
-                key={item.name}
-                className="relative"
-                onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 transition-colors"
-                >
-                  {item.name}
-                  {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                </Link>
-
-                {/* Dropdown */}
-                {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-rose-100 py-2">
-                    {item.dropdown.map((dropItem) => (
-                      <Link
-                        key={dropItem.name}
-                        href={dropItem.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-rose-50 hover:text-rose-600 transition-colors"
-                      >
-                        {dropItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {/* Top Dating Sites - Výrazné buttony */}
-            <div className="hidden xl:flex items-center gap-3 ml-3 pl-4 border-l border-rose-200">
-              <Link
-                href="/seznamky/elite-date"
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                <span className="text-rose-200">★</span>
-                ELITE Date
-              </Link>
-              <Link
-                href="/seznamky/victoria-milan"
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                <span className="text-purple-200">♥</span>
-                Victoria Milan
-              </Link>
-              <Link
-                href="/seznamky/divoke-rande"
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                <span className="text-orange-200">🔥</span>
-                Divoké Rande
-              </Link>
-            </div>
-
-            {/* CTA Button - Odlišený design */}
-            <Link
-              href="/seznamky"
-              className="ml-6 inline-flex items-center gap-2 px-6 py-2.5 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-lg shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+          <div className="hidden lg:flex items-center gap-1">
+            <div
+              className="relative"
+              onMouseEnter={() => setMegaOpen(true)}
+              onMouseLeave={() => setMegaOpen(false)}
             >
-              <Heart className="w-5 h-5" fill="currentColor" />
-              <span>Najít lásku</span>
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center gap-2">
-            <Link
-              href="/seznamky"
-              className="inline-flex items-center gap-1.5 px-4 py-2 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-lg text-sm transition-all bg-white/80"
-            >
-              <Heart className="w-4 h-4" fill="currentColor" />
-              <span>Najít lásku</span>
-            </Link>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-rose-600 p-2.5 rounded-xl hover:bg-rose-50 transition-colors focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
-              aria-label={isOpen ? 'Zavřít menu' : 'Otevřít menu'}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile navigation */}
-        {isOpen && (
-          <div className="lg:hidden pb-4 pt-2 border-t border-rose-100 mt-2">
-            <div className="space-y-1">
-              {navigation.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block py-2 px-3 text-gray-700 hover:text-rose-600 hover:bg-rose-50 font-medium rounded-lg transition-colors"
-                    onClick={() => !item.dropdown && setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.dropdown && (
-                    <div className="ml-4 mt-1 space-y-1">
-                      {item.dropdown.map((dropItem) => (
-                        <Link
-                          key={dropItem.name}
-                          href={dropItem.href}
-                          className="block py-2 px-3 text-sm text-gray-600 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {dropItem.name}
+              <button
+                className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-[15px] font-medium text-ink-500 hover:text-ink-900"
+                aria-expanded={megaOpen}
+                onClick={() => setMegaOpen(v => !v)}
+              >
+                Kategorie <ChevronDown className={`w-4 h-4 transition-transform ${megaOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {megaOpen && (
+                <div className="absolute left-0 top-full pt-2 w-[620px]">
+                  <div className="panel p-5 grid grid-cols-[1fr_200px] gap-6">
+                    <div className="grid grid-cols-2 gap-1">
+                      {kategorieItems.map(item => (
+                        <Link key={item.href} href={item.href} className="rounded-xl px-3 py-2.5 hover:bg-ivory-100 transition-colors">
+                          <span className="block text-sm font-semibold text-ink-900">{item.name}</span>
+                          <span className="block text-xs text-ink-400">{item.note}</span>
                         </Link>
                       ))}
                     </div>
-                  )}
+                    <div className="border-l border-ivory-200 pl-5">
+                      <p className="eyebrow mb-3">Nejčtenější recenze</p>
+                      <ul className="space-y-2">
+                        {topRecenze.map(r => (
+                          <li key={r.href}>
+                            <Link href={r.href} className="text-sm text-ink-600 hover:text-rose-700">{r.name} recenze</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+              )}
+            </div>
+            <Link href="/seznamky" className={navLink('/seznamky')}>Srovnání seznamek</Link>
+            <Link href="/clanky" className={navLink('/clanky')}>Magazín</Link>
+            <Link href="/jak-hodnotime" className={navLink('/jak-hodnotime')}>Jak hodnotíme</Link>
+          </div>
+
+          <div className="hidden lg:flex items-center gap-3">
+            <Link href="/seznamky/elite-date" className="text-sm font-medium text-ink-500 hover:text-ink-900">
+              Vítěz srovnání: <span className="text-ink-900 font-semibold">ELITE Date</span>
+            </Link>
+            <Link href="/kategorie/nejlepsi-seznamky" className="btn-wine !py-2.5 !px-5 text-sm">
+              Najít seznamku
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2.5 -mr-2 rounded-xl text-ink-700 hover:bg-ivory-100"
+            aria-label={isOpen ? 'Zavřít menu' : 'Otevřít menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="lg:hidden pb-6 pt-2 border-t border-ivory-200">
+            <p className="eyebrow mt-3 mb-2 px-1">Kategorie</p>
+            <div className="grid grid-cols-2 gap-1">
+              {kategorieItems.map(item => (
+                <Link key={item.href} href={item.href} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-700 hover:bg-ivory-100">
+                  {item.name}
+                </Link>
               ))}
             </div>
-
-            {/* Mobile CTAs */}
-            <div className="mt-4 px-3">
-              <Link
-                href="/seznamky"
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-rose-500 text-rose-600 hover:bg-rose-500 hover:text-white font-bold rounded-xl transition-all bg-white"
-                onClick={() => setIsOpen(false)}
-              >
-                <Heart className="w-5 h-5" fill="currentColor" />
-                <span>Najít lásku</span>
-              </Link>
+            <div className="mt-4 grid gap-1 border-t border-ivory-200 pt-3">
+              <Link href="/seznamky" className="px-2 py-2 font-medium text-ink-800">Srovnání seznamek</Link>
+              <Link href="/clanky" className="px-2 py-2 font-medium text-ink-800">Magazín o seznamování</Link>
+              <Link href="/jak-hodnotime" className="px-2 py-2 font-medium text-ink-800">Jak hodnotíme</Link>
             </div>
+            <Link href="/kategorie/nejlepsi-seznamky" className="btn-wine w-full mt-4">Najít seznamku</Link>
           </div>
         )}
       </nav>

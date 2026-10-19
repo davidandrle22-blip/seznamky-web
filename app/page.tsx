@@ -1,476 +1,284 @@
 import { Metadata } from 'next'
-import { getProdukty, getClanky, getKategorie } from '@/lib/data'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Star, Check, X, ExternalLink, ChevronRight, Shield, Users, Award, TrendingUp, Heart, Sparkles } from 'lucide-react'
+import { ChevronRight, ShieldCheck, ClipboardCheck, RefreshCw, Scale, Heart, Sparkles, EyeOff, GraduationCap, Flame, Gift } from 'lucide-react'
+import { getProdukty, getClanky, getKategorie } from '@/lib/data'
 import AffiliateLink from '@/components/AffiliateLink'
 import ArticleCard from '@/components/ArticleCard'
+import RankedList, { ScoreBadge } from '@/components/RankedList'
+import ComparisonTable from '@/components/ComparisonTable'
+import FaqSection from '@/components/FaqSection'
+import { ItemListSchema, FAQSchema } from '@/components/seo'
+import { AWARDS } from '@/lib/monetization'
+import { CURRENT_YEAR, monthYear, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Nejlepší seznamky 2026 | Srovnání a recenze | Seznamky.info',
-  description: 'Nezávislé srovnání 24+ online seznamek v České republice. ELITE Date, Academic Singles, Victoria Milan a další. Kompletní recenze, hodnocení a zkušenosti uživatelů. Najděte svou lásku ještě dnes!',
-  keywords: 'nejlepší seznamky 2026, srovnání seznamek, online seznamky, ELITE Date, Victoria Milan, Academic Singles, online dating, najít partnera, seznamka pro vážný vztah',
+  title: { absolute: `Nejlepší seznamky ${CURRENT_YEAR} – srovnání a recenze seznamek v ČR | Seznamky.info` },
+  description: `Které seznamky v ČR opravdu fungují? Nezávislé srovnání a recenze seznamek ${CURRENT_YEAR}: ELITE Date, Victoria Milan, Academic Singles, Singles50, be2 a další. Ceny, výhody, nevýhody a tipy redakce.`,
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Nejlepší seznamky 2026 | Srovnání a recenze | Seznamky.info',
-    description: 'Nezávislé srovnání 24+ online seznamek. Najděte svou lásku ještě dnes!',
-    type: 'website',
-    locale: 'cs_CZ',
+    title: `Nejlepší seznamky ${CURRENT_YEAR} – srovnání a recenze`,
+    description: 'Nezávislé srovnání online seznamek v ČR. Najděte seznamku pro vážný vztah, flirt i 50+.',
+    url: SITE_URL,
   },
 }
 
+const finder = [
+  { label: 'Vážný vztah', desc: 'Párování podle osobnosti', href: '/kategorie/vazne-vztahy', icon: Heart },
+  { label: 'Seznámení 50+', desc: 'Pro zralé singles', href: '/kategorie/senior-seznamky', icon: Sparkles },
+  { label: 'Diskrétní seznámení', desc: 'Anonymita na prvním místě', href: '/kategorie/seznamky-pro-zadane', icon: EyeOff },
+  { label: 'Vzdělaní a úspěšní', desc: 'Luxusní seznamky', href: '/kategorie/luxusni-seznamky', icon: GraduationCap },
+  { label: 'Flirt a zábava', desc: 'Nezávazné seznámení', href: '/kategorie/flirt-seznamky', icon: Flame },
+  { label: 'Seznamky zdarma', desc: 'Bez placení', href: '/kategorie/seznamky-zdarma', icon: Gift },
+]
+
+const homeFaq = [
+  {
+    question: 'Která seznamka je v ČR nejlepší?',
+    answer: `Podle našeho srovnání (${monthYear()}) vychází nejlépe ELITE Date. Je česká, páruje podle osobnostního testu a ručně kontroluje profily. Pro lidi nad 50 let doporučujeme Singles50, pro vysokoškoláky Academic Singles a pro diskrétní seznámení Victoria Milan.`,
+  },
+  {
+    question: 'Jsou seznamky zdarma?',
+    answer: 'Registrace je zdarma téměř všude. Seriózní seznamky pro vážný vztah ale za plnou komunikaci (psaní zpráv, fotky) chtějí placené členství. Obvykle stojí 150–700 Kč měsíčně podle délky předplatného. Platit se vyplatí hlavně proto, že tam najdete lidi, kteří to s hledáním partnera myslí vážně.',
+  },
+  {
+    question: 'Jak poznám falešný profil?',
+    answer: 'Varovné signály jsou dokonalé fotky jako z modelingu a profil bez textu. Dále rychlé vyznávání lásky, snaha přesunout konverzaci mimo seznamku a hlavně jakákoli žádost o peníze. Seriózní seznamky profily ručně kontrolují a nabízejí ověření fotkou.',
+  },
+  {
+    question: 'Jak vybíráte a řadíte seznamky?',
+    answer: 'Každou seznamku hodnotíme podle šesti kritérií: kvalita a aktivita uživatelů, párování, bezpečnost, cena, ovládání a podpora. Detaily najdete na stránce Jak hodnotíme. Web financujeme z affiliate provizí, o tom informujeme transparentně v patičce.',
+  },
+  {
+    question: 'Je online seznamování bezpečné?',
+    answer: 'Ano, pokud dodržíte základní pravidla. Neposílejte nikomu peníze, první schůzku si domluvte na veřejném místě a řekněte o ní někomu blízkému. Osobní údaje sdílejte až s člověkem, kterému důvěřujete. Podrobně to rozebíráme v článku o bezpečném seznamování.',
+  },
+]
+
 export default async function Home() {
-  const [produkty, clanky, kategorie] = await Promise.all([
-    getProdukty(),
-    getClanky(),
-    getKategorie()
-  ])
-
-  // Top 3 priority products
-  const eliteDate = produkty.find(p => p.slug === 'elite-date')
-  const academicSingles = produkty.find(p => p.slug === 'academic-singles')
-  const victoriaMilan = produkty.find(p => p.slug === 'victoria-milan')
-
-  const topProdukty = [eliteDate, victoriaMilan, academicSingles].filter(Boolean)
-  const otherProdukty = produkty.filter(p => !['elite-date', 'victoria-milan', 'academic-singles'].includes(p.slug)).slice(0, 7)
-  const allDisplayProdukty = [...topProdukty, ...otherProdukty]
-
-  const recentClanky = clanky.slice(0, 3)
-
-  const getRatingLabel = (rating: number) => {
-    if (rating >= 9) return { text: 'Výborné', color: 'bg-green-500' }
-    if (rating >= 8) return { text: 'Velmi dobré', color: 'bg-green-400' }
-    if (rating >= 7) return { text: 'Dobré', color: 'bg-yellow-500' }
-    return { text: 'Průměrné', color: 'bg-gray-400' }
-  }
+  const [produkty, clanky, kategorie] = await Promise.all([getProdukty(), getClanky(), getKategorie()])
+  const top3 = produkty.slice(0, 3)
+  const top10 = produkty.slice(0, 10)
+  const recentClanky = clanky.slice(0, 6)
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Romantic Red */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-rose-900 via-rose-800 to-red-900 text-white">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-3xl" />
-        </div>
+    <div>
+      <ItemListSchema
+        name={`Nejlepší seznamky ${CURRENT_YEAR}`}
+        items={top10.map(p => ({ name: p.name, url: `${SITE_URL}/seznamky/${p.slug}` }))}
+      />
+      <FAQSchema items={homeFaq} />
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          <div className="text-center">
-            {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
-              <Heart className="w-4 h-4 text-rose-300 animate-pulse" fill="#fda4af" />
-              <span className="text-sm font-medium text-rose-200">Ověřené recenze 2026.</span>
-              <Sparkles className="w-4 h-4 text-amber-400" />
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              <span className="bg-gradient-to-r from-white via-rose-100 to-white bg-clip-text text-transparent">
-                Najděte svou lásku online
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-rose-100/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Nezávislé srovnání a recenze {produkty.length}+ ověřených seznamek v ČR.
-              Pomůžeme vám najít tu pravou pro vážný vztah, flirt nebo diskrétní seznámení.
+      {/* HERO */}
+      <section className="hero-dark">
+        <div className="relative z-10 container-wide pt-14 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+          <div>
+            <p className="eyebrow-light">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" /> Aktualizováno: {monthYear()} · {produkty.length} hodnocených seznamek
             </p>
-
-            {/* Stats badges */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
-                <Shield className="w-5 h-5 text-emerald-400" />
-                <span className="text-rose-200">Nezávislé</span>
-                <span className="font-bold text-white">hodnocení</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
-                <Users className="w-5 h-5 text-blue-400" />
-                <span className="font-bold text-white text-lg">2M+</span>
-                <span className="text-rose-200">uživatelů</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20">
-                <Heart className="w-5 h-5 text-rose-400" fill="#fb7185" />
-                <span className="text-rose-200">Tisíce</span>
-                <span className="font-bold text-white">úspěšných párů</span>
-              </div>
+            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[3.6rem] font-semibold leading-[1.05] text-white text-balance">
+              Nejlepší seznamky {CURRENT_YEAR}: <span className="italic text-gold-300">upřímné</span> srovnání a recenze
+            </h1>
+            <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
+              Prošli jsme české i zahraniční seznamky. Porovnali jsme, kolik stojí, kdo na nich je a jak dobře párují.
+              Vyberte si tu, která sedí k tomu, co hledáte: vážný vztah, seznámení po padesátce nebo diskrétní dobrodružství.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {top3[0] && (
+                <AffiliateLink produkt={top3[0]} source="homepage" placement="hero-cta" className="btn-gold">
+                  Vyzkoušet vítěze {top3[0].name} zdarma <ChevronRight className="w-4 h-4" />
+                </AffiliateLink>
+              )}
+              <Link href="#zebricek" className="btn-ghost-light">Zobrazit žebříček</Link>
             </div>
-
-            {/* CTA Button */}
-            {eliteDate && (
-              <AffiliateLink
-                produkt={eliteDate}
-                source="homepage"
-                placement="hero-cta"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 border border-white/20"
-              >
-                <span className="text-lg">🏆 Vyzkoušet #1 ELITE Date zdarma</span>
-                <Sparkles className="w-5 h-5" />
-              </AffiliateLink>
-            )}
+            <div className="mt-10 grid grid-cols-3 max-w-lg gap-6 text-white/60 text-sm">
+              <div><span className="block font-display text-2xl text-white">{produkty.length}</span>seznamek v testu</div>
+              <div><span className="block font-display text-2xl text-white">6</span>hodnoticích kritérií</div>
+              <div><span className="block font-display text-2xl text-white">1×</span>měsíčně aktualizace</div>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V60Z" fill="white"/>
-          </svg>
-        </div>
-      </section>
-
-      {/* Main Comparison Section */}
-      <section className="py-10 lg:py-14">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Top 10 seznamek v České republice
-          </h2>
-          <p className="text-gray-600 mb-8">Vybráno a testováno naší redakcí</p>
-
-          {/* Product Cards */}
-          <div className="space-y-6">
-            {allDisplayProdukty.slice(0, 10).map((produkt, index) => {
-              if (!produkt) return null
-              const ratingInfo = getRatingLabel(produkt.rating)
-              const isWinner = index === 0
-              const isTop3 = index < 3
-
-              return (
-                <div
-                  key={produkt.id}
-                  className={`bg-white rounded-xl border-2 transition-all hover:shadow-lg ${
-                    isWinner ? 'border-rose-500 shadow-md shadow-rose-100' :
-                    isTop3 ? 'border-rose-300' : 'border-gray-200'
-                  }`}
-                >
-                  {/* Winner Badge */}
-                  {isWinner && (
-                    <div className="bg-gradient-to-r from-rose-500 to-rose-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm flex items-center justify-center gap-2">
-                      <Award className="w-4 h-4" />
-                      VÍTĚZ SROVNÁNÍ 2026 - NEJLEPŠÍ VOLBA PRO VÁŽNÝ VZTAH
-                    </div>
-                  )}
-                  {index === 1 && (
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
-                      NEJLEPŠÍ PRO DISKRÉTNÍ SEZNÁMENÍ
-                    </div>
-                  )}
-                  {index === 2 && (
-                    <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center py-2 px-4 rounded-t-lg font-bold text-sm">
-                      NEJLEPŠÍ PRO VZDĚLANÉ SINGLES
-                    </div>
-                  )}
-
-                  <div className="p-6">
-                    <div className="flex flex-col lg:flex-row gap-6">
-                      {/* Left: Rank + Logo + Basic Info */}
-                      <div className="flex items-start gap-4 lg:w-72 flex-shrink-0">
-                        {/* Rank */}
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0 ${
-                          isWinner ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white' :
-                          index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white' :
-                          index === 2 ? 'bg-gradient-to-br from-amber-500 to-amber-600 text-white' :
-                          'bg-gray-200 text-gray-700'
-                        }`}>
-                          {index + 1}
-                        </div>
-
-                        {/* Logo */}
-                        <div className="flex-shrink-0">
-                          <div className="w-20 h-20 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden">
-                            {produkt.logo ? (
-                              <Image
-                                src={produkt.logo}
-                                alt={produkt.name}
-                                width={72}
-                                height={72}
-                                className="object-contain"
-                              />
-                            ) : (
-                              <span className="text-2xl font-bold text-gray-400">{produkt.name.charAt(0)}</span>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Name & Rating */}
-                        <div className="min-w-0">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">{produkt.name}</h3>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="flex">
-                              {[1,2,3,4,5].map(i => (
-                                <Star
-                                  key={i}
-                                  className={`w-4 h-4 ${i <= Math.round(produkt.rating/2) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-                                />
-                              ))}
-                            </div>
-                            <span className="font-bold text-gray-900">{produkt.rating}/10</span>
-                          </div>
-                          <span className={`inline-block px-2 py-1 rounded text-xs font-bold text-white ${ratingInfo.color}`}>
-                            {ratingInfo.text}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Middle: Pros & Cons */}
-                      <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {/* Pros */}
-                        <div>
-                          <h4 className="text-sm font-bold text-green-700 mb-2 flex items-center gap-1">
-                            <Check className="w-4 h-4" />
-                            Výhody
-                          </h4>
-                          <ul className="space-y-1.5">
-                            {produkt.pros.slice(0, 3).map((pro, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                                <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                                <span>{pro}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Cons */}
-                        <div>
-                          <h4 className="text-sm font-bold text-red-700 mb-2 flex items-center gap-1">
-                            <X className="w-4 h-4" />
-                            Nevýhody
-                          </h4>
-                          <ul className="space-y-1.5">
-                            {produkt.cons.slice(0, 2).map((con, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                                <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
-                                <span>{con}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Right: CTA */}
-                      <div className="flex flex-col items-center justify-center gap-3 lg:w-48 flex-shrink-0">
-                        <div className="text-center mb-2">
-                          <div className="text-sm text-gray-500">Uživatelů</div>
-                          <div className="font-bold text-gray-900">{produkt.users}</div>
-                        </div>
-
-                        <AffiliateLink
-                          produkt={produkt}
-                          source="homepage"
-                          placement="main-table"
-                          className={`w-full text-center font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 ${
-                            isWinner
-                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white shadow-lg shadow-rose-200'
-                              : isTop3
-                              ? 'bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white'
-                              : 'bg-gray-800 hover:bg-gray-900 text-white'
-                          }`}
-                        >
-                          Registrace zdarma
-                          <ExternalLink className="w-4 h-4" />
-                        </AffiliateLink>
-
-                        <Link
-                          href={`/seznamky/${produkt.slug}`}
-                          className="text-rose-600 hover:text-rose-700 text-sm font-medium flex items-center gap-1"
-                        >
-                          Přečíst recenzi
-                          <ChevronRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
+          {/* Top 3 panel */}
+          <div className="rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-5 sm:p-6 shadow-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <p className="eyebrow-light">Top 3 podle redakce</p>
+              <span className="text-xs text-white/40">{monthYear()}</span>
+            </div>
+            <ol className="space-y-3">
+              {top3.map((p, i) => (
+                <li key={p.id} className="flex items-center gap-4 rounded-2xl bg-white p-3.5 text-ink-900">
+                  <span className={`rank-medal ${i === 0 ? 'bg-gradient-to-b from-gold-200 to-gold-500 text-ink-950' : 'bg-ivory-100 text-ink-500'}`}>{i + 1}</span>
+                  <span className="relative w-12 h-12 shrink-0 rounded-lg border border-ivory-300 overflow-hidden bg-white">
+                    <Image src={p.logo} alt={`${p.name} logo`} fill sizes="48px" className="object-contain p-1" />
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <Link href={`/seznamky/${p.slug}`} className="font-semibold hover:text-rose-700">{p.name}</Link>
+                    <p className="text-xs text-ink-400 truncate">{AWARDS[p.slug]}</p>
                   </div>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* See All Button */}
-          <div className="text-center mt-10">
-            <Link
-              href="/seznamky"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg shadow-rose-200"
-            >
-              Zobrazit všech {produkty.length} seznamek
-              <ChevronRight className="w-5 h-5" />
-            </Link>
+                  <span className="hidden sm:inline-flex rounded-lg bg-ink-900 text-white text-sm font-semibold px-2.5 py-1">{p.rating.toFixed(1)}</span>
+                  <AffiliateLink produkt={p} source="homepage" placement={`hero-top3-${i + 1}`} className={`${i === 0 ? 'btn-gold' : 'btn-wine'} !px-3.5 !py-2 text-sm`}>
+                    Web
+                  </AffiliateLink>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-4 text-[11px] leading-relaxed text-white/40">
+              Obsahuje affiliate odkazy. Při registraci můžeme získat provizi, cena se pro vás nemění.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Comparison Parameters Table */}
-      <section className="py-10 lg:py-14 bg-gradient-to-b from-rose-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Srovnání top 3 seznamek
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl border border-rose-200 text-sm shadow-sm">
-              <thead>
-                <tr className="bg-rose-50">
-                  <th className="text-left p-4 font-bold text-gray-700 border-b border-rose-100">Parametr</th>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <th key={p.id} className="text-center p-4 font-bold text-gray-700 border-b border-rose-100 min-w-[140px]">
-                      {p.name}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-rose-50">
-                  <td className="p-4 text-gray-600">Hodnocení</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center font-bold text-gray-900">{p.rating}/10</td>
-                  ))}
-                </tr>
-                <tr className="border-b border-rose-50 bg-rose-50/30">
-                  <td className="p-4 text-gray-600">Počet uživatelů</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center text-gray-900">{p.users}</td>
-                  ))}
-                </tr>
-                <tr className="border-b border-rose-50">
-                  <td className="p-4 text-gray-600">Úspěšnost párování</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center text-gray-900">{p.successRate || '—'}</td>
-                  ))}
-                </tr>
-                <tr className="border-b border-rose-50 bg-rose-50/30">
-                  <td className="p-4 text-gray-600">Věková skupina</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center text-gray-900">{p.ageRange}</td>
-                  ))}
-                </tr>
-                <tr className="border-b border-rose-50">
-                  <td className="p-4 text-gray-600">Bezplatná verze</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center">
-                      {p.freeVersion ? (
-                        <Check className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : (
-                        <X className="w-5 h-5 text-red-400 mx-auto" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-                <tr className="border-b border-rose-50 bg-rose-50/30">
-                  <td className="p-4 text-gray-600">Ověřené profily</td>
-                  {topProdukty.slice(0, 3).map(p => p && (
-                    <td key={p.id} className="p-4 text-center">
-                      <Check className="w-5 h-5 text-green-500 mx-auto" />
-                    </td>
-                  ))}
-                </tr>
-                <tr>
-                  <td className="p-4 text-gray-600">Mobilní aplikace</td>
-                  {topProdukty.slice(0, 3).map((p, i) => p && (
-                    <td key={p.id} className="p-4 text-center">
-                      {i !== 1 ? (
-                        <Check className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : (
-                        <X className="w-5 h-5 text-red-400 mx-auto" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Trust Us */}
-      <section className="py-10 lg:py-14">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Proč věřit našim recenzím?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { icon: Shield, title: 'Nezávislé hodnocení', desc: 'Testujeme každou seznamku osobně' },
-              { icon: Users, title: 'Reálné zkušenosti', desc: 'Čerpáme z tisíců uživatelských recenzí' },
-              { icon: TrendingUp, title: 'Aktuální data', desc: 'Informace pravidelně aktualizujeme' },
-              { icon: Award, title: 'Transparentnost', desc: 'Jasná metodika hodnocení' },
-            ].map((item, i) => (
-              <div key={i} className="text-center p-6 bg-gradient-to-b from-rose-50 to-white rounded-xl border border-rose-100">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-rose-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-10 lg:py-14 bg-gradient-to-b from-rose-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Seznamky podle kategorie
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {kategorie.slice(0, 8).map((kat) => (
-              <Link
-                key={kat.id}
-                href={`/kategorie/${kat.slug}`}
-                className="bg-white p-5 rounded-xl border border-rose-100 hover:border-rose-400 hover:shadow-lg hover:shadow-rose-100/50 transition-all text-center group"
-              >
-                <h3 className="font-bold text-gray-900 group-hover:text-rose-600 transition-colors mb-1">
-                  {kat.name}
-                </h3>
-                <p className="text-sm text-gray-500">
-                  {produkty.filter(p => p.categories?.includes(kat.slug)).length} seznamek
-                </p>
+      {/* FINDER */}
+      <section className="container-wide -mt-8 relative z-20">
+        <div className="panel p-4 sm:p-6">
+          <p className="eyebrow mb-4">Co hledáte?</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {finder.map(f => (
+              <Link key={f.href} href={f.href} className="group rounded-xl border border-ivory-300/80 p-4 hover:border-gold-300 hover:bg-gold-50/50 transition-colors">
+                <f.icon className="w-5 h-5 text-rose-700" />
+                <span className="mt-3 block font-semibold text-ink-900">{f.label}</span>
+                <span className="block text-xs text-ink-400">{f.desc}</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="py-10 lg:py-14">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Rady a tipy pro seznamování
-            </h2>
-            <Link
-              href="/clanky"
-              className="text-rose-600 hover:text-rose-700 font-medium flex items-center gap-1"
-            >
-              Všechny články
-              <ChevronRight className="w-4 h-4" />
+      {/* RANKING */}
+      <section id="zebricek" className="container-wide pt-16 lg:pt-20 scroll-mt-24">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <p className="eyebrow">Žebříček {monthYear()}</p>
+            <h2 className="h-section mt-2">Top 10 seznamek v České republice</h2>
+            <p className="lead mt-3 max-w-2xl">Pořadí sestavuje redakce podle hodnocení, vhodnosti pro české uživatele a spolupráce s partnery. Body u každé seznamky počítáme stejně.</p>
+          </div>
+          <Link href="/seznamky" className="btn-line self-start md:self-auto">Kompletní srovnání <ChevronRight className="w-4 h-4" /></Link>
+        </div>
+        <RankedList produkty={top10} source="homepage" />
+      </section>
+
+      {/* TABLE */}
+      <section className="container-wide pt-16 lg:pt-20">
+        <p className="eyebrow">Přehledně v tabulce</p>
+        <h2 className="h-section mt-2 mb-8">Srovnání seznamek podle parametrů</h2>
+        <ComparisonTable produkty={produkty} limit={8} source="homepage" />
+      </section>
+
+      {/* METHODOLOGY */}
+      <section className="container-wide pt-16 lg:pt-20">
+        <div className="rounded-3xl bg-ink-900 text-white p-8 md:p-12 grid lg:grid-cols-[1fr_1.4fr] gap-10">
+          <div>
+            <p className="eyebrow-light">Metodika</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-semibold">Jak hodnotíme seznamky</h2>
+            <p className="mt-4 text-white/60 leading-relaxed">
+              Každou seznamku procházíme podle stejných pravidel: registrace, profil, párování, komunikace, ceník a zrušení členství.
+              Body přidělujeme v šesti oblastech.
+            </p>
+            <Link href="/jak-hodnotime" className="mt-6 inline-flex items-center gap-1 text-gold-300 hover:text-gold-200 font-medium">
+              Celá metodika <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentClanky.map((clanek) => (
-              <ArticleCard key={clanek.id} clanek={clanek} />
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { icon: ShieldCheck, t: 'Bezpečnost a ověřování', d: 'Kontrola profilů, ochrana dat, nahlašování.' },
+              { icon: Heart, t: 'Kvalita párování', d: 'Jak dobře seznamka doporučuje vhodné lidi.' },
+              { icon: ClipboardCheck, t: 'Aktivita uživatelů', d: 'Kolik lidí z ČR reálně odpovídá.' },
+              { icon: Scale, t: 'Cena a férovost', d: 'Co dostanete zdarma, skryté poplatky, prodlužování.' },
+              { icon: Sparkles, t: 'Ovládání a aplikace', d: 'Web i mobil, rychlost, přehlednost.' },
+              { icon: RefreshCw, t: 'Aktuálnost', d: 'Ceny a funkce ověřujeme každý měsíc.' },
+            ].map(c => (
+              <div key={c.t} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <c.icon className="w-5 h-5 text-gold-300" />
+                <p className="mt-3 font-semibold">{c.t}</p>
+                <p className="mt-1 text-sm text-white/55">{c.d}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-12 lg:py-16 bg-gradient-to-r from-rose-500 to-rose-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Heart className="w-12 h-12 text-rose-200 mx-auto mb-4" fill="currentColor" />
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Připraveni najít svou lásku?
-          </h2>
-          <p className="text-rose-100 mb-6 max-w-xl mx-auto">
-            Tisíce lidí již našly partnera díky našim doporučeným seznamkám. Začněte ještě dnes!
-          </p>
-          <Link
-            href="/seznamky"
-            className="inline-flex items-center gap-2 bg-white text-rose-600 hover:bg-rose-50 font-bold py-3 px-8 rounded-lg transition-colors"
-          >
-            Prohlédnout seznamky
-            <ChevronRight className="w-5 h-5" />
-          </Link>
+      {/* CATEGORIES */}
+      <section className="container-wide pt-16 lg:pt-20">
+        <p className="eyebrow">Kategorie</p>
+        <h2 className="h-section mt-2 mb-8">Seznamky podle toho, co hledáte</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {kategorie.filter(k => k.slug !== 'vsechny-seznamky').map(kat => {
+            const count = produkty.filter(p => p.categories?.includes(kat.slug)).length
+            return (
+              <Link key={kat.id} href={`/kategorie/${kat.slug}`} className="panel-hover p-6 group">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-xl font-semibold text-ink-900 group-hover:text-rose-700">{kat.name}</h3>
+                  <span className="chip-ink whitespace-nowrap">{count} {count === 1 ? 'seznamka' : count < 5 ? 'seznamky' : 'seznamek'}</span>
+                </div>
+                <p className="mt-2 text-sm text-ink-500 line-clamp-2">{kat.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-rose-700">
+                  Zobrazit srovnání <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            )
+          })}
         </div>
       </section>
+
+      {/* SEO TEXT */}
+      <section className="container-x pt-16 lg:pt-20">
+        <div className="prose-review mx-auto">
+          <h2>Jak vybrat seznamku, která bude fungovat</h2>
+          <p>
+            Online seznamování je dnes nejčastější způsob, jak se v Česku páry potkávají. Ne každá seznamka se ale hodí pro každého.
+            Aplikace typu Tinder nebo Badoo stojí na rychlém swipování podle fotek. Fungují hlavně pro lidi do třiceti a pro flirt.
+            Kdo hledá <Link href="/kategorie/vazne-vztahy">vážný vztah</Link>, většinou dopadne lépe na seznamce, která páruje podle osobnostního testu.
+            Příkladem jsou <Link href="/seznamky/elite-date">ELITE Date</Link>, <Link href="/seznamky/academic-singles">Academic Singles</Link> nebo <Link href="/seznamky/be2">be2</Link>.
+          </p>
+          <p>
+            Při výběru sledujte tři věci. První je <strong>věk a záměr uživatelů</strong>: jestli tam jsou lidé ve vašem věku a se stejným cílem.
+            Druhá je <strong>cena a podmínky</strong>: kolik stojí členství, jestli se automaticky prodlužuje a co dostanete zdarma.
+            Třetí je <strong>bezpečnost</strong>: jestli seznamka kontroluje profily a jak rychle řeší nahlášení.
+            Lidem nad 50 let doporučujeme specializované <Link href="/kategorie/senior-seznamky">seznamky pro seniory</Link>, kde je víc vrstevníků a méně falešných profilů.
+          </p>
+          <p>
+            Nevíte, kde začít? Přečtěte si průvodce <Link href="/clanky/jak-vybrat-spravnou-seznamku">jak vybrat správnou seznamku</Link>
+            a tipy, <Link href="/clanky/jak-napsat-atraktivni-profil">jak napsat profil</Link>, na který lidé odpovídají.
+          </p>
+        </div>
+      </section>
+
+      {/* MAGAZINE */}
+      <section className="container-wide pt-16 lg:pt-20">
+        <div className="flex items-end justify-between gap-4 mb-8">
+          <div>
+            <p className="eyebrow">Magazín</p>
+            <h2 className="h-section mt-2">Rady a tipy pro seznamování</h2>
+          </div>
+          <Link href="/clanky" className="hidden sm:inline-flex btn-line">Všechny články <ChevronRight className="w-4 h-4" /></Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {recentClanky.map(c => <ArticleCard key={c.id} clanek={c} />)}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FaqSection items={homeFaq} title="Časté otázky o seznamkách" />
+
+      {/* FINAL CTA */}
+      {top3[0] && (
+        <section className="container-wide pt-4">
+          <div className="hero-dark rounded-3xl px-6 py-12 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="relative z-10 flex items-center gap-5">
+              <ScoreBadge rating={top3[0].rating} size="lg" />
+              <div>
+                <p className="eyebrow-light">Vítěz srovnání {CURRENT_YEAR}</p>
+                <h2 className="mt-2 text-3xl font-semibold text-white">{top3[0].name}</h2>
+                <p className="mt-1 text-white/60">{top3[0].shortDescription || top3[0].description}</p>
+              </div>
+            </div>
+            <AffiliateLink produkt={top3[0]} source="homepage" placement="bottom-cta" className="relative z-10 btn-gold whitespace-nowrap">
+              Registrovat se zdarma <ChevronRight className="w-4 h-4" />
+            </AffiliateLink>
+          </div>
+        </section>
+      )}
     </div>
   )
 }

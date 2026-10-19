@@ -63,6 +63,8 @@ export interface Produkt {
   safetyInfo?: string
   verdict?: string
   lastUpdated?: string
+  inactiveReason?: string
+  hasApp?: boolean
 }
 
 export interface Clanek {
@@ -79,6 +81,10 @@ export interface Clanek {
   readTime?: number
   isPublished: boolean
   isFeatured?: boolean
+  updatedAt?: string
+  tags?: string[]
+  relatedProducts?: string[]
+  metaTitle?: string
 }
 
 export interface Testimonial {

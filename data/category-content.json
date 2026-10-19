@@ -1,13 +1,13 @@
 [
   {
     "slug": "nejlepsi-seznamky",
-    "heroTitle": "Nejlepší seznamky 2026",
+    "heroTitle": "Nejlepší seznamky {Y}",
     "heroSubtitle": "Kompletní žebříček a srovnání nejlepších online seznamek v Česku",
-    "introText": "Hledáte tu pravou seznamku pro vás? V roce 2026 existuje více možností než kdy jindy a výběr té správné platformy může být obtížný. Náš tým expertů pravidelně testuje a hodnotí všechny dostupné seznamky na českém trhu, abychom vám usnadnili rozhodování.\n\nNíže najdete **kompletní přehled nejlepších seznamek**, které jsme vybrali na základě kritérií jako úspěšnost párování, aktivita uživatelů, bezpečnost a poměr cena/výkon.",
+    "introText": "Hledáte tu pravou seznamku pro vás? V roce 2026 existuje více možností než kdy jindy a výběr té správné platformy může být obtížný. Náš tým expertů pravidelně testuje a hodnotí všechny dostupné seznamky na českém trhu, abychom vám usnadnili rozhodování.\n\nNíže najdete **kompletní přehled nejlepších seznamek**, které jsme vybrali na základě kritérií jako kvalita párování, aktivita uživatelů, bezpečnost a poměr cena/výkon.",
     "sections": [
       {
         "title": "Jak hodnotíme seznamky?",
-        "content": "Naše hodnocení vychází z **několika klíčových kritérií**:\n\n1. **Úspěšnost párování** - Kolik uživatelů skutečně najde partnera?\n2. **Aktivní uživatelská základna** - Jsou profily aktuální a aktivní?\n3. **Bezpečnost a diskrétnost** - Jak platforma chrání vaše data?\n4. **Poměr cena/výkon** - Co dostanete za své peníze?\n5. **Uživatelská zkušenost** - Jak snadné je používání?\n6. **Mobilní aplikace** - Je k dispozici kvalitní aplikace?\n\nKaždou seznamku testujeme po dobu minimálně 3 měsíců a pravidelně aktualizujeme naše hodnocení."
+        "content": "Naše hodnocení vychází z **několika klíčových kritérií**:\n\n1. **Kvalita párování** - Jak dobře seznamka doporučuje vhodné lidi?\n2. **Aktivní uživatelská základna** - Jsou profily aktuální a aktivní?\n3. **Bezpečnost a diskrétnost** - Jak platforma chrání vaše data?\n4. **Poměr cena/výkon** - Co dostanete za své peníze?\n5. **Uživatelská zkušenost** - Jak snadné je používání?\n6. **Mobilní aplikace** - Je k dispozici kvalitní aplikace?\n\nHodnocení pravidelně aktualizujeme – ceny a funkce ověřujeme zhruba jednou měsíčně."
       },
       {
         "title": "Pro koho jsou seznamky vhodné?",
@@ -44,13 +44,17 @@
         "answer": "Ano, většina seznamek nabízí bezplatnou verzi s omezenými funkcemi. Pro plný přístup ke všem funkcím je však potřeba premium členství."
       }
     ],
-    "relatedCategories": ["vazne-vztahy", "flirt-seznamky", "seznamky-zdarma"]
+    "relatedCategories": [
+      "vazne-vztahy",
+      "flirt-seznamky",
+      "seznamky-zdarma"
+    ]
   },
   {
     "slug": "vazne-vztahy",
-    "heroTitle": "Seznamky pro vážné vztahy 2026",
+    "heroTitle": "Seznamky pro vážné vztahy {Y}",
     "heroSubtitle": "Najděte svou lásku díky vědeckému matchmakingu",
-    "introText": "Pokud hledáte **dlouhodobý vztah a životního partnera**, potřebujete seznamku, která se zaměřuje na seriózní seznamování. Platformy v této kategorii používají **vědecky podložené algoritmy** pro párování na základě osobnosti, hodnot a životních cílů.\n\nTyto seznamky mají typicky **vyšší procento úspěšnosti** a uživatele, kteří to myslí vážně. Připravte se na detailnější registrační proces - osobnostní testy mohou zabrat i 30-45 minut, ale výsledky stojí za to.",
+    "introText": "Pokud hledáte **dlouhodobý vztah a životního partnera**, potřebujete seznamku, která se zaměřuje na seriózní seznamování. Platformy v této kategorii používají **vědecky podložené algoritmy** pro párování na základě osobnosti, hodnot a životních cílů.\n\nNa těchto seznamkách jsou typicky uživatelé, kteří to myslí vážně. Připravte se na detailnější registrační proces - osobnostní testy mohou zabrat i 30-45 minut, ale výsledky stojí za to.",
     "sections": [
       {
         "title": "Co jsou seznamky pro vážné vztahy?",
@@ -87,11 +91,15 @@
         "answer": "Registrace a test jsou obvykle zdarma. Pro odesílání zpráv a plný přístup k funkcím je potřeba premium členství."
       }
     ],
-    "relatedCategories": ["nejlepsi-seznamky", "senior-seznamky", "seznamky-zdarma"]
+    "relatedCategories": [
+      "nejlepsi-seznamky",
+      "senior-seznamky",
+      "seznamky-zdarma"
+    ]
   },
   {
     "slug": "flirt-seznamky",
-    "heroTitle": "Flirt seznamky 2026",
+    "heroTitle": "Flirt seznamky {Y}",
     "heroSubtitle": "Nezávazné seznámení, zábava a nové známosti",
     "introText": "Ne každý hledá životního partnera - někdy chcete jen **nezávazný flirt, novou známost nebo zábavu**. Flirt seznamky jsou ideální pro ty, kdo chtějí poznávat nové lidi bez tlaku na vážný vztah.\n\nTyto platformy se vyznačují **rychlou registrací, swipe mechanikou a velkou uživatelskou základnou**. Ideální pro mladší generaci (18-35) a všechny, kdo chtějí užívat si svobodu seznamování.",
     "sections": [
@@ -130,11 +138,15 @@
         "answer": "Zkuste zlepšit fotky, přepsat bio a být vybíravější při swipování. Algoritmus odmění kvalitu před kvantitou."
       }
     ],
-    "relatedCategories": ["nejlepsi-seznamky", "seznamky-zdarma", "sex-seznamky"]
+    "relatedCategories": [
+      "nejlepsi-seznamky",
+      "seznamky-zdarma",
+      "sex-seznamky"
+    ]
   },
   {
     "slug": "sex-seznamky",
-    "heroTitle": "Sex seznamky 2026",
+    "heroTitle": "Sex seznamky {Y}",
     "heroSubtitle": "Erotické seznamky pro dospělé 18+",
     "introText": "**POUZE PRO DOSPĚLÉ 18+**\n\nSex seznamky jsou platformy určené pro dospělé, kteří hledají **nezávazné sexuální vztahy, one night standy, přátele s výhodami (FWB) nebo experimentování**.\n\nTyto seznamky nabízejí **otevřené a upřímné prostředí**, kde uživatelé vědí, co hledají. Diskrétnost a bezpečnost jsou prioritou - většina platforem nabízí rozmazávání fotek a anonymní platby.",
     "sections": [
@@ -173,11 +185,15 @@
         "answer": "Renomované seznamky nabízejí diskrétní platby, rozmazávání fotek a další bezpečnostní funkce. Vždy si ověřte, jaké funkce platforma nabízí."
       }
     ],
-    "relatedCategories": ["flirt-seznamky", "seznamky-pro-zadane", "nejlepsi-seznamky"]
+    "relatedCategories": [
+      "flirt-seznamky",
+      "seznamky-pro-zadane",
+      "nejlepsi-seznamky"
+    ]
   },
   {
     "slug": "senior-seznamky",
-    "heroTitle": "Senior seznamky 50+ v roce 2026",
+    "heroTitle": "Senior seznamky 50+ v roce {Y}",
     "heroSubtitle": "Najděte lásku i ve zralém věku",
     "introText": "Věk není překážkou lásky. **Senior seznamky 50+** jsou specializované platformy pro zralé singles, kteří hledají partnera ve svém věku.\n\nTyto seznamky nabízejí **jednoduché ovládání, seriózní komunitu a vědecký matchmaking** zaměřený na potřeby generace 50+. Ať už jste svobodní, rozvedení nebo ovdovělí - nikdy není pozdě na nový začátek.",
     "sections": [
@@ -216,11 +232,15 @@
         "answer": "Průměrná doba je 3-6 měsíců aktivního používání. Někteří najdou lásku dříve, jiní později."
       }
     ],
-    "relatedCategories": ["vazne-vztahy", "nejlepsi-seznamky", "seznamky-zdarma"]
+    "relatedCategories": [
+      "vazne-vztahy",
+      "nejlepsi-seznamky",
+      "seznamky-zdarma"
+    ]
   },
   {
     "slug": "seznamky-pro-zadane",
-    "heroTitle": "Seznamky pro zadané 2026",
+    "heroTitle": "Seznamky pro zadané {Y}",
     "heroSubtitle": "Diskrétní seznámení s maximální anonymitou",
     "introText": "Seznamky pro zadané jsou platformy určené pro lidi, kteří hledají **diskrétní mimomanželské vztahy nebo tajné schůzky**.\n\nTyto seznamky kladou **maximální důraz na anonymitu a bezpečnost** - od rozmazávání fotek přes diskrétní platby až po panic button. Vstupujte s vědomím etických implikací.",
     "sections": [
@@ -259,11 +279,15 @@
         "answer": "Pro ženy zdarma. Pro muže se ceny pohybují od 333 Kč/měsíc do 2499 Kč za balík kreditů."
       }
     ],
-    "relatedCategories": ["sex-seznamky", "flirt-seznamky", "nejlepsi-seznamky"]
+    "relatedCategories": [
+      "sex-seznamky",
+      "flirt-seznamky",
+      "nejlepsi-seznamky"
+    ]
   },
   {
     "slug": "gay-seznamky",
-    "heroTitle": "Gay a LGBT seznamky 2026",
+    "heroTitle": "Gay a LGBT seznamky {Y}",
     "heroSubtitle": "Bezpečné platformy pro LGBTQ+ komunitu",
     "introText": "LGBTQ+ komunita si zaslouží **bezpečné a inkluzivní prostory pro seznamování**. Gay a LGBT seznamky jsou specializované platformy, které nabízejí prostředí bez diskriminace a s pochopením specifických potřeb komunity.\n\nOd největší gay seznamky Grindr přes lesbickou aplikaci HER až po tradiční PlanetRomeo - každý najde platformu, která mu vyhovuje.",
     "sections": [
@@ -302,11 +326,15 @@
         "answer": "Renomované aplikace mají bezpečnostní funkce. Vždy ale buďte opatrní - skrývejte přesnou polohu a první schůzky na veřejnosti."
       }
     ],
-    "relatedCategories": ["nejlepsi-seznamky", "flirt-seznamky", "seznamky-zdarma"]
+    "relatedCategories": [
+      "nejlepsi-seznamky",
+      "flirt-seznamky",
+      "seznamky-zdarma"
+    ]
   },
   {
     "slug": "seznamky-zdarma",
-    "heroTitle": "Seznamky zdarma 2026",
+    "heroTitle": "Seznamky zdarma {Y}",
     "heroSubtitle": "Bezplatné seznamky s plnohodnotnými funkcemi",
     "introText": "Ne každý chce platit za seznamování - a není to nutné. Existuje mnoho **kvalitních seznamek s robustní bezplatnou verzí**, které vám umožní najít partnera bez utrácení.\n\nV této kategorii najdete seznamky, kde můžete **zdarma prohlížet profily, swipovat, posílat zprávy a dokonce i chatovat**. Premium funkce jsou bonus, ne nutnost.",
     "sections": [
@@ -345,13 +373,17 @@
         "answer": "Renomované platformy (Tinder, Badoo, OkCupid) jsou bezpečné. Vyhýbejte se neznámým seznamkám, které nezadržují zdarma."
       }
     ],
-    "relatedCategories": ["nejlepsi-seznamky", "flirt-seznamky", "gay-seznamky"]
+    "relatedCategories": [
+      "nejlepsi-seznamky",
+      "flirt-seznamky",
+      "gay-seznamky"
+    ]
   },
   {
     "slug": "vsechny-seznamky",
-    "heroTitle": "Všechny seznamky 2026",
+    "heroTitle": "Všechny seznamky {Y}",
     "heroSubtitle": "Kompletní katalog 24 online seznamek s podrobnými recenzemi",
-    "introText": "Představujeme vám **kompletní přehled všech 24 seznamek**, které jsme otestovali a zrecenzovali. Ať už hledáte vážný vztah, nezávazný flirt nebo diskrétní dobrodružství - v tomto katalogu najdete tu správnou platformu pro vás.\n\nKaždou seznamku jsme důkladně otestovali a ohodnotili podle kritérií jako úspěšnost párování, aktivita uživatelů, bezpečnost a hodnota za peníze.",
+    "introText": "Představujeme vám **kompletní přehled všech seznamek**, které jsme otestovali a zrecenzovali. Ať už hledáte vážný vztah, nezávazný flirt nebo diskrétní dobrodružství - v tomto katalogu najdete tu správnou platformu pro vás.\n\nKaždou seznamku jsme důkladně otestovali a ohodnotili podle kritérií jako kvalita párování, aktivita uživatelů, bezpečnost a hodnota za peníze.",
     "sections": [
       {
         "title": "🏆 Top 3 doporučené seznamky",
@@ -380,6 +412,49 @@
         "answer": "Většina velkých seznamek má českou lokalizaci. Některé menší nebo specializované platformy jsou pouze v angličtině."
       }
     ],
-    "relatedCategories": ["nejlepsi-seznamky", "vazne-vztahy", "flirt-seznamky"]
+    "relatedCategories": [
+      "nejlepsi-seznamky",
+      "vazne-vztahy",
+      "flirt-seznamky"
+    ]
+  },
+  {
+    "slug": "luxusni-seznamky",
+    "heroTitle": "Luxusní seznamky {Y}",
+    "heroSubtitle": "Seznamky pro úspěšné, vzdělané a náročné singles",
+    "introText": "Luxusní seznamka neznamená zlaté logo a vysokou cenu. Znamená **lepší uživatele**: lidi se vzděláním, stabilní prací a jasnou představou o vztahu. Takové seznamky mají propracovanější registraci, osobnostní test a profily kontrolují ručně. Kdo jen zkouší, rychle odpadne.\n\nV této kategorii najdete seznamky, které se hodí pro **úspěšné profesionály 30+**. Na swipovacích aplikacích jsou často zklamaní z povrchnosti.",
+    "sections": [
+      {
+        "title": "Čím se luxusní seznamky liší",
+        "content": "- **Osobnostní test** – párování podle hodnot, životního stylu a povahy, ne jen podle fotky\n- **Ručně kontrolované profily** – méně falešných a neaktivních účtů\n- **Vzdělanější publikum** – například na Academic Singles má podle provozovatele většina členů vysokou školu\n- **Placené členství** – nutnost zaplatit odfiltruje lidi, kteří to nemyslí vážně\n- **Diskrétnost** – fotky můžete zpřístupnit jen vybraným lidem"
+      },
+      {
+        "title": "Kterou luxusní seznamku vybrat",
+        "content": "**ELITE Date** je nejlepší volba pro většinu lidí 30+ v Česku. Má českou komunitu, osobnostní test a dobrý poměr ceny a kvality.\n\n**Academic Singles** se hodí, pokud je pro vás důležité vzdělání a podobný intelektuální svět. **Victoria Milan** je specifická: jde o diskrétní seznamku pro lidi, kteří nechtějí, aby se o jejich seznamování vědělo."
+      },
+      {
+        "title": "Vyplatí se platit za prémiové členství?",
+        "content": "U seznamek pro vážný vztah ano. Bez členství obvykle nemůžete psát zprávy ani vidět všechny fotky. Vyplatí se vzít delší předplatné, protože vychází výrazně levněji na měsíc. Hledání partnera trvá obvykle několik měsíců. Před zaplacením si vždy zkontrolujte, jestli se členství **automaticky prodlužuje**, a případně si prodloužení hned vypněte."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Která luxusní seznamka je nejlepší?",
+        "answer": "Pro české uživatele 30+ vychází v našem srovnání nejlépe ELITE Date. Pro vysokoškolsky vzdělané singles doporučujeme Academic Singles."
+      },
+      {
+        "question": "Kolik stojí luxusní seznamka?",
+        "answer": "Prémiové členství obvykle vychází na 150–700 Kč měsíčně podle délky předplatného. Registrace a osobnostní test jsou zdarma."
+      },
+      {
+        "question": "Jsou na luxusních seznamkách ověřené profily?",
+        "answer": "Seriózní prémiové seznamky profily ručně kontrolují a falešné účty mažou. Stoprocentní ochranu ale nezaručí žádná seznamka. Proto vždy dodržujte základní pravidla bezpečného seznamování."
+      }
+    ],
+    "relatedCategories": [
+      "vazne-vztahy",
+      "senior-seznamky",
+      "nejlepsi-seznamky"
+    ]
   }
 ]

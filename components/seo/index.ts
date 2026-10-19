@@ -5,5 +5,7 @@ export {
   BreadcrumbSchema,
   WebsiteSchema,
   AggregateRatingSchema,
-  OrganizationSchema
+  OrganizationSchema,
+  ItemListSchema,
+  ArticleSchema
 } from './JsonLd'

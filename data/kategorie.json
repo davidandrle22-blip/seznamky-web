@@ -3,100 +3,100 @@
     "id": "nejlepsi-seznamky",
     "name": "Nejlepší seznamky",
     "slug": "nejlepsi-seznamky",
-    "description": "Celkový žebříček všech seznamek 2026 - kompletní srovnání a hodnocení.",
+    "description": "Celkový žebříček nejlepších seznamek – vybrali jsme ty, které v Česku opravdu fungují.",
     "icon": "crown",
     "order": 1,
-    "metaTitle": "Nejlepší seznamky 2026 - Top 10 srovnání a recenze",
-    "metaDescription": "Kompletní žebříček nejlepších online seznamek v Česku pro rok 2026. Nezávislé recenze, srovnání cen a funkcí."
+    "metaTitle": "Nejlepší seznamky {Y} – top 10 seznamek v ČR podle redakce",
+    "metaDescription": "Které seznamky jsou v ČR nejlepší? Žebříček top 10 seznamek {Y} s hodnocením, cenami a zkušenostmi. ELITE Date, Victoria Milan, Academic Singles, Singles50 a další."
   },
   {
     "id": "vazne-vztahy",
     "name": "Vážné vztahy",
     "slug": "vazne-vztahy",
-    "description": "Seznamky zaměřené na hledání dlouhodobého partnera a vážného vztahu.",
+    "description": "Seznamky, kde lidé hledají dlouhodobého partnera – s osobnostním testem a ručně kontrolovanými profily.",
     "icon": "heart",
     "order": 2,
-    "metaTitle": "Seznamky pro vážné vztahy 2026 - Najděte svou lásku",
-    "metaDescription": "Nejlepší seznamky pro vážné vztahy a hledání životního partnera. Srovnání platforem s vědeckým matchmakingem."
+    "metaTitle": "Seznamky pro vážný vztah {Y} – kde najít partnera na celý život",
+    "metaDescription": "Nejlepší seznamky pro vážný vztah: párování podle osobnostního testu, ověřené profily a lidé 30+, kteří hledají partnera. Srovnání ELITE Date, Academic Singles, be2 a dalších."
   },
   {
     "id": "flirt-seznamky",
     "name": "Flirt & nezávazné vztahy",
     "slug": "flirt-seznamky",
-    "description": "Aplikace pro nezávazné seznámení, flirtování a zábavu.",
+    "description": "Aplikace a weby pro flirt, rychlé seznámení a zábavu bez závazků.",
     "icon": "smile",
     "order": 3,
-    "metaTitle": "Flirt seznamky 2026 - Nezávazné seznámení a zábava",
-    "metaDescription": "Top seznamky pro flirt a nezávazné vztahy. Swipování, rychlé schůzky a zábava bez závazků."
+    "metaTitle": "Flirt seznamky {Y} – nejlepší aplikace pro nezávazné seznámení",
+    "metaDescription": "Srovnání flirt seznamek a aplikací pro nezávazné seznámení. FlirtKontakt, Tinder, Badoo, Victoria Milan a další – ceny, výhody a bezpečnost."
   },
   {
     "id": "sex-seznamky",
     "name": "Sex seznamky",
     "slug": "sex-seznamky",
-    "description": "Erotické seznamky pro dospělé 18+ hledající intimní setkání.",
+    "description": "Diskrétní erotické seznamky pro dospělé 18+ s důrazem na anonymitu a bezpečnost.",
     "icon": "flame",
     "order": 4,
-    "metaTitle": "Sex seznamky 2026 - Erotické seznamky pro dospělé 18+",
-    "metaDescription": "Nejlepší erotické a sex seznamky pro dospělé. Diskrétní platformy pro nezávazný sex a intimní setkání."
+    "metaTitle": "Sex seznamky {Y} – erotické seznamky pro dospělé 18+ (srovnání)",
+    "metaDescription": "Erotické seznamky pro dospělé 18+: které jsou diskrétní, bezpečné a mají aktivní uživatele z ČR. Srovnání Victoria Milan, FlirtKontakt, C-Date a dalších."
   },
   {
     "id": "senior-seznamky",
     "name": "Senior seznamky 50+",
     "slug": "senior-seznamky",
-    "description": "Seznamky určené pro zralé singles nad 50 let hledající partnera.",
+    "description": "Seznamky pro zralé singles nad 50 let – víc vrstevníků, méně falešných profilů.",
     "icon": "users",
     "order": 5,
-    "metaTitle": "Senior seznamky 50+ v roce 2026 - Pro zralé singles",
-    "metaDescription": "Nejlepší seznamky pro seniory nad 50 let. Platformy s ověřenými profily a vědeckým párováním pro zralé singles."
+    "metaTitle": "Seznamky pro seniory 50+ {Y} – nejlepší seznamka po padesátce",
+    "metaDescription": "Nejlepší seznamky pro lidi nad 50 let. Singles50, ELITE Date, Academic Singles a be2 – srovnání cen, věku uživatelů a bezpečnosti. Najděte partnera i po padesátce."
   },
   {
     "id": "seznamky-pro-zadane",
     "name": "Seznamky pro zadané",
     "slug": "seznamky-pro-zadane",
-    "description": "Diskrétní seznamky pro mimomanželské vztahy a tajné schůzky.",
+    "description": "Diskrétní seznamky s anonymními profily, rozmazanými fotkami a neutrální platbou.",
     "icon": "eye-off",
     "order": 6,
-    "metaTitle": "Seznamky pro zadané 2026 - Diskrétní seznámení",
-    "metaDescription": "Diskrétní seznamky pro zadané hledající mimomanželský vztah. Maximální anonymita a bezpečnostní funkce."
+    "metaTitle": "Seznamky pro zadané {Y} – diskrétní seznámení (srovnání)",
+    "metaDescription": "Diskrétní seznamky pro zadané: Victoria Milan, Ashley Madison, Gleeden a další. Jak chrání anonymitu, kolik stojí a na co si dát pozor."
   },
   {
     "id": "gay-seznamky",
     "name": "Gay & LGBT seznamky",
     "slug": "gay-seznamky",
-    "description": "Specializované seznamky pro LGBTQ+ komunitu - gay, lesbické a další.",
+    "description": "Seznamky a aplikace pro gaye, lesby a celou LGBTQ+ komunitu.",
     "icon": "rainbow",
     "order": 7,
-    "metaTitle": "Gay a LGBT seznamky 2026 - Pro LGBTQ+ komunitu",
-    "metaDescription": "Nejlepší gay, lesbické a LGBT seznamky. Bezpečné platformy pro LGBTQ+ komunitu v Česku."
+    "metaTitle": "Gay seznamky a LGBT seznamky {Y} – srovnání pro ČR",
+    "metaDescription": "Nejlepší gay, lesbické a LGBT+ seznamky v ČR: Grindr, ROMEO (PlanetRomeo), HER, OkCupid. Srovnání funkcí, cen a bezpečnosti."
   },
   {
     "id": "seznamky-zdarma",
     "name": "Seznamky zdarma",
     "slug": "seznamky-zdarma",
-    "description": "Bezplatné seznamky a aplikace s plnohodnotnými funkcemi zdarma.",
+    "description": "Seznamky s bezplatnou registrací a funkcemi, které můžete používat bez placení.",
     "icon": "gift",
     "order": 8,
-    "metaTitle": "Seznamky zdarma 2026 - Bezplatné seznamovací aplikace",
-    "metaDescription": "Nejlepší seznamky zdarma s plnohodnotnými funkcemi. Bezplatné možnosti pro seznámení bez placení."
+    "metaTitle": "Seznamky zdarma {Y} – kde se seznámit bez placení",
+    "metaDescription": "Seznamky zdarma v ČR: kde je registrace i komunikace bez poplatků a kde se platí až za prémiové funkce. Srovnání bezplatných verzí seznamek."
   },
   {
     "id": "luxusni-seznamky",
     "name": "Luxusní seznamky",
     "slug": "luxusni-seznamky",
-    "description": "Exkluzivní seznamky pro úspěšné a náročné singles hledající kvalitního partnera.",
+    "description": "Prémiové seznamky pro úspěšné, vzdělané a náročné singles.",
     "icon": "crown",
     "order": 9,
-    "metaTitle": "Luxusní seznamky 2026 - Pro úspěšné a náročné",
-    "metaDescription": "Exkluzivní seznamky pro úspěšné profesionály a náročné singles. Ověřené profily a prémiové služby."
+    "metaTitle": "Luxusní seznamky {Y} – seznamky pro úspěšné a vzdělané singles",
+    "metaDescription": "Exkluzivní seznamky pro náročné: ELITE Date, Academic Singles a další prémiové seznamky s ověřenými profily, vzdělanými uživateli a důrazem na kvalitu."
   },
   {
     "id": "vsechny-seznamky",
     "name": "Všechny seznamky",
     "slug": "vsechny-seznamky",
-    "description": "Kompletní přehled všech 24 seznamek v našem katalogu - srovnání, hodnocení a recenze.",
+    "description": "Kompletní přehled všech seznamek, které jsme hodnotili.",
     "icon": "list",
     "order": 10,
-    "metaTitle": "Všechny seznamky 2026 - Kompletní katalog 24 seznamek",
-    "metaDescription": "Kompletní katalog všech 24 online seznamek. Podrobné srovnání, hodnocení a nezávislé recenze každé platformy."
+    "metaTitle": "Všechny seznamky {Y} – kompletní katalog online seznamek",
+    "metaDescription": "Kompletní katalog online seznamek v ČR s hodnocením redakce, cenami a recenzemi."
   }
 ]
