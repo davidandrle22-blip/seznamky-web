@@ -36,7 +36,15 @@ export const MONETIZATION: Record<string, Monetization> = {
   'divoke-rande':     { status: 'available', network: 'přímo provozovatel', commission: 'neznámé – vyžádat' },
   'c-date':           { status: 'available', network: 'vlastní program / Awin', commission: 'CPS' },
   'ashley-madison':   { status: 'available', network: 'vlastní program', commission: 'CPS (první platba)' },
-  'adult-friend-finder': { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'revshare / PPS' },
+  'adult-friend-finder': { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'passion':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'sexfinder':         { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'xmatch':            { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'heated-affairs':    { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'hornywife':         { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'swapfinder':        { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'tsdates':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'alt-com':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 100 $ / objednávka (PMOB) nebo 75 % + 55 % revshare' },
   'be-naughty':       { status: 'available', network: 'Together Networks (partners.benaughty.com)', commission: 'PPL / PPS / revshare' },
   'gleeden':          { status: 'available', network: 'Kwanko / přímo', commission: 'CPL' },
   'edarling':         { status: 'none' },
@@ -59,7 +67,18 @@ export const PRIORITY_ORDER = [
   'be2',
   'elite-meets-beauty',
   'flirtkontakt',
-  // čekají na affiliate odkaz (Paysale / Together Networks) – seřazeno podle provize
+  // čekají na affiliate odkaz – seřazeno podle provize
+  // FriendFinder Networks: až 130 $ za objednávku / 75 % revshare / CPL až 5 $
+  'adult-friend-finder',
+  'passion',
+  'sexfinder',
+  'heated-affairs',
+  'xmatch',
+  'hornywife',
+  'swapfinder',
+  'tsdates',
+  'alt-com', // FFN, strop 100 $ za objednávku
+  // Paysale / Together Networks
   'eroticky-kontakt',
   'dateefy',
   'zrala-laska',
@@ -77,11 +96,11 @@ export const CATEGORY_PICKS: Record<string, string[]> = {
   'vazne-vztahy': ['elite-date', 'academic-singles', 'be2'],
   'senior-seznamky': ['singles50', 'elite-date', 'academic-singles', 'zrala-laska'],
   'luxusni-seznamky': ['elite-date', 'academic-singles', 'elite-meets-beauty', 'victoria-milan'],
-  'seznamky-pro-zadane': ['victoria-milan', 'elite-meets-beauty', 'flirtkontakt'],
-  'sex-seznamky': ['victoria-milan', 'flirtkontakt', 'eroticky-kontakt', 'dateefy', 'chci-sex-rande'],
-  'flirt-seznamky': ['flirtkontakt', 'victoria-milan', 'dateefy', 'flirt-com'],
+  'seznamky-pro-zadane': ['victoria-milan', 'elite-meets-beauty', 'flirtkontakt', 'heated-affairs'],
+  'sex-seznamky': ['victoria-milan', 'flirtkontakt', 'adult-friend-finder', 'passion', 'eroticky-kontakt', 'dateefy', 'chci-sex-rande'],
+  'flirt-seznamky': ['flirtkontakt', 'victoria-milan', 'dateefy', 'passion', 'flirt-com'],
   'seznamky-zdarma': ['elite-date', 'flirtkontakt', 'victoria-milan'],
-  'gay-seznamky': [],
+  'gay-seznamky': ['tsdates'],
 }
 
 /** Krátké štítky „ocenění“ pro top seznamky */
@@ -95,6 +114,12 @@ export const AWARDS: Record<string, string> = {
   'elite-meets-beauty': 'Luxusní seznamování',
   'eroticky-kontakt': 'Česká erotická seznamka',
   'zrala-laska': 'Česká seznamka 50+',
+  'adult-friend-finder': 'Největší sex seznamka světa',
+  'heated-affairs': 'Diskrétní poměry',
+  'swapfinder': 'Pro páry a swingers',
+  'tsdates': 'Trans seznamování',
+  'alt-com': 'BDSM a fetiš',
+  'hornywife': 'Zralé ženy (MILF)',
 }
 
 export function isTracked(slug: string): boolean {

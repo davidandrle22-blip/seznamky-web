@@ -910,7 +910,8 @@
     "genderRatio": "35/65",
     "categories": [
       "sex-seznamky",
-      "nejlepsi-seznamky"
+      "nejlepsi-seznamky",
+      "flirt-seznamky"
     ],
     "targetAudience": "Dospělí hledající sexuální partnery",
     "pros": [
@@ -2004,5 +2005,388 @@
       "Automatické prodlužování členství"
     ],
     "order": 12
+  },
+  {
+    "id": "passion",
+    "slug": "passion",
+    "name": "Passion.com",
+    "logo": "/images/seznamky/passion.svg",
+    "description": "Mezinárodní erotická seznamka pro dospělé ze sítě FriendFinder Networks. Profily, chat a hledání partnerů pro nezávazná setkání.",
+    "shortDescription": "Erotická seznamka FriendFinder Networks",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.passion.com/",
+    "rating": 7.3,
+    "expertRating": 7.3,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "flirt-seznamky"
+    ],
+    "targetAudience": "Dospělí hledající erotické seznámení",
+    "pros": [
+      "Velká mezinárodní komunita",
+      "Registrace zdarma",
+      "Patří do zavedené sítě FriendFinder Networks"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "V ČR méně profilů než na českých seznamkách"
+    ],
+    "features": [
+      "Chat",
+      "Pokročilé vyhledávání",
+      "Fotky a videa v profilu"
+    ],
+    "highlights": [],
+    "order": 30,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "sexfinder",
+    "slug": "sexfinder",
+    "name": "SexFinder",
+    "logo": "/images/seznamky/sexfinder.svg",
+    "description": "Seznamka pro dospělé, kteří hledají nezávazná setkání bez dlouhého seznamování. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Seznamka pro nezávazný sex",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.sexfinder.com/",
+    "rating": 7.1,
+    "expertRating": 7.1,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "flirt-seznamky"
+    ],
+    "targetAudience": "Dospělí hledající nezávazný sex",
+    "pros": [
+      "Jasně daný účel",
+      "Registrace zdarma",
+      "Hledání podle vzdálenosti"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Placené členství pro plnou komunikaci",
+      "Riziko falešných profilů jako u všech sex seznamek"
+    ],
+    "features": [
+      "Chat",
+      "Hledání v okolí",
+      "Hotlist"
+    ],
+    "highlights": [],
+    "order": 31,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "xmatch",
+    "slug": "xmatch",
+    "name": "XMatch",
+    "logo": "/images/seznamky/xmatch.svg",
+    "description": "Seznamka pro dospělé ze sítě FriendFinder Networks zaměřená na flirt a erotická setkání. Sdílí část komunity s dalšími weby sítě.",
+    "shortDescription": "Seznamka pro dospělé 18+",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.xmatch.com/",
+    "rating": 7.0,
+    "expertRating": 7.0,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "flirt-seznamky"
+    ],
+    "targetAudience": "Dospělí hledající flirt a erotická setkání",
+    "pros": [
+      "Široká mezinárodní komunita",
+      "Registrace zdarma",
+      "Rychlá registrace"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "Design působí zastarale"
+    ],
+    "features": [
+      "Chat",
+      "Vyhledávání podle zájmů",
+      "Fotky v profilu"
+    ],
+    "highlights": [],
+    "order": 32,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "heated-affairs",
+    "slug": "heated-affairs",
+    "name": "HeatedAffairs",
+    "logo": "/images/seznamky/heated-affairs.svg",
+    "description": "Seznamka pro diskrétní poměry a zadané, kteří hledají dobrodružství. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Diskrétní seznamka pro zadané",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.heatedaffairs.com/",
+    "rating": 7.0,
+    "expertRating": 7.0,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "seznamky-pro-zadane",
+      "sex-seznamky"
+    ],
+    "targetAudience": "Zadaní a lidé hledající diskrétní poměr",
+    "pros": [
+      "Zaměření na diskrétní setkání",
+      "Registrace zdarma",
+      "Zavedená síť FriendFinder Networks"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Placené členství pro plnou komunikaci",
+      "Menší česká komunita"
+    ],
+    "features": [
+      "Chat",
+      "Diskrétní profil",
+      "Hledání v okolí"
+    ],
+    "highlights": [],
+    "order": 33,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "hornywife",
+    "slug": "hornywife",
+    "name": "HornyWife",
+    "logo": "/images/seznamky/hornywife.svg",
+    "description": "Erotická seznamka zaměřená na seznámení se zralými a zadanými ženami. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Seznamka se zralými ženami (MILF)",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.hornywife.com/",
+    "rating": 6.8,
+    "expertRating": 6.8,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "seznamky-pro-zadane"
+    ],
+    "targetAudience": "Dospělí se zájmem o zralé ženy",
+    "pros": [
+      "Úzké zaměření",
+      "Registrace zdarma",
+      "Zavedená síť FriendFinder Networks"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "Úzká cílová skupina"
+    ],
+    "features": [
+      "Chat",
+      "Vyhledávání podle věku",
+      "Fotky v profilu"
+    ],
+    "highlights": [],
+    "order": 34,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "swapfinder",
+    "slug": "swapfinder",
+    "name": "SwapFinder",
+    "logo": "/images/seznamky/swapfinder.svg",
+    "description": "Seznamka pro páry a singles se zájmem o swingers a otevřené vztahy. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Seznamka pro páry a swingers",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.swapfinder.com/",
+    "rating": 6.8,
+    "expertRating": 6.8,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "seznamky-pro-zadane"
+    ],
+    "targetAudience": "Páry a singles se zájmem o swingers",
+    "pros": [
+      "Zaměření na páry a swingers",
+      "Párové profily",
+      "Registrace zdarma"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "V ČR menší komunita"
+    ],
+    "features": [
+      "Párové profily",
+      "Chat",
+      "Hledání v okolí"
+    ],
+    "highlights": [],
+    "order": 35,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "tsdates",
+    "slug": "tsdates",
+    "name": "TSDates",
+    "logo": "/images/seznamky/tsdates.svg",
+    "description": "Seznamka pro trans ženy a muže a lidi, kteří se s nimi chtějí seznámit. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Seznamka pro trans lidi a jejich obdivovatele",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.tsdates.com/",
+    "rating": 6.8,
+    "expertRating": 6.8,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "gay-seznamky",
+      "sex-seznamky"
+    ],
+    "targetAudience": "Trans lidé a jejich partneři",
+    "pros": [
+      "Specializace na trans seznamování",
+      "Registrace zdarma",
+      "Bezpečnější prostor než obecné seznamky"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "Malá česká komunita"
+    ],
+    "features": [
+      "Chat",
+      "Vyhledávání podle preferencí",
+      "Fotky v profilu"
+    ],
+    "highlights": [],
+    "order": 36,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
+  },
+  {
+    "id": "alt-com",
+    "slug": "alt-com",
+    "name": "ALT.com",
+    "logo": "/images/seznamky/alt-com.svg",
+    "description": "Seznamka a komunita pro lidi se zájmem o BDSM, fetiš a alternativní sexualitu. Patří do sítě FriendFinder Networks.",
+    "shortDescription": "Seznamka pro BDSM a fetiš",
+    "fullDescription": "",
+    "affiliateUrl": "https://www.alt.com/",
+    "rating": 6.9,
+    "expertRating": 6.9,
+    "users": "",
+    "activeUsers": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky"
+    ],
+    "targetAudience": "Dospělí se zájmem o BDSM a fetiš",
+    "pros": [
+      "Největší specializace na BDSM a fetiš",
+      "Komunita, skupiny a blogy",
+      "Registrace zdarma"
+    ],
+    "cons": [
+      "Česká verze chybí",
+      "Plná komunikace je placená",
+      "Specifické zaměření, ne pro každého"
+    ],
+    "features": [
+      "Skupiny podle zájmů",
+      "Chat",
+      "Detailní preference v profilu"
+    ],
+    "highlights": [],
+    "order": 37,
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [],
+    "lastUpdated": "2026-10-20",
+    "hasApp": false
   }
 ]

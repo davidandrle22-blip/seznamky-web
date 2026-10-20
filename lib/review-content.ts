@@ -1065,6 +1065,310 @@ Doporučujeme všem, kdo chtějí velký výběr a flexibilitu. Pro vážné vzt
 ---
 
 `,
+  'passion': `
+Passion.com je mezinárodní erotická seznamka pro dospělé. Patří do sítě FriendFinder Networks, stejné jako [AdultFriendFinder](/seznamky/adult-friend-finder), a sdílí s ní část technologie i bezpečnostních pravidel.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | erotické seznámení 18+ |
+| **Provozovatel** | FriendFinder Networks (passion.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je Passion.com
+
+- pro dospělé, kteří hledají erotická a nezávazná setkání,
+- pro ty, kterým nevadí anglické rozhraní,
+- pro uživatele, kteří chtějí velký výběr profilů i v zahraničí.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+Passion.com se hodí pro dospělé, kteří chtějí velkou erotickou seznamku se zavedeným provozovatelem. Pro seznámení přímo v Česku zvažte i [FlirtKontakt](/seznamky/flirtkontakt) nebo [Erotický kontakt](/seznamky/eroticky-kontakt).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'sexfinder': `
+SexFinder je seznamka pro dospělé, kteří chtějí nezávazné setkání bez dlouhého dopisování. Provozuje ji síť FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | nezávazný sex 18+ |
+| **Provozovatel** | FriendFinder Networks (sexfinder.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je SexFinder
+
+- pro dospělé, kteří hledají nezávazný sex,
+- pro ty, kdo chtějí jasně nastavená očekávání od začátku,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+SexFinder je přímočará sex seznamka. Registrace je zdarma, takže si můžete nejdřív projít profily ve svém okolí. Pro českou komunitu zvažte [Chci sex rande](/seznamky/chci-sex-rande).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'xmatch': `
+XMatch je seznamka pro dospělé ze sítě FriendFinder Networks. Je zaměřená na flirt a erotická setkání a sdílí část komunity s dalšími weby sítě.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | flirt a erotická setkání 18+ |
+| **Provozovatel** | FriendFinder Networks (xmatch.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je XMatch
+
+- pro dospělé, kteří hledají flirt i erotické setkání,
+- pro ty, kdo chtějí velkou mezinárodní komunitu,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+XMatch je solidní volba pro flirt a nezávazné seznámení. Pro české prostředí doporučujeme porovnat ho s [FlirtKontaktem](/seznamky/flirtkontakt).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'heated-affairs': `
+HeatedAffairs je seznamka pro diskrétní poměry. Je určená zadaným a lidem, kteří hledají dobrodružství mimo vztah. Provozuje ji síť FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | diskrétní poměry |
+| **Provozovatel** | FriendFinder Networks (heatedaffairs.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je HeatedAffairs
+
+- pro zadané, kteří hledají diskrétní setkání,
+- pro ty, kdo chtějí seznamku se zaměřením na poměry,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+HeatedAffairs je specializovaná seznamka na diskrétní poměry. Pokud chcete větší českou komunitu a rozmazané fotky, zvažte [Victoria Milan](/seznamky/victoria-milan).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'hornywife': `
+HornyWife je erotická seznamka zaměřená na zralé a zadané ženy a jejich obdivovatele. Patří do sítě FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | seznámení se zralými ženami |
+| **Provozovatel** | FriendFinder Networks (hornywife.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je HornyWife
+
+- pro dospělé se zájmem o zralé ženy,
+- pro ty, kdo hledají nezávazné a diskrétní setkání,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+HornyWife je úzce zaměřená seznamka. Hodí se pro ty, kdo vědí, co hledají. Pro širší výběr zvažte [AdultFriendFinder](/seznamky/adult-friend-finder).
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'swapfinder': `
+SwapFinder je seznamka pro páry a singles se zájmem o swingers a otevřené vztahy. Umožňuje vytvořit párový profil. Provozuje ji síť FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | páry, swingers a otevřené vztahy |
+| **Provozovatel** | FriendFinder Networks (swapfinder.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je SwapFinder
+
+- pro páry, které hledají jiné páry nebo singles,
+- pro singles se zájmem o swingers,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+SwapFinder je jedna z mála seznamek s párovými profily. Domluvte si předem v páru jasná pravidla a začněte bezplatnou registrací.
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'tsdates': `
+TSDates je seznamka pro trans ženy a muže a pro lidi, kteří se s nimi chtějí seznámit. Patří do sítě FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | trans seznamování |
+| **Provozovatel** | FriendFinder Networks (tsdates.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je TSDates
+
+- pro trans lidi, kteří hledají partnera nebo setkání,
+- pro ty, kdo hledají trans partnera s respektem,
+- pro uživatele, kterým nevadí anglické rozhraní.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+TSDates nabízí specializovaný prostor pro trans seznamování, který obecné seznamky často nemají. Registrace je zdarma.
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
+  'alt-com': `
+ALT.com je seznamka a komunita pro lidi se zájmem o BDSM, fetiš a alternativní sexualitu. Kromě profilů nabízí i skupiny a diskuze. Provozuje ji síť FriendFinder Networks.
+
+## Rychlé shrnutí
+
+| Parametr | Hodnota |
+|---|---|
+| **Hodnocení redakce** | {{RATING}}/10 |
+| **Zaměření** | BDSM, fetiš a alternativní sexualita |
+| **Provozovatel** | FriendFinder Networks (alt.com) |
+| **Registrace** | zdarma |
+| **Komunikace** | plné funkce s placeným členstvím |
+| **Jazyk** | angličtina a další světové jazyky |
+
+## Pro koho je ALT.com
+
+- pro dospělé se zájmem o BDSM a fetiš,
+- pro ty, kdo hledají partnera se stejnými preferencemi,
+- pro uživatele, kteří chtějí i komunitu a diskuze, nejen seznamku.
+
+## Co funguje a co ne
+
+Výhodou je zavedený provozovatel s dlouholetou historií a bezplatná registrace, díky které si web projdete bez placení. Nevýhodou pro české uživatele je chybějící česká verze a menší počet profilů z ČR než na českých seznamkách. Plná komunikace vyžaduje placené členství. Před nákupem si zkontrolujte, zda se automaticky obnovuje.
+
+## Na co si dát pozor
+
+- Profily, které chtějí peníze nebo rychlý přesun mimo web, ignorujte.
+- Nesdílejte intimní fotky s obličejem.
+- Používejte přezdívku a samostatný e-mail.
+
+Víc v článcích [diskrétní seznamování](/clanky/diskretni-seznamovani-bezpecnost) a [sex seznamky: jak vybrat](/clanky/sex-seznamky-jak-vybrat).
+
+## Verdikt
+
+ALT.com je specializovaná platforma pro BDSM a fetiš komunitu. Pravidla souhlasu a bezpečí jsou tu ještě důležitější než jinde: domluvte se předem a první schůzku mějte na veřejném místě.
+
+**Hodnocení redakce: {{RATING}}/10**
+`,
 }
 
 

@@ -107,29 +107,29 @@ export default async function ProduktDetailPage({ params }: Props) {
             <span className="text-white/80">{produkt.name}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end">
-            <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-end">
+            <div className="min-w-0 flex flex-col sm:flex-row gap-6 sm:items-center">
               <span className="relative w-24 h-24 shrink-0 rounded-2xl bg-white overflow-hidden ring-1 ring-white/20 shadow-xl">
                 <Image src={produkt.logo} alt={`${produkt.name} logo`} fill sizes="96px" className="object-contain p-2" priority />
               </span>
-              <div>
+              <div className="min-w-0">
                 {award && <span className="chip bg-gold-300/15 text-gold-200 ring-1 ring-gold-300/30">{award}</span>}
-                <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-white leading-tight">
+                <h1 className="mt-3 text-[2.1rem] sm:text-4xl md:text-5xl font-semibold text-white leading-tight">
                   {produkt.name} recenze {CURRENT_YEAR}
                 </h1>
-                <p className="mt-3 text-lg text-white/65 max-w-2xl">{produkt.description}</p>
+                <p className="mt-3 text-base sm:text-lg text-white/65 max-w-2xl">{produkt.description}</p>
                 <p className="mt-4 text-sm text-white/45">
                   {EDITORIAL_NAME} · Aktualizováno {formatDateCz(updated)} · <Link href="/jak-hodnotime" className="underline decoration-white/20 hover:text-white">jak hodnotíme</Link>
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-5 rounded-3xl bg-white/[0.06] border border-white/10 p-5">
+            <div className="min-w-0 flex items-center gap-4 sm:gap-5 rounded-3xl bg-white/[0.06] border border-white/10 p-4 sm:p-5">
               <ScoreBadge rating={produkt.rating} size="lg" />
               {produkt.isActive && (
-                <div>
-                  <AffiliateLink produkt={produkt} source="detail" placement="hero-cta" className={`${tracked ? 'btn-gold' : 'btn-ghost-light'} whitespace-nowrap`}>
-                    {tracked ? 'Registrace zdarma' : `Přejít na ${produkt.name}`} <ChevronRight className="w-4 h-4" />
+                <div className="flex-1 min-w-0">
+                  <AffiliateLink produkt={produkt} source="detail" placement="hero-cta" className={`${tracked ? 'btn-gold' : 'btn-ghost-light'} w-full justify-center whitespace-nowrap`}>
+                    {tracked ? 'Registrace zdarma' : 'Navštívit web'} <ChevronRight className="w-4 h-4" />
                   </AffiliateLink>
                   <p className="mt-2 text-xs text-white/40 text-center">Oficiální web seznamky</p>
                 </div>
