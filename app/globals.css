@@ -573,11 +573,11 @@
   @apply italic text-gray-700;
 }
 
-.prose-review a {
+.prose-review a:not([class*="btn"]) {
   @apply text-romantic-600 underline decoration-romantic-300 underline-offset-2 hover:decoration-romantic-500 hover:text-romantic-700 transition-colors;
 }
 
-.prose-review a[target="_blank"]::after {
+.prose-review a[target="_blank"]:not([class*="btn"])::after {
   content: ' ↗';
   @apply text-romantic-400 text-sm;
 }
@@ -667,23 +667,27 @@
 
 /* Tables in prose - responsive wrapper */
 .prose-review .table-wrapper {
-  @apply my-8 -mx-4 md:mx-0 overflow-x-auto;
+  @apply my-8 overflow-x-auto rounded-xl border border-ivory-300 bg-white;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose-review table {
-  @apply w-full text-sm md:text-base;
+  @apply w-full text-[13px] leading-snug sm:text-sm md:text-base;
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 500px;
 }
 
 .prose-review thead th {
-  @apply bg-gray-900 text-white font-semibold text-left px-4 py-3 first:rounded-tl-xl last:rounded-tr-xl whitespace-nowrap;
+  @apply bg-gray-900 text-white font-semibold text-left px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm;
 }
 
 .prose-review tbody td {
-  @apply px-4 py-3.5 border-b border-gray-100 bg-white;
+  @apply px-3 py-3 sm:px-4 sm:py-3.5 border-b border-gray-100 bg-white align-top;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
+
+.prose-review tbody tr:last-child td { border-bottom: 0; }
 
 .prose-review tbody tr:hover td {
   @apply bg-gray-50;
@@ -1926,6 +1930,6 @@
 
 /* Article typography tweaks */
 .prose-review { color: #342b3d; }
-.prose-review a { color: #8e2f55; text-decoration-color: rgba(142,47,85,0.35); }
+.prose-review a:not([class*="btn"]) { color: #8e2f55; text-decoration-color: rgba(142,47,85,0.35); }
 .prose-review blockquote { border-left-color: #c9a256 !important; background: #fbf7ee !important; }
 .prose-review table thead th { background: #17111c !important; color: #fff !important; }

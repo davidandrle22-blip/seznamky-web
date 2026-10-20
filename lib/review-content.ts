@@ -159,10 +159,10 @@ Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživa
 ### Pro koho je ELITE Date určena?
 
 **Typický uživatel:**
-- 👤 Věk: **30–55 let** (hlavní cílová skupina, registrace je určena hlavně lidem 30+)
-- 🎓 Většina má vysokoškolské vzdělání
-- 💼 Stabilní kariéra a finanční situace
-- 💕 Hledá **vážný, dlouhodobý vztah**
+- Věk: **30–55 let** (hlavní cílová skupina, registrace je určena hlavně lidem 30+)
+- Většina má vysokoškolské vzdělání
+- Stabilní kariéra a finanční situace
+- Hledá **vážný, dlouhodobý vztah**
 
 ### Ceník členství (orientační)
 
@@ -172,7 +172,7 @@ Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživa
 | **6 měsíců** | 1 440 Kč | 240 Kč |
 | **12 měsíců** | 1 800 Kč | 150 Kč |
 
-💡 **Tip:** Čím delší období zvolíte, tím výhodnější cena. Navíc **ELITE Date neprovádí automatické prodlužování** - nemusíte se bát skrytých poplatků.
+**Tip:** Čím delší období zvolíte, tím výhodnější cena. Navíc **ELITE Date neprovádí automatické prodlužování** - nemusíte se bát skrytých poplatků.
 
 ### Co získáte s prémiovým členstvím?
 
@@ -182,16 +182,16 @@ Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživa
 - Zobrazení procentuální kompatibility
 
 **Prémiové členství:**
-- ✉️ Neomezené odesílání a přijímání zpráv
-- 📷 Zobrazení všech fotografií
-- 📹 Video chat přímo v aplikaci
-- 👁️ Informace o přečtení zpráv
-- 🔍 Pokročilé filtry vyhledávání
-- 📱 Plný přístup v mobilní aplikaci
+- Neomezené odesílání a přijímání zpráv
+- Zobrazení všech fotografií
+- Video chat přímo v aplikaci
+- Informace o přečtení zpráv
+- Pokročilé filtry vyhledávání
+- Plný přístup v mobilní aplikaci
 
 ### Nevýhody a na co si dát pozor
 
-⚠️ **Co kritizují uživatelé:**
+**Co kritizují uživatelé:**
 
 1. **"Mrtvé profily"** - Někteří uživatelé bez zaplaceného členství nemohou odpovědět na vaše zprávy. Bohužel nevidíte, zda je profil aktivní.
 
@@ -202,9 +202,9 @@ Na základě těchto dat algoritmus vyhodnotí kompatibilitu s ostatními uživa
 
 ### Bezpečnost a ochrana soukromí
 
-- 🔒 Manuální kontrola všech fotografií a profilů
-- 🚫 Možnost blokování a nahlášení uživatelů
-- 🔐 GDPR compliance a šifrovaná komunikace
+- Manuální kontrola všech fotografií a profilů
+- Možnost blokování a nahlášení uživatelů
+- GDPR compliance a šifrovaná komunikace
 - Žádné propojení se sociálními sítěmi
 
 ### Závěrečné hodnocení
@@ -228,7 +228,7 @@ Victoria Milan patří k nejznámějším evropským seznamkám pro diskrétní 
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -241,31 +241,31 @@ Victoria Milan patří k nejznámějším evropským seznamkám pro diskrétní 
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 🔒 **Maximální anonymita** – žádné propojení se sociálními sítěmi
-- 👩 **Pro ženy zcela zdarma** – plné členství bez poplatků
-- 💳 **Diskrétní platby** – na výpisu neutrální název firmy
-- 🌍 **Mezinárodní komunita** – miliony aktivních uživatelů
-- 📱 **Kvalitní mobilní aplikace** – dostupná pro iOS i Android
-
----
-
-## ❌ Nevýhody
-
-- ⚠️ Bez členství nepřečtete příchozí zprávy
-- ⚠️ Vyšší cena pro muže ve srovnání s běžnými seznamkami
-- ⚠️ Občasné falešné profily (nutná obezřetnost)
+- **Maximální anonymita** – žádné propojení se sociálními sítěmi
+- **Pro ženy zcela zdarma** – plné členství bez poplatků
+- **Diskrétní platby** – na výpisu neutrální název firmy
+- **Mezinárodní komunita** – miliony aktivních uživatelů
+- **Kvalitní mobilní aplikace** – dostupná pro iOS i Android
 
 ---
 
-## 👤 Pro koho je Victoria Milan?
+## Nevýhody
+
+- Bez členství nepřečtete příchozí zprávy
+- Vyšší cena pro muže ve srovnání s běžnými seznamkami
+- Občasné falešné profily (nutná obezřetnost)
+
+---
+
+## Pro koho je Victoria Milan?
 
 **Ideální pro:**
-- 💑 Zadané a vdané hledající diskrétní dobrodružství
-- 🔓 Páry v otevřených vztazích
-- 🎭 Uživatele, kteří vyžadují maximální anonymitu
-- 👩 Ženy – členství je zcela zdarma
+- Zadané a vdané hledající diskrétní dobrodružství
+- Páry v otevřených vztazích
+- Uživatele, kteří vyžadují maximální anonymitu
+- Ženy – členství je zcela zdarma
 
 **Není vhodná pro:**
 - Hledače vážného dlouhodobého vztahu
@@ -273,7 +273,7 @@ Victoria Milan patří k nejznámějším evropským seznamkám pro diskrétní 
 
 ---
 
-## 🔐 Jak funguje ochrana soukromí?
+## Jak funguje ochrana soukromí?
 
 Victoria Milan nabízí unikátní bezpečnostní funkce, které jinde nenajdete:
 
@@ -291,7 +291,7 @@ Platformu **nelze propojit** s Facebookem ani jinými sítěmi.
 
 ---
 
-## 💰 Ceník členství 2026
+## Ceník členství 2026
 
 ### Pro ženy: ZDARMA
 Všechny funkce bez jakýchkoliv poplatků.
@@ -301,14 +301,14 @@ Všechny funkce bez jakýchkoliv poplatků.
 | Členství | Délka | Celková cena | Cena/měsíc |
 |----------|-------|--------------|------------|
 | **Silver** | 3 měsíce | 621 Kč | 207 Kč |
-| **Gold** ⭐ | 6 měsíců | 750 Kč | 125 Kč |
+| **Gold** | 6 měsíců | 750 Kč | 125 Kč |
 | **Diamond** | 12 měsíců | 996 Kč | **83 Kč** |
 
-💡 **Náš tip:** Roční členství Diamond vychází pouze na 83 Kč měsíčně – nejlepší poměr cena/výkon.
+**Náš tip:** Roční členství Diamond vychází pouze na 83 Kč měsíčně – nejlepší poměr cena/výkon.
 
 ---
 
-## 📱 Mobilní aplikace
+## Mobilní aplikace
 
 Victoria Milan nabízí plnohodnotnou mobilní aplikaci pro iOS i Android:
 
@@ -320,26 +320,26 @@ Victoria Milan nabízí plnohodnotnou mobilní aplikaci pro iOS i Android:
 
 ---
 
-## 🛡️ Bezpečnost a soukromí
+## Bezpečnost a soukromí
 
 | Funkce | Dostupnost |
 |--------|------------|
-| SSL šifrování | ✅ |
-| Anonymní email systém | ✅ |
-| Možnost smazat chat | ✅ |
-| GDPR compliance | ✅ |
-| Blokování uživatelů | ✅ |
-| Propojení se soc. sítěmi | ❌ (záměrně) |
+| SSL šifrování | Ano |
+| Anonymní email systém | Ano |
+| Možnost smazat chat | Ano |
+| GDPR compliance | Ano |
+| Blokování uživatelů | Ano |
+| Propojení se soc. sítěmi | Ne (záměrně) |
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Klíč k úspěchu na Victoria Milan je trpělivost a diskrétnost.** Používejte rozmazané fotky, pište personalizované zprávy a buďte aktivní zejména večer mezi 20:00–22:00, kdy je nejvíce uživatelů online.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 Victoria Milan je **jednoznačně nejlepší volbou pro diskrétní seznamování** v České republice. Unikátní bezpečnostní funkce jako AnonymousBlur™ a Panic Button nemá žádná konkurence. Pro ženy je služba zcela zdarma, muži ocení férové ceny zejména u ročního členství.
 
@@ -355,7 +355,7 @@ Academic Singles je prémiová seznamka určená výhradně pro vysokoškolsky v
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -368,32 +368,32 @@ Academic Singles je prémiová seznamka určená výhradně pro vysokoškolsky v
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 🎓 **Exkluzivní komunita** – 85% uživatelů s vysokoškolským vzděláním
-- 🧠 **Vědecký matchmaking** – párování podle osobnosti a hodnot
+- **Exkluzivní komunita** – 85% uživatelů s vysokoškolským vzděláním
+- **Vědecký matchmaking** – párování podle osobnosti a hodnot
 - **Manuální ověřování** – každá fotka prochází kontrolou
-- 📹 **Videohovory** – poznejte protějšek před schůzkou
-- 📊 **Detailní kompatibilita** – procentuální shoda s každým profilem
+- **Videohovory** – poznejte protějšek před schůzkou
+- **Detailní kompatibilita** – procentuální shoda s každým profilem
 
 ---
 
-## ❌ Nevýhody
+## Nevýhody
 
-- ⚠️ **Automatické prodlužování členství** – nutné zrušit 14 dní předem
-- ⚠️ Vysoká cena ve srovnání s konkurencí
-- ⚠️ Bez placeného členství nelze komunikovat
-- ⚠️ Menší uživatelská základna než u masových seznamek
+- **Automatické prodlužování členství** – nutné zrušit 14 dní předem
+- Vysoká cena ve srovnání s konkurencí
+- Bez placeného členství nelze komunikovat
+- Menší uživatelská základna než u masových seznamek
 
 ---
 
-## 👤 Pro koho je Academic Singles?
+## Pro koho je Academic Singles?
 
 **Ideální pro:**
-- 🎓 Vysokoškolsky vzdělané profesionály (lékaři, právníci, IT, manažeři)
-- 💕 Lidi hledající vážný dlouhodobý vztah
-- 🧠 Ty, kdo chtějí intelektuálně kompatibilního partnera
-- 👔 Uživatele ve věku 30–55 let
+- Vysokoškolsky vzdělané profesionály (lékaři, právníci, IT, manažeři)
+- Lidi hledající vážný dlouhodobý vztah
+- Ty, kdo chtějí intelektuálně kompatibilního partnera
+- Uživatele ve věku 30–55 let
 
 **Není vhodná pro:**
 - Hledače nezávazných vztahů
@@ -402,7 +402,7 @@ Academic Singles je prémiová seznamka určená výhradně pro vysokoškolsky v
 
 ---
 
-## 🧠 Jak funguje matchmaking?
+## Jak funguje matchmaking?
 
 Academic Singles využívá propracovaný systém párování založený na vědeckém výzkumu:
 
@@ -423,7 +423,7 @@ Academic Singles využívá propracovaný systém párování založený na věd
 
 ---
 
-## 💰 Ceník členství 2026
+## Ceník členství 2026
 
 ### Základní členství (zdarma):
 - Registrace a vyplnění testu
@@ -437,13 +437,13 @@ Academic Singles využívá propracovaný systém párování založený na věd
 |----------|-------|--------------|------------|
 | **Basic** | 1 měsíc | 890 Kč | 890 Kč |
 | **Classic** | 6 měsíců | 3 540 Kč | 590 Kč |
-| **Comfort** ⭐ | 12 měsíců | 5 880 Kč | **490 Kč** |
+| **Comfort** | 12 měsíců | 5 880 Kč | **490 Kč** |
 
-⚠️ **Důležité upozornění:** Členství se automaticky prodlužuje! Zrušení proveďte **minimálně 14 dní** před vypršením.
+**Důležité upozornění:** Členství se automaticky prodlužuje! Zrušení proveďte **minimálně 14 dní** před vypršením.
 
 ---
 
-## 📱 Mobilní aplikace
+## Mobilní aplikace
 
 Academic Singles nabízí aplikaci pro iOS i Android:
 
@@ -455,28 +455,28 @@ Academic Singles nabízí aplikaci pro iOS i Android:
 
 ---
 
-## 🛡️ Bezpečnost a soukromí
+## Bezpečnost a soukromí
 
 | Funkce | Dostupnost |
 |--------|------------|
-| Manuální ověřování fotek | ✅ |
-| SSL šifrování | ✅ |
-| GDPR compliance | ✅ |
-| Blokování uživatelů | ✅ |
-| Videohovory | ✅ |
-| Propojení se soc. sítěmi | ❌ |
+| Manuální ověřování fotek | Ano |
+| SSL šifrování | Ano |
+| GDPR compliance | Ano |
+| Blokování uživatelů | Ano |
+| Videohovory | Ano |
+| Propojení se soc. sítěmi | Ne |
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Investujte čas do osobnostního dotazníku.** Čím upřímnější a důkladnější budou vaše odpovědi, tím relevantnější budou doporučení partnerů. Nepospíchejte – kvalitní profil = kvalitní matche.
 
-⚠️ **Nezapomeňte:** Nastavte si připomínku 14 dní před vypršením členství, pokud nechcete automatické prodloužení.
+**Nezapomeňte:** Nastavte si připomínku 14 dní před vypršením členství, pokud nechcete automatické prodloužení.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 Academic Singles je **nejlepší volbou pro vzdělané profesionály**, kteří hledají vážný vztah s intelektuálně kompatibilním partnerem. Vědecký matchmaking funguje a kvalita profilů je výrazně vyšší než u běžných seznamek.
 
@@ -492,7 +492,7 @@ Divoké rande je česká seznamka zaměřená na nezávazné vztahy a erotická 
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -505,32 +505,32 @@ Divoké rande je česká seznamka zaměřená na nezávazné vztahy a erotická 
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 👩 **Ženy mají VIP zdarma** – doživotně po ověření fotky
-- ⚖️ **Vyrovnaný poměr pohlaví** – 57% žen, 43% mužů
-- 🇨🇿 **Čistě česká komunita** – desítky tisíc online denně
-- 🔒 **Diskrétní prostředí** – důraz na anonymitu
-- ✉️ **Neomezená komunikace** s VIP členstvím
-
----
-
-## ❌ Nevýhody
-
-- ⚠️ Muži musí platit za plnohodnotné funkce
-- ⚠️ Zaměřeno pouze na nezávazné vztahy (ne vážné)
-- ⚠️ Zrušení VIP vyžaduje písemnou výpověď
-- ⚠️ Vyšší ceny ve srovnání s některými konkurenty
+- **Ženy mají VIP zdarma** – doživotně po ověření fotky
+- **Vyrovnaný poměr pohlaví** – 57% žen, 43% mužů
+- **Čistě česká komunita** – desítky tisíc online denně
+- **Diskrétní prostředí** – důraz na anonymitu
+- **Neomezená komunikace** s VIP členstvím
 
 ---
 
-## 👤 Pro koho je Divoké rande?
+## Nevýhody
+
+- Muži musí platit za plnohodnotné funkce
+- Zaměřeno pouze na nezávazné vztahy (ne vážné)
+- Zrušení VIP vyžaduje písemnou výpověď
+- Vyšší ceny ve srovnání s některými konkurenty
+
+---
+
+## Pro koho je Divoké rande?
 
 **Ideální pro:**
-- 🔥 Dospělé hledající nezávazné vztahy a erotická dobrodružství
-- 👩 Ženy – VIP členství je zcela zdarma
-- 🇨🇿 Ty, kdo preferují aktivní českou komunitu
-- 🔒 Uživatele, kteří oceňují diskrétnost
+- Dospělé hledající nezávazné vztahy a erotická dobrodružství
+- Ženy – VIP členství je zcela zdarma
+- Ty, kdo preferují aktivní českou komunitu
+- Uživatele, kteří oceňují diskrétnost
 
 **Není vhodná pro:**
 - Hledače vážného dlouhodobého vztahu
@@ -539,7 +539,7 @@ Divoké rande je česká seznamka zaměřená na nezávazné vztahy a erotická 
 
 ---
 
-## 🔐 Jak funguje Divoké rande?
+## Jak funguje Divoké rande?
 
 ### Registrace (5 minut):
 1. Zadejte email a zvolte přezdívku
@@ -556,7 +556,7 @@ Divoké rande je česká seznamka zaměřená na nezávazné vztahy a erotická 
 
 ---
 
-## 💰 Ceník VIP členství 2026
+## Ceník VIP členství 2026
 
 ### Pro ženy: ZDARMA
 Doživotní VIP po ověření profilové fotografie.
@@ -567,46 +567,46 @@ Doživotní VIP po ověření profilové fotografie.
 |----------|-------|--------------|------------|
 | **Basic** | 1 měsíc | 499 Kč | 499 Kč |
 | **Standard** | 3 měsíce | 999 Kč | 333 Kč |
-| **Premium** ⭐ | 12 měsíců | 2 388 Kč | **199 Kč** |
+| **Premium** | 12 měsíců | 2 388 Kč | **199 Kč** |
 
-💡 **Náš tip:** Roční členství vychází pouze na 199 Kč měsíčně – nejlepší poměr cena/výkon.
+**Náš tip:** Roční členství vychází pouze na 199 Kč měsíčně – nejlepší poměr cena/výkon.
 
 ---
 
-## 🆓 Zdarma vs. VIP
+## Zdarma vs. VIP
 
 | Funkce | Zdarma | VIP |
 |--------|--------|-----|
-| Prohlížení profilů | ✅ | ✅ |
-| Odpovídání na zprávy | ✅ | ✅ |
+| Prohlížení profilů | Ano | Ano |
+| Odpovídání na zprávy | Ano | Ano |
 | Oslovení (denně) | 10 | 30 |
 | Hodnocení (denně) | 10 | 40 |
-| Návštěvníci profilu | ❌ | ✅ |
-| „Kdo si mě oblíbil" | ❌ | ✅ |
-| Předávání kontaktů | ❌ | ✅ |
+| Návštěvníci profilu | Ne | Ano |
+| „Kdo si mě oblíbil" | Ne | Ano |
+| Předávání kontaktů | Ne | Ano |
 
 ---
 
-## 🛡️ Bezpečnost a soukromí
+## Bezpečnost a soukromí
 
 | Funkce | Dostupnost |
 |--------|------------|
-| Nastavení viditelnosti profilu | ✅ |
-| Ověřování fotek (ženy) | ✅ |
-| Blokování uživatelů | ✅ |
-| Mazání falešných profilů | ✅ |
-| Diskrétní komunikace | ✅ |
-| GDPR compliance | ✅ |
+| Nastavení viditelnosti profilu | Ano |
+| Ověřování fotek (ženy) | Ano |
+| Blokování uživatelů | Ano |
+| Mazání falešných profilů | Ano |
+| Diskrétní komunikace | Ano |
+| GDPR compliance | Ano |
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Buďte aktivní zejména večer mezi 20:00–23:00**, kdy je na Divokém rande nejvíce uživatelů online. Kvalitní profilová fotka a upřímný popis výrazně zvyšují šanci na úspěch.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 Divoké rande je **nejlepší česká seznamka pro nezávazné vztahy**. Vyrovnaný poměr pohlaví, aktivní komunita a fakt, že ženy mají VIP zdarma, z ní dělají atraktivní volbu. Pro muže je roční členství za 199 Kč/měsíc férová cena.
 
@@ -622,7 +622,7 @@ Singles50 je prémiová seznamka pro zralé singles – hlavní skupinou jsou li
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -635,32 +635,32 @@ Singles50 je prémiová seznamka pro zralé singles – hlavní skupinou jsou li
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 🎯 **Specializace na 40+** – komunita zralých singles
-- ⚖️ **Vyrovnaný poměr pohlaví** – 52:48
-- 🧠 **Chytrý matchmaking** – párování podle osobnosti a zájmů
-- 💰 **Dostupné ceny** – od 149 Kč měsíčně
-- 📱 **Mobilní aplikace** – iOS i Android
-
----
-
-## ❌ Nevýhody
-
-- ⚠️ Bez VIP členství nelze plně komunikovat
-- ⚠️ Pouze pro uživatele 40+ (věkové omezení)
-- ⚠️ Někteří uživatelé hlásí obtížné zrušení členství
-- ⚠️ Menší uživatelská základna než u masových seznamek
+- **Specializace na 40+** – komunita zralých singles
+- **Vyrovnaný poměr pohlaví** – 52:48
+- **Chytrý matchmaking** – párování podle osobnosti a zájmů
+- **Dostupné ceny** – od 149 Kč měsíčně
+- **Mobilní aplikace** – iOS i Android
 
 ---
 
-## 👤 Pro koho je Singles50?
+## Nevýhody
+
+- Bez VIP členství nelze plně komunikovat
+- Pouze pro uživatele 40+ (věkové omezení)
+- Někteří uživatelé hlásí obtížné zrušení členství
+- Menší uživatelská základna než u masových seznamek
+
+---
+
+## Pro koho je Singles50?
 
 **Ideální pro:**
-- 👤 Uživatele ve věku 40–65 let
-- 💕 Lidi hledající vážný partnerský vztah
-- 🎯 Ty, kdo vědí, co od vztahu očekávají
-- 💼 Singles s ustálenou životní situací
+- Uživatele ve věku 40–65 let
+- Lidi hledající vážný partnerský vztah
+- Ty, kdo vědí, co od vztahu očekávají
+- Singles s ustálenou životní situací
 
 **Není vhodná pro:**
 - Mladší uživatele (pod 40 let)
@@ -669,7 +669,7 @@ Singles50 je prémiová seznamka pro zralé singles – hlavní skupinou jsou li
 
 ---
 
-## 🧠 Jak funguje matchmaking?
+## Jak funguje matchmaking?
 
 Singles50 využívá propracovaný systém párování:
 
@@ -684,52 +684,52 @@ Zábavný způsob seznamování – hodnotíte profily a při vzájemné shodě 
 
 ---
 
-## 💰 Ceník členství 2026
+## Ceník členství 2026
 
 | Členství | Délka | Cena/měsíc |
 |----------|-------|------------|
 | **Basic** | 1 měsíc | 149 Kč |
 | **Standard** | 3 měsíce | 133 Kč |
-| **Premium** ⭐ | 6 měsíců | 92 Kč |
+| **Premium** | 6 měsíců | 92 Kč |
 | **VIP** | 12 měsíců | 33 Kč |
 
-💡 **Náš tip:** Roční členství je nejlepší investice – vychází pouze na 33 Kč měsíčně.
+**Náš tip:** Roční členství je nejlepší investice – vychází pouze na 33 Kč měsíčně.
 
 ---
 
-## 🆓 Zdarma vs. VIP
+## Zdarma vs. VIP
 
 | Funkce | Zdarma | VIP |
 |--------|--------|-----|
-| Registrace a test | ✅ | ✅ |
-| Prohlížení profilů | ✅ | ✅ |
-| Zobrazení kompatibility | ✅ | ✅ |
-| Odesílání zpráv | ❌ | ✅ |
-| Čtení zpráv | ❌ | ✅ |
-| Pokročilé filtry | ❌ | ✅ |
-| Zobrazení všech fotek | ❌ | ✅ |
+| Registrace a test | Ano | Ano |
+| Prohlížení profilů | Ano | Ano |
+| Zobrazení kompatibility | Ano | Ano |
+| Odesílání zpráv | Ne | Ano |
+| Čtení zpráv | Ne | Ano |
+| Pokročilé filtry | Ne | Ano |
+| Zobrazení všech fotek | Ne | Ano |
 
 ---
 
-## 🛡️ Bezpečnost a soukromí
+## Bezpečnost a soukromí
 
 | Funkce | Dostupnost |
 |--------|------------|
-| SSL šifrování | ✅ |
-| GDPR compliance | ✅ |
-| Blokování uživatelů | ✅ |
-| Nahlášení profilů | ✅ |
-| Zákaznická podpora | ✅ |
+| SSL šifrování | Ano |
+| GDPR compliance | Ano |
+| Blokování uživatelů | Ano |
+| Nahlášení profilů | Ano |
+| Zákaznická podpora | Ano |
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Věnujte čas osobnostnímu testu.** Čím důkladněji ho vyplníte, tím relevantnější budou vaše matche. Singles50 je o kvalitě, ne kvantitě – buďte trpěliví a otevření novým možnostem.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 Singles50 je **nejlepší volbou pro zralé singles nad 40 let**, kteří hledají vážný vztah s partnerem podobného věku. Inteligentní matchmaking a specializovaná komunita jsou hlavními přednostmi.
 
@@ -781,7 +781,7 @@ BeNaughty je mezinárodní seznamka zaměřená na flirt a nezávazné seznamov�
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -794,32 +794,32 @@ BeNaughty je mezinárodní seznamka zaměřená na flirt a nezávazné seznamov�
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 📱 **Moderní rozhraní** – přehledný design
-- 🔍 **Rozšířené vyhledávání** – filtry podle věku, lokality, vzhledu
-- 🛡️ **Flexibilní balíčky** – možnost pozastavení členství
-- 🚫 **Blokování uživatelů** – ochrana před obtěžováním
-- 🆓 **Registrace zdarma** – vyzkoušejte bez závazků
-
----
-
-## ❌ Nevýhody
-
-- ⚠️ Nižší kvalita některých profilů
-- ⚠️ Možnost výskytu falešných účtů
-- ⚠️ Omezené funkce bez VIP
-- ⚠️ Veřejné hodnocení fotek může být nepříjemné
-- ⚠️ Slabší zákaznická podpora
+- **Moderní rozhraní** – přehledný design
+- **Rozšířené vyhledávání** – filtry podle věku, lokality, vzhledu
+- **Flexibilní balíčky** – možnost pozastavení členství
+- **Blokování uživatelů** – ochrana před obtěžováním
+- **Registrace zdarma** – vyzkoušejte bez závazků
 
 ---
 
-## 👤 Pro koho je BeNaughty?
+## Nevýhody
+
+- Nižší kvalita některých profilů
+- Možnost výskytu falešných účtů
+- Omezené funkce bez VIP
+- Veřejné hodnocení fotek může být nepříjemné
+- Slabší zákaznická podpora
+
+---
+
+## Pro koho je BeNaughty?
 
 **Ideální pro:**
-- 🔥 Uživatele hledající flirt a nezávazné vztahy
-- 🌍 Ty, kdo oceňují mezinárodní komunitu
-- 💰 Singles s nižším rozpočtem na seznamování
+- Uživatele hledající flirt a nezávazné vztahy
+- Ty, kdo oceňují mezinárodní komunitu
+- Singles s nižším rozpočtem na seznamování
 
 **Není vhodná pro:**
 - Hledače vážného dlouhodobého vztahu
@@ -828,17 +828,17 @@ BeNaughty je mezinárodní seznamka zaměřená na flirt a nezávazné seznamov�
 
 ---
 
-## 💰 Ceník členství 2026
+## Ceník členství 2026
 
 | Balíček | Cena/měsíc | Co získáte |
 |---------|------------|------------|
 | **Extra zabezpečení** | 200 Kč | Anonymní prohlížení |
 | **Chataholik** | 215 Kč | Neomezený chat |
-| **Prémiový randič** ⭐ | 315 Kč | Všechny funkce + boost |
+| **Prémiový randič** | 315 Kč | Všechny funkce + boost |
 
 ---
 
-## 🎯 Hlavní funkce
+## Hlavní funkce
 
 - **Like galerie** – hodnoťte fotky ostatních
 - **Rozšířené vyhledávání** – filtry podle preferencí
@@ -848,24 +848,24 @@ BeNaughty je mezinárodní seznamka zaměřená na flirt a nezávazné seznamov�
 
 ---
 
-## 🛡️ Bezpečnost
+## Bezpečnost
 
 | Funkce | Dostupnost |
 |--------|------------|
-| Blokování uživatelů | ✅ |
-| Nahlášení profilů | ✅ |
-| HTTPS šifrování | ✅ |
+| Blokování uživatelů | Ano |
+| Nahlášení profilů | Ano |
+| HTTPS šifrování | Ano |
 | Ověřování profilů | Částečné |
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Buďte obezřetní a důvěřujte svým instinktům.** BeNaughty má smíšenou reputaci – některé profily mohou být falešné. Nikdy neposílejte peníze neznámým lidem a ověřujte si totožnost před schůzkou.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 BeNaughty je **průměrná volba pro nezávazné seznamování**. Má moderní rozhraní a dostupné ceny, ale kvalita profilů je nižší než u konkurence. Doporučujeme ji pouze těm, kdo jsou ochotni být obezřetní.
 
@@ -915,7 +915,7 @@ Badoo je největší seznamovací platforma na světě s více než 500 miliony 
 
 ---
 
-## 📊 Rychlé shrnutí
+## Rychlé shrnutí
 
 | Parametr | Hodnota |
 |----------|---------|
@@ -929,33 +929,33 @@ Badoo je největší seznamovací platforma na světě s více než 500 miliony 
 
 ---
 
-## ✅ Hlavní výhody
+## Hlavní výhody
 
-- 🌍 **Největší uživatelská základna** – 500M+ uživatelů celosvětově
-- 🆓 **Štědrá bezplatná verze** – chat, swipování, stories zdarma
-- 📱 **Vynikající mobilní aplikace** – 100M+ stažení
-- 💎 **Lifetime členství** – jednorázová platba 2 499 Kč
-- 📹 **Video chat** – poznejte člověka před schůzkou
+- **Největší uživatelská základna** – 500M+ uživatelů celosvětově
+- **Štědrá bezplatná verze** – chat, swipování, stories zdarma
+- **Vynikající mobilní aplikace** – 100M+ stažení
+- **Lifetime členství** – jednorázová platba 2 499 Kč
+- **Video chat** – poznejte člověka před schůzkou
 - **Ověřování profilů** – selfie verifikace
 
 ---
 
-## ❌ Nevýhody
+## Nevýhody
 
-- ⚠️ Vyšší počet neaktivních a falešných profilů
-- ⚠️ Reklamy v bezplatné verzi
-- ⚠️ Méně uživatelů 55+
-- ⚠️ Pro vážné vztahy existují lepší alternativy
+- Vyšší počet neaktivních a falešných profilů
+- Reklamy v bezplatné verzi
+- Méně uživatelů 55+
+- Pro vážné vztahy existují lepší alternativy
 
 ---
 
-## 👤 Pro koho je Badoo?
+## Pro koho je Badoo?
 
 **Ideální pro:**
-- 🔥 Mladé lidi 18–35 let
-- 🌍 Cestující – mezinárodní dosah ve 190 zemích
-- 🆓 Ty, kdo chtějí vyzkoušet seznamku zdarma
-- 💕 Hledače flirtu, přátelství i vztahů
+- Mladé lidi 18–35 let
+- Cestující – mezinárodní dosah ve 190 zemích
+- Ty, kdo chtějí vyzkoušet seznamku zdarma
+- Hledače flirtu, přátelství i vztahů
 
 **Není vhodná pro:**
 - Seniory 55+ (málo uživatelů)
@@ -964,7 +964,7 @@ Badoo je největší seznamovací platforma na světě s více než 500 miliony 
 
 ---
 
-## 🎯 Jak funguje Badoo?
+## Jak funguje Badoo?
 
 ### Způsoby seznamování:
 
@@ -979,7 +979,7 @@ Badoo je největší seznamovací platforma na světě s více než 500 miliony 
 
 ---
 
-## 💰 Ceník Premium 2026
+## Ceník Premium 2026
 
 ### Co je zdarma:
 - Vytvoření profilu a nahrání fotek
@@ -995,27 +995,27 @@ Badoo je největší seznamovací platforma na světě s více než 500 miliony 
 | **Basic** | 1 měsíc | 399 Kč | 399 Kč |
 | **Standard** | 3 měsíce | 699 Kč | 233 Kč |
 | **Premium** | 6 měsíců | 999 Kč | **167 Kč** |
-| **Lifetime** ⭐ | Navždy | 2 499 Kč | Jednorázově |
+| **Lifetime** | Navždy | 2 499 Kč | Jednorázově |
 
-💡 **Náš tip:** Lifetime členství za 2 499 Kč je nejlepší investice pro dlouhodobé uživatele.
+**Náš tip:** Lifetime členství za 2 499 Kč je nejlepší investice pro dlouhodobé uživatele.
 
 ---
 
-## 🆓 Zdarma vs. Premium
+## Zdarma vs. Premium
 
 | Funkce | Zdarma | Premium |
 |--------|--------|---------|
-| Swipování | 100/den | ✅ Neomezené |
-| Chat s matchi | ✅ | ✅ |
-| Kdo mě lajkl | ❌ | ✅ |
-| Vrácení swipe | ❌ | ✅ |
-| Zvýraznění profilu | ❌ | ✅ 3× více zobrazení |
-| Bez reklam | ❌ | ✅ |
-| Ověřený badge | ❌ | ✅ |
+| Swipování | 100/den | Ano Neomezené |
+| Chat s matchi | Ano | Ano |
+| Kdo mě lajkl | Ne | Ano |
+| Vrácení swipe | Ne | Ano |
+| Zvýraznění profilu | Ne | Ano 3× více zobrazení |
+| Bez reklam | Ne | Ano |
+| Ověřený badge | Ne | Ano |
 
 ---
 
-## 📱 Mobilní aplikace
+## Mobilní aplikace
 
 Badoo má jednu z nejlepších seznamovacích aplikací na trhu:
 
@@ -1028,16 +1028,16 @@ Badoo má jednu z nejlepších seznamovacích aplikací na trhu:
 
 ---
 
-## 🛡️ Bezpečnost a soukromí
+## Bezpečnost a soukromí
 
 | Funkce | Dostupnost |
 |--------|------------|
-| Selfie ověření | ✅ |
-| AI moderace fotek | ✅ |
-| Blokování uživatelů | ✅ |
-| Nahlášení obsahu | ✅ |
-| 24/7 moderační tým | ✅ |
-| GDPR compliance | ✅ |
+| Selfie ověření | Ano |
+| AI moderace fotek | Ano |
+| Blokování uživatelů | Ano |
+| Nahlášení obsahu | Ano |
+| 24/7 moderační tým | Ano |
+| GDPR compliance | Ano |
 
 ### Tipy pro bezpečné seznamování:
 1. Nikdy neposílejte peníze neznámým
@@ -1048,13 +1048,13 @@ Badoo má jednu z nejlepších seznamovacích aplikací na trhu:
 
 ---
 
-## 💡 Tip pro nové uživatele
+## Tip pro nové uživatele
 
 > **Investujte do kvalitních fotek a ověřte svůj profil.** Ověřený badge výrazně zvyšuje důvěryhodnost a počet matchů. Buďte aktivní – pravidelné swipování a rychlé odpovědi jsou klíčem k úspěchu.
 
 ---
 
-## 🏆 Verdikt
+## Verdikt
 
 Badoo je **skvělá volba pro vstup do světa online seznamování**. Obrovská uživatelská základna, štědrá bezplatná verze a kvalitní mobilní aplikace z ní dělají jednu z nejdostupnějších seznamek. Hlavní nevýhodou je vyšší počet neaktivních profilů – buďte trpěliví.
 

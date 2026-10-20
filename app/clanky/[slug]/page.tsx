@@ -7,6 +7,7 @@ import { Clock, ChevronRight } from 'lucide-react'
 import { getClanekBySlug, getClanky, getProdukty } from '@/lib/data'
 import ArticleCard from '@/components/ArticleCard'
 import AffiliateLink from '@/components/AffiliateLink'
+import MobileCtaBar from '@/components/MobileCtaBar'
 import { ScoreBadge } from '@/components/RankedList'
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo'
 import { categoryLabel } from '@/lib/article-categories'
@@ -94,7 +95,7 @@ export default async function ClanekDetailPage({ params }: Props) {
   }
 
   return (
-    <div>
+    <div className="pb-20 lg:pb-0">
       <ArticleSchema
         headline={clanek.title}
         description={clanek.excerpt}
@@ -197,6 +198,10 @@ export default async function ClanekDetailPage({ params }: Props) {
             {relatedClanky.map(c => <ArticleCard key={c.id} clanek={c} />)}
           </div>
         </section>
+      )}
+
+      {main && isTracked(main.slug) && (
+        <MobileCtaBar produkt={main} source="article" kicker="Tip redakce" label="Vyzkoušet" />
       )}
     </div>
   )

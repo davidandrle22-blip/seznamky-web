@@ -71,19 +71,19 @@ export default async function Home() {
 
       {/* HERO */}
       <section className="hero-dark">
-        <div className="relative z-10 container-wide pt-14 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
-          <div>
+        <div className="relative z-10 container-wide pt-10 pb-14 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-24 grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-12 items-center">
+          <div className="min-w-0">
             <p className="eyebrow-light">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" /> Aktualizováno: {monthYear()} · {produkty.length} hodnocených seznamek
             </p>
-            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[3.6rem] font-semibold leading-[1.05] text-white text-balance">
+            <h1 className="mt-5 text-[2.15rem] sm:text-5xl lg:text-[3.6rem] font-semibold leading-[1.05] text-white text-balance">
               Nejlepší seznamky {CURRENT_YEAR}: <span className="italic text-gold-300">upřímné</span> srovnání a recenze
             </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-base sm:text-lg text-white/70 max-w-xl leading-relaxed">
               Prošli jsme české i zahraniční seznamky. Porovnali jsme, kolik stojí, kdo na nich je a jak dobře párují.
               Vyberte si tu, která sedí k tomu, co hledáte: vážný vztah, seznámení po padesátce nebo diskrétní dobrodružství.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 [&>*]:justify-center">
               {top3[0] && (
                 <AffiliateLink produkt={top3[0]} source="homepage" placement="hero-cta" className="btn-gold">
                   Vyzkoušet vítěze {top3[0].name} zdarma <ChevronRight className="w-4 h-4" />
@@ -91,7 +91,7 @@ export default async function Home() {
               )}
               <Link href="#zebricek" className="btn-ghost-light">Zobrazit žebříček</Link>
             </div>
-            <div className="mt-10 grid grid-cols-3 max-w-lg gap-6 text-white/60 text-sm">
+            <div className="mt-9 sm:mt-10 grid grid-cols-3 max-w-lg gap-4 sm:gap-6 text-white/60 text-xs sm:text-sm leading-snug">
               <div><span className="block font-display text-2xl text-white">{produkty.length}</span>seznamek v testu</div>
               <div><span className="block font-display text-2xl text-white">6</span>hodnoticích kritérií</div>
               <div><span className="block font-display text-2xl text-white">1×</span>měsíčně aktualizace</div>
@@ -99,30 +99,30 @@ export default async function Home() {
           </div>
 
           {/* Top 3 panel */}
-          <div className="rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-5 sm:p-6 shadow-2xl">
-            <div className="flex items-center justify-between mb-4">
+          <div className="min-w-0 rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-3.5 sm:p-6 shadow-2xl">
+            <div className="flex items-center justify-between gap-3 mb-4 px-1 sm:px-0">
               <p className="eyebrow-light">Top 3 podle redakce</p>
               <span className="text-xs text-white/40">{monthYear()}</span>
             </div>
             <ol className="space-y-3">
               {top3.map((p, i) => (
-                <li key={p.id} className="flex items-center gap-4 rounded-2xl bg-white p-3.5 text-ink-900">
+                <li key={p.id} className="flex items-center gap-2.5 sm:gap-4 rounded-2xl bg-white p-2.5 sm:p-3.5 text-ink-900">
                   <span className={`rank-medal ${i === 0 ? 'bg-gradient-to-b from-gold-200 to-gold-500 text-ink-950' : 'bg-ivory-100 text-ink-500'}`}>{i + 1}</span>
-                  <span className="relative w-12 h-12 shrink-0 rounded-lg border border-ivory-300 overflow-hidden bg-white">
+                  <span className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-lg border border-ivory-300 overflow-hidden bg-white">
                     <Image src={p.logo} alt={`${p.name} logo`} fill sizes="48px" className="object-contain p-1" />
                   </span>
                   <div className="flex-1 min-w-0">
-                    <Link href={`/seznamky/${p.slug}`} className="font-semibold hover:text-rose-700">{p.name}</Link>
+                    <Link href={`/seznamky/${p.slug}`} className="block truncate font-semibold hover:text-rose-700">{p.name}</Link>
                     <p className="text-xs text-ink-400 truncate">{AWARDS[p.slug]}</p>
                   </div>
                   <span className="hidden sm:inline-flex rounded-lg bg-ink-900 text-white text-sm font-semibold px-2.5 py-1">{p.rating.toFixed(1)}</span>
-                  <AffiliateLink produkt={p} source="homepage" placement={`hero-top3-${i + 1}`} className={`${i === 0 ? 'btn-gold' : 'btn-wine'} !px-3.5 !py-2 text-sm`}>
+                  <AffiliateLink produkt={p} source="homepage" placement={`hero-top3-${i + 1}`} className={`${i === 0 ? 'btn-gold' : 'btn-wine'} shrink-0 !px-3.5 !py-2 text-sm`}>
                     Web
                   </AffiliateLink>
                 </li>
               ))}
             </ol>
-            <p className="mt-4 text-[11px] leading-relaxed text-white/40">
+            <p className="mt-4 px-1 sm:px-0 text-[11px] leading-relaxed text-white/40">
               Obsahuje affiliate odkazy. Při registraci můžeme získat provizi, cena se pro vás nemění.
             </p>
           </div>
@@ -238,7 +238,7 @@ export default async function Home() {
             Lidem nad 50 let doporučujeme specializované <Link href="/kategorie/senior-seznamky">seznamky pro seniory</Link>, kde je víc vrstevníků a méně falešných profilů.
           </p>
           <p>
-            Nevíte, kde začít? Přečtěte si průvodce <Link href="/clanky/jak-vybrat-spravnou-seznamku">jak vybrat správnou seznamku</Link>
+            Nevíte, kde začít? Přečtěte si průvodce <Link href="/clanky/jak-vybrat-spravnou-seznamku">jak vybrat správnou seznamku</Link>{" "}
             a tipy, <Link href="/clanky/jak-napsat-atraktivni-profil">jak napsat profil</Link>, na který lidé odpovídají.
           </p>
         </div>

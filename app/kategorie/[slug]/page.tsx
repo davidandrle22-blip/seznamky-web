@@ -8,6 +8,7 @@ import RankedList, { ScoreBadge } from '@/components/RankedList'
 import ComparisonTable from '@/components/ComparisonTable'
 import FaqSection from '@/components/FaqSection'
 import AffiliateLink from '@/components/AffiliateLink'
+import MobileCtaBar from '@/components/MobileCtaBar'
 import { ItemListSchema, BreadcrumbSchema, FAQSchema } from '@/components/seo'
 import { CATEGORY_PICKS, AWARDS, isTracked } from '@/lib/monetization'
 import { CURRENT_YEAR, monthYear, SITE_URL } from '@/lib/site'
@@ -70,7 +71,7 @@ export default async function KategoriePage({ params }: Props) {
   ]
 
   return (
-    <div>
+    <div className="pb-20 lg:pb-0">
       <ItemListSchema name={h1} items={ranked.map(p => ({ name: p.name, url: `${SITE_URL}/seznamky/${p.slug}` }))} />
       <BreadcrumbSchema items={breadcrumbs} />
       {content?.faq?.length ? <FAQSchema items={content.faq} /> : null}
@@ -123,7 +124,8 @@ export default async function KategoriePage({ params }: Props) {
       )}
 
       <section className="container-wide pt-12">
-        <h2 className="h-section mb-8">Žebříček: {kategorie.name.toLowerCase()} ({monthYear()})</h2>
+        <p className="eyebrow">Žebříček · {monthYear()}</p>
+        <h2 className="h-section mt-2 mb-10">{kategorie.name}: pořadí redakce</h2>
         {ranked.length > 0 ? (
           <RankedList produkty={ranked} source="category" />
         ) : (
@@ -172,6 +174,10 @@ export default async function KategoriePage({ params }: Props) {
         Stránka obsahuje affiliate odkazy. Pokud se přes ně zaregistrujete, můžeme získat provizi. Cena se pro vás nemění.
         Ceny a funkce seznamek se mohou měnit, aktuální podmínky ověřte na webu provozovatele.
       </p>
+
+      {main && isTracked(main.slug) && (
+        <MobileCtaBar produkt={main} source="category" kicker="Doporučení redakce" label="Vyzkoušet" />
+      )}
     </div>
   )
 }
