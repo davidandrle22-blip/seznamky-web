@@ -20,6 +20,12 @@ export interface AffiliateConfig {
   supportsSubTracking?: boolean
   /** Má rozdílné offer ID podle zařízení */
   hasDeviceDetection?: boolean
+  /** Typ sítě – 'affise-smartlink' staví odkaz jinak (id + pid + sub1..3) */
+  network?: 'go2cloud' | 'affise-smartlink'
+  /** ID smartlinku (Affise) */
+  smartId?: string
+  /** Partner ID (pid) pro Affise smartlink */
+  pid?: string
 }
 
 /**
@@ -90,6 +96,38 @@ export const AFFILIATE_LINKS: Record<string, AffiliateConfig> = {
     affId: '24115',
     supportsSubTracking: true,
   },
+
+  // ===== Paysale Dating Smartlink (CB Media – CZ dating) =====
+  // Jeden smartlink routuje na nejlépe konvertující dating nabídku.
+  // sub1 = slug seznamky (odkud klik přišel), sub2 = zdroj, sub3 = umístění.
+  'eroticky-kontakt': {
+    baseUrl: 'https://paysale.g2afse.com/sl',
+    network: 'affise-smartlink',
+    smartId: '6707ff5cbb23f2139d89e9bf',
+    pid: '138936',
+    supportsSubTracking: true,
+  },
+  'dateefy': {
+    baseUrl: 'https://paysale.g2afse.com/sl',
+    network: 'affise-smartlink',
+    smartId: '6707ff5cbb23f2139d89e9bf',
+    pid: '138936',
+    supportsSubTracking: true,
+  },
+  'zrala-laska': {
+    baseUrl: 'https://paysale.g2afse.com/sl',
+    network: 'affise-smartlink',
+    smartId: '6707ff5cbb23f2139d89e9bf',
+    pid: '138936',
+    supportsSubTracking: true,
+  },
+  'chci-sex-rande': {
+    baseUrl: 'https://paysale.g2afse.com/sl',
+    network: 'affise-smartlink',
+    smartId: '6707ff5cbb23f2139d89e9bf',
+    pid: '138936',
+    supportsSubTracking: true,
+  },
 }
 
 export interface AffiliateParams {
@@ -148,6 +186,19 @@ export function getAffiliateLink(
   // Pokud produkt nemá vlastní affiliate config, vrátíme fallback URL
   if (!config) {
     return fallbackUrl || ''
+  }
+
+  // Affise smartlink (Paysale) – jiná struktura: id + pid + sub1..3
+  if (config.network === 'affise-smartlink') {
+    const slUrl = new URL(config.baseUrl)
+    if (config.smartId) slUrl.searchParams.set('id', config.smartId)
+    if (config.pid) slUrl.searchParams.set('pid', config.pid)
+    // sub1 = slug seznamky (výchozí), ať v Paysale poznáme zdrojovou stránku
+    slUrl.searchParams.set('sub1', params?.sub1 || slug)
+    if (params?.source) slUrl.searchParams.set('sub2', params.source)
+    if (params?.placement) slUrl.searchParams.set('sub3', params.placement)
+    if (params?.sub2) slUrl.searchParams.set('sub4', params.sub2)
+    return slUrl.toString()
   }
 
   // Sestavení URL
