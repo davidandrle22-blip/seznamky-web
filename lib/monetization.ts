@@ -36,15 +36,15 @@ export const MONETIZATION: Record<string, Monetization> = {
   'divoke-rande':     { status: 'available', network: 'přímo provozovatel', commission: 'neznámé – vyžádat' },
   'c-date':           { status: 'available', network: 'vlastní program / Awin', commission: 'CPS' },
   'ashley-madison':   { status: 'available', network: 'vlastní program', commission: 'CPS (první platba)' },
-  'adult-friend-finder': { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'passion':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'sexfinder':         { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'xmatch':            { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'heated-affairs':    { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'hornywife':         { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'swapfinder':        { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'tsdates':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
-  'alt-com':           { status: 'available', network: 'FriendFinder Networks (cash.ffn.com)', commission: 'až 100 $ / objednávka (PMOB) nebo 75 % + 55 % revshare' },
+  'adult-friend-finder': { status: 'tracking', network: 'FriendFinder Networks (ID g1496013)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'passion':           { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'sexfinder':         { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'xmatch':            { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'heated-affairs':    { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'hornywife':         { status: 'tracking', network: 'FriendFinder Networks (ID g1496013)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'swapfinder':        { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'tsdates':           { status: 'available', network: 'FriendFinder Networks – značka není v affiliate účtu (jen AFF/ALT)', commission: 'až 130 $ / objednávka (PMOB) nebo 75 % + 55 % revshare, CPL až 5 $' },
+  'alt-com':           { status: 'tracking', network: 'FriendFinder Networks (ID g1496013)', commission: 'až 100 $ / objednávka (PMOB) nebo 75 % + 55 % revshare' },
   'be-naughty':       { status: 'available', network: 'Together Networks (partners.benaughty.com)', commission: 'PPL / PPS / revshare' },
   'gleeden':          { status: 'available', network: 'Kwanko / přímo', commission: 'CPL' },
   'edarling':         { status: 'none' },
@@ -67,22 +67,22 @@ export const PRIORITY_ORDER = [
   'be2',
   'elite-meets-beauty',
   'flirtkontakt',
-  // čekají na affiliate odkaz – seřazeno podle provize
-  // FriendFinder Networks: až 130 $ za objednávku / 75 % revshare / CPL až 5 $
+  // FriendFinder Networks – v účtu g1496013 (až 130 $ / objednávka nebo 75 % revshare)
   'adult-friend-finder',
-  'passion',
-  'sexfinder',
-  'heated-affairs',
-  'xmatch',
-  'hornywife',
-  'swapfinder',
-  'tsdates',
-  'alt-com', // FFN, strop 100 $ za objednávku
-  // Paysale / Together Networks
+  'hornywife', // přesměrovává na AFF se zachovaným ID
+  'alt-com',
+  // Paysale Dating Smartlink
   'eroticky-kontakt',
   'dateefy',
   'zrala-laska',
   'chci-sex-rande',
+  // čekají na affiliate odkaz – FFN značky mimo účet, Together Networks
+  'passion',
+  'sexfinder',
+  'heated-affairs',
+  'xmatch',
+  'swapfinder',
+  'tsdates',
   'flirt-com',
 ]
 

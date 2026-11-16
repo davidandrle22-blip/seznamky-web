@@ -20,8 +20,8 @@ export interface AffiliateConfig {
   supportsSubTracking?: boolean
   /** Má rozdílné offer ID podle zařízení */
   hasDeviceDetection?: boolean
-  /** Typ sítě – 'affise-smartlink' staví odkaz jinak (id + pid + sub1..3) */
-  network?: 'go2cloud' | 'affise-smartlink'
+  /** Typ sítě – 'affise-smartlink' staví odkaz jinak (id + pid + sub1..3), 'direct' = hotový odkaz beze změn */
+  network?: 'go2cloud' | 'affise-smartlink' | 'direct'
   /** ID smartlinku (Affise) */
   smartId?: string
   /** Partner ID (pid) pro Affise smartlink */
@@ -128,6 +128,22 @@ export const AFFILIATE_LINKS: Record<string, AffiliateConfig> = {
     pid: '138936',
     supportsSubTracking: true,
   },
+
+  // ===== FriendFinder Networks (Medley) – affiliate ID g1496013, schváleno 28.10.2026 =====
+  // V účtu jsou jen AdultFriendFinder, ALT (+ Cams, VirtualFriendFinder). HornyWife přesměrovává na AFF se zachovaným ID.
+  // /go/g1496013 = výchozí program účtu (Percentage p2101609). Passion/SexFinder/XMatch/... v programu nejsou.
+  'adult-friend-finder': {
+    baseUrl: 'https://adultfriendfinder.com/go/g1496013',
+    network: 'direct',
+  },
+  'hornywife': {
+    baseUrl: 'https://hornywife.com/go/g1496013',
+    network: 'direct',
+  },
+  'alt-com': {
+    baseUrl: 'https://alt.com/go/g1496013',
+    network: 'direct',
+  },
 }
 
 export interface AffiliateParams {
@@ -186,6 +202,11 @@ export function getAffiliateLink(
   // Pokud produkt nemá vlastní affiliate config, vrátíme fallback URL
   if (!config) {
     return fallbackUrl || ''
+  }
+
+  // Hotový odkaz (FFN) – bez úprav
+  if (config.network === 'direct') {
+    return config.baseUrl
   }
 
   // Affise smartlink (Paysale) – jiná struktura: id + pid + sub1..3
