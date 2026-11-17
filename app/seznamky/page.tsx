@@ -85,7 +85,7 @@ export default async function SeznamkyPage({ searchParams }: Props) {
         <ComparisonTable produkty={filtered} limit={40} source="seznamky" />
         <p className="disclosure mt-4">
           Údaje o počtu registrací a věku vycházejí z informací provozovatelů a našeho testování. Ceny a funkce se mohou měnit,
-          aktuální podmínky vždy ověřte na webu seznamky. Stránka obsahuje affiliate odkazy.
+          aktuální podmínky vždy ověřte na webu seznamky.
         </p>
       </section>
     </div>

@@ -171,7 +171,6 @@ export default async function KategoriePage({ params }: Props) {
       )}
 
       <p className="container-x disclosure pt-10">
-        Stránka obsahuje affiliate odkazy. Pokud se přes ně zaregistrujete, můžeme získat provizi. Cena se pro vás nemění.
         Ceny a funkce seznamek se mohou měnit, aktuální podmínky ověřte na webu provozovatele.
       </p>
 

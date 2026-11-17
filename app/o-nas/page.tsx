@@ -4,7 +4,7 @@ import { getSettings } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'O nás – redakce Seznamky.info',
-  description: 'Kdo stojí za Seznamky.info, jak vznikají naše recenze seznamek a jak web financujeme.',
+  description: 'Kdo stojí za Seznamky.info a jak vznikají naše recenze seznamek.',
   alternates: { canonical: '/o-nas' },
 }
 
@@ -26,13 +26,6 @@ export default async function ONasPage() {
           <li>Sledujeme bezpečnost: ověřování profilů, ochranu dat a reakce na nahlášení.</li>
           <li>Píšeme praktické články o seznamování, od prvního profilu po první rande.</li>
         </ul>
-        <h2>Jak web financujeme</h2>
-        <p>
-          Web je zdarma. Financujeme ho z affiliate provizí: když se přes náš odkaz zaregistrujete nebo si koupíte členství,
-          provozovatel seznamky nám může zaplatit provizi. Vás to nic nestojí. Spolupráce s partnery ovlivňuje, které seznamky
-          zvýrazňujeme. Bodové hodnocení ale počítáme pro všechny stejně podle <Link href="/jak-hodnotime">veřejné metodiky</Link>.
-          Seznamku, která podle nás nefunguje, nedoporučíme ani za provizi.
-        </p>
         <h2>Kontakt</h2>
         <p>
           Máte zkušenost se seznamkou, našli jste v recenzi chybu nebo chcete navázat spolupráci? Napište nám na{' '}

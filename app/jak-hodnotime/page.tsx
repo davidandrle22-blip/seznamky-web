@@ -54,11 +54,6 @@ export default function JakHodnotimePage() {
           Ceny, funkce a dostupnost kontrolujeme zhruba jednou měsíčně. Datum poslední aktualizace najdete u každé recenze.
           Když seznamka v ČR přestane fungovat, označíme ji a doporučíme alternativy.
         </p>
-        <h2>Řazení a affiliate spolupráce</h2>
-        <p>
-          Web financujeme z affiliate provizí. Ve žebříčcích a v doporučeních proto můžeme zvýraznit partnerské seznamky.
-          Do výběru se ale dostanou jen ty, které v hodnocení dopadly dobře. Více na stránce <Link href="/o-nas">O nás</Link>.
-        </p>
         <h2>Uživatelské recenze</h2>
         <p>
           Nezveřejňujeme vymyšlené ani placené recenze. Údaje o počtu uživatelů pocházejí od provozovatelů seznamek

@@ -57,12 +57,7 @@ export default async function Footer() {
           <FooterCol title="Průvodce" links={pruvodce} />
         </div>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-xs leading-relaxed text-white/50">
-          <strong className="text-white/70">Jak web financujeme:</strong> Některé odkazy na Seznamky.info jsou affiliate odkazy.
-          Když se přes ně zaregistrujete, můžeme od provozovatele seznamky dostat provizi. Vás to nic nestojí a cena pro vás
-          zůstává stejná. Pořadí doporučení ovlivňuje i spolupráce s partnery. Hodnocení (body) ale počítáme podle stejné metodiky
-          u všech seznamek. Obsah je určen osobám starším 18 let.
-        </div>
+        <p className="mt-12 text-xs text-white/40">Obsah je určen osobám starším 18 let.</p>
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-sm">
           <p>© {CURRENT_YEAR} Seznamky.info</p>

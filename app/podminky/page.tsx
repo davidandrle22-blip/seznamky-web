@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { FileText, AlertCircle, Scale, ExternalLink, Ban, CheckCircle } from 'lucide-react'
+import { FileText, AlertCircle, Scale, Ban, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -64,31 +64,6 @@ export default function PodminkyPage() {
           </div>
         </div>
 
-        {/* Affiliate odkazy */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8 mb-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-              <ExternalLink className="w-6 h-6 text-green-600" />
-            </div>
-            <h2 className="text-xl font-bold text-gray-900">Affiliate odkazy</h2>
-          </div>
-
-          <div className="prose prose-gray max-w-none">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Web Seznamky.info obsahuje affiliate (partnerské) odkazy na třetí strany.
-              To znamená, že:
-            </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
-              <li>Některé odkazy vedou na externí seznamovací služby</li>
-              <li>Za registraci přes tyto odkazy můžeme obdržet provizi</li>
-              <li>Pro vás jako uživatele to neznamená žádné dodatečné náklady</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed">
-              Affiliate spolupráce nemá vliv na objektivitu našich recenzí.
-              Hodnocení vytváříme nezávisle na základě vlastního testování.
-            </p>
-          </div>
-        </div>
 
         {/* Co neděláme */}
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8 mb-6">

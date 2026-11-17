@@ -234,7 +234,6 @@ export default async function ProduktDetailPage({ params }: Props) {
 
           <p className="disclosure mt-10">
             Ceny a funkce ověřujeme pravidelně, mohou se ale změnit. Aktuální podmínky najdete na webu {produkt.name}.
-            Recenze obsahuje affiliate odkazy. Pokud se přes ně zaregistrujete, můžeme získat provizi. Na hodnocení to nemá vliv.
           </p>
         </article>
 

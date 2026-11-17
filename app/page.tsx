@@ -47,7 +47,7 @@ const homeFaq = [
   },
   {
     question: 'Jak vybíráte a řadíte seznamky?',
-    answer: 'Každou seznamku hodnotíme podle šesti kritérií: kvalita a aktivita uživatelů, párování, bezpečnost, cena, ovládání a podpora. Detaily najdete na stránce Jak hodnotíme. Web financujeme z affiliate provizí, o tom informujeme transparentně v patičce.',
+    answer: 'Každou seznamku hodnotíme podle šesti kritérií: kvalita a aktivita uživatelů, párování, bezpečnost, cena, ovládání a podpora. Detaily najdete na stránce Jak hodnotíme.',
   },
   {
     question: 'Je online seznamování bezpečné?',
@@ -122,9 +122,6 @@ export default async function Home() {
                 </li>
               ))}
             </ol>
-            <p className="mt-4 px-1 sm:px-0 text-[11px] leading-relaxed text-white/40">
-              Obsahuje affiliate odkazy. Při registraci můžeme získat provizi, cena se pro vás nemění.
-            </p>
           </div>
         </div>
       </section>

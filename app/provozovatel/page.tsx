@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
-import { Building2, Mail, Globe, Shield } from 'lucide-react'
+import { Building2, Mail, Globe } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Informace o provozovateli | Seznamky.info',
-  description: 'Informace o provozovateli webu Seznamky.info - VP Digital s.r.o. Transparentní informace o affiliate spolupráci.',
+  description: 'Informace o provozovateli webu Seznamky.info - VP Digital s.r.o.',
 }
 
 export default function ProvozovatelPage() {
@@ -81,27 +81,6 @@ export default function ProvozovatelPage() {
           </div>
         </div>
 
-        {/* Transparency Card */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-              <Shield className="w-6 h-6 text-green-600" />
-            </div>
-            <h2 className="text-xl font-bold text-gray-900">Transparentnost</h2>
-          </div>
-
-          <div className="prose prose-gray max-w-none">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Web Seznamky.info funguje na principu affiliate marketingu. Některé odkazy
-              na stránkách jsou partnerské odkazy, což znamená, že můžeme obdržet provizi,
-              pokud se prostřednictvím našeho odkazu zaregistrujete na dané seznamce.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Tato spolupráce nemá vliv na naše hodnocení ani na pořadí seznamek v žebříčcích.
-              Recenze vytváříme nezávisle na základě vlastního testování a zpětné vazby uživatelů.
-            </p>
-          </div>
-        </div>
 
         {/* Back link */}
         <div className="mt-8 text-center">

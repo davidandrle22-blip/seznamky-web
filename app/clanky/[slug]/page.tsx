@@ -186,7 +186,6 @@ export default async function ClanekDetailPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="disclosure mt-4">Obsahuje affiliate odkazy. Při registraci můžeme získat provizi, cena se pro vás nemění.</p>
           </section>
         )}
       </div>
