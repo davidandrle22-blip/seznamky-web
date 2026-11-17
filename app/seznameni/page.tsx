@@ -7,7 +7,7 @@ import { landingsByType } from '@/lib/seznameni'
 
 export const metadata = {
   title: `Seznámení podle měst, krajů a věku ${CURRENT_YEAR} – najděte seznamku pro sebe`,
-  description: 'Seznamky podle města, kraje, věku a toho, koho hledáte. Praha, Brno, Ostrava a dalších 20 měst, všech 13 krajů, seznamky 30+, 40+, 50+ i 60+.',
+  description: 'Seznamky podle města, kraje, věku a toho, koho hledáte. Praha, Brno, Ostrava a všechna okresní města, všech 13 krajů, seznamky 30+, 40+, 50+ i 60+.',
   alternates: { canonical: '/seznameni' },
 }
 
@@ -42,6 +42,30 @@ export default function SeznameniIndex() {
       {GROUPS.map(g => {
         const items = landingsByType(g.type)
         const Icon = g.icon
+        if (g.type === 'mesto') {
+          const kraje = landingsByType('kraj')
+          const groups = [
+            { name: 'Hlavní město Praha', cities: items.filter(l => l.slug === 'praha') },
+            ...kraje.map(k => ({ name: k.name, cities: items.filter(l => l.slug !== 'praha' && `seznamka-${l.kraj}` === k.slug) })),
+          ].filter(x => x.cities.length)
+          return (
+            <section key={g.type} className="container-wide pt-14">
+              <h2 className="h-section mb-6 flex items-center gap-3"><Icon className="w-6 h-6 text-rose-700" />{g.title}</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
+                {groups.map(grp => (
+                  <div key={grp.name}>
+                    <h3 className="text-sm font-semibold uppercase tracking-wide text-ink-500 mb-3">{grp.name}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {grp.cities.map(l => (
+                        <Link key={l.slug} href={`/seznameni/${l.slug}`} className="chip-link">{l.name}</Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )
+        }
         return (
           <section key={g.type} className="container-wide pt-14">
             <h2 className="h-section mb-6 flex items-center gap-3"><Icon className="w-6 h-6 text-rose-700" />{g.title}</h2>
