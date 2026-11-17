@@ -8,6 +8,8 @@ import ArticleCard from '@/components/ArticleCard'
 import RankedList, { ScoreBadge } from '@/components/RankedList'
 import ComparisonTable from '@/components/ComparisonTable'
 import FaqSection from '@/components/FaqSection'
+import SeznamkaFinder from '@/components/SeznamkaFinder'
+import { landingsByType, TOP_CITIES } from '@/lib/seznameni'
 import { ItemListSchema, FAQSchema } from '@/components/seo'
 import { AWARDS } from '@/lib/monetization'
 import { CURRENT_YEAR, monthYear, SITE_URL } from '@/lib/site'
@@ -142,6 +144,11 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* VYHLEDÁVAČ */}
+      <section className="container-wide pt-10">
+        <SeznamkaFinder />
+      </section>
+
       {/* RANKING */}
       <section id="zebricek" className="container-wide pt-16 lg:pt-20 scroll-mt-24">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
@@ -216,6 +223,27 @@ export default async function Home() {
             )
           })}
         </div>
+      </section>
+
+      {/* SEZNÁMENÍ PODLE MĚST */}
+      <section className="container-wide pt-16 lg:pt-20">
+        <p className="eyebrow">Seznámení ve vašem okolí</p>
+        <h2 className="h-section mt-2 mb-3">Seznamky podle měst, krajů a věku</h2>
+        <p className="text-ink-500 mb-8 max-w-2xl">Vyberte své město nebo kraj. Ke každému jsme vybrali seznamky a přidali tipy na první rande.</p>
+        <div className="flex flex-wrap gap-2">
+          {landingsByType('mesto').filter(l => TOP_CITIES.includes(l.slug)).map(l => (
+            <Link key={l.slug} href={`/seznameni/${l.slug}`} className="chip-link">Seznamka {l.name}</Link>
+          ))}
+          {landingsByType('vek').map(l => (
+            <Link key={l.slug} href={`/seznameni/${l.slug}`} className="chip-link">{l.name}</Link>
+          ))}
+          {landingsByType('kdo').slice(0, 4).map(l => (
+            <Link key={l.slug} href={`/seznameni/${l.slug}`} className="chip-link">{l.name}</Link>
+          ))}
+        </div>
+        <Link href="/seznameni" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-rose-700">
+          Všechna města a kraje <ChevronRight className="w-4 h-4" />
+        </Link>
       </section>
 
       {/* SEO TEXT */}

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getProdukty, getClanky, getKategorie } from '@/lib/data'
 import { SITE_URL, LAST_REVIEW_DATE } from '@/lib/site'
+import { LANDINGS } from '@/lib/seznameni'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [produkty, clanky, kategorie] = await Promise.all([getProdukty(), getClanky(), getKategorie()])
@@ -37,5 +38,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...categoryPages, ...reviewPages, ...articlePages]
+  const landingPages: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/seznameni`, lastModified: reviewed, changeFrequency: 'weekly', priority: 0.8 },
+    ...LANDINGS.map((l) => ({
+      url: `${SITE_URL}/seznameni/${l.slug}`,
+      lastModified: reviewed,
+      changeFrequency: 'monthly' as const,
+      priority: l.type === 'mesto' || l.type === 'kraj' ? 0.75 : 0.8,
+    })),
+  ]
+
+  return [...staticPages, ...categoryPages, ...landingPages, ...reviewPages, ...articlePages]
 }

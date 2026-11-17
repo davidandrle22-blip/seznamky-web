@@ -1913,6 +1913,8 @@
   .chip-gold { @apply chip bg-gold-100 text-gold-800 ring-1 ring-gold-200; }
   .chip-wine { @apply chip bg-rose-50 text-rose-700 ring-1 ring-rose-100; }
   .chip-ink { @apply chip bg-ink-50 text-ink-600 ring-1 ring-ink-100; }
+  .chip-link { @apply inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium bg-white text-ink-700 ring-1 ring-ivory-300 transition-colors hover:text-rose-700 hover:ring-rose-200; }
+  .finder-select { @apply w-full rounded-xl border border-ivory-300 bg-white px-3.5 py-3 text-ink-900 focus:outline-none focus:ring-2 focus:ring-gold-300; }
 
   .table-premium { @apply w-full text-sm; }
   .table-premium thead th { @apply bg-ink-900 text-white/90 font-semibold text-left px-4 py-3 text-xs uppercase tracking-wider; }

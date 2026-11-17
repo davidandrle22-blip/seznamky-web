@@ -24,6 +24,16 @@ const recenze = [
   { name: 'FlirtKontakt recenze', href: '/seznamky/flirtkontakt' },
 ]
 
+const seznameni = [
+  { name: 'Seznamka Praha', href: '/seznameni/praha' },
+  { name: 'Seznamka Brno', href: '/seznameni/brno' },
+  { name: 'Seznamka Ostrava', href: '/seznameni/ostrava' },
+  { name: 'Seznamka Plzeň', href: '/seznameni/plzen' },
+  { name: 'Seznamka 50+', href: '/seznameni/seznamka-50' },
+  { name: 'Vyhledávač seznamek', href: '/hledat' },
+  { name: 'Všechna města a kraje', href: '/seznameni' },
+]
+
 const pruvodce = [
   { name: 'Jak vybrat seznamku', href: '/clanky/jak-vybrat-spravnou-seznamku' },
   { name: 'Jak napsat profil', href: '/clanky/jak-napsat-atraktivni-profil' },
@@ -39,7 +49,7 @@ export default async function Footer() {
   return (
     <footer className="bg-ink-950 text-white/70 mt-16">
       <div className="container-wide py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1fr] gap-10">
           <div>
             <Logo variant="light" />
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
@@ -54,6 +64,7 @@ export default async function Footer() {
 
           <FooterCol title="Kategorie" links={kategorieLinks} />
           <FooterCol title="Recenze" links={recenze} />
+          <FooterCol title="Seznámení" links={seznameni} />
           <FooterCol title="Průvodce" links={pruvodce} />
         </div>
 

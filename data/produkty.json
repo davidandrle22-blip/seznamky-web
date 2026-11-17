@@ -2388,5 +2388,957 @@
     "faq": [],
     "lastUpdated": "2026-10-20",
     "hasApp": false
+  },
+  {
+    "id": "cesky-flirt",
+    "shortDescription": "Česká seznamka pro flirt i vztah",
+    "fullDescription": "",
+    "expertRating": 7.0,
+    "activeUsers": "",
+    "targetAudience": "Singles 18+, kteří chtějí flirtovat nebo poznat nové lidi",
+    "features": [
+      "Vyhledávání podle kraje",
+      "Chat",
+      "Galerie fotek"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Je Český flirt jen na nezávazné seznámení?",
+        "answer": "Ne. Lidé tu hledají flirt, kamarády i vážný vztah. Co hledáte, si nastavíte v profilu."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "cesky-flirt",
+    "name": "Český flirt",
+    "logo": "/images/seznamky/cesky-flirt.svg",
+    "description": "Česká seznamka pro flirt, nová přátelství i vážnější seznámení s lidmi z celého Česka.",
+    "affiliateUrl": "https://www.ceskyflirt.com/",
+    "rating": 7.0,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Česká komunita z celé republiky",
+      "Registrace zdarma",
+      "Hodí se pro flirt i vážnější seznámení"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Bez osobnostního testu",
+      "Bez samostatné aplikace"
+    ],
+    "order": 40
+  },
+  {
+    "id": "mistni-flirt",
+    "shortDescription": "Nezávazný flirt s lidmi v okolí",
+    "fullDescription": "",
+    "expertRating": 6.9,
+    "activeUsers": "",
+    "targetAudience": "Dospělí, kteří hledají flirt nebo nezávazné setkání poblíž",
+    "features": [
+      "Profily v okolí",
+      "Chat",
+      "Erotické fotky"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Pro koho je Místní flirt?",
+        "answer": "Pro dospělé, kteří hledají nezávazný flirt nebo setkání s lidmi ve svém okolí."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "mistni-flirt",
+    "name": "Místní flirt",
+    "logo": "/images/seznamky/mistni-flirt.svg",
+    "description": "Seznamka pro nezávazný flirt a erotická setkání s lidmi z okolí. Ověřování fotek a diskrétní prostředí.",
+    "affiliateUrl": "https://www.mistniflirt.com/",
+    "rating": 6.9,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Zaměření na lidi z okolí",
+      "Rychlá registrace zdarma",
+      "Diskrétní prostředí"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Úzké zaměření na nezávazné seznámení",
+      "Bez samostatné aplikace"
+    ],
+    "order": 41
+  },
+  {
+    "id": "krasny-let",
+    "shortDescription": "Diskrétní seznamka pro tajný úlet",
+    "fullDescription": "",
+    "expertRating": 6.9,
+    "activeUsers": "",
+    "targetAudience": "Dospělí single i zadaní, kteří hledají diskrétní setkání",
+    "features": [
+      "Chat",
+      "Erotické fotky",
+      "Profily v okolí"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Je Krásný let diskrétní?",
+        "answer": "Ano, seznamka je postavená na diskrétnosti. Používejte přezdívku a samostatný e-mail, jak doporučujeme u všech seznamek pro zadané."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "krasny-let",
+    "name": "Krásný let",
+    "logo": "/images/seznamky/krasny-let.svg",
+    "description": "Diskrétní seznamka pro nezávazná a tajná setkání. Určená dospělým, kteří hledají vzrušení mimo všední stereotyp.",
+    "affiliateUrl": "https://www.krasnylet.com/",
+    "rating": 6.9,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "seznamky-pro-zadane",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Důraz na diskrétnost",
+      "Registrace zdarma",
+      "Aktivní uživatelé hledající totéž"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Jen nezávazné seznámení",
+      "Bez samostatné aplikace"
+    ],
+    "order": 42
+  },
+  {
+    "id": "nadrzena-tajemstvi",
+    "shortDescription": "Erotická seznamka pro splnění fantazií",
+    "fullDescription": "",
+    "expertRating": 6.6,
+    "activeUsers": "",
+    "targetAudience": "Dospělí 18+, kteří hledají erotická setkání",
+    "features": [
+      "Chat",
+      "Erotické fotky",
+      "Vyhledávání v okolí"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Co je Nadržená tajemství?",
+        "answer": "Česká erotická seznamka pro dospělé, kteří hledají nezávazná setkání a sdílení fantazií."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "nadrzena-tajemstvi",
+    "name": "Nadržená tajemství",
+    "logo": "/images/seznamky/nadrzena-tajemstvi.svg",
+    "description": "Erotická seznamka pro dospělé, kteří chtějí otevřeně mluvit o svých fantaziích a hledat nezávazná setkání.",
+    "affiliateUrl": "https://www.nadrzenatajemstvi.com/",
+    "rating": 6.6,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Otevřená komunikace bez přetvářky",
+      "Registrace zdarma",
+      "Česká verze"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Jen erotické zaměření",
+      "Bez samostatné aplikace"
+    ],
+    "order": 43
+  },
+  {
+    "id": "najdi-svuj-flirt",
+    "shortDescription": "Flirt a nezávazné seznámení",
+    "fullDescription": "",
+    "expertRating": 7.0,
+    "activeUsers": "",
+    "targetAudience": "Singles i zadaní 18+, kteří chtějí flirtovat",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Galerie fotek"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Je Najdi svůj flirt zdarma?",
+        "answer": "Registrace a prohlížení profilů jsou zdarma, plná komunikace je součástí placeného členství."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "najdi-svuj-flirt",
+    "name": "Najdi svůj flirt",
+    "logo": "/images/seznamky/najdi-svuj-flirt.svg",
+    "description": "Seznamka pro flirt a nezávazné seznámení. Jednoduchá registrace a rychlý start konverzace.",
+    "affiliateUrl": "https://www.najdisvujflirt.com/",
+    "rating": 7.0,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Rychlá registrace zdarma",
+      "Jednoduché ovládání",
+      "Česká verze"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Zaměření na nezávazné seznámení",
+      "Bez samostatné aplikace"
+    ],
+    "order": 44
+  },
+  {
+    "id": "tajna-laska",
+    "shortDescription": "Diskrétní flirt pro single i zadané",
+    "fullDescription": "",
+    "expertRating": 6.8,
+    "activeUsers": "",
+    "targetAudience": "Dospělí, kteří hledají diskrétní flirt",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Flirty"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Potřebuji k registraci platební kartu?",
+        "answer": "Ne, registrace je bez platební karty. Placené členství řešíte až ve chvíli, kdy chcete plně komunikovat."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "tajna-laska",
+    "name": "Tajná láska",
+    "logo": "/images/seznamky/tajna-laska.svg",
+    "description": "Diskrétní seznamka pro flirt a tajná setkání. Registrace bez platební karty.",
+    "affiliateUrl": "https://www.tajnalaska.com/",
+    "rating": 6.8,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "seznamky-pro-zadane",
+      "flirt-seznamky"
+    ],
+    "pros": [
+      "Registrace bez platební karty",
+      "Důraz na diskrétnost",
+      "Česká verze"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Jen nezávazné seznámení",
+      "Bez samostatné aplikace"
+    ],
+    "order": 45
+  },
+  {
+    "id": "tajny-zraly-flirt",
+    "shortDescription": "Diskrétní flirt se zralými lidmi",
+    "fullDescription": "",
+    "expertRating": 6.8,
+    "activeUsers": "",
+    "targetAudience": "Dospělí, kteří hledají flirt se zralejšími partnery",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Ověřené profily"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Pro koho je Tajný zralý flirt?",
+        "answer": "Pro dospělé, kteří hledají flirt nebo diskrétní setkání se zralejšími partnery."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "tajny-zraly-flirt",
+    "name": "Tajný zralý flirt",
+    "logo": "/images/seznamky/tajny-zraly-flirt.svg",
+    "description": "Seznamka pro diskrétní flirt se zralými ženami a muži. Ručně kontrolované profily a česká verze.",
+    "affiliateUrl": "https://www.tajnyzralyflirt.com/",
+    "rating": 6.8,
+    "users": "",
+    "ageRange": "30+",
+    "categories": [
+      "senior-seznamky",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Zaměření na zralé uživatele",
+      "Ručně kontrolované profily",
+      "Účet zdarma za minutu"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Nezávazné zaměření",
+      "Bez samostatné aplikace"
+    ],
+    "order": 46
+  },
+  {
+    "id": "vyhledavac-milf",
+    "shortDescription": "Seznamka se zralými ženami (MILF)",
+    "fullDescription": "",
+    "expertRating": 6.5,
+    "activeUsers": "",
+    "targetAudience": "Muži a ženy, kteří hledají seznámení se zralými ženami",
+    "features": [
+      "Chat",
+      "Vyhledávání podle věku",
+      "Fotky v profilu"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Co znamená MILF seznamka?",
+        "answer": "Seznamka zaměřená na seznámení se zralými, sebevědomými ženami, obvykle s nezávazným zaměřením."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "vyhledavac-milf",
+    "name": "Vyhledávač MILF",
+    "logo": "/images/seznamky/vyhledavac-milf.svg",
+    "description": "Erotická seznamka zaměřená na seznámení se zralými ženami. Česká verze a diskrétní prostředí.",
+    "affiliateUrl": "https://www.vyhledavacmilf.com/",
+    "rating": 6.5,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Jasné zaměření",
+      "Česká verze",
+      "Registrace zdarma"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Úzká cílová skupina",
+      "Bez samostatné aplikace"
+    ],
+    "order": 47
+  },
+  {
+    "id": "freerande",
+    "shortDescription": "Česká flirt a milenecká seznamka",
+    "fullDescription": "",
+    "expertRating": 7.1,
+    "activeUsers": "",
+    "targetAudience": "Dospělí, kteří hledají flirt nebo milence",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Galerie fotek"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Kdo provozuje Freerande?",
+        "answer": "Švýcarská společnost InterMaxGroup AG, která provozuje i další seznamky v Evropě."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "freerande",
+    "name": "Freerande",
+    "logo": "/images/seznamky/freerande.svg",
+    "description": "Česká seznamka pro nezávazný flirt a milenecké vztahy. Provozuje ji švýcarská InterMaxGroup AG.",
+    "affiliateUrl": "https://www.freerande.cz/",
+    "rating": 7.1,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky",
+      "sex-seznamky",
+      "seznamky-pro-zadane"
+    ],
+    "pros": [
+      "Česká komunita",
+      "Zavedený provozovatel (InterMaxGroup AG)",
+      "Registrace zdarma"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Zaměření na nezávazné vztahy",
+      "Bez samostatné aplikace"
+    ],
+    "order": 48
+  },
+  {
+    "id": "gkontakt",
+    "shortDescription": "Česká gay seznamka",
+    "fullDescription": "",
+    "expertRating": 7.2,
+    "activeUsers": "",
+    "targetAudience": "Gay a bi muži z Česka",
+    "features": [
+      "Vyhledávání mužů v okolí",
+      "Online uživatelé",
+      "Fotky"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Vyhledávání",
+      "Nahrání fotek"
+    ],
+    "faq": [
+      {
+        "question": "Je GKontakt jen pro gaye?",
+        "answer": "Ano, GKontakt je seznamka pro muže, kteří hledají muže: gay i bi."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "gkontakt",
+    "name": "GKontakt",
+    "logo": "/images/seznamky/gkontakt.svg",
+    "description": "Jedna z největších českých gay seznamek. Muži tu hledají flirt, vztah i nezávazné setkání v diskrétním prostředí. Provozuje ji Internet Portal s.r.o.",
+    "affiliateUrl": "https://gkontakt.cz/",
+    "rating": 7.2,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "gay-seznamky",
+      "sex-seznamky"
+    ],
+    "pros": [
+      "Velká česká gay komunita",
+      "Dlouhá historie (od roku 2005)",
+      "Diskrétní prostředí"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Převažuje nezávazné seznámení",
+      "Starší design"
+    ],
+    "order": 49
+  },
+  {
+    "id": "kerl",
+    "shortDescription": "Gay seznamka bez měsíčních poplatků",
+    "fullDescription": "",
+    "expertRating": 6.9,
+    "activeUsers": "",
+    "targetAudience": "Gay a bi muži, kteří nechtějí platit předplatné",
+    "features": [
+      "Vyhledávání",
+      "Zprávy",
+      "Profily s fotkami"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Komunikace bez předplatného"
+    ],
+    "faq": [
+      {
+        "question": "Je Kerl zdarma?",
+        "answer": "Kerl funguje bez měsíčních poplatků. Případné doplňkové služby ověřte přímo na webu."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "kerl",
+    "name": "Kerl",
+    "logo": "/images/seznamky/kerl.svg",
+    "description": "Česká gay seznamka pro chlapy, která funguje bez měsíčních poplatků. Provozuje ji Yellobar s.r.o.",
+    "affiliateUrl": "https://kerl.cz/",
+    "rating": 6.9,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "gay-seznamky",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Bez měsíčních poplatků",
+      "Česká komunita",
+      "Jednoduchá registrace"
+    ],
+    "cons": [
+      "Menší komunita než velké seznamky",
+      "Méně pokročilých funkcí",
+      "Bez osobnostního testu"
+    ],
+    "order": 50
+  },
+  {
+    "id": "yellobar",
+    "shortDescription": "Seznamka pro vážný vztah bez předplatného",
+    "fullDescription": "",
+    "expertRating": 7.0,
+    "activeUsers": "",
+    "targetAudience": "Singles, kteří hledají vztah a nechtějí platit předplatné",
+    "features": [
+      "Rozšířené hledání",
+      "Zprávy",
+      "Hodnocení profilu"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Komunikace bez předplatného"
+    ],
+    "faq": [
+      {
+        "question": "Platí se na Yellobaru předplatné?",
+        "answer": "Ne, Yellobar funguje bez měsíčních poplatků."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "yellobar",
+    "name": "Yellobar",
+    "logo": "/images/seznamky/yellobar.svg",
+    "description": "Česká seznamka pro vážný vztah bez měsíčních poplatků. Provozuje ji Yellobar s.r.o.",
+    "affiliateUrl": "https://yellobar.com/",
+    "rating": 7.0,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "vazne-vztahy",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Bez měsíčních poplatků",
+      "Zaměření na vážný vztah",
+      "Česká komunita"
+    ],
+    "cons": [
+      "Menší komunita než placené seznamky",
+      "Bez osobnostního testu",
+      "Méně ověřování profilů"
+    ],
+    "order": 51
+  },
+  {
+    "id": "nalovu",
+    "shortDescription": "Česká seznamka podle měst a krajů",
+    "fullDescription": "",
+    "expertRating": 6.7,
+    "activeUsers": "",
+    "targetAudience": "Singles, kteří chtějí poznat lidi z konkrétního města",
+    "features": [
+      "Hledání podle měst",
+      "Kategorie vztahů",
+      "Zprávy"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Co je zvláštní na seznamce naLovu?",
+        "answer": "Profily můžete procházet podle měst a obcí, takže snadno najdete lidi ze svého okolí."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "nalovu",
+    "name": "naLovu",
+    "logo": "/images/seznamky/nalovu.svg",
+    "description": "Česká seznamka, kde můžete hledat podle měst, obcí a kategorií: vážný vztah, přátelství nebo flirt.",
+    "affiliateUrl": "https://nalovu.cz/",
+    "rating": 6.7,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "vazne-vztahy",
+      "flirt-seznamky",
+      "seznamky-zdarma"
+    ],
+    "pros": [
+      "Hledání podle měst a obcí",
+      "Vážný vztah, přátelství i flirt",
+      "Česká komunita"
+    ],
+    "cons": [
+      "Menší komunita",
+      "Jednodušší funkce",
+      "Bez aplikace"
+    ],
+    "order": 52
+  },
+  {
+    "id": "bezzavazku",
+    "shortDescription": "Česká seznamka pro flirt a sex bez závazků",
+    "fullDescription": "",
+    "expertRating": 6.4,
+    "activeUsers": "",
+    "targetAudience": "Dospělí, kteří hledají vztah bez závazků",
+    "features": [
+      "Chat",
+      "Profily v okolí",
+      "Fotky"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Kdo provozuje BezZávazků?",
+        "answer": "Česká společnost Fixnet s.r.o."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "bezzavazku",
+    "name": "BezZávazků",
+    "logo": "/images/seznamky/bezzavazku.svg",
+    "description": "Česká seznamka pro dospělé single i zadané, kteří hledají flirt a setkání bez závazků. Provozuje ji Fixnet s.r.o.",
+    "affiliateUrl": "https://bezzavazku.cz/",
+    "rating": 6.4,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "sex-seznamky",
+      "seznamky-pro-zadane"
+    ],
+    "pros": [
+      "Česká seznamka a provozovatel",
+      "Jasně nastavená očekávání",
+      "Ručně schvalované fotky"
+    ],
+    "cons": [
+      "Menší komunita",
+      "Plná komunikace je placená",
+      "Bez aplikace"
+    ],
+    "order": 53
+  },
+  {
+    "id": "datingbuddies",
+    "shortDescription": "Mezinárodní flirt seznamka",
+    "fullDescription": "",
+    "expertRating": 6.5,
+    "activeUsers": "",
+    "targetAudience": "Singles, kteří hledají flirt nebo vztah",
+    "features": [
+      "Chat",
+      "Vyhledávání",
+      "Profily"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Je DatingBuddies česká seznamka?",
+        "answer": "Jde o mezinárodní seznamku. Českých uživatelů je méně než na domácích seznamkách."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "datingbuddies",
+    "name": "DatingBuddies",
+    "logo": "/images/seznamky/datingbuddies.svg",
+    "description": "Mezinárodní seznamka pro flirt i dlouhodobější vztah. Běží na platformě Dating Factory.",
+    "affiliateUrl": "https://www.datingbuddies.com/",
+    "rating": 6.5,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "flirt-seznamky"
+    ],
+    "pros": [
+      "Hledání podle pohlaví a orientace",
+      "Registrace zdarma",
+      "Zavedená platforma"
+    ],
+    "cons": [
+      "Menší česká komunita",
+      "Plná komunikace je placená",
+      "Část obsahu jen anglicky"
+    ],
+    "order": 54
+  },
+  {
+    "id": "loveat50",
+    "shortDescription": "Seznamka pro lidi 50+",
+    "fullDescription": "",
+    "expertRating": 6.9,
+    "activeUsers": "",
+    "targetAudience": "Singles 50+",
+    "features": [
+      "Vyhledávání podle věku",
+      "Chat",
+      "Profily"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Pro koho je LoveAt50?",
+        "answer": "Pro lidi zhruba od 50 let, kteří hledají partnera mezi vrstevníky."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "loveat50",
+    "name": "LoveAt50",
+    "logo": "/images/seznamky/loveat50.svg",
+    "description": "Seznamka pro lidi po padesátce, kteří hledají partnera, přítele nebo společnost.",
+    "affiliateUrl": "https://www.loveat50.com/",
+    "rating": 6.9,
+    "users": "",
+    "ageRange": "50+",
+    "categories": [
+      "senior-seznamky"
+    ],
+    "pros": [
+      "Zaměření na generaci 50+",
+      "Registrace zdarma",
+      "Jednoduché ovládání"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Menší česká komunita",
+      "Bez osobnostního testu"
+    ],
+    "order": 55
+  },
+  {
+    "id": "singles-meets",
+    "shortDescription": "Seznamka pro singles",
+    "fullDescription": "",
+    "expertRating": 6.6,
+    "activeUsers": "",
+    "targetAudience": "Singles 18+",
+    "features": [
+      "Chat",
+      "Vyhledávání",
+      "Profily"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Je Singles Meets na vážný vztah?",
+        "answer": "Lidé tu hledají vztah i flirt. Pro výhradně vážný vztah doporučujeme seznamky s osobnostním testem."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "singles-meets",
+    "name": "Singles Meets",
+    "logo": "/images/seznamky/singles-meets.svg",
+    "description": "Seznamka pro singles, kteří hledají nové známosti, flirt nebo partnera.",
+    "affiliateUrl": "https://www.singles-meets.com/",
+    "rating": 6.6,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "vazne-vztahy",
+      "flirt-seznamky"
+    ],
+    "pros": [
+      "Registrace zdarma",
+      "Jednoduché ovládání",
+      "Široká cílová skupina"
+    ],
+    "cons": [
+      "Plná komunikace je placená",
+      "Menší česká komunita",
+      "Bez osobnostního testu"
+    ],
+    "order": 56
+  },
+  {
+    "id": "krestanska-seznamka",
+    "shortDescription": "Seznamka pro věřící",
+    "fullDescription": "",
+    "expertRating": 6.8,
+    "activeUsers": "",
+    "targetAudience": "Věřící singles hledající vážný vztah",
+    "features": [
+      "Profily",
+      "Zprávy",
+      "Vyhledávání"
+    ],
+    "highlights": [],
+    "isActive": true,
+    "isFeatured": false,
+    "isNew": true,
+    "freeVersion": true,
+    "freeFeatures": [
+      "Registrace",
+      "Prohlížení profilů"
+    ],
+    "faq": [
+      {
+        "question": "Pro koho je Křesťanská seznamka?",
+        "answer": "Pro věřící, kteří hledají partnera pro vážný vztah postavený na společných hodnotách."
+      }
+    ],
+    "lastUpdated": "2026-11-17",
+    "hasApp": false,
+    "slug": "krestanska-seznamka",
+    "name": "Křesťanská seznamka",
+    "logo": "/images/seznamky/krestanska-seznamka.svg",
+    "description": "Česká seznamka pro věřící, kteří hledají partnera se stejnými hodnotami a vírou.",
+    "affiliateUrl": "https://www.krestanskaseznamka.cz/",
+    "rating": 6.8,
+    "users": "",
+    "ageRange": "18+",
+    "categories": [
+      "vazne-vztahy"
+    ],
+    "pros": [
+      "Partneři se stejnými hodnotami",
+      "Zaměření na vážný vztah",
+      "Česká komunita"
+    ],
+    "cons": [
+      "Menší komunita",
+      "Jednodušší funkce",
+      "Bez aplikace"
+    ],
+    "order": 57
   }
 ]
