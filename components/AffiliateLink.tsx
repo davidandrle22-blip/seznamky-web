@@ -93,9 +93,9 @@ export default function AffiliateLink({
     // 1. Push GA4/GTM dataLayer event
     pushDataLayerEvent()
 
-    // 1b. Sklik konverze „Proklik Affiliate“ – jen odkazy s aktivním trackingem
+    // 1b. Sklik konverze „Proklik Affiliate“ (typ Zahájení objednávky) – jen odkazy s aktivním trackingem
     if (isTracked(produkt.slug)) {
-      semTrack('Lead')
+      semTrack('InitiateCheckout')
     }
 
     // 2. Async server tracking - neblokuje navigaci
