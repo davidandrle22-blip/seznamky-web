@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { getClickStats, getRecentClicks, getClicks } from '@/lib/affiliate'
 import { getAllProdukty } from '@/lib/data'
 import { put, list } from '@vercel/blob'
+import { AFFILIATE_LINKS, getAffiliateLink, hasCustomAffiliateLink } from '@/lib/affiliate-config'
+import { MONETIZATION } from '@/lib/monetization'
 
 export const runtime = 'nodejs'
 
@@ -157,6 +159,21 @@ export async function GET() {
     }
 
     const productTracking: ProductTrackingStatus[] = produkty.map((p) => {
+      // Seznamky s odkazem nasazeným v kódu (lib/affiliate-config.ts) – ten má přednost před vším ostatním
+      if (hasCustomAffiliateLink(p.slug)) {
+        const m = MONETIZATION[p.slug]
+        const network = AFFILIATE_LINKS[p.slug].network || 'go2cloud'
+        const ignoredOverride = overrides[p.slug] ? ' · ruční úprava v adminu se neuplatní' : ''
+        return {
+          slug: p.slug,
+          name: p.name,
+          affiliateUrl: getAffiliateLink(p.slug, p.affiliateUrl, { source: 'admin', placement: 'nahled' }),
+          clickCount: clickCountBySlug.get(p.slug) || 0,
+          trackingStatus: p.isActive ? 'ACTIVE' : 'INACTIVE',
+          trackingDetails: `Nasazeno v kódu – ${m?.network || network}${ignoredOverride}`,
+          isActive: p.isActive,
+        }
+      }
       const affiliateUrl = overrides[p.slug] || p.affiliateUrl || ''
       const hasUrl = Boolean(affiliateUrl && affiliateUrl.trim() !== '')
       const trackingCheck = hasUrl ? hasTrackingParams(affiliateUrl) : { hasParams: false, details: 'URL není nastavena' }
@@ -178,7 +195,9 @@ export async function GET() {
         affiliateUrl: affiliateUrl || null,
         clickCount: clickCountBySlug.get(p.slug) || 0,
         trackingStatus,
-        trackingDetails: trackingCheck.details,
+        trackingDetails: MONETIZATION[p.slug]?.status === 'available'
+          ? `Bez trackingu – čeká na schválení: ${MONETIZATION[p.slug].network || 'affiliate program'}`
+          : trackingCheck.details,
         isActive: p.isActive,
       }
     })
