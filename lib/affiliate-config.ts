@@ -70,6 +70,14 @@ export const AFFILIATE_LINKS: Record<string, AffiliateConfig> = {
     supportsSubTracking: true,
   },
 
+  // ===== Yellobar (eSpolupráce offer 829, 74 Kč za aktivovaný účet) =====
+  'yellobar': {
+    baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
+    offerId: '829',
+    affId: '24115',
+    supportsSubTracking: true,
+  },
+
   // ===== Be2 =====
   'be2': {
     baseUrl: 'https://espolupracecz.go2cloud.org/aff_c',
