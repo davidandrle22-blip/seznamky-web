@@ -2,6 +2,8 @@
 
 import { Produkt } from '@/lib/types'
 import { ReactNode, MouseEvent } from 'react'
+import { isTracked } from '@/lib/monetization'
+import { semTrack } from '@/components/SemTracking'
 
 export type AffiliateSource =
   | 'homepage'
@@ -90,6 +92,11 @@ export default function AffiliateLink({
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     // 1. Push GA4/GTM dataLayer event
     pushDataLayerEvent()
+
+    // 1b. Sklik konverze „Proklik Affiliate“ – jen odkazy s aktivním trackingem
+    if (isTracked(produkt.slug)) {
+      semTrack('Lead')
+    }
 
     // 2. Async server tracking - neblokuje navigaci
     fetch('/api/affiliate/track', {

@@ -3,6 +3,7 @@ import { Inter, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import SemTracking from '@/components/SemTracking'
 import { SITE_URL, SITE_NAME, CURRENT_YEAR } from '@/lib/site'
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-sans', display: 'swap' })
@@ -88,6 +89,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SemTracking />
       </body>
     </html>
   )
